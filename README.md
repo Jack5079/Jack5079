@@ -1,3 +1,9 @@
+> *"hi im jack"*
+
+\- @resynth1943, copying and pasting my Mastodon bio after I posted a [Halycon](https://www.halcyon.social/) XSS
+
+# Projects
+
 <div align="center">
 <img width="100" src="https://nxtbot.ml/icon.svg">
 <h1>nxt</h1>
