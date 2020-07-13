@@ -30,7 +30,7 @@ Run a random Deno program by me.
 `echo "Coming soon..."`
 
 <div align="center">
-<img width="100" src="https://deno.land/logo.svg">
+<img width="100" src="https://deno.land/images/hashrock_simple.png">
 <h1>Deno Libraries</h1>
 </div>
 
