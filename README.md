@@ -7,14 +7,16 @@
 - [nxt deno](//github.com/Jack5079/nxt-deno)
 - [nxt web](//github.com/Jack5079/nxt-web)
 
-<div align="center">
-<h1>Other Programs</h1>
-</div>
 
 
 <div align="center">
 <img width="100" src="https://5079.ml/5079mlicon.svg">
-<h1>5079.ml</h1>
+<h1><a href="https://jack5079.github.io">5079.ml</a></h1>
+</div>
+i will add website list later but for now just go there
+
+<div align="center">
+<h1>Other Programs</h1>
 </div>
 
 ## Node Randomizer
