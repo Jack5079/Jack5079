@@ -2,7 +2,7 @@
 <h3><code>npx Jack5079/Jack5079 # Jack5079</code></h3>
 </div>
 <div align="center">
-<img height="50" src="https://nxtbot.ml/icon.svg">
+<img width="100" src="https://nxtbot.ml/icon.svg">
 <h2>nxt</h2>
 </div>
 
@@ -14,6 +14,6 @@
 
 <div align="center">
 
-<img height="50" src="https://5079.ml/5079mlicon.svg">
+<img width="100" src="https://5079.ml/5079mlicon.svg">
 <h2>5079.ml</h2>
 </div>
