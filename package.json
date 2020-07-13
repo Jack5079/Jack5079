@@ -2,5 +2,7 @@
   "name": "jack5079",
   "version": "1.0.0",
   "bin": "randomNode.js",
-  "dependencies": {}
+  "dependencies": {
+    "@types/node": "^14.0.22"
+  }
 }
