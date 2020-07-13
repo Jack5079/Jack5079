@@ -31,6 +31,8 @@ Run a random Deno program by me.
 
 <div align="center">
 <img width="100" src="https://deno.land/images/hashrock_simple.png">
+<br>
+<a href="https://github.com/hashrock"><small>Deno icon by Hashrock</small></a>
 <h1>Deno Libraries</h1>
 </div>
 
