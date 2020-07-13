@@ -32,9 +32,9 @@ Run a random Deno program by me.
 `echo "Coming soon..."`
 
 <div align="center">
-<img width="100" src="https://deno.land/images/hashrock_simple.png">
+<img height="150" src="https://deno.land/images/deno_paper.png">
 <br>
-<small>Colorful Deno icon by @hashrock</small>
+<small>Paper Deno icon by @heymicodes</small>
 <h1>Deno Libraries</h1>
 </div>
 
