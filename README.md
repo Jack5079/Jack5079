@@ -1,6 +1,8 @@
-> *"hi im jack"*
+# About
 
-\- @resynth1943, copying and pasting my Mastodon bio after I posted a [Halycon](https://www.halcyon.social/) XSS
+hi im jack
+
+![Proof](https://user-images.githubusercontent.com/29169102/87263761-1b420b00-c48c-11ea-989d-241104f16747.png)
 
 # Projects
 
