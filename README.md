@@ -42,7 +42,7 @@ Run a random Deno program by me.
 <h1>Deno Libraries</h1>
 </div>
 
-## [console.bark](https://github.com/Jack5079/console.bark)
+## [console.bark](https://deno.land/x/console_bark/)
 
 A port of console.bark to Deno.
 
