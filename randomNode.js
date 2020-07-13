@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const projects = [
   "nightcore-generator",
   "asciimation",
