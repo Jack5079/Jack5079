@@ -34,7 +34,7 @@ Run a random Deno program by me.
 <div align="center">
 <img width="100" src="https://deno.land/images/hashrock_simple.png">
 <br>
-<a href="https://github.com/hashrock"><small>Colorful Deno icon by Hashrock</small></a>
+<small>Colorful Deno icon by @hashrock</small>
 <h1>Deno Libraries</h1>
 </div>
 
