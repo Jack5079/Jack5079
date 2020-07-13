@@ -1,8 +1,6 @@
 # About
 
-\<script>alert("hi im jack")\</script>
-
-![Proof](https://user-images.githubusercontent.com/29169102/87263761-1b420b00-c48c-11ea-989d-241104f16747.png)
+![Insanity](https://user-images.githubusercontent.com/29169102/87263907-825fbf80-c48c-11ea-84fc-c9fb0e264a41.png)
 
 # Projects
 
