@@ -1,5 +1,5 @@
 <div align="center">
-<h3><code>npx Jack5079/Jack5079 # Jack5079</code></h3>
+<h3><code>npx Jack5079/Jack5079 # run a random program by me</code></h3>
 </div>
 <div align="center">
 <img width="100" src="https://nxtbot.ml/icon.svg">
