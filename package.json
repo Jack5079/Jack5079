@@ -1,5 +1,8 @@
 {
   "name": "jack5079",
   "version": "1.0.0",
-  "bin": "index.js"
+  "bin": "index.js",
+  "dependencies": {
+    "open": "^7.0.4"
+  }
 }
