@@ -1,6 +1,13 @@
-const projects = ["nightcore-generator", "asciimation", "create-github-repo", "swear-clipboard"];
-const project = projects[Math.floor(Math.random() * projects.length)]
-console.log(`Running ${project}...`)
+const projects = [
+  "nightcore-generator",
+  "asciimation",
+  "create-github-repo",
+  "swear-clipboard",
+  "feces",
+  'yeoman-puns'
+];
+const project = projects[Math.floor(Math.random() * projects.length)];
+console.log(`Running ${project}...`);
 
 var child = require("child_process").spawn("npx.cmd", [
   "Jack5079/" + project,
