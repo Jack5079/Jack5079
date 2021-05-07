@@ -10,7 +10,7 @@ const projects = [
 const project = projects[Math.floor(Math.random() * projects.length)];
 console.log(`Running ${project}...`);
 
-var child = require("child_process").spawn("npx.cmd", [
+var child = require("child_process").spawn("npx" + (process.platform === 'win32' ? '.cmd' : ''), [
   "Jack5079/" + project,
 ]);
 
