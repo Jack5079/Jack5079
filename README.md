@@ -6,6 +6,8 @@ twitter user @ipostdog
 
 ![trophy](https://github-profile-trophy.vercel.app/?username=Jack5079&theme=monokai&no-frame=true)
 
+![Metrics](https://metrics.lecoq.io/Jack5079)
+
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Jack5079)
 
 ![Jack5079's GitHub stats](https://github-readme-stats.vercel.app/api?username=Jack5079&count_private=true&show_icon=true)
