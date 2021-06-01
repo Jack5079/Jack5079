@@ -18,6 +18,7 @@ jobs:
           # Options
           user: Jack5079
           template: classic
+          repositories_skipped: me-and-nate
           base: header, activity, community, repositories, metadata
           config_timezone: America/New_York
           config_twemoji: yes
