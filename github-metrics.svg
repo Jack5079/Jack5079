@@ -3433,7 +3433,7 @@
                                     </svg>
                                     <div class="name">
                                         <span>Rerumu/FiOne</span>
-                                        <span>starred 7 hours ago</span>
+                                        <span>starred 10 hours ago</span>
                                     </div>
                                 </div>
                                 <div class="field description">
@@ -3475,7 +3475,7 @@
                                     </svg>
                                     <div class="name">
                                         <span>dremin/RetroBar</span>
-                                        <span>starred 11 hours ago</span>
+                                        <span>starred 14 hours ago</span>
                                     </div>
                                 </div>
                                 <div class="field description">
@@ -3517,7 +3517,7 @@
                                     </svg>
                                     <div class="name">
                                         <span>mitchellkrogza/Phishing.Database</span>
-                                        <span>starred 18 hours ago</span>
+                                        <span>starred 21 hours ago</span>
                                     </div>
                                 </div>
                                 <div class="field description">
@@ -3869,7 +3869,7 @@ Signed-off-by: dependabot[bot] &lt;support@github.com&gt;</span>
                                     </defs>
                                     <svg xmlns="http://www.w3.org/2000/svg" class="gauge info">
                                         <circle class="gauge-base" r="25" cx="28" cy="28"/>
-                                        <circle class="gauge-arc" transform="rotate(-90 28 28)" r="25" cx="28" cy="28" stroke-dasharray="80.102584238965 155"/>
+                                        <circle class="gauge-arc" transform="rotate(-90 28 28)" r="25" cx="28" cy="28" stroke-dasharray="80.12936186516995 155"/>
                                     </svg>
                                     <svg xmlns="http://www.w3.org/2000/svg" mask="url(#mask)">
                                         <g xmlns="http://www.w3.org/2000/svg" transform="translate(5 4)" fill="none" fill-rule="evenodd">
@@ -4337,7 +4337,7 @@ Signed-off-by: dependabot[bot] &lt;support@github.com&gt;</span>
             </section>
             <footer>
                 <span>These metrics include private contributions</span>
-                <span>Last updated Tue, 15 Jun 2021 06:18:35 (timezone America/New_York) with lowlighter/metrics@3.10.0</span>
+                <span>Last updated Tue, 15 Jun 2021 09:20:11 (timezone America/New_York) with lowlighter/metrics@3.10.0</span>
             </footer>
             <div id="metrics-end"></div>
         </div>
