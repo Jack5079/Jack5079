@@ -3428,7 +3428,7 @@
                                     </svg>
                                     <div class="name">
                                         <span>osyrisrblx/rbxts-build</span>
-                                        <span>starred 7 hours ago</span>
+                                        <span>starred 10 hours ago</span>
                                     </div>
                                 </div>
                                 <div class="field description">
@@ -3847,7 +3847,7 @@
                                     </defs>
                                     <svg xmlns="http://www.w3.org/2000/svg" class="gauge info">
                                         <circle class="gauge-base" r="25" cx="28" cy="28"/>
-                                        <circle class="gauge-arc" transform="rotate(-90 28 28)" r="25" cx="28" cy="28" stroke-dasharray="84.37651578632357 155"/>
+                                        <circle class="gauge-arc" transform="rotate(-90 28 28)" r="25" cx="28" cy="28" stroke-dasharray="84.4035755345478 155"/>
                                     </svg>
                                     <svg xmlns="http://www.w3.org/2000/svg" mask="url(#mask)">
                                         <g xmlns="http://www.w3.org/2000/svg" transform="translate(5 4)" fill="none" fill-rule="evenodd">
@@ -3918,7 +3918,7 @@
                                     </defs>
                                     <svg xmlns="http://www.w3.org/2000/svg" class="gauge info">
                                         <circle class="gauge-base" r="25" cx="28" cy="28"/>
-                                        <circle class="gauge-arc" transform="rotate(-90 28 28)" r="25" cx="28" cy="28" stroke-dasharray="133.58858858858858 155"/>
+                                        <circle class="gauge-arc" transform="rotate(-90 28 28)" r="25" cx="28" cy="28" stroke-dasharray="134.05405405405406 155"/>
                                     </svg>
                                     <svg xmlns="http://www.w3.org/2000/svg" mask="url(#mask)">
                                         <g transform="translate(4 4)" fill="none" fill-rule="evenodd">
@@ -3942,11 +3942,11 @@
                   Maintainer
                   
                     <span class="gh">
-                      ranked 35k out of 238m repositories
+                      ranked 34.9k out of 238m repositories
                     </span>
                   
                 </div>
-                                <div class="text">Maintaining a repository with 862 stars</div>
+                                <div class="text">Maintaining a repository with 865 stars</div>
                             </div>
                         </div>
                         <div class="achievement c largeable-width-half">
@@ -4077,7 +4077,7 @@
                   Influencer
                   
                     <span class="gh">
-                      ranked 662k out of 73m users
+                      ranked 663k out of 73m users
                     </span>
                   
                 </div>
@@ -4319,7 +4319,7 @@
             </section>
             <footer>
                 <span>These metrics include private contributions</span>
-                <span>Last updated Mon, 05 Jul 2021 09:24:07 (timezone America/New_York) with lowlighter/metrics@3.10.0</span>
+                <span>Last updated Mon, 05 Jul 2021 12:27:38 (timezone America/New_York) with lowlighter/metrics@3.10.0</span>
             </footer>
             <div id="metrics-end"></div>
         </div>
