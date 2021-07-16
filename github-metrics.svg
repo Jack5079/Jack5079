@@ -3838,7 +3838,7 @@
                                     </defs>
                                     <svg xmlns="http://www.w3.org/2000/svg" class="gauge info">
                                         <circle class="gauge-base" r="25" cx="28" cy="28"/>
-                                        <circle class="gauge-arc" transform="rotate(-90 28 28)" r="25" cx="28" cy="28" stroke-dasharray="152.365 155"/>
+                                        <circle class="gauge-arc" transform="rotate(-90 28 28)" r="25" cx="28" cy="28" stroke-dasharray="152.79125 155"/>
                                     </svg>
                                     <svg xmlns="http://www.w3.org/2000/svg" mask="url(#mask)">
                                         <g transform="translate(4 4)" fill="none" fill-rule="evenodd">
@@ -3862,11 +3862,11 @@
                   Great maintainer
                   
                     <span class="gh">
-                      ranked 5.30k out of 238m repositories
+                      ranked 5.29k out of 238m repositories
                     </span>
                   
                 </div>
-                                <div class="text">Maintaining a repository with 4932 stars</div>
+                                <div class="text">Maintaining a repository with 4943 stars</div>
                             </div>
                         </div>
                         <div class="achievement b largeable-width-half">
@@ -3911,7 +3911,7 @@
                                     </defs>
                                     <svg xmlns="http://www.w3.org/2000/svg" class="gauge info">
                                         <circle class="gauge-base" r="25" cx="28" cy="28"/>
-                                        <circle class="gauge-arc" transform="rotate(-90 28 28)" r="25" cx="28" cy="28" stroke-dasharray="86.76539999032855 155"/>
+                                        <circle class="gauge-arc" transform="rotate(-90 28 28)" r="25" cx="28" cy="28" stroke-dasharray="86.79134458737632 155"/>
                                     </svg>
                                     <svg xmlns="http://www.w3.org/2000/svg" mask="url(#mask)">
                                         <g xmlns="http://www.w3.org/2000/svg" transform="translate(5 4)" fill="none" fill-rule="evenodd">
@@ -4100,7 +4100,7 @@
                   Influencer
                   
                     <span class="gh">
-                      ranked 668k out of 74m users
+                      ranked 669k out of 74m users
                     </span>
                   
                 </div>
@@ -4342,7 +4342,7 @@
             </section>
             <footer>
                 <span>These metrics include private contributions</span>
-                <span>Last updated Fri, 16 Jul 2021 15:25:22 (timezone America/New_York) with lowlighter/metrics@3.10.0</span>
+                <span>Last updated Fri, 16 Jul 2021 18:21:19 (timezone America/New_York) with lowlighter/metrics@3.10.0</span>
             </footer>
             <div id="metrics-end"></div>
         </div>
