@@ -9,6 +9,8 @@
 <details>
 <summary>technologies</summary>
 
+*by the way, these icons were generated with [moller-icons](https://github.com/Jack5079/moller-icons)*
+
 ## for websites
 
 ![icons list](https://moller-icons.5079.workers.dev/?icons=javascript,svelte,html5,css3,astro,supabase,vite&perline=3)
