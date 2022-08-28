@@ -27,7 +27,7 @@ flowchart LR
  serverless --> worksonpages(Is it compatible with Pages?) --> compatcf[Yes] & incompatcf[No]
  compatcf --> pageson>Pages, fullstack on]
  incompatcf --> Vercel>Vercel]
- serverful --> stop>Sequence diagramsImpossible to host]
+ serverful --> stop>Impossible to host]
 ```
 
 ## for lego game
