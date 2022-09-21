@@ -61,11 +61,11 @@ I use TypeScript here because there is no roblox-js
 
 i need to learn more compiled languages too
 
-![icons list](https://moller-icons.5079.workers.dev/?icons=c,csharp,cplusplus,rust,nim,zig&perLine=3)
+![icons list](https://moller-icons.5079.workers.dev/?icons=c,csharp,cplusplus,go,nim,zig&perLine=3)
 
 - C#: if i ever have to deal with Windows again
 - C++: when i need to fix a bug in kde
 - C: i think it's important
-- Rust/Nim/Zig: to replace V since V has bad tooling
+- Go/Nim/Zig: to replace V since V has bad tooling
 
 </details>
