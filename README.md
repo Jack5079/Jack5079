@@ -45,10 +45,11 @@ I use TypeScript here because there is no roblox-js
 
 ## tech i haven't used in projects yet
 
-![icons list](https://moller-icons.5079.workers.dev/?icons=v,bash,powershell&perLine=3)
+![icons list](https://moller-icons.5079.workers.dev/?icons=v,bash,powershell,zig&perLine=3)
 
 - V: Just learned it and its tooling sucks
 - Bash, PowerShell: I use them as terminals, not as scripting languages
+- Zig: Not sure how I'll do memory management
 
 ## should learn
 
@@ -61,7 +62,7 @@ I use TypeScript here because there is no roblox-js
 
 i need to learn more compiled languages too
 
-![icons list](https://moller-icons.5079.workers.dev/?icons=c,csharp,cplusplus,go,nim,zig&perLine=3)
+![icons list](https://moller-icons.5079.workers.dev/?icons=c,csharp,cplusplus,go,nim&perLine=3)
 
 - C#: if i ever have to deal with Windows again
 - C++: when i need to fix a bug in kde
