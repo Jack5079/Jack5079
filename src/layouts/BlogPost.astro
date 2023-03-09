@@ -18,15 +18,28 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props
 				font-size: 2em;
 				margin: 0.25em 0 0;
 			}
-			hr {
-				border-top: 1px solid #ddd;
-				margin: 1rem 0;
-			}
 			.last-updated-on {
 				font-style: italic;
 			}
-			article > a {
+			.metadata a {
 				display: contents;
+				color: var(--subtext0);
+			}
+			/* Top of the page, then fades out */
+			.hero {
+				-webkit-mask-image: linear-gradient(
+					to top,
+					transparent 0%,
+					black 40%
+				);
+				mask-image: linear-gradient(to top, transparent 0%, black 40%);
+				border-radius: 1em;
+			}
+			.metadata {
+				text-align: center;
+			}
+			.p-summary {
+				font-style: italic;
 			}
 		</style>
 	</head>
@@ -37,24 +50,31 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props
 			<article>
 				{
 					heroImage && (
-						<img width={720} height={360} src={heroImage} alt="" />
+						<img
+							width={720}
+							height={360}
+							src={heroImage}
+							alt=""
+							class="hero"
+						/>
 					)
 				}
-				<h1 class="p-name">{title}</h1>
-				<a href="u-url" href={Astro.url.href}>
-					<FormattedDate date={pubDate} />
+				<div class="metadata">
+					<h1 class="p-name">{title}</h1>
+					<a href="u-url" href={Astro.url.href}>
+						<FormattedDate date={pubDate} />
 
-					{
-						updatedDate && (
-							<div class="last-updated-on">
-								Last updated on{' '}
-								<FormattedDate date={updatedDate} />
-							</div>
-						)
-					}
-				</a>
-				{description && <p class="p-summary">{description}</p>}
-				<hr />
+						{
+							updatedDate && (
+								<div class="last-updated-on">
+									Last updated on{' '}
+									<FormattedDate date={updatedDate} />
+								</div>
+							)
+						}
+					</a>
+					{description && <p class="p-summary">{description}</p>}
+				</div>
 				<div class="e-content">
 					<slot />
 				</div>
