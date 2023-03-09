@@ -25,6 +25,9 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props
 			.last-updated-on {
 				font-style: italic;
 			}
+			article > a {
+				display: contents;
+			}
 		</style>
 	</head>
 
@@ -38,19 +41,19 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props
 					)
 				}
 				<h1 class="p-name">{title}</h1>
-				<FormattedDate date={pubDate} />
-				{
-					updatedDate && (
-						<div class="last-updated-on">
-							Last updated on <FormattedDate date={updatedDate} />
-						</div>
-					)
-				}
-				{
-					description && (
-						<p class="p-summary">{description}</p>
-					)
-				}
+				<a href="u-url" href={Astro.url.href}>
+					<FormattedDate date={pubDate} />
+
+					{
+						updatedDate && (
+							<div class="last-updated-on">
+								Last updated on{' '}
+								<FormattedDate date={updatedDate} />
+							</div>
+						)
+					}
+				</a>
+				{description && <p class="p-summary">{description}</p>}
 				<hr />
 				<div class="e-content">
 					<slot />
