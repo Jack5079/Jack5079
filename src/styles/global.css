@@ -69,6 +69,12 @@ body {
 a {
 	color: var(--blue);
 }
+a:hover {
+	color: var(--sapphire);
+}
+a:active {
+	color: var(--sky);
+}
 code,
 pre {
 	font-family: 'Space Mono', monospace;
