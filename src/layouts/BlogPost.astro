@@ -25,7 +25,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props
 				color: var(--subtext0);
 			}
 			/* Top of the page, then fades out */
-			.hero {
+			.u-featured {
 				-webkit-mask-image: linear-gradient(
 					to top,
 					transparent 0%,
@@ -49,7 +49,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props
 			<article>
 				{
 					heroImage && (
-						<img width="100%" src={heroImage} alt="" class="hero" />
+						<img width="100%" src={heroImage} alt="" class="u-featured" />
 					)
 				}
 				<div class="metadata">
