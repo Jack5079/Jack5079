@@ -17,6 +17,7 @@
     "@fontsource/space-grotesk": "^4.5.13",
     "@fontsource/space-mono": "^4.5.12",
     "astro": "^2.1.2",
+    "simple-icons": "^8.6.0",
     "svelte": "^3.54.0"
   }
 }

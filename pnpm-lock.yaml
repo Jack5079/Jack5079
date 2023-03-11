@@ -8,6 +8,7 @@ specifiers:
   '@fontsource/space-grotesk': ^4.5.13
   '@fontsource/space-mono': ^4.5.12
   astro: ^2.1.2
+  simple-icons: ^8.6.0
   svelte: ^3.54.0
 
 dependencies:
@@ -18,6 +19,7 @@ dependencies:
   '@fontsource/space-grotesk': 4.5.13
   '@fontsource/space-mono': 4.5.12
   astro: 2.1.2
+  simple-icons: 8.6.0
   svelte: 3.56.0
 
 packages:
@@ -3063,6 +3065,11 @@ packages:
 
   /signal-exit/3.0.7:
     resolution: {integrity: sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==}
+    dev: false
+
+  /simple-icons/8.6.0:
+    resolution: {integrity: sha512-A5rRhFdgsV+1LIdkzIuwa+ilYb1v+svDi1ojOcfnEXaYSsTAlYRpWcH+p0MM1XY7uIkiNJ8i9bkFRoysMbLopw==}
+    engines: {node: '>=0.12.18'}
     dev: false
 
   /sisteransi/1.0.5:

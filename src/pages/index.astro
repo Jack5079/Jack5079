@@ -1,14 +1,37 @@
 ---
-import BaseHead from '../components/BaseHead.astro'
-import Header from '../components/Header.astro'
-import Footer from '../components/Footer.astro'
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
-import { getCollection } from 'astro:content'
-import FormattedDate from '../components/FormattedDate.astro'
+import BaseHead from "../components/BaseHead.astro"
+import Footer from "../components/Footer.astro"
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts"
+import { getCollection } from "astro:content"
+import FormattedDate from "../components/FormattedDate.astro"
+import { siDiscord, siMastodon, siGithub, siCodeberg } from "simple-icons"
 
-const posts = (await getCollection('blog')).sort(
+const posts = (await getCollection("blog")).sort(
 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 )
+
+const socials = [
+	{
+		icon: siDiscord,
+		href: "https://discord.com/users/173589391560802306",
+		text: "Jack#9701",
+	},
+	{
+		icon: siMastodon,
+		href: "https://wetdry.world/@j",
+		text: "@j@wetdry.world",
+	},
+	{
+		icon: siGithub,
+		href: "https://github.com/Jack5079",
+		text: "github.com/Jack5079",
+	},
+	{
+		icon: siCodeberg,
+		href: "https://codeberg.org/j-w",
+		text: "codeberg.org/j-w",
+	},
+]
 ---
 
 <!DOCTYPE html>
@@ -24,22 +47,96 @@ const posts = (await getCollection('blog')).sort(
 				display: flex;
 			}
 			ul li :global(time) {
-				flex: 0 0 130px;
+				flex: 0 0 148px;
 				font-style: italic;
 				color: var(--subtext0);
 			}
 			ul li a:visited {
 				color: var(--sapphire);
 			}
+			.p-name {
+				text-decoration: none;
+				color: inherit;
+			}
+			dl a {
+				display: flex;
+				gap: 1ch;
+				text-decoration: none;
+				color: var(--subtext0);
+				fill: currentColor;
+				font-weight: bold;
+			}
+			dl a:hover {
+				text-decoration: underline;
+			}
+			dd {
+				margin-inline-start: 0;
+			}
+			dl :global(svg) {
+				height: 24px;
+			}
+			dl {
+				margin-block-end: 0;
+			}
+			h1 {
+				display: flex;
+				align-items: center;
+				gap: 1ch;
+				margin: 0;
+			}
+			@media (min-width: 1200px) {
+				h1 {
+					justify-content: center;
+				}
+				header {
+					position: fixed;
+					width: 250px;
+					top: 2em;
+					left: calc(50% - 600px);
+					background: var(--surface0);
+					padding: 1ch;
+					box-sizing: border-box;
+					border-radius: 1ch;
+					border: 1px solid var(--surface1);
+				}
+			}
 		</style>
 	</head>
 	<body>
-		<Header />
+		<header class="h-card">
+			<h1>
+				<img
+					src="/icon.gif"
+					alt="Jack W."
+					class="u-photo"
+					height="48px"
+					width="48px"
+					style="border-radius: 50%;"
+				/>
+				<a href="/" role="heading" class="p-name u-url">Jack W.</a>
+			</h1>
+			<p class="p-note">
+				i do things to computers and sometimes they work<br /><br />
+				¼ of <a class="p-org" href="https://cetera.uk">Etcetera</a>
+			</p>
+			<!-- for bridgy fed -->
+			<a href="acct:j@j.cetera.uk" class="u-url" role="none" aria-hidden />
+			<dl>
+				{
+					socials.map(social => (
+						<a href={social.href} target="_blank" rel="me">
+							<dt set:html={social.icon.svg} />
+							<dd>{social.text}</dd>
+						</a>
+					))
+				}
+			</dl>
+		</header>
 		<main>
 			<section>
 				<ul>
 					{
-						posts.map((post) => (
+						posts.map(post => (
 							<li>
 								<FormattedDate date={post.data.pubDate} />
 								<a href={`/${post.slug}/`}>{post.data.title}</a>
