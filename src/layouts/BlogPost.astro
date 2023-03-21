@@ -20,7 +20,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props
 			.last-updated-on {
 				font-style: italic;
 			}
-			.metadata a {
+			hgroup a {
 				display: contents;
 				color: var(--subtext0);
 			}
@@ -34,7 +34,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props
 				mask-image: linear-gradient(to top, transparent 0%, black 40%);
 				border-radius: 1em;
 			}
-			.metadata {
+			hgroup {
 				text-align: center;
 			}
 			.p-summary {
@@ -52,7 +52,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props
 						<img width="100%" src={heroImage} alt="" class="u-featured" />
 					)
 				}
-				<div class="metadata">
+				<hgroup>
 					<h1 class="p-name">{title}</h1>
 					<a class="u-url" href={Astro.url.href}>
 						<FormattedDate date={pubDate} />
@@ -67,7 +67,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props
 						}
 					</a>
 					{description && <p class="p-summary">{description}</p>}
-				</div>
+				</hgroup>
 				<div class="e-content">
 					<slot />
 				</div>
