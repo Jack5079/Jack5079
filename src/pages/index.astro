@@ -5,6 +5,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts"
 import { getCollection } from "astro:content"
 import FormattedDate from "../components/FormattedDate.astro"
 import { siDiscord, siMastodon, siGithub, siCodeberg, siYoutube } from "simple-icons"
+import LastName from "../components/LastName.svelte"
 
 const posts = (await getCollection("blog")).sort(
 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
@@ -35,7 +36,7 @@ const socials = [
 		icon: siYoutube,
 		href: "https://youtube.com/@Jack5079",
 		text: "youtube.com/@Jack5079",
-	}
+	},
 ]
 ---
 
@@ -62,6 +63,10 @@ const socials = [
 			.p-name {
 				text-decoration: none;
 				color: inherit;
+				display: flex;
+				flex-direction: row;
+				gap: 0.5ch;
+				font-size: calc(min(32px, 4vw));
 			}
 			dl a {
 				display: flex;
@@ -109,7 +114,7 @@ const socials = [
 	</head>
 	<body>
 		<header class="h-card">
-			<h1 role="none">
+			<h1 role="none" aria-label="Jack W.">
 				<img
 					src="/icon.gif"
 					alt="Jack W."
@@ -118,14 +123,17 @@ const socials = [
 					width="48px"
 					style="border-radius: 50%;"
 				/>
-				<a href="/" role="heading" class="p-name u-url u-uid">Jack W.</a>
+				<a href="/" role="heading" class="p-name u-url u-uid">
+					Jack <LastName client:load />
+				</a>
 			</h1>
 			<p class="p-note">
+				You don't need to know my last name<br />
 				i do things to computers and sometimes they work<br /><br />
 				stupid code at <a class="p-org" href="https://cetera.uk">Etcetera</a>
 			</p>
 			<!-- for bridgy fed -->
-			<a href="acct:j@j.cetera.uk" class="u-url" role="none" aria-hidden />
+			<a href="acct:j@j.cetera.uk" class="u-url" role="none" aria-hidden></a>
 			<dl>
 				{
 					socials.map(social => (
