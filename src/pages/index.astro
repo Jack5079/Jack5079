@@ -25,17 +25,17 @@ const socials = [
 	{
 		icon: siGithub,
 		href: "https://github.com/Jack5079",
-		text: "github.com/Jack5079",
+		text: "@Jack5079",
 	},
 	{
 		icon: siCodeberg,
 		href: "https://codeberg.org/j-w",
-		text: "codeberg.org/j-w",
+		text: "@j-w",
 	},
 	{
 		icon: siYoutube,
 		href: "https://youtube.com/@Jack5079",
-		text: "youtube.com/@Jack5079",
+		text: "@Jack5079",
 	},
 ]
 ---
@@ -133,18 +133,20 @@ const socials = [
 				stupid code at <a class="p-org" href="https://cetera.uk">Etcetera</a>
 			</p>
 			<!-- for bridgy fed -->
-			<a href="acct:j@j.cetera.uk" class="u-url" role="none" aria-hidden></a>
-			<dl>
-				{
-					socials.map(social => (
-						<a href={social.href} target="_blank" rel="me">
-							<dt set:html={social.icon.svg} />
-							<dd>{social.text}</dd>
-						</a>
-					))
-				}
-			</dl>
+			<a href="acct:j@j.cetera.uk" class="u-url" role="none" aria-hidden hidden tabindex="-1">
+			</a>
 		</header>
+		<dl>
+			{
+				socials.map(social => (
+					<a href={social.href} target="_blank" rel="me">
+						<dt set:html={social.icon.svg} aria-label={social.icon.title} />
+						<dd>{social.text}</dd>
+					</a>
+				))
+			}
+		</dl>
+
 		<!-- <main>
 			<section>
 				<em>WIP: no actual content yet</em>
