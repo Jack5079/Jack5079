@@ -10,6 +10,7 @@
 		"thought this was a good idea",
 		"does a little trolling",
 		"wrote this in 5 minutes",
+		".cab cost $21"
 	]
 	let name = names[0]
 	onMount(() => {

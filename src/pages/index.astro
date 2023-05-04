@@ -4,7 +4,7 @@ import Footer from "../components/Footer.astro"
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts"
 import { getCollection } from "astro:content"
 import FormattedDate from "../components/FormattedDate.astro"
-import { siDiscord, siMastodon, siGithub, siCodeberg, siYoutube } from "simple-icons"
+import { siDiscord, siMastodon, siGithub, siCodeberg, siYoutube, siMatrix } from "simple-icons"
 import LastName from "../components/LastName.svelte"
 
 const posts = (await getCollection("blog")).sort(
@@ -16,6 +16,11 @@ const socials = [
 		icon: siDiscord,
 		href: "https://discord.com/users/173589391560802306",
 		text: "Jack#9701",
+	},
+	{
+		icon: siMatrix,
+		href: "https://matrix.to/#/@jack-w:matrix.org",
+		text: "@jack-w:matrix.org",
 	},
 	{
 		icon: siMastodon,
@@ -146,7 +151,8 @@ const socials = [
 				</a>
 			</p>
 			<!-- for bridgy fed -->
-			<a href="acct:j@jack.cab" class="u-url" role="none" aria-hidden hidden tabindex="-1"></a>
+			<a href="acct:j@jack.cab" class="u-url" role="none" aria-hidden hidden tabindex="-1">
+			</a>
 		</header>
 
 		<dl>
