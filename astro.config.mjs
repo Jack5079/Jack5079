@@ -6,7 +6,7 @@ import svelte from "@astrojs/svelte"
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://j.cetera.uk",
+	site: "https://jack.cab",
 	integrations: [mdx(), sitemap(), svelte()],
 	output: "static",
 })
