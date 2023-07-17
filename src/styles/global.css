@@ -58,7 +58,7 @@
 }
 
 body {
-	font-family: 'Space Grotesk', sans-serif;
+	font-family: "Inter var", "Inter", sans-serif;
 	margin: auto;
 	padding: 20px;
 	max-width: 65ch;
@@ -77,5 +77,5 @@ a:active {
 }
 code,
 pre {
-	font-family: 'Space Mono', monospace;
+	font-family: monospace, monospace; /* [sic], https://seirdy.one/posts/2020/11/23/website-best-practices#monospace-handling */
 }
