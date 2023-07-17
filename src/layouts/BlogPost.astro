@@ -1,11 +1,11 @@
 ---
-import type { CollectionEntry } from 'astro:content'
-import BaseHead from '../components/BaseHead.astro'
-import Header from '../components/Header.astro'
-import Footer from '../components/Footer.astro'
-import FormattedDate from '../components/FormattedDate.astro'
+import type { CollectionEntry } from "astro:content"
+import BaseHead from "../components/BaseHead.astro"
+import Header from "../components/Header.astro"
+import Footer from "../components/Footer.astro"
+import FormattedDate from "../components/FormattedDate.astro"
 
-type Props = CollectionEntry<'blog'>['data']
+type Props = CollectionEntry<"blog">["data"]
 
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props
 ---
@@ -29,11 +29,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props
 			}
 			/* Top of the page, then fades out */
 			.u-featured {
-				-webkit-mask-image: linear-gradient(
-					to top,
-					transparent 0%,
-					black 40%
-				);
+				-webkit-mask-image: linear-gradient(to top, transparent 0%, black 40%);
 				mask-image: linear-gradient(to top, transparent 0%, black 40%);
 				border-radius: 1em;
 			}
@@ -54,11 +50,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props
 		<Header />
 		<main>
 			<article>
-				{
-					heroImage && (
-						<img width="100%" src={heroImage} alt="" class="u-featured" />
-					)
-				}
+				{heroImage && <img width="100%" src={heroImage} alt="" class="u-featured" />}
 				<hgroup>
 					<h1 class="p-name">{title}</h1>
 					<a class="u-url" href={Astro.url.href}>
@@ -67,8 +59,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props
 						{
 							updatedDate && (
 								<div class="last-updated-on">
-									Last updated on{' '}
-									<FormattedDate date={updatedDate} />
+									Last updated on <FormattedDate date={updatedDate} />
 								</div>
 							)
 						}
