@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   '@astrojs/mdx':
     specifier: ^0.17.2
@@ -13,18 +17,12 @@ dependencies:
   '@astrojs/svelte':
     specifier: ^2.1.1
     version: 2.1.1(astro@2.3.4)(svelte@3.58.0)(typescript@4.9.5)(vite@4.3.4)
-  '@fontsource/space-grotesk':
-    specifier: ^4.5.13
-    version: 4.5.13
-  '@fontsource/space-mono':
-    specifier: ^4.5.12
-    version: 4.5.12
   astro:
     specifier: ^2.3.4
     version: 2.3.4
   simple-icons:
-    specifier: ^8.12.1
-    version: 8.12.1
+    specifier: ^9.3.0
+    version: 9.3.0
   svelte:
     specifier: ^3.58.0
     version: 3.58.0
@@ -617,14 +615,6 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
-
-  /@fontsource/space-grotesk@4.5.13:
-    resolution: {integrity: sha512-HYjs3C/ME3N55+9la5FGH3NebpBqyCP03DJzDLYlQ/fpnYOoQcEEoojtMyqDr8kBlQtrB6FSoa3vy84Wh0ZFqw==}
-    dev: false
-
-  /@fontsource/space-mono@4.5.12:
-    resolution: {integrity: sha512-/ljrJgSIB/C0jUCn07r/V/KpkdHF9bnK2fD0raGSVkgQjFqQ6Q3LndVeBiUCJlIi6ROh7rHDkpFzn+nNmRgRlQ==}
-    dev: false
 
   /@jridgewell/gen-mapping@0.3.3:
     resolution: {integrity: sha512-HLhSWOLRi875zjjMG/r+Nv0oCW8umGb0BgEhyX3dDX3egwZtB8PqLnjz3yedt8R5StBrzcg4aBpnh8UA9D1BoQ==}
@@ -3151,8 +3141,8 @@ packages:
     resolution: {integrity: sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==}
     dev: false
 
-  /simple-icons@8.12.1:
-    resolution: {integrity: sha512-4h1rh9dFixdXMSZivOeVqx1gRExALHcZcSU4BtTeATVK3GFNrk44ySXj34yLa57a0pWwhWOiaZUzgVZiltLNqw==}
+  /simple-icons@9.3.0:
+    resolution: {integrity: sha512-T6x3teIpPdMc8nibYvE56Va1eF+l8Puk//1YYtCxQP4wbGRzYxgwZTl18YCjoFLnu/0exehwyR2hMEFZV3lflg==}
     engines: {node: '>=0.12.18'}
     dev: false
 
