@@ -14,12 +14,14 @@
 	]
 	let name = names[0]
 	onMount(() => {
-		let i = 0
-		const id = setInterval(() => {
-			i++
-			name = names[i % names.length]
-		}, 1500)
-		return () => clearInterval(id)
+		if (matchMedia("(prefers-reduced-motion: no-preference) and (update: fast)").matches) {
+			let i = 0
+			const id = setInterval(() => {
+				i++
+				name = names[i % names.length]
+			}, 1500)
+			return () => clearInterval(id)
+		}
 	})
 </script>
 
