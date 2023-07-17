@@ -170,7 +170,7 @@ const socials = [
 		<dl>
 			{
 				socials.map(social => (
-					<a href={social.href} target="_blank" rel="me">
+					<a href={social.href} rel="me">
 						<dt set:html={social.icon.svg} aria-label={social.icon.title} />
 						<dd>{social.text}</dd>
 					</a>
