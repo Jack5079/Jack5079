@@ -4,18 +4,26 @@ import Footer from "../components/Footer.astro"
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts"
 import { getCollection } from "astro:content"
 import FormattedDate from "../components/FormattedDate.astro"
-import { siDiscord, siMastodon, siGithub, siCodeberg, siYoutube, siMatrix, siMisskey } from "simple-icons"
+import {
+	siDiscord,
+	siMastodon,
+	siGithub,
+	siCodeberg,
+	siYoutube,
+	siMatrix,
+	siMisskey,
+} from "simple-icons"
 import LastName from "../components/LastName.svelte"
 
 const posts = (await getCollection("blog")).sort(
-	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 )
 
 const socials = [
 	{
 		icon: siDiscord,
 		href: "https://discord.com/users/173589391560802306",
-		text: "@jack5079",
+		text: "@nixos.org",
 	},
 	{
 		icon: siMatrix,
