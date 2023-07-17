@@ -17,9 +17,11 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props
 		<style>
 			.p-name {
 				font-size: 2em;
+				view-transition-name: title;
 			}
 			.last-updated-on {
 				font-style: italic;
+				view-transition-name: updated;
 			}
 			hgroup a {
 				display: contents;
@@ -40,6 +42,10 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props
 			}
 			.p-summary {
 				font-style: italic;
+				view-transition-name: summary;
+			}
+			.e-content {
+				view-transition-name: content;
 			}
 		</style>
 	</head>
@@ -56,7 +62,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props
 				<hgroup>
 					<h1 class="p-name">{title}</h1>
 					<a class="u-url" href={Astro.url.href}>
-						<FormattedDate date={pubDate} />
+						<FormattedDate date={pubDate} style="view-transition-name:date" />
 
 						{
 							updatedDate && (
