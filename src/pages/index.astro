@@ -76,8 +76,10 @@ const socials = [
 				font-style: italic;
 				color: var(--subtext0);
 			}
-			ul li a:visited {
-				color: var(--sapphire);
+			@media (prefers-color-scheme: dark) {
+				ul li a:visited {
+					color: var(--sapphire);
+				}
 			}
 			.p-name {
 				text-decoration: none;
