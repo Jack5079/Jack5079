@@ -6,6 +6,7 @@ import { getCollection } from "astro:content"
 import FormattedDate from "../components/FormattedDate.astro"
 import Buttons from "../components/Buttons/Buttons.astro"
 import MyTime from "../components/MyTime.svelte"
+import cab from "../components/cab.png?url"
 import {
 	siDiscord,
 	siMastodon,
@@ -63,7 +64,7 @@ const socials = [
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead title="Jack.cab" description={SITE_DESCRIPTION} />
 		<style>
 			ul {
 				list-style-type: none;
@@ -138,12 +139,11 @@ const socials = [
 		<header class="h-card">
 			<h1 role="none" aria-label="Jack W.">
 				<img
-					src="/livid.webp"
-					alt="photo of a beagle (not me, i am not a beagle) in the kitchen, close up, looking to the left, floppy ears, mouth closed, eyes open"
+					src={cab}
+					alt="Icon for cabinet (.cab) files in Windows Vista"
 					class="u-photo"
 					height="48px"
 					width="48px"
-					style="border-radius: 50%;"
 				/>
 				<a href="/" role="heading" class="p-name u-url u-uid">
 					Jack <LastName client:load />
