@@ -1,0 +1,66 @@
+---
+import houl from "./houl.png?url"
+import projectlounge from "./projectloungenow.gif?url"
+import molly from "./molly.png?url"
+import please_theme from "./pleasetheme.svg?url"
+import gnu from "./gnubanner-2.png?url"
+---
+
+<h2>Buttons</h2>
+<ul>
+	<!-- <li>
+		<a href="https://houl.floof.company/">
+			<img src={houl} alt="Houl" width="88" height="31" />
+		</a>
+	</li> -->
+	<li>
+		<a href="https://projectlounge.pw">
+			<img src={projectlounge} alt="PROJECTLOUNGE, Now!" width="88" height="31" />
+		</a>
+	</li>
+	<li>
+		<a href="https://jack.cab" title="hi">
+			<img
+				src={molly}
+				alt="Stretched photo of a tired beagle close to the camera"
+				width="88"
+				height="31"
+			/>
+		</a>
+	</li>
+	<li>
+		<a href="https://gnu.org/">
+			<img src={gnu} alt="GNU" width="88" height="31" />
+		</a>
+	</li>
+	<li>
+		<a href="https://gradienceteam.github.io/">
+			<img src={please_theme} alt="Please theme our apps" height="31" />
+		</a>
+	</li>
+</ul>
+
+<style>
+	ul {
+		list-style-type: none;
+		padding-inline-start: 0;
+		text-align: center;
+	}
+	li {
+		display: inline-block;
+		margin: 0 8px;
+	}
+	img {
+		vertical-align: bottom;
+	}
+	@media (max-width: 560px) {
+		li {
+			display: block;
+			margin-left: 0;
+		}
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+	}
+</style>

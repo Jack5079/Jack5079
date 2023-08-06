@@ -4,6 +4,7 @@ import Footer from "../components/Footer.astro"
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts"
 import { getCollection } from "astro:content"
 import FormattedDate from "../components/FormattedDate.astro"
+import Buttons from "../components/Buttons/Buttons.astro"
 import MyTime from "../components/MyTime.svelte"
 import {
 	siDiscord,
@@ -202,6 +203,7 @@ const socials = [
 					))
 				}
 			</dl>
+			<Buttons />
 		</header>
 
 		<!-- <main>
