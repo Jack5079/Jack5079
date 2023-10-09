@@ -76,12 +76,10 @@ const socials = [
 			ul li :global(time) {
 				flex: 0 0 148px;
 				font-style: italic;
-				color: var(--subtext0);
+				color: GrayText;
 			}
-			@media (prefers-color-scheme: dark) {
-				ul li a:visited {
-					color: var(--sapphire);
-				}
+			ul li a {
+				flex: 1;
 			}
 			.p-name {
 				text-decoration: none;
@@ -95,7 +93,6 @@ const socials = [
 				display: flex;
 				gap: 1ch;
 				text-decoration: none;
-				color: var(--subtext0);
 				fill: currentColor;
 				font-weight: bold;
 			}
@@ -117,22 +114,7 @@ const socials = [
 				gap: 0.5ch;
 				margin: 0;
 			}
-			@media (all) {
-				h1 {
-					justify-content: center;
-				}
-				header {
-					position: fixed;
-					width: 250px;
-					top: 2em;
-					left: calc(50% - 600px);
-					background: var(--surface0);
-					padding: 1ch;
-					box-sizing: border-box;
-					border-radius: 1ch;
-					border: 1px solid var(--surface1);
-				}
-			}
+	 
 		</style>
 	</head>
 	<body>
@@ -206,21 +188,18 @@ const socials = [
 			<Buttons />
 		</header>
 
-		<!-- <main>
-			<section>
-				<em>WIP: no actual content yet</em>
-				<ul>
-					{
-						posts.map(post => (
-							<li>
-								<FormattedDate date={post.data.pubDate} />
-								<a href={`/${post.slug}/`}>{post.data.title}</a>
-							</li>
-						))
-					}
-				</ul>
-			</section>
-		</main>
+		<!-- <section>
+			<ul>
+				{
+					posts.map(post => (
+						<li>
+							<a href={`/${post.slug}/`}>{post.data.title}</a>
+							<FormattedDate date={post.data.pubDate} />
+						</li>
+					))
+				}
+			</ul>
+		</section> 
 		<Footer /> -->
 	</body>
 </html>
