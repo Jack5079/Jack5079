@@ -26,6 +26,12 @@
 	--mantle: #181825;
 	--crust: #11111b;
 }
+@media (prefers-constrast: more) {
+		:root {
+			--base: #000;
+			--text: #FFF;
+		}
+}
 @media (prefers-color-scheme: light) {
 	:root {
 		--rosewater: #dc8a78;
@@ -54,6 +60,12 @@
 		--base: #eff1f5;
 		--mantle: #e6e9ef;
 		--crust: #dce0e8;
+	}
+	@media (prefers-contrast: more) {
+		:root {
+			--base: #FFF;
+			--text: #000;
+		}
 	}
 }
 
