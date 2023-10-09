@@ -1,36 +1,83 @@
 ---
 import houl from "./houl.png?url"
+import limepot from "./limepotxyz-badge00.gif?url"
+import jack from "./cab-files.png?url"
 import projectlounge from "./projectloungenow.gif?url"
-import molly from "./molly.png?url"
 import please_theme from "./pleasetheme.svg?url"
 import gnu from "./gnubanner-2.png?url"
+import charlie from "./charlie.png?url"
+import split from "./split.png?url"
+import coolelectronics from "./ce88x31.png?url"
+import gba from "./sherbetbutton.gif?url"
+import ssm230 from "./ssm230.png?url"
 ---
 
-<h2>Buttons</h2>
 <ul>
-	<!-- <li>
-		<a href="https://houl.floof.company/">
-			<img src={houl} alt="Houl" width="88" height="31" />
-		</a>
-	</li> -->
-	<li>
-		<a href="https://projectlounge.pw">
-			<img src={projectlounge} alt="PROJECTLOUNGE, Now!" width="88" height="31" />
-		</a>
-	</li>
 	<li>
 		<a href="https://jack.cab" title="hi">
 			<img
-				src={molly}
-				alt="Stretched photo of a tired beagle close to the camera"
+				src={jack}
+				alt="File named Jack.cab listed in GNOME Files"
 				width="88"
 				height="31"
 			/>
 		</a>
 	</li>
 	<li>
+		<a href="https://charlie.land">
+			<img
+				src={charlie}
+				alt="Link icon, NixOS logo, and the uncanny cat side by side on a black background"
+				width="88"
+				height="31"
+			/>
+		</a>
+	</li>
+	<li>
+		<a href="https://me.fyle.uk">
+			<img
+				src={split}
+				alt="Text 'me.fyle.uk' with split's avatar in the background at 50% opacity, off-white solid background behind that"
+				width="88"
+				height="31"
+			/>
+		</a>
+	</li>
+	<li>
+		<a href="https://coolelectronics.me/">
+			<img src={coolelectronics} alt="coolelectronics.me" width="88" height="31" />
+		</a>
+	</li>
+	<!-- <li>
+		<a href="https://https://spacy.neocities.org/">
+			<img src={ssm230} alt="Spacy" width="88" height="31" />
+		</a>
+	</li>
+	<li>
+		<a href="https://limepot.xyz/">
+			<img src={limepot} alt="Limepot" width="88" height="31" />
+		</a>
+	</li>
+	<li>
+		<a href="https://houl.floof.company/">
+			<img src={houl} alt="Houl" width="88" height="31" />
+		</a>
+	</li> -->
+</ul>
+<ul>
+	<li>
+		<a href="https://projectlounge.pw">
+			<img src={projectlounge} alt="PROJECTLOUNGE, Now!" width="88" height="31" />
+		</a>
+	</li>
+	<li>
 		<a href="https://gnu.org/">
 			<img src={gnu} alt="GNU" width="88" height="31" />
+		</a>
+	</li>
+	<li>
+		<a href="https://gba.ioi-xd.net/">
+			<img src={gba} alt="gba.ioi-xd.net: MOD RADIO" width="88" height="31" />
 		</a>
 	</li>
 	<li>
@@ -43,12 +90,16 @@ import gnu from "./gnubanner-2.png?url"
 <style>
 	ul {
 		list-style-type: none;
-		padding-inline-start: 0;
-		text-align: center;
+		/* padding-inline-start: 0; */
+		display: flex;
+		justify-content: space-evenly;
+		gap: 1ch;
+		flex-direction: row;
+		flex-wrap: wrap;
 	}
 	li {
 		display: inline-block;
-		margin: 0 8px;
+		margin: 0;
 	}
 	img {
 		vertical-align: bottom;
