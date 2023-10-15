@@ -24,27 +24,27 @@ const socials = [
 	{
 		icon: siDiscord,
 		href: "https://discord.com/users/173589391560802306",
-		text: "@nixos.org",
+		text: "@nixos.<wbr>org",
 	},
 	{
 		icon: siMatrix,
 		href: "https://matrix.to/#/@jack-w:matrix.org",
-		text: "@jack-w:matrix.org",
+		text: "@jack-w:<wbr>matrix.org",
 	},
 	{
 		icon: siMastodon,
 		href: "https://wetdry.world/@j",
-		text: "@j@wetdry.world",
+		text: "@j@<wbr>wetdry.<wbr>world",
 	},
 	{
 		icon: siMisskey,
 		href: "https://owo.community/@j",
-		text: "@j@owo.community",
+		text: "@j@owo.<wbr>community",
 	},
 	{
 		icon: siGithub,
 		href: "https://github.com/Jack5079",
-		text: "@Jack5079",
+		text: "@Jack<wbr>5079",
 	},
 	{
 		icon: siCodeberg,
@@ -54,7 +54,7 @@ const socials = [
 	{
 		icon: siYoutube,
 		href: "https://youtube.com/@Jack5079",
-		text: "@Jack5079",
+		text: "@Jack<wbr>5079",
 	},
 ]
 ---
@@ -82,31 +82,33 @@ const socials = [
 			.p-name {
 				text-decoration: none;
 				color: inherit;
+				word-wrap: break-word;
 			}
 			dl a {
-				display: flex;
-				gap: 1ch;
 				text-decoration: none;
 				fill: currentColor;
 				font-weight: bold;
+				display: block;
 			}
 			dl a:hover {
 				text-decoration: underline;
 			}
+			dt, dd {
+				display: inline;
+			}
 			dd {
-				margin-inline-start: 0;
+				margin-inline-start: 12px;
 			}
 			dl :global(svg) {
 				height: 24px;
+				width: 24px;
+				vertical-align: middle;
 			}
 			dl {
-				margin-block-end: 0;
+				line-height: 2
 			}
-			h1 {
-				display: flex;
-				align-items: center;
-				gap: 0.5ch;
-				margin: 0;
+			h1 img {
+				vertical-align: middle;
 			}
 	 
 		</style>
@@ -170,7 +172,7 @@ const socials = [
 						</svg>
 					</dt>
 					<dd>
-						America/New_York
+						America/<wbr>New_<wbr>York
 						<script is:inline>
 							const time = () => "(" + new Date().toLocaleString("en-US", {
 								timeZone: "America/New_York",
@@ -190,7 +192,7 @@ const socials = [
 					socials.map(social => (
 						<a href={social.href} rel="me" title={social.icon.title}>
 							<dt set:html={social.icon.svg} aria-label={social.icon.title} />
-							<dd>{social.text}</dd>
+							<dd set:html={social.text}></dd>
 						</a>
 					))
 				}

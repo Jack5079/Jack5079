@@ -9,3 +9,9 @@ code,
 pre {
 	font-family: monospace, monospace; /* [sic], https://seirdy.one/posts/2020/11/23/website-best-practices#monospace-handling */
 }
+
+@media (max-width: 230px) {
+	body {
+		padding: 0;
+	}
+}
