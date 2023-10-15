@@ -16,7 +16,6 @@ import {
 	siMatrix,
 	siMisskey,
 } from "simple-icons"
-import LastName from "../components/LastName.svelte"
 
 const posts = (await getCollection("blog")).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
@@ -128,7 +127,7 @@ const socials = [
 					width="48px"
 				/>
 				<a href="/" role="heading" class="p-name u-url u-uid">
-					Jack <LastName client:idle />
+					Jack W.
 				</a>
 			</h1>
 			<p class="p-note">
