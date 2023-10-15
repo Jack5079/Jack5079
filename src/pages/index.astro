@@ -5,7 +5,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts"
 import { getCollection } from "astro:content"
 import FormattedDate from "../components/FormattedDate.astro"
 import Buttons from "../components/Buttons/Buttons.astro"
-import MyTime from "../components/MyTime.svelte"
 import cab from "../components/cab.png?url"
 import {
 	siDiscord,
@@ -173,7 +172,22 @@ const socials = [
 							></path>
 						</svg>
 					</dt>
-					<dd>America/New_York <MyTime client:load /></dd>
+					<dd>
+						America/New_York
+						<script is:inline>
+							const time = () => "(" + new Date().toLocaleString("en-US", {
+								timeZone: "America/New_York",
+								hour12: true,
+								hour: "numeric",
+								minute: "numeric",
+							}) + ")"
+							const text = new Text(time())
+							document.currentScript.replaceWith(text)
+							setInterval(() => {
+								text.textContent = time()
+							}, 1000)
+						</script>
+					</dd>
 				</a>
 				{
 					socials.map(social => (
