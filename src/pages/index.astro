@@ -100,8 +100,6 @@ const socials = [
 				margin-inline-start: 12px;
 			}
 			dl :global(svg) {
-				height: 24px;
-				width: 24px;
 				vertical-align: middle;
 			}
 			dl {
@@ -162,7 +160,11 @@ const socials = [
 					href="https://en.wikipedia.org/wiki/Time_in_Massachusetts#IANA_time_zone_database"
 					title="Time zone">
 					<dt aria-label="Time zone">
-						<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+						<svg
+							viewBox="0 0 16 16"
+							xmlns="http://www.w3.org/2000/svg"
+							width="24"
+							height="24">
 							<title>Time zone</title>
 							<path
 								d="m 8 0 c -4.40625 0 -8 3.59375 -8 8 s 3.59375 8 8 8 s 8 -3.59375 8 -8 s -3.59375 -8 -8 -8 z m 0 2 c 3.324219 0 6 2.675781 6 6 s -2.675781 6 -6 6 s -6 -2.675781 -6 -6 s 2.675781 -6 6 -6 z m 0 0"
@@ -192,8 +194,14 @@ const socials = [
 				{
 					socials.map(social => (
 						<a href={social.href} rel="me" title={social.icon.title}>
-							<dt set:html={social.icon.svg} aria-label={social.icon.title} />
-							<dd set:html={social.text}></dd>
+							<dt
+								set:html={social.icon.svg.replace(
+									`role="img"`,
+									`role="img" width="24" height="24"`
+								)}
+								aria-label={social.icon.title}
+							/>
+							<dd set:html={social.text} />
 						</a>
 					))
 				}
