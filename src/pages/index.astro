@@ -199,7 +199,7 @@ const socials = [
 				</a>
 				{
 					socials.map(social => (
-						<a href={social.href} rel="me" title={social.icon.title}>
+						<a href={social.href} rel="me" title={social.icon.title} class="u-url">
 							<dt
 								set:html={social.icon.svg.replace(
 									`role="img"`,
