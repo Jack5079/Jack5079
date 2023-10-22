@@ -1,2 +1,3 @@
 /.well-known/webfinger* https://fed.brid.gy/.well-known/webfinger:splat 301
 /.well-known/host-meta* https://fed.brid.gy/.well-known/host-meta:splat 301
+/dotfiles https://github.com/jack5079/dotfiles
