@@ -180,22 +180,8 @@ const socials = [
 							></path>
 						</svg>
 					</dt>
-					<dd>
-						America/<wbr>New_<wbr>York
-						<script is:inline>
-							const time = () => "(" + new Date().toLocaleString("en-US", {
-								timeZone: "America/New_York",
-								hour12: true,
-								hour: "numeric",
-								minute: "numeric",
-							}) + ")"
-							const text = new Text(time())
-							document.currentScript.replaceWith(text)
-							setInterval(() => {
-								text.textContent = time()
-							}, 1000)
-						</script>
-					</dd>
+					<!-- prettier-ignore -->
+					<dd>America/<wbr />New_<wbr />York <script is:inline id="tz"async>tzf=_=>`(${new Date().toLocaleString([],{timeZone:"America/New_York",timeStyle:"short"})})`;tzt=new Text(tzf());tz.replaceWith(tzt);setInterval("tzt.innerText=tzf()",1e3)</script></dd>
 				</a>
 				{
 					socials.map(social => (
