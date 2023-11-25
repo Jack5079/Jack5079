@@ -2,7 +2,6 @@
 title: "test post"
 description: "have i actually setup the right metadata"
 pubDate: "May 03 2023"
-heroImage: "/placeholder-hero.jpg"
 ---
 
 > metadata? more like metaDONTia
