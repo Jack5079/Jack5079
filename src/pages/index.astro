@@ -69,7 +69,7 @@ const socials = [
 <html lang="en">
 	<head>
 		<BaseHead title="Jack.cab" description={SITE_DESCRIPTION} image={cab} />
-		<style>
+		<style is:global>
 			ul {
 				list-style-type: none;
 				padding: unset;
@@ -99,13 +99,14 @@ const socials = [
 			dl a:hover {
 				text-decoration: underline;
 			}
-			dt, dd {
+			dt,
+			dd {
 				display: inline;
 			}
 			dd {
 				margin-inline-start: 12px;
 			}
-			dl :global(svg) {
+			dl svg {
 				vertical-align: middle;
 			}
 			dl {
@@ -114,7 +115,6 @@ const socials = [
 			h1 img {
 				vertical-align: middle;
 			}
-	 
 		</style>
 	</head>
 	<body>
