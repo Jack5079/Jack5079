@@ -17,31 +17,12 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props
 		<style>
 			.p-name {
 				font-size: 2em;
-				view-transition-name: title;
-			}
-			.last-updated-on {
-				font-style: italic;
-				view-transition-name: updated;
-			}
-			hgroup a {
-				display: contents;
-				color: GrayText;
 			}
 			/* Top of the page, then fades out */
 			.u-featured {
 				-webkit-mask-image: linear-gradient(to top, transparent 0%, black 40%);
 				mask-image: linear-gradient(to top, transparent 0%, black 40%);
 				border-radius: 1em;
-			}
-			hgroup {
-				text-align: center;
-			}
-			.p-summary {
-				font-style: italic;
-				view-transition-name: summary;
-			}
-			.e-content {
-				view-transition-name: content;
 			}
 		</style>
 	</head>
@@ -50,21 +31,21 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props
 		<Header />
 		<main>
 			<article>
-				{heroImage && <img width="100%" src={heroImage} alt="" class="u-featured" />}
-				<hgroup>
-					<h1 class="p-name">{title}</h1>
-					<a class="u-url" href={Astro.url.href}>
-						<FormattedDate date={pubDate} style="view-transition-name:date" />
+				{heroImage && <img width="100%" src={heroImage} alt="" class="u-featured" decoding="async"/>}
+				<hgroup style="text-align:center">
+					<h1 class="p-name" style="font-size:xx-large">{title}</h1>
+					<a class="u-url" href={Astro.url.href} style="display:contents;color:GrayText">
+						<FormattedDate date={pubDate} />
 
 						{
 							updatedDate && (
-								<div class="last-updated-on">
+								<div style="font-style:italic">
 									Last updated on <FormattedDate date={updatedDate} />
 								</div>
 							)
 						}
 					</a>
-					{description && <p class="p-summary">{description}</p>}
+					{description && <p class="p-summary" style="font-style:italic">{description}</p>}
 				</hgroup>
 				<div class="e-content">
 					<slot />
