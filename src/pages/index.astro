@@ -77,11 +77,6 @@ const socials = [
 			ul li {
 				display: flex;
 			}
-			ul li :global(time) {
-				flex: 0 0 148px;
-				font-style: italic;
-				color: GrayText;
-			}
 			ul li a {
 				flex: 1;
 			}
@@ -197,7 +192,7 @@ const socials = [
 					posts.map(post => (
 						<li>
 							<a href={`/${post.slug}/`}>{post.data.title}</a>
-							<FormattedDate date={post.data.pubDate} />
+							<FormattedDate style="color:GrayText" date={post.data.pubDate} />
 						</li>
 					))
 				}
