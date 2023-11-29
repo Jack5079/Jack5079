@@ -198,6 +198,32 @@ const socials = [
 				}
 			</ul>
 		</section>
+		<h2>Quotes</h2>
+		{
+			[
+				["[...] all of my ideas i just steal from jack [...]", "split, 2023"],
+				[
+					"jack if you start a civil war in the uk I dont want no part in it",
+					"Charlie, 2022",
+				],
+				[
+					"DELETE THIS TWEET RIGHT NOW OR ELSE I WILL SEND YOUR HOME ADDRESS",
+					"tacticalmanx75, 2022",
+				],
+			].map(([quote, author]) => (
+				<figure data-nosnippet itemtype="https://schema.org/Quotation">
+					<blockquote itemprop="text">
+						<p>{quote}</p>
+					</blockquote>
+					<figcaption>
+						―
+						<span itemprop="citation">
+							{author}
+						</span>
+					</figcaption>
+				</figure>
+			))
+		}
 		<Footer />
 	</body>
 </html>
