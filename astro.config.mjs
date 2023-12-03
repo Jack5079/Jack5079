@@ -7,4 +7,11 @@ export default defineConfig({
 	site: "https://jack.cab",
 	integrations: [mdx(), sitemap()],
 	output: "static",
+	server: {
+		headers: {
+			"Content-Security-Policy": "sandbox allow-scripts",
+			"Cross-Origin-Embedder-Policy": "credentialless",
+			"Cross-Origin-Opener-Policy": "same-origin",
+		},
+	},
 })
