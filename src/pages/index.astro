@@ -192,7 +192,7 @@ const socials = [
 						</svg>
 					</dt>
 					<!-- prettier-ignore -->
-					<dd>America/<wbr />New_<wbr />York (<noscript>enable JavaScript for live clock</noscript><script is:inline id="tz"async>tzf=_=>new Date().toLocaleString([],{timeZone:"America/New_York",timeStyle:"short"});tzt=new Text(tzf());tz.replaceWith(tzt);setInterval("tzt.textContent=tzf()",1e3)</script>)</dd>
+					<dd>America/<wbr />New_<wbr />York <noscript>(enable JavaScript for live clock)</noscript><script is:inline id="tz"async>tzf=_=>`(${new Date().toLocaleString([],{timeZone:"America/New_York",timeStyle:"short"})})`;tzt=new Text(tzf());tz.replaceWith(tzt);setInterval("tzt.textContent=tzf()",1e3)</script></dd>
 				</a>
 				{
 					socials.map(social => (
