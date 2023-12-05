@@ -1,5 +1,5 @@
 # `Cross-Origin-Embedder-Policy` is unsafe-none because the Increment badge doesn't have CORS yet
 /*
-  Content-Security-Policy: sandbox allow-scripts allow-popups
+  Content-Security-Policy: sandbox allow-scripts allow-popups allow-forms allow-same-origin
   Cross-Origin-Embedder-Policy: unsafe-none
   Cross-Origin-Opener-Policy: same-origin
