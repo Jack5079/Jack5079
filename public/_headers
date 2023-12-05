@@ -3,3 +3,8 @@
   Content-Security-Policy: sandbox allow-scripts allow-popups allow-forms allow-same-origin
   Cross-Origin-Embedder-Policy: unsafe-none
   Cross-Origin-Opener-Policy: same-origin
+
+/_astro/
+  ! Content-Security-Policy
+  ! Cross-Origin-Embedder-Policy
+  ! Cross-Origin-Opener-Policy
