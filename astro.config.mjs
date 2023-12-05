@@ -9,9 +9,9 @@ export default defineConfig({
 	output: "static",
 	server: {
 		headers: {
-			"Content-Security-Policy": "sandbox allow-scripts",
-			"Cross-Origin-Embedder-Policy": "credentialless",
+			"Content-Security-Policy": "sandbox allow-scripts allow-popups",
 			"Cross-Origin-Opener-Policy": "same-origin",
+			"Cross-Origin-Embedder-Policy": "unsafe-none", // `Cross-Origin-Embedder-Policy` is unsafe-none because the Increment badge doesn't have CORS yet
 		},
 	},
 })
