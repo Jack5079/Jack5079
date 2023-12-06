@@ -21,8 +21,8 @@ dependencies:
     specifier: ^0.32.6
     version: 0.32.6
   simple-icons:
-    specifier: ^9.3.0
-    version: 9.3.0
+    specifier: ^10.0.0
+    version: 10.1.0
 
 packages:
 
@@ -1073,8 +1073,8 @@ packages:
       tsconfck: 3.0.0-next.9
       unist-util-visit: 4.1.2
       vfile: 5.3.7
-      vite: 4.4.11
-      vitefu: 0.2.4(vite@4.4.11)
+      vite: 4.5.1
+      vitefu: 0.2.4(vite@4.5.1)
       which-pm: 2.1.1
       yargs-parser: 21.1.1
       zod: 3.21.1
@@ -3433,8 +3433,8 @@ packages:
       simple-concat: 1.0.1
     dev: false
 
-  /simple-icons@9.3.0:
-    resolution: {integrity: sha512-T6x3teIpPdMc8nibYvE56Va1eF+l8Puk//1YYtCxQP4wbGRzYxgwZTl18YCjoFLnu/0exehwyR2hMEFZV3lflg==}
+  /simple-icons@10.1.0:
+    resolution: {integrity: sha512-WbWY8Gn0M14EJF0bjH6KTofckesZ6+ZMzA/yM3rbruGFLii/ktYTzTbURCDGzU5ue6XO3pLm9dnzr2YtQegZaA==}
     engines: {node: '>=0.12.18'}
     dev: false
 
@@ -3864,8 +3864,8 @@ packages:
       vfile-message: 4.0.2
     dev: false
 
-  /vite@4.4.11:
-    resolution: {integrity: sha512-ksNZJlkcU9b0lBwAGZGGaZHCMqHsc8OpgtoYhsQ4/I2v5cnpmmmqe5pM4nv/4Hn6G/2GhTdj0DhZh2e+Er1q5A==}
+  /vite@4.5.1:
+    resolution: {integrity: sha512-AXXFaAJ8yebyqzoNB9fu2pHoo/nWX+xZlaRwoeYUxEqBO+Zj4msE5G+BhGBll9lYEKv9Hfks52PAF2X7qDYXQA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
@@ -3899,7 +3899,7 @@ packages:
       fsevents: 2.3.2
     dev: false
 
-  /vitefu@0.2.4(vite@4.4.11):
+  /vitefu@0.2.4(vite@4.5.1):
     resolution: {integrity: sha512-fanAXjSaf9xXtOOeno8wZXIhgia+CZury481LsDaV++lSvcU2R9Ch2bPh3PYFyoHW+w9LqAeYRISVQjUIew14g==}
     peerDependencies:
       vite: ^3.0.0 || ^4.0.0
@@ -3907,7 +3907,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 4.4.11
+      vite: 4.5.1
     dev: false
 
   /web-namespaces@2.0.1:
