@@ -17,6 +17,8 @@ import {
 	siNixos,
 	siX,
 } from "simple-icons"
+import { Picture } from "astro:assets"
+import funnythumbsup from "../components/funnythumbsup.webp"
 
 const posts = (await getCollection("blog")).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
@@ -125,6 +127,12 @@ const socials = [
 						no-repeat;
 				}
 			}
+			@media (min-width: 800px) {
+				dl {
+					display: grid;
+					grid-template-columns: 1fr 1fr;
+				}
+			}
 		</style>
 	</head>
 	<body>
@@ -155,8 +163,7 @@ const socials = [
 						<circle cx="127.16" cy="46.64" r="46.65"></circle>
 						<circle cx="102.68" cy="219.58" r="56.14"></circle>
 					</svg> Etcetera</a
-				>, a free software development group. My pronouns are <span
-					class="u-pronoun">
+				>, a free software development group. My pronouns are <span class="u-pronoun">
 					<span class="p-x-pronoun-nominative">he</span>/<span class="p-x-pronoun-oblique"
 						>him</span
 					></span
@@ -166,116 +173,124 @@ const socials = [
 				I wrote my first program in 2016 inside <a href="https://www.computercraft.info"
 					>ComputerCraft</a
 				>; I think I made malware? Then in 2017, I learned Roblox scripting, in 2018 I
-				learned webdev, and now I am in intense burnout :funnythumbsup:
+				learned webdev, and now I am in intense burnout <Picture
+					style="vertical-align:middle"
+					src={funnythumbsup}
+					height="24"
+					densities={[2]}
+					alt="funnythumbsup"
+				/>
+				<p>
+					I am <noscript>17 (enable JavaScript for higher precision)</noscript><script
+						async
+					>
+						document.write(
+							((Date.now() - new Date("2006-02-01")) / 864e5 / 365.25).toPrecision(4)
+						)
+					</script> years old.
+				</p>
+				<!-- for bridgy fed -->
+				<link href="acct:j@jack.cab" class="u-url" />
+				<dl>
+					<a
+						href="https://en.wikipedia.org/wiki/Time_in_Massachusetts#IANA_time_zone_database"
+						title="Time zone">
+						<dt aria-label="Time zone:">
+							<svg viewBox="0 0 16 16" width="24" height="24">
+								<title>Time zone</title>
+								<path
+									d="m 8 0 c -4.40625 0 -8 3.59375 -8 8 s 3.59375 8 8 8 s 8 -3.59375 8 -8 s -3.59375 -8 -8 -8 z m 0 2 c 3.324219 0 6 2.675781 6 6 s -2.675781 6 -6 6 s -6 -2.675781 -6 -6 s 2.675781 -6 6 -6 z m 0 0"
+								></path>
+								<path
+									d="m 4.929688 4.953125 c -0.128907 0.003906 -0.257813 0.058594 -0.351563 0.152344 c -0.191406 0.195312 -0.1875 0.511719 0.007813 0.707031 l 3.113281 3.042969 c 0.105469 0.097656 0.246093 0.144531 0.386719 0.128906 h 2.914062 c 0.277344 0 0.5 -0.222656 0.5 -0.5 c 0 -0.273437 -0.222656 -0.5 -0.5 -0.5 h -2.761719 l -2.953125 -2.886719 c -0.09375 -0.09375 -0.222656 -0.144531 -0.355468 -0.144531 z m 0 0"
+								></path>
+							</svg>
+						</dt>
+						<!-- prettier-ignore -->
+						<dd>America/<wbr />New_<wbr />York <noscript>(enable JavaScript for live clock)</noscript><script is:inline id="tz"async>tzf=_=>`(${new Date().toLocaleString([],{timeZone:"America/New_York",timeStyle:"short"})})`;tzt=new Text(tzf());tz.replaceWith(tzt);setInterval("tzt.textContent=tzf()",1e3)</script></dd>
+					</a>
+					{
+						socials.map(social => (
+							<a href={social.href} rel="me" title={social.icon.title} class="u-url">
+								<dt
+									set:html={social.icon.svg.replace(
+										`role="img"`,
+										`role="img" width="24" height="24"`
+									)}
+									aria-label={social.icon.title + ":"}
+								/>
+								<dd set:html={social.text} />
+							</a>
+						))
+					}
+				</dl>
+			</p>
+			<h2>Blog</h2>
+			<section>
+				<ul>
+					{
+						posts.map(post => (
+							<li>
+								<a href={`/${post.slug}/`}>{post.data.title}</a>
+								<FormattedDate style="color:GrayText" date={post.data.pubDate} />
+							</li>
+						))
+					}
+				</ul>
+			</section>
+			<Buttons />
+			<h2 id="reviews">Reviews</h2>
+			<p>As you can see, I am the most beloved member of my friend group(s).</p>
+			{
+				[
+					["WHAT THE FUCK JACK [...] WHY DOES HE DO THIS", "Charlie, 2023"],
+					[
+						"jack I'm sorry this looks fucking terrible and you should explode",
+						"aagaming, 2023",
+					],
+					[
+						"DECAPITATE. YOUR EXECUTION DATE IS TOMORROW. IM GOING TO YOUR FDUCKING [sic] HOUSE AND PUTTING YOU ON MY GUILLOTINE. I WILL RECREATE THE FRENCH REVOLUTION IN YOUR LIVING ROOOMMM!",
+						"xzen, 2023",
+					],
+					["[...] all of my ideas i just steal from jack [...]", "split, 2023"],
+					["the dude [Jack] is an enigma to me", "accel, 2023"],
+					["SHUT UP JACK", "malice, 2023"],
+					["Josh Miller is gonna assassinate you", "Bongo, 2023"],
+					[
+						"DELETE THIS TWEET RIGHT NOW OR ELSE I WILL SEND YOUR HOME ADDRESS",
+						"tacticalmanx75, 2022",
+					],
+				].map(([quote, author]) => (
+					<figure data-nosnippet itemtype="https://schema.org/Quotation" itemscope="">
+						<blockquote itemprop="text">
+							<p>{quote}</p>
+						</blockquote>
+						<figcaption>
+							―<span itemprop="citation">{author}</span>
+						</figcaption>
+					</figure>
+				))
+			}
+			<h2>FAQ</h2>
+			<h3>
+				<a href="https://tech.lgbt/@pinkcreeper100/111156296740088614"
+					>why have you become a filing cabinet?</a
+				>
+			</h3>
+			<p>
+				After I lost <code>5079.ml</code>, I needed a new domain. So I went onto Cloudflare
+				and started typing <a href="https://en.wikipedia.org/wiki/Top-level_domain">TLDs</a>
+				to see if I could just get Jack. Somehow, <code>Jack.cab</code> was available, so I jumped
+				on it.
 			</p>
 			<p>
-				I am <noscript>17 (enable JavaScript for higher precision)</noscript><script async>
-					document.write(
-						((Date.now() - new Date("2006-02-01")) / 864e5 / 365.25).toPrecision(4)
-					)
-				</script> years old.
+				<code>.cab</code> is not only a TLD, but the file extension for the <a
+					href="https://en.wikipedia.org/wiki/Cabinet_(file_format)">Cabinet</a
+				>
+				archive format. I needed a new profile picture anyway, so I used the Vista icon for the
+				format.
 			</p>
-			<!-- for bridgy fed -->
-			<link href="acct:j@jack.cab" class="u-url" />
-			<dl>
-				<a
-					href="https://en.wikipedia.org/wiki/Time_in_Massachusetts#IANA_time_zone_database"
-					title="Time zone">
-					<dt aria-label="Time zone:">
-						<svg viewBox="0 0 16 16" width="24" height="24">
-							<title>Time zone</title>
-							<path
-								d="m 8 0 c -4.40625 0 -8 3.59375 -8 8 s 3.59375 8 8 8 s 8 -3.59375 8 -8 s -3.59375 -8 -8 -8 z m 0 2 c 3.324219 0 6 2.675781 6 6 s -2.675781 6 -6 6 s -6 -2.675781 -6 -6 s 2.675781 -6 6 -6 z m 0 0"
-							></path>
-							<path
-								d="m 4.929688 4.953125 c -0.128907 0.003906 -0.257813 0.058594 -0.351563 0.152344 c -0.191406 0.195312 -0.1875 0.511719 0.007813 0.707031 l 3.113281 3.042969 c 0.105469 0.097656 0.246093 0.144531 0.386719 0.128906 h 2.914062 c 0.277344 0 0.5 -0.222656 0.5 -0.5 c 0 -0.273437 -0.222656 -0.5 -0.5 -0.5 h -2.761719 l -2.953125 -2.886719 c -0.09375 -0.09375 -0.222656 -0.144531 -0.355468 -0.144531 z m 0 0"
-							></path>
-						</svg>
-					</dt>
-					<!-- prettier-ignore -->
-					<dd>America/<wbr />New_<wbr />York <noscript>(enable JavaScript for live clock)</noscript><script is:inline id="tz"async>tzf=_=>`(${new Date().toLocaleString([],{timeZone:"America/New_York",timeStyle:"short"})})`;tzt=new Text(tzf());tz.replaceWith(tzt);setInterval("tzt.textContent=tzf()",1e3)</script></dd>
-				</a>
-				{
-					socials.map(social => (
-						<a href={social.href} rel="me" title={social.icon.title} class="u-url">
-							<dt
-								set:html={social.icon.svg.replace(
-									`role="img"`,
-									`role="img" width="24" height="24"`
-								)}
-								aria-label={social.icon.title + ":"}
-							/>
-							<dd set:html={social.text} />
-						</a>
-					))
-				}
-			</dl>
+			<Footer />
 		</main>
-		<h2>Blog</h2>
-		<section>
-			<ul>
-				{
-					posts.map(post => (
-						<li>
-							<a href={`/${post.slug}/`}>{post.data.title}</a>
-							<FormattedDate style="color:GrayText" date={post.data.pubDate} />
-						</li>
-					))
-				}
-			</ul>
-		</section>
-		<Buttons />
-		<h2 id="reviews">Reviews</h2>
-		<p>As you can see, I am the most beloved member of my friend group(s).</p>
-		{
-			[
-				["I have not made a website ever without skidding off of Jack", "Charlie, 2023"],
-				[
-					"jack I'm sorry this looks fucking terrible and you should explode",
-					"aagaming, 2023",
-				],
-				[
-					"DECAPITATE. YOUR EXECUTION DATE IS TOMORROW. IM GOING TO YOUR FDUCKING [sic] HOUSE AND PUTTING YOU ON MY GUILLOTINE. I WILL RECREATE THE FRENCH REVOLUTION IN YOUR LIVING ROOOMMM!",
-					"xzen, 2023",
-				],
-				["[...] all of my ideas i just steal from jack [...]", "split, 2023"],
-				["the dude [Jack] is an enigma to me", "accel, 2023"],
-				["SHUT UP JACK", "malice, 2023"],
-				["Josh Miller is gonna assassinate you", "Bongo, 2023"],
-				[
-					"DELETE THIS TWEET RIGHT NOW OR ELSE I WILL SEND YOUR HOME ADDRESS",
-					"tacticalmanx75, 2022",
-				],
-			].map(([quote, author]) => (
-				<figure data-nosnippet itemtype="https://schema.org/Quotation" itemscope="">
-					<blockquote itemprop="text">
-						<p>{quote}</p>
-					</blockquote>
-					<figcaption>
-						―<span itemprop="citation">{author}</span>
-					</figcaption>
-				</figure>
-			))
-		}
-		<h2>FAQ</h2>
-		<h3>
-			<a href="https://tech.lgbt/@pinkcreeper100/111156296740088614"
-				>why have you become a filing cabinet?</a
-			>
-		</h3>
-		<p>
-			After I lost <code>5079.ml</code>, I needed a new domain. So I went onto Cloudflare and
-			started typing <a href="https://en.wikipedia.org/wiki/Top-level_domain">TLDs</a> to see
-			if I could just get Jack. Somehow, <code>Jack.cab</code> was available, so I jumped on
-			it.
-		</p>
-		<p>
-			<code>.cab</code> is not only a TLD, but the file extension for the <a
-				href="https://en.wikipedia.org/wiki/Cabinet_(file_format)">Cabinet</a
-			>
-			 archive format. I needed a new profile picture anyway, so I used the Vista icon for the
-			format.
-		</p>
-		<Footer />
 	</body>
 </html>
