@@ -16,5 +16,8 @@
     "astro": "^4.0.2",
     "sharp": "^0.32.6",
     "simple-icons": "^10.0.0"
-  }
+  },
+  "trustedDependencies": [
+    "sharp"
+  ]
 }
