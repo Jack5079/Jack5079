@@ -18,7 +18,7 @@ import {
 	siX,
 } from "simple-icons"
 import { Picture } from "astro:assets"
-import funnythumbsup from "../components/funnythumbsup.webp"
+import funnythumbsup from "../components/funnythumbsup.png"
 
 const posts = (await getCollection("blog")).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
