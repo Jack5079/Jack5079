@@ -223,18 +223,16 @@ const socials = [
 			</dl>
 		</p>
 		<h2>Blog</h2>
-		<section>
-			<ul>
-				{
-					posts.map(post => (
-						<li>
-							<a href={`/${post.slug}/`}>{post.data.title}</a>
-							<FormattedDate style="color:GrayText" date={post.data.pubDate} />
-						</li>
-					))
-				}
-			</ul>
-		</section>
+		<ul>
+			{
+				posts.map(post => (
+					<li>
+						<a href={`/${post.slug}/`}>{post.data.title}</a>
+						<FormattedDate style="color:GrayText" date={post.data.pubDate} />
+					</li>
+				))
+			}
+		</ul>
 		<Buttons />
 		<h2 id="reviews">Reviews</h2>
 		<p>As you can see, I am the most beloved member of my friend group(s).</p>
