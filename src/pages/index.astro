@@ -17,8 +17,6 @@ import {
 	siNixos,
 	siX,
 } from "simple-icons"
-import { Picture } from "astro:assets"
-import funnythumbsup from "../components/funnythumbsup.webp"
 
 const posts = (await getCollection("blog")).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
@@ -31,7 +29,7 @@ const socials = [
 		text: "@nixos.<wbr>org",
 	},
 	//{
-		//icon: siMatrix,
+	//icon: siMatrix,
 	//	href: "https://matrix.to/#/@jack-w:matrix.org",
 	//	text: "@jack-w:<wbr>matrix.org",
 	//},
@@ -168,53 +166,39 @@ const socials = [
 				></span
 			>.
 		</p>
-		<p>
-			I wrote my first program in 2016 inside <a href="https://www.computercraft.info"
-				>ComputerCraft</a
-			>; I think I made malware? Then in 2017, I learned Roblox scripting, in 2018 I learned
-			webdev, and now I am in intense burnout <Picture
-				style="vertical-align:middle"
-				src={funnythumbsup}
-				height="24"
-				densities={[2]}
-				alt="funnythumbsup"
-			/>
-			<!-- for bridgy fed -->
-			<link href="acct:j@jack.cab" class="u-url" />
-			<dl>
-				<a
-					href="https://en.wikipedia.org/wiki/Eastern_Time_Zone"
-					title="Time zone">
-					<dt aria-label="Time zone:">
-						<svg viewBox="0 0 16 16" width="24" height="24">
-							<title>Time zone</title>
-							<path
-								d="m 8 0 c -4.40625 0 -8 3.59375 -8 8 s 3.59375 8 8 8 s 8 -3.59375 8 -8 s -3.59375 -8 -8 -8 z m 0 2 c 3.324219 0 6 2.675781 6 6 s -2.675781 6 -6 6 s -6 -2.675781 -6 -6 s 2.675781 -6 6 -6 z m 0 0"
-							></path>
-							<path
-								d="m 4.929688 4.953125 c -0.128907 0.003906 -0.257813 0.058594 -0.351563 0.152344 c -0.191406 0.195312 -0.1875 0.511719 0.007813 0.707031 l 3.113281 3.042969 c 0.105469 0.097656 0.246093 0.144531 0.386719 0.128906 h 2.914062 c 0.277344 0 0.5 -0.222656 0.5 -0.5 c 0 -0.273437 -0.222656 -0.5 -0.5 -0.5 h -2.761719 l -2.953125 -2.886719 c -0.09375 -0.09375 -0.222656 -0.144531 -0.355468 -0.144531 z m 0 0"
-							></path>
-						</svg>
-					</dt>
-					<!-- prettier-ignore -->
-					<dd>America/<wbr />New_<wbr />York <noscript>(enable JavaScript for live clock)</noscript><script is:inline id="tz"async>tzf=_=>`(${new Date().toLocaleString([],{timeZone:"America/New_York",timeStyle:"short"})})`;tzt=new Text(tzf());tz.replaceWith(tzt);setInterval("tzt.textContent=tzf()",1e3)</script></dd>
-				</a>
-				{
-					socials.map(social => (
-						<a href={social.href} rel="me" title={social.icon.title} class="u-url">
-							<dt
-								set:html={social.icon.svg.replace(
-									`role="img"`,
-									`role="img" width="24" height="24"`
-								)}
-								aria-label={social.icon.title + ":"}
-							/>
-							<dd set:html={social.text} />
-						</a>
-					))
-				}
-			</dl>
-		</p>
+		<!-- for bridgy fed -->
+		<link href="acct:j@jack.cab" class="u-url" />
+		<dl>
+			<a href="https://en.wikipedia.org/wiki/Eastern_Time_Zone" title="Time zone">
+				<dt aria-label="Time zone:">
+					<svg viewBox="0 0 16 16" width="24" height="24">
+						<title>Time zone</title>
+						<path
+							d="m 8 0 c -4.40625 0 -8 3.59375 -8 8 s 3.59375 8 8 8 s 8 -3.59375 8 -8 s -3.59375 -8 -8 -8 z m 0 2 c 3.324219 0 6 2.675781 6 6 s -2.675781 6 -6 6 s -6 -2.675781 -6 -6 s 2.675781 -6 6 -6 z m 0 0"
+						></path>
+						<path
+							d="m 4.929688 4.953125 c -0.128907 0.003906 -0.257813 0.058594 -0.351563 0.152344 c -0.191406 0.195312 -0.1875 0.511719 0.007813 0.707031 l 3.113281 3.042969 c 0.105469 0.097656 0.246093 0.144531 0.386719 0.128906 h 2.914062 c 0.277344 0 0.5 -0.222656 0.5 -0.5 c 0 -0.273437 -0.222656 -0.5 -0.5 -0.5 h -2.761719 l -2.953125 -2.886719 c -0.09375 -0.09375 -0.222656 -0.144531 -0.355468 -0.144531 z m 0 0"
+						></path>
+					</svg>
+				</dt>
+				<!-- prettier-ignore -->
+				<dd>America/<wbr />New_<wbr />York <noscript>(enable JavaScript for live clock)</noscript><script is:inline id="tz"async>tzf=_=>`(${new Date().toLocaleString([],{timeZone:"America/New_York",timeStyle:"short"})})`;tzt=new Text(tzf());tz.replaceWith(tzt);setInterval("tzt.textContent=tzf()",1e3)</script></dd>
+			</a>
+			{
+				socials.map(social => (
+					<a href={social.href} rel="me" title={social.icon.title} class="u-url">
+						<dt
+							set:html={social.icon.svg.replace(
+								`role="img"`,
+								`role="img" width="24" height="24"`
+							)}
+							aria-label={social.icon.title + ":"}
+						/>
+						<dd set:html={social.text} />
+					</a>
+				))
+			}
+		</dl>
 		<h2>Blog</h2>
 		<ul>
 			{
