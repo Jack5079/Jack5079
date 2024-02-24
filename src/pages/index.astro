@@ -18,7 +18,7 @@ import {
 	siX,
 } from "simple-icons"
 
-const posts = (await getCollection("blog")).sort(
+const posts = (await getCollection("blog"))?.sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 )
 
@@ -199,20 +199,25 @@ const socials = [
 				))
 			}
 		</dl>
-		<h2>Blog</h2>
-		<ul>
-			{
-				posts.map(post => (
-					<li>
-						<a href={`/${post.slug}/`}>{post.data.title}</a>
-						<FormattedDate style="color:GrayText" date={post.data.pubDate} />
-					</li>
-				))
-			}
-		</ul>
+		{
+			posts && (
+				<>
+					<h2>Blog</h2>
+					<ul>
+						{posts.map(post => (
+							<li>
+								<a href={`/${post.slug}/`}>{post.data.title}</a>
+								<FormattedDate style="color:GrayText" date={post.data.pubDate} />
+							</li>
+						))}
+					</ul>
+				</>
+			)
+		}
 		<h2>Feedback</h2>
 		<form action="https://feedback.5079.workers.dev/" method="post">
-			<textarea name="text" placeholder="Feedback" style="resize:vertical;width:100%"/>
+			<textarea name="text" placeholder="Feedback" style="resize:vertical;width:100%"
+			></textarea>
 			<input type="submit" value="Send feedback" />
 			<input type="hidden" name="wave" value="smiley" />
 		</form>
