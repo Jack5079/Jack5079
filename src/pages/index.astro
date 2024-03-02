@@ -137,9 +137,10 @@ const socials = [
 		<h1 role="none" aria-label="Jack W.">
 			<img
 				src={cab}
-				alt="Cabinet file icon on Windows Vista"
+				alt="Archive file icon on GNOME"
 				decoding="async"
 				class="u-photo"
+				style="image-rendering:pixelated"
 				height="48"
 				width="48"
 			/>
@@ -224,46 +225,39 @@ const socials = [
 		<Buttons />
 		<h2 id="reviews">Reviews</h2>
 		<p>As you can see, I am the most beloved member of my friend group(s).</p>
-		{
-			[
-				["whys jack so obsessed with wave smiley", "mau, 2023"],
-				["WHAT THE FUCK JACK [...] WHY DOES HE DO THIS", "Charlie, 2023"],
+		<section>
+			{
 				[
-					"jack I'm sorry this looks fucking terrible and you should explode",
-					"aagaming, 2023",
-				],
-				[
-					"DECAPITATE. YOUR EXECUTION DATE IS TOMORROW. IM GOING TO YOUR FDUCKING [sic] HOUSE AND PUTTING YOU ON MY GUILLOTINE. I WILL RECREATE THE FRENCH REVOLUTION IN YOUR LIVING ROOOMMM!",
-					"xzen, 2023",
-				],
-				["[...] all of my ideas i just steal from jack [...]", "split, 2023"],
-				["the dude [Jack] is an enigma to me", "accel, 2023"],
-				["SHUT UP JACK", "malice, 2023"],
-				["Josh Miller is gonna assassinate you", "Bongo, 2023"],
-				[
-					"DELETE THIS TWEET RIGHT NOW OR ELSE I WILL SEND YOUR HOME ADDRESS",
-					"tacticalmanx75, 2022",
-				],
-			].map(([quote, author]) => (
-				<figure data-nosnippet itemtype="https://schema.org/Quotation" itemscope="">
-					<blockquote itemprop="text">
-						<p>{quote}</p>
-					</blockquote>
-					<figcaption>
-						―<span itemprop="citation">{author}</span>
-					</figcaption>
-				</figure>
-			))
-		}
-		<h2>FAQ</h2>
-		<h3>
-			<a href="https://tech.lgbt/@pinkcreeper100/111156296740088614"
-				>why have you become a filing cabinet?</a
-			>
-		</h3>
-		<p>
-			The <a href="https://en.wikipedia.org/wiki/File:Cab_file_format_icon.png">cabinet icon</a> represents the <a href="https://en.wikipedia.org/wiki/Cabinet_(file_format)">.cab</a> in Jack.cab.
-		</p>
+					["whys jack so obsessed with wave smiley", "mau, 2023"],
+					["WHAT THE FUCK JACK [...] WHY DOES HE DO THIS", "Charlie, 2023"],
+					[
+						"jack I'm sorry this looks fucking terrible and you should explode",
+						"aagaming, 2023",
+					],
+					[
+						"DECAPITATE. YOUR EXECUTION DATE IS TOMORROW. IM GOING TO YOUR FDUCKING [sic] HOUSE AND PUTTING YOU ON MY GUILLOTINE. I WILL RECREATE THE FRENCH REVOLUTION IN YOUR LIVING ROOOMMM!",
+						"xzen, 2023",
+					],
+					["[...] all of my ideas i just steal from jack [...]", "split, 2023"],
+					["the dude [Jack] is an enigma to me", "accel, 2023"],
+					["SHUT UP JACK", "malice, 2023"],
+					["Josh Miller is gonna assassinate you", "Bongo, 2023"],
+					[
+						"DELETE THIS TWEET RIGHT NOW OR ELSE I WILL SEND YOUR HOME ADDRESS",
+						"tacticalmanx75, 2022",
+					],
+				].map(([quote, author]) => (
+					<figure data-nosnippet itemtype="https://schema.org/Quotation" itemscope="">
+						<blockquote itemprop="text">
+							<p>{quote}</p>
+						</blockquote>
+						<figcaption>
+							―<span itemprop="citation">{author}</span>
+						</figcaption>
+					</figure>
+				))
+			}
+		</section>
 		<Footer />
 	</body>
 </html>
