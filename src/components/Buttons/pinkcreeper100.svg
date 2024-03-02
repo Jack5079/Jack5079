@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88 31">
+  <rect width="88" height="31" style="fill:#1e1e2e;stroke:#313244;stroke-width:5"/>
+  <image x="57" y="7" width="16" height="16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAKlBMVEUYGCUeHi1MT2Noa4Fwcoh5eI6hjZ+tkqLZpKbep6biqaXlqqTltKjlt6nUvBI2AAAAfklEQVQI1y3KoQ3DMBCF4ecRbobbIAEHTkUFHaYsBganjFDcIQINXOkpExRWVUCWqROVfdL/o+SSb+WawRrNm1fM3+VhtA+cXO/BDQ7wCTR4kplJ4kT9g5HkDb/sgK+EWz88OjaI9B++p46ejHKgwV4HlgqdZDTRCTrIqKLDD2RBLP1L65KiAAAAAElFTkSuQmCC" style="image-rendering:pixelated"/>
+  <text x="14" y="19" style="font-size:12px;font-family:'Fira Code',monospace;fill:#cdd6f4;stroke:#cdd6f4;stroke-linecap:round;stroke-linejoin:round">pc100</text>
+</svg>
