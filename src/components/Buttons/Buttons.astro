@@ -31,7 +31,7 @@ import xserver1317 from "./1317.png?url"
 
 <h2>Buttons</h2>
 <h3>Etceterans</h3>
-<ul>
+<ul class="btns">
 	<li>
 		<a href="https://jack.cab">
 			<img src={jack} alt="Jack.cab" width="88" height="31" decoding="async" />
@@ -77,7 +77,7 @@ import xserver1317 from "./1317.png?url"
 </ul>
 <h3>Fediverse <a href="https://en.wiktionary.org/wiki/mutual#Noun">mutuals</a></h3>
 <p>(incomplete)</p>
-<ul>
+<ul class="btns">
 	<li>
 		<a href="https://aei.sh/">
 			<img src={aei} alt="aei's site" width="88" height="31" decoding="async" />
@@ -195,7 +195,7 @@ import xserver1317 from "./1317.png?url"
 	</li>
 </ul>
 <h3>Other</h3>
-<ul>
+<ul class="btns">
 	<li>
 		<a href="https://gba.ioi-xd.net/">
 			<img
@@ -222,13 +222,7 @@ import xserver1317 from "./1317.png?url"
 	</li>
 	<li>
 		<a href="https://www.gnome.org/">
-			<img
-				src={gnome}
-				alt="GNOME"
-				width="88"
-				height="31"
-				decoding="async"
-			/>
+			<img src={gnome} alt="GNOME" width="88" height="31" decoding="async" />
 		</a>
 	</li>
 	<li>
@@ -256,30 +250,30 @@ import xserver1317 from "./1317.png?url"
 	</li>
 </ul>
 
-<style>
-	ul {
+<style is:global>
+	.btns {
 		list-style-type: none;
 		padding-inline-start: 0;
 		display: flex;
-		justify-content: space-evenly;
+		justify-content: space-between;
 		gap: 1ch;
 		flex-direction: row;
 		flex-wrap: wrap;
 	}
-	li {
+	.btns li {
 		display: inline-block;
 		margin: 0;
 	}
-	img {
+	.btns img {
 		vertical-align: bottom;
 		image-rendering: pixelated;
 	}
 	@media (max-width: 560px) {
-		li {
+		.btns li {
 			display: block;
 			margin-left: 0;
 		}
-		img {
+		.btns img {
 			max-width: 100%;
 			height: auto;
 		}
