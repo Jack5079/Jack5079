@@ -2,73 +2,15 @@
 import BaseHead from "../components/BaseHead.astro"
 import Footer from "../components/Footer.astro"
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts"
+import Buttons from "../components/Buttons/Buttons.astro"
 import { getCollection } from "astro:content"
 import FormattedDate from "../components/FormattedDate.astro"
-import Buttons from "../components/Buttons/Buttons.astro"
 import cab from "../components/cab.png?url"
-import {
-	siDiscord,
-	siMastodon,
-	siGithub,
-	siCodeberg,
-	siYoutube,
-	siMatrix,
-	siMisskey,
-	siNixos,
-	siX,
-} from "simple-icons"
-
+import Header from "../components/Header.astro"
+import ClockParagraph from "../components/ClockParagraph.astro"
 const posts = (await getCollection("blog"))?.sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 )
-
-const socials = [
-	{
-		icon: siDiscord,
-		href: "https://discord.com/users/173589391560802306",
-		text: "@nixos.<wbr>org",
-	},
-	//{
-	//icon: siMatrix,
-	//	href: "https://matrix.to/#/@jack-w:matrix.org",
-	//	text: "@jack-w:<wbr>matrix.org",
-	//},
-	{
-		icon: siMastodon,
-		href: "https://wetdry.world/@j",
-		text: "@j@<wbr>wetdry.<wbr>world",
-	},
-	{
-		icon: siMisskey,
-		href: "https://owo.community/@j",
-		text: "@j@owo.<wbr>community",
-	},
-	{
-		icon: siX,
-		href: "https://x.com/banger_post",
-		text: "@banger_post",
-	},
-	{
-		icon: siGithub,
-		href: "https://github.com/Jack5079",
-		text: "@Jack<wbr>5079",
-	},
-	{
-		icon: siCodeberg,
-		href: "https://codeberg.org/j-w",
-		text: "@j-w",
-	},
-	{
-		icon: siYoutube,
-		href: "https://youtube.com/@Jack5079",
-		text: "@Jack<wbr>5079",
-	},
-	{
-		icon: siNixos,
-		href: "https://github.com/Jack5079/dotfiles",
-		text: "github:<wbr>Jack5079/<wbr>dotfiles",
-	},
-]
 ---
 
 <!doctype html>
@@ -76,130 +18,43 @@ const socials = [
 	<head>
 		<BaseHead title="Jack.cab" description={SITE_DESCRIPTION} image={cab} />
 		<style is:global>
-			ul {
-				list-style-type: none;
-				padding: unset;
-			}
-			ul li {
-				display: flex;
-			}
-			ul li a {
-				flex: 1;
-			}
-			h1 a {
-				text-decoration: none;
-				color: inherit;
-				word-wrap: break-word;
-			}
-			dl a {
-				text-decoration: none;
-				fill: currentColor;
-				font-weight: bold;
-				display: block;
-			}
-			dl a:hover {
-				text-decoration: underline;
-			}
-			dl dt,
-			dl dd {
-				display: inline;
-			}
-			dl dd {
-				margin-inline-start: 12px;
-			}
-			dl svg {
-				vertical-align: middle;
-			}
-			dl {
-				line-height: 2;
-			}
-			h1 > * {
-				vertical-align: middle;
-			}
 			figure {
 				margin-inline: 0;
-			}
-			@media (min-width: 696.5px) {
-				body {
-					background: radial-gradient(AccentColor, transparent 70%) 50% -30%/696.5px 696.5px
-						no-repeat;
-				}
-			}
-			@media (min-width: 800px) {
-				dl {
-					display: grid;
-					grid-template-columns: 1fr 1fr;
-				}
 			}
 		</style>
 	</head>
 	<body class="h-card">
-		<h1 role="none" aria-label="Jack W.">
-			<img
-				src={cab}
-				alt="Archive file icon on GNOME"
-				decoding="async"
-				class="u-photo"
-				style="image-rendering:pixelated"
-				height="48"
-				width="48"
-			/>
-			<a href="/" role="heading" class="p-name u-url u-uid"> Jack W.</a>
-		</h1>
+		<Header home />
 		<p class="p-note">
-			Co-founder of
-			<a class="p-org h-card" href="https://cetera.uk">
-				<svg
-					viewBox="0 0 173.8 275.72"
-					height="20"
-					style="vertical-align: middle"
-					role="none"
-					fill="currentColor">
-					<circle cx="37.13" cy="26.43" r="21.6"></circle>
-					<circle cx="34.62" cy="117.87" r="34.62"></circle>
-					<circle cx="119.78" cy="130.68" r="21.6"></circle>
-					<circle cx="127.16" cy="46.64" r="46.65"></circle>
-					<circle cx="102.68" cy="219.58" r="56.14"></circle>
-				</svg> Etcetera</a
-			>, a free software development group. My pronouns are <span class="u-pronoun">
-				<span class="p-x-pronoun-nominative">he</span>/<span class="p-x-pronoun-oblique"
+			I'm the <span class="p-org h-card">
+				<span class="p-role">co-founder</span> of
+				<a href="https://cetera.uk" class="p-name u-url">
+					<svg
+						viewBox="0 0 173.8 275.72"
+						height="20"
+						style="vertical-align: middle"
+						class="u-photo"
+						role="none"
+						fill="currentColor">
+						<circle cx="37.13" cy="26.43" r="21.6"></circle>
+						<circle cx="34.62" cy="117.87" r="34.62"></circle>
+						<circle cx="119.78" cy="130.68" r="21.6"></circle>
+						<circle cx="127.16" cy="46.64" r="46.65"></circle>
+						<circle cx="102.68" cy="219.58" r="56.14"></circle>
+					</svg> Etcetera</a
+				></span
+			>, a free software development group.
+		</p>
+		<p>
+			My pronouns are <span class="u-pronoun" style="white-space:pre"
+				><span class="p-x-pronoun-nominative">he</span>/<span class="p-x-pronoun-oblique"
 					>him</span
 				></span
 			>.
+			<ClockParagraph tz="US/Eastern" />
 		</p>
 		<!-- for bridgy fed -->
 		<link href="acct:j@jack.cab" class="u-url" />
-		<dl>
-			<a href="https://en.wikipedia.org/wiki/Eastern_Time_Zone" title="Time zone">
-				<dt aria-label="Time zone:">
-					<svg viewBox="0 0 16 16" width="24" height="24">
-						<title>Time zone</title>
-						<path
-							d="m 8 0 c -4.40625 0 -8 3.59375 -8 8 s 3.59375 8 8 8 s 8 -3.59375 8 -8 s -3.59375 -8 -8 -8 z m 0 2 c 3.324219 0 6 2.675781 6 6 s -2.675781 6 -6 6 s -6 -2.675781 -6 -6 s 2.675781 -6 6 -6 z m 0 0"
-						></path>
-						<path
-							d="m 4.929688 4.953125 c -0.128907 0.003906 -0.257813 0.058594 -0.351563 0.152344 c -0.191406 0.195312 -0.1875 0.511719 0.007813 0.707031 l 3.113281 3.042969 c 0.105469 0.097656 0.246093 0.144531 0.386719 0.128906 h 2.914062 c 0.277344 0 0.5 -0.222656 0.5 -0.5 c 0 -0.273437 -0.222656 -0.5 -0.5 -0.5 h -2.761719 l -2.953125 -2.886719 c -0.09375 -0.09375 -0.222656 -0.144531 -0.355468 -0.144531 z m 0 0"
-						></path>
-					</svg>
-				</dt>
-				<!-- prettier-ignore -->
-				<dd>Eastern Time <noscript>(enable JavaScript for live clock)</noscript><script is:inline id="tz"async>tzf=_=>`(${new Date().toLocaleString([],{timeZone:"US/Eastern",timeStyle:"short"})})`;tz.replaceWith(tzt=new Text(tzf()));setInterval(_=>tzt.textContent=tzf(),1e3)</script></dd>
-			</a>
-			{
-				socials.map(social => (
-					<a href={social.href} rel="me" title={social.icon.title} class="u-url">
-						<dt
-							set:html={social.icon.svg.replace(
-								`role="img"`,
-								`role="img" width="24" height="24"`
-							)}
-							aria-label={social.icon.title + ":"}
-						/>
-						<dd set:html={social.text} />
-					</a>
-				))
-			}
-		</dl>
 		{
 			posts && (
 				<>
@@ -215,6 +70,7 @@ const socials = [
 				</>
 			)
 		}
+		<Buttons />
 		<h2>Feedback</h2>
 		<form action="https://feedback.5079.workers.dev/" method="post">
 			<textarea name="text" placeholder="Feedback" style="resize:vertical;width:100%"
@@ -222,7 +78,6 @@ const socials = [
 			<input type="submit" value="Send feedback" />
 			<input type="hidden" name="wave" value="smiley" />
 		</form>
-		<Buttons />
 		<h2 id="reviews">Reviews</h2>
 		<p>As you can see, I am the most beloved member of my friend group(s).</p>
 		<section>

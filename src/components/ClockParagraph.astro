@@ -1,0 +1,9 @@
+---
+type Props = {
+	tz: string
+}
+---
+
+<a href=`https://en.wikipedia.org/wiki/${Astro.props.tz}`>Right now</a>, it's <span
+	set:html={`<script id=tz>tzf=_=>new Date().toLocaleString([],{timeZone:"${Astro.props.tz}",timeStyle:"short"});tz.replaceWith((tzt=new Text(tzf())));setInterval(_=>tzt.textContent=tzf(),1e3)</script>`}
+/>.

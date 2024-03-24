@@ -56,7 +56,14 @@ const { title, description, pubDate, updatedDate, image } = Astro.props
 					)
 				}
 				<hgroup style="text-align:center">
-					<h1 class="p-name" style="font-size:xx-large">{title}</h1>
+					<h1 class="p-name" style="font-size:xx-large;margin-bottom:0;text-wrap:balance;width:100%" set:html={title} />
+					{
+						description && (
+							<p class="p-summary" style="font-style:italic">
+								{description}
+							</p>
+						)
+					}
 					<a class="u-url" href={Astro.url.href} style="display:contents;color:GrayText">
 						<FormattedDate date={pubDate} />
 
@@ -68,13 +75,6 @@ const { title, description, pubDate, updatedDate, image } = Astro.props
 							)
 						}
 					</a>
-					{
-						description && (
-							<p class="p-summary" style="font-style:italic">
-								{description}
-							</p>
-						)
-					}
 				</hgroup>
 				<div class="e-content">
 					<slot />
