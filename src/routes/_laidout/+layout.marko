@@ -19,17 +19,17 @@ html lang="en"
 		]
 		<!-- TODO: add sitemap & rss -->
 		meta property="twitter:card" content="summary_large_image"
-		const/title=($global.meta.title ?? "Jack.cab")
-		const/description=($global.meta.description ?? ":wavesmiley:")
-		const/image=($global.meta.image)
-		title -- title
+		$ const title = $global.meta.title ?? "Jack.cab"
+		$ const description = $global.meta.description ?? ":wavesmiley:"
+		$ const image = $global.meta.image
+		title -- ${title}
 		meta name="description" content=description
 		meta property="og:site_name" content="Jack.cab"
 		meta property="og:title" content=title
 		meta property="og:description" content=description
 		meta property="twitter:title" content=title
 		meta property="twitter:description" content=description
-		if=image
+		if(image)
 			meta property="og:image" content=(new URL(image, $global.url).href)
 			meta [
 				property="twitter:image"
@@ -66,4 +66,5 @@ html lang="en"
 			}
 			--
 	body class=($global.meta.bodyClass)
+		jack-header
 		${input.renderBody}

@@ -1,0 +1,78 @@
+import {
+	siDiscord,
+	siMastodon,
+	siGithub,
+	siCodeberg,
+	siYoutube,
+	siMisskey,
+	siNixos,
+	siX,
+} from "simple-icons"
+
+const/socials=[
+	{
+		icon: siDiscord,
+		href: "https://discord.com/users/173589391560802306",
+		text: "@nixos.org",
+	},
+	{
+		icon: siMastodon,
+		href: "https://wetdry.world/@j",
+		text: "@j@wetdry.world",
+	},
+	{
+		icon: siX,
+		href: "https://x.com/banger_post",
+		text: "@banger_post",
+	},
+	{
+		icon: siGithub,
+		href: "https://github.com/Jack5079",
+		text: "@Jack5079",
+	},
+	{
+		icon: siCodeberg,
+		href: "https://codeberg.org/j-w",
+		text: "@j-w",
+	},
+	{
+		icon: siYoutube,
+		href: "https://youtube.com/@Jack5079",
+		text: "@Jack5079",
+	},
+	{
+		icon: siNixos,
+		href: "https://github.com/Jack5079/dotfiles",
+		text: "github:Jack5079/dotfiles",
+	}
+]
+
+<!-- class:list={[!home && "u-author h-card"]} -->
+
+nav
+	a href="/" class="u-url u-uid" rel="author"
+		img src="../favicon.png" alt="" decoding="async" class="u-photo" style="image-rendering:pixelated" height="32" width="32"
+		span.p-name -- ${" "}Jack W.
+	for|_, social| in=socials
+		a href=social.href target="_blank" rel="me" title=`${social.text} on ${social.icon.name}` -- $!{social.icon.svg.replace(`role="img"`, `role="none" width="24" height="24" class="social"`).replace(new RegExp("<title>.*</title>"), "")}
+style --
+	nav {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 1ch;
+	}
+	.u-uid {
+		margin: 0.5em 0;
+		/* Aligned with the height of the logo's beige portion */
+		font-size: 27.5px;
+		font-weight: bold;
+		text-decoration: none;
+		flex-grow: 1;
+	}
+	svg.social {
+		width: 1.5em;
+		height: 1.5em;
+		fill: currentColor;
+	}

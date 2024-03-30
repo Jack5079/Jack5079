@@ -51,5 +51,5 @@ declare module "../src/routes/+404.marko" {
 }
 
 type Routes = {
-	"/_laidout": { verb: "get"; };
+	"/_laidout": { verb: "get"; meta: typeof import("../src/routes/_laidout/+meta.json"); };
 }

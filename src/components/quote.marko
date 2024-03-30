@@ -1,0 +1,16 @@
+export interface Input {
+	value: string
+	author: string
+}
+
+figure data-nosnippet itemtype="https://schema.org/Quotation" itemscope=""
+	blockquote itemprop="text"
+		p -- ${input.value}
+	figcaption
+		-- ―
+		span itemprop="citation" -- ${input.author}
+
+style --
+	figure {
+		margin-inline: 0;
+	}

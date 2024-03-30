@@ -1,122 +1,347 @@
+import aa from "./buttons/aagaming-8831.png?url"
+import aei from "./buttons/aei.gif?url"
+import bee from "./buttons/beebadge.png?url"
+import beebles from "./buttons/beebles.png?url"
+import charlie from "./buttons/charlie.png?url"
+import coolelectronics from "./buttons/ce88x31.png?url"
+import drakonic from "./buttons/drakonic.gif?url"
+import freeplay from "./buttons/freeplay.png?url"
+import gba from "./buttons/sherbetbutton.gif?url"
+import gnome from "./buttons/gnome.png?url"
+import ivy from "./buttons/ivy.png?url"
+import jack from "./buttons/jack.png?url"
+import luna from "./buttons/luna.png?url"
+import malice from "./buttons/malice.png?url"
+import mau from "./buttons/mau.png?url"
+import micro from "./buttons/micro.png?url"
+import pancakes from "./buttons/pancakes.png?url"
+import please_theme from "./buttons/pleasetheme.png?url"
+import sideberry from "./buttons/sideberry.png?url"
+import sneexy from "./buttons/sneexy.gif?url"
+import spacy from "./buttons/ssm230.png?url"
+import split from "./buttons/split.gif?url"
+import sterophonick from "./buttons/sterophonick.gif?url"
+import toastyfen from "./buttons/toastyfen.gif?url"
+import tuxcrafting from "./buttons/tctek.png?url"
+import wavi from "./buttons/wavi.png?url"
+import whitespaced from "./buttons/whitespaced.gif?url"
+import xserver1317 from "./buttons/1317.png?url"
+
+p.p-note
+	-- I'm the
+	span.p-org.h-card
+		span.p-role -- ${" "}co-founder
+		-- ${" "}of${" "}
+		a.p-name.u-url href="https://cetera.uk"
+			svg.u-photo [
+				viewBox="0 0 173.8 275.72"
+				height="20"
+				style="vertical-align: middle"
+				role="none"
+				fill="currentColor"
+			]
+				circle cx="37.13" cy="26.43" r="21.6"
+				circle cx="34.62" cy="117.87" r="34.62"
+				circle cx="119.78" cy="130.68" r="21.6"
+				circle cx="127.16" cy="46.64" r="46.65"
+				circle cx="102.68" cy="219.58" r="56.14"
+			-- ${" "}Etcetera
+		-- , a free software development group.
+
+p
+	-- My pronouns are${" "}
+	span.u-pronoun style="white-space:pre"
+		span.p-x-pronoun-nominative -- he
+		-- /
+		span.p-x-pronoun-oblique -- him
+	-- .${" "}
+	clock-sentence="US/Eastern"
+
+link href="acct:j@jack.cab" class="u-url" // for bridgy fed
+
+h2#buttons -- Buttons
+	button-section="Etceterans"
+		li -- hi
+
 <!-- 
-
+	---
+import aa from "./aagaming-8831.png?url"
+import aei from "./aei.gif?url"
+import bee from "./beebadge.png?url"
+import beebles from "./beebles.png?url"
+import charlie from "./charlie.png?url"
+import coolelectronics from "./ce88x31.png?url"
+import drakonic from "./drakonic.gif?url"
+import freeplay from "./freeplay.png?url"
+import gba from "./sherbetbutton.gif?url"
+import gnome from "./gnome.png?url"
+import ivy from "./ivy.png?url"
+import jack from "./jack.png?url"
+import luna from "./luna.png?url"
+import malice from "./malice.png?url"
+import mau from "./mau.png?url"
+import micro from "./micro.png?url"
+import pancakes from "./pancakes.png?url"
+import please_theme from "./pleasetheme.png?url"
+import sideberry from "./sideberry.png?url"
+import sneexy from "./sneexy.gif?url"
+import spacy from "./ssm230.png?url"
+import split from "./split.gif?url"
+import sterophonick from "./sterophonick.gif?url"
+import toastyfen from "./toastyfen.gif?url"
+import tuxcrafting from "./tctek.png?url"
+import wavi from "./wavi.png?url"
+import whitespaced from "./whitespaced.gif?url"
+import xserver1317 from "./1317.png?url"
 ---
-import BaseHead from "../components/BaseHead.astro"
-import Footer from "../components/Footer.astro"
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts"
-import Buttons from "../components/Buttons/Buttons.astro"
-import { getCollection } from "astro:content"
-import FormattedDate from "../components/FormattedDate.astro"
-import cab from "../components/cab.png?url"
-import Header from "../components/Header.astro"
-import ClockParagraph from "../components/ClockParagraph.astro"
-const posts = (await getCollection("blog"))?.sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-)
----
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title="Jack.cab" description={SITE_DESCRIPTION} image={cab} />
-		<style is:global>
-			figure {
-				margin-inline: 0;
-			}
-		</style>
-	</head>
-	<body class="h-card">
-		<Header home />
-		<p class="p-note">
-			I'm the <span class="p-org h-card">
-				<span class="p-role">co-founder</span> of
-				<a href="https://cetera.uk" class="p-name u-url">
-					<svg
-						viewBox="0 0 173.8 275.72"
-						height="20"
-						style="vertical-align: middle"
-						class="u-photo"
-						role="none"
-						fill="currentColor">
-						<circle cx="37.13" cy="26.43" r="21.6"></circle>
-						<circle cx="34.62" cy="117.87" r="34.62"></circle>
-						<circle cx="119.78" cy="130.68" r="21.6"></circle>
-						<circle cx="127.16" cy="46.64" r="46.65"></circle>
-						<circle cx="102.68" cy="219.58" r="56.14"></circle>
-					</svg> Etcetera</a
-				></span
-			>, a free software development group.
-		</p>
-		<p>
-			My pronouns are <span class="u-pronoun" style="white-space:pre"
-				><span class="p-x-pronoun-nominative">he</span>/<span class="p-x-pronoun-oblique"
-					>him</span
-				></span
-			>.
-			<ClockParagraph tz="US/Eastern" />
-		</p>
-		// for bridgy fed
-		<link href="acct:j@jack.cab" class="u-url" />
-		{
-			posts && (
-				<>
-					<h2>Blog</h2>
-					<ul>
-						{posts.map(post => (
-							<li>
-								<a href={`/${post.slug}/`}>{post.data.title}</a>
-								<FormattedDate style="color:GrayText" date={post.data.pubDate} />
-							</li>
-						))}
-					</ul>
-				</>
-			)
-		}
-		<Buttons />
-		<h2>Feedback</h2>
-		<form action="https://feedback.5079.workers.dev/" method="post">
-			<textarea name="text" placeholder="Feedback" style="resize:vertical;width:100%"
-			></textarea>
-			<input type="submit" value="Send feedback" />
-			<input type="hidden" name="wave" value="smiley" />
-		</form>
-		<h2 id="reviews">Reviews</h2>
-		<p>As you can see, I am the most beloved member of my friend group(s).</p>
-		<section>
-			{
-				[
-					["whys jack so obsessed with wave smiley", "mau, 2023"],
-					["WHAT THE FUCK JACK [...] WHY DOES HE DO THIS", "Charlie, 2023"],
-					[
-						"jack I'm sorry this looks fucking terrible and you should explode",
-						"aagaming, 2023",
-					],
-					[
-						"DECAPITATE. YOUR EXECUTION DATE IS TOMORROW. IM GOING TO YOUR FDUCKING [sic] HOUSE AND PUTTING YOU ON MY GUILLOTINE. I WILL RECREATE THE FRENCH REVOLUTION IN YOUR LIVING ROOOMMM!",
-						"xzen, 2023",
-					],
-					["[...] all of my ideas i just steal from jack [...]", "split, 2023"],
-					["the dude [Jack] is an enigma to me", "accel, 2023"],
-					["SHUT UP JACK", "malice, 2023"],
-					["Josh Miller is gonna assassinate you", "Bongo, 2023"],
-					[
-						"DELETE THIS TWEET RIGHT NOW OR ELSE I WILL SEND YOUR HOME ADDRESS",
-						"tacticalmanx75, 2022",
-					],
-				].map(([quote, author]) => (
-					<figure data-nosnippet itemtype="https://schema.org/Quotation" itemscope="">
-						<blockquote itemprop="text">
-							<p>{quote}</p>
-						</blockquote>
-						<figcaption>
-							―<span itemprop="citation">{author}</span>
-						</figcaption>
-					</figure>
-				))
-			}
-		</section>
-		<Footer />
-	</body>
-</html>
-
+<h2>Buttons</h2>
+<h3>Etceterans</h3>
+<ul class="btns">
+	<li>
+		<a href="https://jack.cab">
+			<img src={jack} alt="Jack.cab" width="88" height="31" decoding="async" />
+		</a>
+	</li>
+	<li>
+		<a href="https://aagaming.me">
+			<img src={aa} alt="aagaming" width="88" height="31" decoding="async" />
+		</a>
+	</li>
+	<li>
+		<a href="https://charlie.downgraded.uk" title="Charlie">
+			<img src={charlie} alt="Charlie" width="88" height="31" decoding="async" />
+		</a>
+	</li>
+	<li>
+		<a href="https://me.fyle.uk">
+			<img
+				src={split}
+				alt="split"
+				width="88"
+				height="31"
+				decoding="async"
+				style="image-rendering:auto"
+			/>
+		</a>
+	</li>
+	<li>
+		<a href="https://maliciousmeaning.dev/" title="Malice">
+			<img src={malice} alt="Malice" width="120" height="31" decoding="async" />
+		</a>
+	</li>
+	<li>
+		<a href="https://mau.monster" title="mau">
+			<img src={mau} alt="mau" width="88" height="31" decoding="async" />
+		</a>
+	</li>
+	<li>
+		<a href="https://fur.dev" title="Wavi">
+			<img src={wavi} alt="Wavi" width="88" height="31" decoding="async" />
+		</a>
+	</li>
+</ul>
+<h3>Fediverse <a href="https://en.wiktionary.org/wiki/mutual#Noun">mutuals</a></h3>
+<ul class="btns">
+	<li>
+		<a href="https://aei.sh/">
+			<img src={aei} alt="aei's site" width="88" height="31" decoding="async" />
+		</a>
+	</li>
+	<li>
+		<a href="https://beebl.es/">
+			<img src={beebles} alt="Beebles" width="88" height="31" decoding="async" />
+		</a>
+	</li>
+	<li>
+		<a href="https://bee.movie/">
+			<img src={bee} alt="suspiciouslyBee" width="88" height="31" decoding="async" />
+		</a>
+	</li>
+	<li>
+		<a href="https://coolelectronics.me/">
+			<img
+				src={coolelectronics}
+				alt="coolelectronics.me"
+				width="88"
+				height="31"
+				decoding="async"
+			/>
+		</a>
+	</li>
+	<li>
+		<a href="https://freeplay.floof.company/">
+			<img
+				src={freeplay}
+				alt="Freeplay"
+				width="88"
+				height="31"
+				decoding="async"
+				style="image-rendering:auto"
+			/>
+		</a>
+	</li>
+	<li>
+		<a href="https://micro.pages.gay/">
+			<img src={micro} alt="Micro" width="88" height="31" decoding="async" />
+		</a>
+	</li>
+	<li>
+		<a href="https://sneexy.pages.gay/">
+			<img src={sneexy} alt="Sneexy" width="88" height="31" decoding="async" />
+		</a>
+	</li>
+	<li>
+		<a href="https://spacy.neocities.org/">
+			<img src={spacy} alt="spacy" width="88" height="31" decoding="async" />
+		</a>
+	</li>
+	<li>
+		<a href="https://sterophonick.github.io/">
+			<img src={sterophonick} alt="Sterophonick" width="88" height="31" decoding="async" />
+		</a>
+	</li>
+	<li>
+		<a href="https://infisoft.org">
+			<img src={whitespaced} alt="whitespaced" width="88" height="31" decoding="async" />
+		</a>
+	</li>
+	<li>
+		<a href="https://pinkcreeper100.pages.gay">
+			<svg width="88" height="31" aria-label="pinkcreeper100">
+				<rect width="88" height="31" fill="#1e1e2e" stroke="#313244" stroke-width="5"
+				></rect>
+				<image
+					x="57"
+					y="7"
+					width="16"
+					height="16"
+					href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAKlBMVEUYGCUeHi1MT2Noa4Fwcoh5eI6hjZ+tkqLZpKbep6biqaXlqqTltKjlt6nUvBI2AAAAfklEQVQI1y3KoQ3DMBCF4ecRbobbIAEHTkUFHaYsBganjFDcIQINXOkpExRWVUCWqROVfdL/o+SSb+WawRrNm1fM3+VhtA+cXO/BDQ7wCTR4kplJ4kT9g5HkDb/sgK+EWz88OjaI9B++p46ejHKgwV4HlgqdZDTRCTrIqKLDD2RBLP1L65KiAAAAAElFTkSuQmCC"
+					image-rendering="pixelated"
+				/>
+				<text
+					x="14"
+					y="19"
+					font-family="monospace"
+					font-size="12px"
+					font-family="'Fira Code',monospace"
+					fill="#cdd6f4"
+					stroke="#cdd6f4"
+					stroke-linecap="round"
+					stroke-linejoin="round">pc100</text
+				>
+			</svg>
+		</a>
+	</li>
+	<li>
+		<a href="https://toastyfen.neocities.org/">
+			<img src={toastyfen} alt="toastyfen" width="88" height="31" decoding="async" />
+		</a>
+	</li>
+	<li>
+		<a href="https://luna.anarchy.center/">
+			<img src={luna} alt="luna's anarchy center" width="88" height="31" decoding="async" />
+		</a>
+	</li>
+	<li>
+		<a href="https://tuxcrafting.online">
+			<img src={tuxcrafting} alt="tuxcrafting" width="88" height="31" decoding="async" />
+		</a>
+	</li>
+	<li>
+		<a href="https://trypancakes.com">
+			<img src={pancakes} alt="pancakes" width="88" height="31" decoding="async" />
+		</a>
+	</li>
+	<li>
+		<a href="https://ivytastic.lgbt">
+			<img src={ivy} alt="ivytastic" width="88" height="31" decoding="async" />
+		</a>
+	</li>
+	<li>
+		<a href="https://drakonic.zone">
+			<img src={drakonic} alt="DRAKONIC" width="88" height="31" decoding="async" />
+		</a>
+	</li>
+</ul>
+<h3>Other</h3>
+<ul class="btns">
+	<li>
+		<a href="https://gba.ioi-xd.net/">
+			<img
+				src={gba}
+				alt="gba.ioi-xd.net: MOD RADIO"
+				width="88"
+				height="31"
+				decoding="async"
+				style="image-rendering:auto"
+			/>
+		</a>
+	</li>
+	<li>
+		<a href="https://addons.mozilla.org/firefox/addon/sidebery">
+			<img
+				src={sideberry}
+				alt="Use Sideberry, not Arc!"
+				width="88"
+				height="31"
+				decoding="async"
+				style="image-rendering:auto"
+			/>
+		</a>
+	</li>
+	<li>
+		<a href="https://www.gnome.org/">
+			<img src={gnome} alt="GNOME" width="88" height="31" decoding="async" />
+		</a>
+	</li>
+	<li>
+		<a href="https://gradienceteam.github.io/">
+			<img
+				src={please_theme}
+				alt="Please theme our apps"
+				width="120"
+				height="31"
+				decoding="async"
+				style="image-rendering:auto"
+			/>
+		</a>
+	</li>
+	<li>
+		<a href="https://gitlab.freedesktop.org/xorg/xserver/-/issues/1317">
+			<img
+				src={xserver1317}
+				alt="xserver issue 1317: xwayland glamor renders incorrectly on nvidia"
+				width="88"
+				height="31"
+				decoding="async"
+			/>
+		</a>
+	</li>
+</ul>
  -->
+h2#blog -- Blog
+ul
+	for|_, post| in=[{data:{title:"Hello World",pubDate:new Date()},slug:"hello-world"}]
+		li
+			a href=`/${post.slug}/` -- ${post.data.title}
+			-- ${" "}
+			formatted-date=post.data.pubDate style="color:GrayText"
+
+h2#feedback -- Feedback
+form action="https://feedback.5079.workers.dev/" method="post"
+	textarea name="text" placeholder="Feedback" style="resize:vertical;width:100%"
+	input type="submit" value="Send feedback"
+	input type="hidden" name="wave" value="smiley"
+
+h2#reviews -- Reviews
+p -- As you can see, I am the most beloved member of my friend group(s).
+quote="whys jack so obsessed with wave smiley" author="mau, 2023"
+quote="WHAT THE FUCK JACK [...] WHY DOES HE DO THIS" author="Charlie, 2023"
+quote="jack I'm sorry this looks fucking terrible and you should explode" author="aagaming, 2023"
+quote="DECAPITATE. YOUR EXECUTION DATE IS TOMORROW. IM GOING TO YOUR FDUCKING [sic] HOUSE AND PUTTING YOU ON MY GUILLOTINE. I WILL RECREATE THE FRENCH REVOLUTION IN YOUR LIVING ROOOMMM!" author="xzen, 2023"
+quote="[...] all of my ideas i just steal from jack [...]" author="split, 2023"
+quote="the dude [Jack] is an enigma to me" author="accel, 2023"
+quote="SHUT UP JACK" author="malice, 2023"
+quote="Josh Miller is gonna assassinate you" author="Bongo, 2023"
+quote="DELETE THIS TWEET RIGHT NOW OR ELSE I WILL SEND YOUR HOME ADDRESS" author="tacticalmanx75, 2022"
