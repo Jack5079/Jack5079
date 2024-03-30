@@ -42,7 +42,7 @@ button-section="Etceterans"
 			img src="./_buttons/charlie.png" alt="Charlie" decoding="async" style="image-rendering:pixelated" width="88" height="31"
 	li
 		a href="https://me.fyle.uk"
-			img src="./_buttons/split.gif" alt="split" decoding="async" style="image-rendering:pixelated" width="88" height="31"
+			img src="./_buttons/split.gif" alt="split" decoding="async" width="88" height="31"
 	li
 		a href="https://maliciousmeaning.dev/" title="Malice"
 			img src="./_buttons/malice.png" alt="Malice" decoding="async" style="image-rendering:pixelated" width="120" height="31"
@@ -67,7 +67,7 @@ button-section="Fediverse"
 			img src="./_buttons/ce88x31.png" alt="coolelectronics.me" decoding="async" style="image-rendering:pixelated" width="88" height="31"
 	li
 		a href="https://freeplay.floof.company/"
-			img src="./_buttons/freeplay.png" alt="Freeplay" decoding="async" style="image-rendering:pixelated" width="88" height="31"
+			img src="./_buttons/freeplay.png" alt="Freeplay" decoding="async" width="88" height="31"
 	li
 		a href="https://micro.pages.gay/"
 			img src="./_buttons/micro.png" alt="Micro" decoding="async" style="image-rendering:pixelated" width="88" height="31"
@@ -129,13 +129,13 @@ button-section="Other"
 				img src="./_buttons/sherbetbutton.gif" alt="sherbetbutton" decoding="async" style="image-rendering:pixelated" width="88" height="31"
 		li
 			a href="https://addons.mozilla.org/firefox/addon/sidebery"
-				img src="./_buttons/sidebery.png" alt="Use Sidebery, not Arc!" decoding="async" style="image-rendering:pixelated" width="88" height="31"
+				img src="./_buttons/sidebery.png" alt="Use Sidebery, not Arc!" decoding="async" width="88" height="31"
 		li
 			a href="https://www.gnome.org/"
 				img src="./_buttons/gnome.png" alt="GNOME" decoding="async" style="image-rendering:pixelated" width="88" height="31"
 		li
 			a href="https://gradienceteam.github.io/"
-				img src="./_buttons/pleasetheme.png" alt="Please theme our apps" decoding="async" style="image-rendering:pixelated" width="120" height="31"
+				img src="./_buttons/pleasetheme.png" alt="Please theme our apps" decoding="async" width="120" height="31"
 		li
 			a href="https://gitlab.freedesktop.org/xorg/xserver/-/issues/1317"
 				img src="./_buttons/1317.png" alt="xserver issue 1317: xwayland glamor renders incorrectly on nvidia" decoding="async" style="image-rendering:pixelated" width="88" height="31"
@@ -153,6 +153,7 @@ ul
 			a href=`/${post.slug}/` -- ${post.data.title}
 			-- ${" "}
 			formatted-date=(post.data.pubDate) style="color:GrayText"
+
 h2#feedback -- Feedback
 form action="https://feedback.5079.workers.dev/" method="post"
 	textarea [
@@ -162,6 +163,7 @@ form action="https://feedback.5079.workers.dev/" method="post"
 	]
 	input type="submit" value="Send feedback"
 	input type="hidden" name="wave" value="smiley"
+
 h2#reviews -- Reviews
 p -- As you can see, I am the most beloved member of my friend group(s).
 quote="whys jack so obsessed with wave smiley" author="mau, 2023"

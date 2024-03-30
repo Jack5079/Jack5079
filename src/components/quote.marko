@@ -2,15 +2,15 @@ export interface Input {
 	value: string
 	author: string
 }
-
-figure data-nosnippet itemtype="https://schema.org/Quotation" itemscope=""
+figure data-nosnippet itemscope itemtype="https://schema.org/Quotation"
 	blockquote itemprop="text"
 		p -- ${input.value}
 	figcaption
 		-- ―
 		span itemprop="citation" -- ${input.author}
-
-style --
+style
+	--
 	figure {
 		margin-inline: 0;
 	}
+	--

@@ -15,7 +15,7 @@ html lang="en"
 		link [
 			rel="alternate"
 			type="application/activity+json"
-			href=`https://fed.brid.gy/r/${$global.url}`
+			href=`https://fed.brid.gy/r/${new URL($global.url.pathname, "https://jack.cab")}`
 		]
 		<!-- TODO: add sitemap & rss -->
 		meta property="twitter:card" content="summary_large_image"
@@ -30,10 +30,10 @@ html lang="en"
 		meta property="twitter:title" content=title
 		meta property="twitter:description" content=description
 		if(image)
-			meta property="og:image" content=(new URL(image, $global.url).href)
+			meta property="og:image" content=(new URL(image, "https://jack.cab").href)
 			meta [
 				property="twitter:image"
-				content=(new URL(image[0], $global.url).href)
+				content=(new URL(image[0], "https://jack.cab").href)
 			]
 			meta property="og:image:alt" content=image[1]
 			meta property="twitter:image:alt" content=image[1]
