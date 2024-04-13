@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "marko-run",
-    "build": "marko-run build",
+    "build": "marko-run build && ls -la && ls -la dist",
     "preview": "marko-run preview",
     "start": "node --enable-source-maps ./dist/index.mjs"
   },
