@@ -1,0 +1,73 @@
+<!-- <const/posts=import.meta.glob(`../../../posts/*.md`, {
+	query: "?raw",
+	import: "default",
+	eager: true,
+}) />
+
+
+<pre>${posts[`../../../posts/${$global.params.slug}.md`]}</pre> -->
+
+<!-- <const/post=await import(`../../../posts/${$global.params.slug}.md?raw`) />
+
+<pre>${post}</pre> -->
+
+<article class="h-entry">
+	<await(import(`../../../posts/${$global.params.slug}.md`))>
+		<@then|md|>
+			<style>
+				/* Top of the page, then fades out */
+				.u-featured {
+					-webkit-mask-image: linear-gradient(
+						to top,
+						transparent 0%,
+						black 40%
+					);
+					mask-image: linear-gradient(to top, transparent 0%, black 40%);
+					border-radius: 1em 1em 0 0;
+					width: 100%;
+					height: auto;
+				}
+				hgroup {
+					text-align: center;
+				}
+			</style>
+			<hgroup>
+				$ const { image, title, description, pubDate } = md.attributes
+				<if(image)>
+					<!-- <Picture
+						class="u-featured"
+						src={attributes.image[0]}
+						alt={attributes.image[1]}
+						width={657}
+						densities={[0.5, 1.5, 2]}
+					/> -->
+					<!-- TODO: vite-image -->
+					$ import(`../../../posts/${image[0]}?url`).then(console.log)
+					<await(import(`../../../posts/${image[0]}?url`))>
+						<@then|{ default: src }|>
+							<img src=src alt=image[1] width=657 class="u-featured" />
+						</@then>
+					</await>
+				</if>
+				<h1
+					class="p-name"
+					style="font-size:xx-large;margin-bottom:0;text-wrap:balance;width:100%"
+				>
+					$!{title}
+				</h1>
+				<if(description)>
+					<p class="p-summary" style="font-style:italic">$!{description}</p>
+				</if>
+				<a
+					class="u-url"
+					href=($global.url.href)
+					style="display:contents;color:GrayText"
+				>
+					<formatted-date value=new Date(pubDate) />
+				</a>
+			</hgroup>
+			<div class="e-content">$!{md.html}</div>
+		</@then>
+		<@catch|error|><pre>${error}</pre></@catch>
+	</await>
+</article>

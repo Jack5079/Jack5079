@@ -4,6 +4,6 @@
 	"markoSyntax": "concise",
 	"markoAttrParen": true,
 	"plugins": [
-		"prettier-plugin-marko"
+		"prettier-plugin-marko-htmljs"
 	]
 }
