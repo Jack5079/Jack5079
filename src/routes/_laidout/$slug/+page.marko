@@ -42,7 +42,6 @@
 						densities={[0.5, 1.5, 2]}
 					/> -->
 					<!-- TODO: vite-image -->
-					$ import(`../../../posts/${image[0]}?url`).then(console.log)
 					<await(import(`../../../posts/${image[0]}?url`))>
 						<@then|{ default: src }|>
 							<img src=src alt=image[1] width=657 class="u-featured" />
