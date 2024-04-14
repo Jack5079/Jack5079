@@ -406,19 +406,18 @@
 </button-section>
 <h2 id="blog">Blog</h2>
 <ul>
-	<for|_, post|
-		in=[
-			{
-				data: { title: "Hello World", pubDate: new Date() },
-				slug: "hello-world",
-			},
-		]
+	<for|path, { title, pubDate }|
+		in=import.meta.glob("../../posts/*.md", {
+			eager: true,
+			import: "attributes",
+		})
 	>
 		<li>
-			<a href=`/${post.slug}/`>${post.data.title}</a>${" "}
-			<formatted-date=(post.data.pubDate)
-				style="color:GrayText"
-			></formatted-date>
+			<a href=(path.replace("../../posts/", "/").replace(".md", ""))>
+				${title}
+			</a>
+			${" "}
+			<formatted-date=new Date(pubDate) style="color:GrayText" /> 
 		</li>
 	</for>
 </ul>
