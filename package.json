@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "marko-run",
-    "build": "bun run ./patch.js && npx marko-run build",
+    "build": "bun run ./patch.js && npx marko-run build && cp -r ./public/. ./dist",
     "preview": "marko-run preview",
     "start": "node --enable-source-maps ./dist/index.mjs"
   },
