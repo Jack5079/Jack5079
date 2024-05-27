@@ -3,11 +3,9 @@ export interface Input {
 	renderBody: Marko.Body
 }
 
-h3 -- ${input.value}
-ul.btns
-	${input.renderBody}
-
-style --
+<h3>${input.value}</h3>
+<ul class="btns"><${input.renderBody} /></ul>
+<style>
 	.btns {
 		list-style-type: none;
 		padding-inline-start: 0;
@@ -35,3 +33,4 @@ style --
 			height: auto;
 		}
 	}
+</style>

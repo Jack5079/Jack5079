@@ -8,7 +8,7 @@ import {
 	siX,
 } from "simple-icons"
 
-const/socials=[
+<const/socials=[
 	{
 		icon: siDiscord,
 		href: "https://discord.com/users/173589391560802306",
@@ -43,18 +43,39 @@ const/socials=[
 		icon: siNixos,
 		href: "https://github.com/Jack5079/dotfiles",
 		text: "github:Jack5079/dotfiles",
-	}
-]
-
+	},
+]></const>
 <!-- class:list={[!home && "u-author h-card"]} -->
 
-nav
-	a href="/" class="u-url u-uid" rel="author"
-		img src="../favicon.png" alt="" decoding="async" class="u-photo" style="image-rendering:pixelated" height="32" width="32"
-		span.p-name -- ${" "}Jack W.
-	for|_, social| in=socials
-		a href=social.href target="_blank" rel="me" title=`${social.text} on ${social.icon.name}` -- $!{social.icon.svg.replace(`role="img"`, `role="none" width="24" height="24" class="social"`).replace(new RegExp("<title>.*</title>"), "")}
-style --
+<nav>
+	<a href="/" class="u-url u-uid" rel="author">
+		<img
+			src="../favicon.png"
+			alt=""
+			decoding="async"
+			class="u-photo"
+			style="image-rendering:pixelated"
+			height="32"
+			width="32"
+		/> <span class="p-name">Jack W.</span>
+	</a>
+	<for|_, social| in=socials>
+		<a
+			href=social.href
+			target="_blank"
+			rel="me"
+			title=`${social.text} on ${social.icon.title}`
+		>
+			$!{social.icon.svg
+				.replace(
+					`role="img"`,
+					`role="none" width="24" height="24" class="social"`,
+				)
+				.replace(new RegExp("<title>.*</title>"), "")}
+		</a>
+	</for>
+</nav>
+<style>
 	nav {
 		display: flex;
 		flex-direction: row;
@@ -75,3 +96,4 @@ style --
 		height: 1.5em;
 		fill: currentColor;
 	}
+</style>

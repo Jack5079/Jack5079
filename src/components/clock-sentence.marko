@@ -2,13 +2,21 @@ export interface Input {
 	value: string
 }
 
-
-a href=`https:///en.wikipedia.org/wiki/${input.value}` -- Right now
-let/time=new Date().toLocaleString([],{timeZone:input.value,timeStyle:"short"})
-effect () {
-	const interval = setInterval(() => {
-		time = new Date().toLocaleString([],{timeZone:input.value,timeStyle:"short"})
-	}, 1000)
-	return () => clearInterval(interval)
-}
--- , it's ${time}.
+<span>
+	In my <a href=`https:///en.wikipedia.org/wiki/${input.value}`>time zone</a>,
+	it's
+	<let/time=new Date().toLocaleString([], {
+		timeZone: input.value,
+		timeStyle: "short",
+	}) />
+	<effect() {
+		const interval = setInterval(() => {
+			time = new Date().toLocaleString([], {
+				timeZone: input.value,
+				timeStyle: "short",
+			})
+		}, 1000)
+		return () => clearInterval(interval)
+	} />
+	${time}.
+</span>
