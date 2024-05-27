@@ -1,0 +1,36 @@
+export interface Input {
+	value: string
+	renderBody: Marko.Body
+}
+
+<h3>${input.value}</h3>
+<ul class="btns"><${input.renderBody} /></ul>
+<style>
+	.btns {
+		list-style-type: none;
+		padding-inline-start: 0;
+		display: flex;
+		justify-content: space-between;
+		gap: 1ch;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+	.btns li {
+		display: inline-block;
+		margin: 0;
+	}
+	.btns img {
+		display: block;
+		image-rendering: pixelated;
+	}
+	@media (max-width: 560px) {
+		.btns li {
+			display: block;
+			margin-left: 0;
+		}
+		.btns img {
+			max-width: 100%;
+			height: auto;
+		}
+	}
+</style>

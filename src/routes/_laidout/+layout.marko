@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/png" href="../../favicon.png" />
+		<meta name="color-scheme" content="light dark" />
+		<link rel="authorization_endpoint" href="https://indieauth.com/auth" />
+		<link
+			rel="canonical"
+			href=new URL($global.url.pathname, "https://jack.cab").href
+		/>
+		<link
+			rel="alternate"
+			type="application/activity+json"
+			href=`https://fed.brid.gy/r/${new URL($global.url.pathname, "https://jack.cab")}`
+		/>
+		<!-- TODO: add sitemap & rss -->
+		<meta property="twitter:card" content="summary_large_image" />
+		$ const title = $global.meta.title ?? "Jack.cab"
+		$ const description = $global.meta.description ?? ":wavesmiley:"
+		$ const image = $global.meta.image
+		<title>${title}</title>
+		<meta name="description" content=description />
+		<meta property="og:site_name" content="Jack.cab" />
+		<meta property="og:title" content=title />
+		<meta property="og:description" content=description />
+		<meta property="twitter:title" content=title />
+		<meta property="twitter:description" content=description />
+		<if(image)>
+			<meta
+				property="og:image"
+				content=new URL(image, "https://jack.cab").href
+			/>
+			<meta
+				property="twitter:image"
+				content=new URL(image[0], "https://jack.cab").href
+			/>
+			<meta property="og:image:alt" content=image[1] />
+			<meta property="twitter:image:alt" content=image[1] />
+		</if>
+		<style>
+			body {
+				font-family: "Inter Variable", "Inter", sans-serif;
+				margin: auto;
+				padding: 20px;
+				max-width: 65ch;
+				line-height: 1.5;
+			}
+			h1,
+			h2,
+			h3,
+			.u-uid {
+				font-family: "Inter Display", "Inter Variable", "Inter", sans-serif;
+			}
+			code,
+			pre {
+				font-family: monospace, monospace; /* [sic], https://seirdy.one/posts/2020/11/23/website-best-practices#monospace-handling */
+			}
+
+			@media (max-width: 230px) {
+				body {
+					padding: 0;
+				}
+			}
+		</style>
+	</head>
+	<body class=($global.meta.bodyClass)>
+		<jack-header></jack-header>
+		<${input.renderBody}></>
+	</body>
+</html>

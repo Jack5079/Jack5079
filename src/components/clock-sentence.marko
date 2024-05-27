@@ -1,0 +1,23 @@
+export interface Input {
+	value: string
+}
+
+<span>
+	In my <a href=`https:///en.wikipedia.org/wiki/${input.value}`>time zone</a>,
+	it's
+	<let/time="(enable JavaScript for clock)" />
+	<effect() {
+		time = new Date().toLocaleString([], {
+			timeZone: input.value,
+			timeStyle: "short",
+		})
+		const interval = setInterval(() => {
+			time = new Date().toLocaleString([], {
+				timeZone: input.value,
+				timeStyle: "short",
+			})
+		}, 1000)
+		return () => clearInterval(interval)
+	} />
+	${time}.
+</span>

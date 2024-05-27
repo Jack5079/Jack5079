@@ -1,0 +1,23 @@
+export interface Input {
+	value: string
+	author: string
+}
+<figure data-nosnippet itemscope itemtype="https://schema.org/Quotation">
+	<blockquote itemprop="text"><q>${input.value}</q></blockquote>
+	<figcaption>―<span itemprop="citation">${input.author}</span></figcaption>
+</figure>
+<style>
+	figure {
+		margin-inline: 0;
+	}
+	blockquote {
+		display: inline;
+		margin: 0;
+	}
+	q {
+		font-style: italic;
+	}
+	figcaption {
+		color: GrayText;
+	}
+</style>
