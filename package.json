@@ -4,17 +4,18 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "marko-run",
-    "build": "bun run ./patch.ts && marko-run build",
+    "build": "bun run ./patch.ts && npx marko-run build",
     "preview": "marko-run preview",
     "start": "node --enable-source-maps ./dist/index.mjs"
   },
   "dependencies": {
+    "@marko/compiler": "^5.36.1",
     "@marko/run": "^0.4.4",
     "@marko/run-adapter-static": "^0.1.6",
-    "@marko/runtime-tags": "^ 0.1.5",
-    "@marko/translator-interop-class-tags": "^0.1.10",
+    "@marko/runtime-tags": "^0.1.5",
+    "@marko/translator-tags": "^0.1.14",
     "@types/bun": "^1.0.12",
-    "marko": "^5.33.12",
+    "marko": "^5.34.3",
     "prettier-plugin-marko": "^3.1.2",
     "prettier-plugin-marko-htmljs": "^0.0.4",
     "sharp": "^0.33",
