@@ -53,6 +53,7 @@ import { file } from "bun"
 const fyle = file(
 	`${import.meta.dirname}/node_modules/@marko/run-adapter-static/dist/index.js`,
 )
+console.log("Patching @marko/run-adapter-static")
 await Bun.write(
 	fyle,
 	(await fyle.text()).replace(
