@@ -61,3 +61,4 @@ await Bun.write(
 		`htmlparser2/lib/WritableStream.js"`,
 	),
 )
+console.log("Done")
