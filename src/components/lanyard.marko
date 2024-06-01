@@ -1,0 +1,97 @@
+export interface Input {
+	// The Discord user ID to monitor
+	value: string
+}
+
+<let/presence=null />
+
+<if=presence>
+	<h2>Activities</h2>
+	<for|activity| of=(presence?.activities ?? [])>
+		<article>
+			<section class="images">
+				<if=activity.assets>
+					<img
+						src=`https://cdn.discordapp.com/app-assets/${activity.application_id}/${activity.assets.large_image}.png`
+						alt=(activity.assets.large_text)
+						title=(activity.assets.large_text)
+						height=60
+						width=60
+						decoding="async"
+						class="large-image"
+					/>
+					<img
+						src=`https://cdn.discordapp.com/app-assets/${activity.application_id}/${activity.assets.small_image}.png`
+						alt=(activity.assets.small_text)
+						title=(activity.assets.small_text)
+						height=20
+						width=20
+						decoding="async"
+						class="small-image"
+					/>
+				</if>
+				<else>
+					<!-- https://github.com/lucaforever/discordstatus-website/blob/8b1711d9ecc448934ba4ad16e4ad637925dc542f/init.js#L128C43-L128C74 -->
+					<img
+						src=`https://dcdn.dstn.to/app-icons/${activity.application_id}`
+						alt=activity.name
+						title=activity.name
+						height=60
+						width=60
+						decoding="async"
+						class="large-image"
+					/>
+				</else>
+			</section>
+			<section class="details">
+				<h3>${activity.name}</h3>
+				<pre>${activity.details + "\n" + activity.state}</pre>
+			</section>
+		</article>
+	</for>
+</if>
+<style>
+	.large-image {
+		border-radius: 8px;
+	}
+	.small-image {
+		border-radius: 50%;
+		position: absolute;
+		bottom: -4px;
+		right: -4px;
+		border: 3px solid ButtonFace;
+	}
+	section.images {
+		position: relative;
+		width: 60px;
+		height: 60px;
+	}
+	pre {
+		font-size: small;
+		text-transform: uppercase;
+	}
+	article {
+		background: ButtonFace;
+		display: inline-flex;
+		flex-direction: row;
+		gap: 8px;
+		border-radius: 8px;
+		padding: 8px;
+		margin: 8px;
+	}
+	h3 {
+		margin: 0;
+		line-height: 60px;
+	}
+</style>
+<effect() {
+	const res = fetch(`https://api.lanyard.rest/v1/users/${input.value}`).then(
+		(res) => res.json(),
+	)
+
+	res.then((res) => {
+		if (res.data) {
+			presence = res.data
+		}
+	})
+} />
