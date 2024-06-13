@@ -4,11 +4,55 @@ export interface Input {
 }
 
 <let/presence=null />
+<effect() {
+	const res = fetch(`https://api.lanyard.rest/v1/users/${input.value}`).then(
+		(res) => res.json(),
+	)
 
-<if=presence>
+	res.then((res) => {
+		if (res.data) {
+			presence = res.data
+		}
+	})
+} />
+<if=(presence?.activities?.length !== 0)>
 	<h2>Activities</h2>
 	<for|activity| of=(presence?.activities ?? [])>
 		<article>
+			<style>
+				.large-image {
+					border-radius: 8px;
+				}
+				.small-image {
+					border-radius: 50%;
+					position: absolute;
+					bottom: -4px;
+					right: -4px;
+					border: 3px solid ButtonFace;
+				}
+				section.images {
+					position: relative;
+					width: 60px;
+					height: 60px;
+				}
+				pre {
+					font-size: small;
+					text-transform: uppercase;
+				}
+				article {
+					background: ButtonFace;
+					display: inline-flex;
+					flex-direction: row;
+					gap: 8px;
+					border-radius: 8px;
+					padding: 8px;
+					margin: 8px;
+				}
+				h3 {
+					margin: 0;
+					line-height: 60px;
+				}
+			</style>
 			<section class="images">
 				<if=activity.assets>
 					<img
@@ -49,50 +93,4 @@ export interface Input {
 			</section>
 		</article>
 	</for>
-	<if=(presence.activities.length === 0)><p>No activities</p></if>
 </if>
-<style>
-	.large-image {
-		border-radius: 8px;
-	}
-	.small-image {
-		border-radius: 50%;
-		position: absolute;
-		bottom: -4px;
-		right: -4px;
-		border: 3px solid ButtonFace;
-	}
-	section.images {
-		position: relative;
-		width: 60px;
-		height: 60px;
-	}
-	pre {
-		font-size: small;
-		text-transform: uppercase;
-	}
-	article {
-		background: ButtonFace;
-		display: inline-flex;
-		flex-direction: row;
-		gap: 8px;
-		border-radius: 8px;
-		padding: 8px;
-		margin: 8px;
-	}
-	h3 {
-		margin: 0;
-		line-height: 60px;
-	}
-</style>
-<effect() {
-	const res = fetch(`https://api.lanyard.rest/v1/users/${input.value}`).then(
-		(res) => res.json(),
-	)
-
-	res.then((res) => {
-		if (res.data) {
-			presence = res.data
-		}
-	})
-} />
