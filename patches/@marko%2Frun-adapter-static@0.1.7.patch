@@ -1,0 +1,13 @@
+diff --git a/dist/index.js b/dist/index.js
+index c0d7b8f675ac55f938c2e416d09b76f38897dc79..3615e3e4e085dd82cc769febdd29d89633de62fc 100644
+--- a/dist/index.js
++++ b/dist/index.js
+@@ -6,7 +6,7 @@ import { Pool } from "undici";
+ // src/crawler.ts
+ import fs from "fs";
+ import nodePath from "path";
+-import { WritableStream as Parser } from "htmlparser2/lib/WritableStream";
++import { WritableStream as Parser } from "htmlparser2/lib/WritableStream.js";
+ var noop = () => {
+ };
+ var ignoredRels = /* @__PURE__ */ new Set(["nofollow", "enclosure", "external"]);

@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "marko-run",
-    "build": "bun run ./patch.js && npx marko-run build && cp -r ./public/. ./dist",
+    "build": "npx marko-run build && cp -r ./public/. ./dist",
     "preview": "marko-run preview",
     "start": "node --enable-source-maps ./dist/index.mjs"
   },
@@ -26,5 +26,8 @@
   },
   "overrides": {
     "sharp": "^0.33"
+  },
+  "patchedDependencies": {
+    "@marko/run-adapter-static@0.1.7": "patches/@marko%2Frun-adapter-static@0.1.7.patch"
   }
 }
