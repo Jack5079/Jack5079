@@ -21,13 +21,9 @@
     "sharp": "^0.33",
     "simple-icons": "^10.0.0",
     "typescript": "^5.4.3",
-    "vite": "^5.2.7",
-    "vite-plugin-markdown": "^2.2.0"
+    "vite": "^5.2.7"
   },
   "overrides": {
     "sharp": "^0.33"
-  },
-  "patchedDependencies": {
-    "@marko/run-adapter-static@0.1.7": "patches/@marko%2Frun-adapter-static@0.1.7.patch"
   }
 }
