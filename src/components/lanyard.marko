@@ -1,5 +1,5 @@
 export interface Input {
-	// The Discord user ID to monitor
+	/** The Discord user ID to monitor */
 	value: string
 }
 
@@ -15,7 +15,10 @@ export interface Input {
 		}
 	})
 } />
-<if=(presence?.activities?.length !== 0)>
+<if=(
+	presence?.activities?.length !== undefined &&
+		presence?.activities?.length !== 0
+)>
 	<h2>Activities</h2>
 	<for|activity| of=(presence?.activities ?? [])>
 		<article>
