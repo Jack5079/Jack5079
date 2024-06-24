@@ -1,10 +1,12 @@
 export interface Input {
-	value: string
-	author: string
+	renderBody: Marko.Body
+	byline: Marko.Body
 }
 <figure data-nosnippet itemscope itemtype="https://schema.org/Quotation">
-	<blockquote itemprop="text"><q>${input.value}</q></blockquote>
-	<figcaption>―<span itemprop="citation">${input.author}</span></figcaption>
+	<blockquote itemprop="text"><q><${input.renderBody} /></q></blockquote>
+	<figcaption>
+		―<span itemprop="citation"><${input.byline} /></span>
+	</figcaption>
 </figure>
 <style>
 	figure {
