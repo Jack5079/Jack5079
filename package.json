@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "jack.cab",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -9,19 +9,18 @@
     "start": "node --enable-source-maps ./dist/index.mjs"
   },
   "dependencies": {
-    "@marko/compiler": "^5.36.1",
-    "@marko/run": "^0.4.4",
-    "@marko/run-adapter-static": "^0.1.6",
-    "@marko/runtime-tags": "^0.1.6",
-    "@marko/translator-interop-class-tags": "^0.1.14",
-    "@types/bun": "^1.0.12",
-    "marko": "^5.34.3",
-    "prettier-plugin-marko": "^3.1.2",
+    "@marko/compiler": "^5.37.6",
+    "@marko/run": "^0.4.5",
+    "@marko/run-adapter-static": "^0.1.7",
+    "@marko/runtime-tags": "^0.1.9",
+    "@marko/translator-interop-class-tags": "^0.1.21",
+    "@types/bun": "^1.1.8",
+    "marko": "^5.35.10",
     "prettier-plugin-marko-htmljs": "^0.0.4",
-    "sharp": "^0.33",
-    "simple-icons": "^10.0.0",
-    "typescript": "^5.4.3",
-    "vite": "^5.2.7"
+    "sharp": "^0.33.5",
+    "simple-icons": "^10.4.0",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.2"
   },
   "overrides": {
     "sharp": "^0.33"

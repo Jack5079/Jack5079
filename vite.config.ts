@@ -5,5 +5,5 @@ import staticAdapter from "@marko/run-adapter-static"
 export default defineConfig({
 	plugins: [
 		marko({ adapter: staticAdapter() })
-	],
+	]
 })

@@ -1,5 +1,5 @@
 {
-  "[marko]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+	"[marko]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	}
 }
