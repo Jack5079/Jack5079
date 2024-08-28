@@ -9,13 +9,13 @@
     "start": "node --enable-source-maps ./dist/index.mjs"
   },
   "dependencies": {
-    "@marko/compiler": "^5.37.6",
+    "@marko/compiler": "^5.37.7",
     "@marko/run": "^0.4.5",
     "@marko/run-adapter-static": "^0.1.7",
-    "@marko/runtime-tags": "^0.1.9",
-    "@marko/translator-interop-class-tags": "^0.1.21",
+    "@marko/runtime-tags": "^0.1.10",
+    "@marko/translator-interop-class-tags": "^0.1.22",
     "@types/bun": "^1.1.8",
-    "marko": "^5.35.10",
+    "marko": "^5.35.11",
     "prettier-plugin-marko-htmljs": "^0.0.4",
     "sharp": "^0.33.5",
     "simple-icons": "^10.4.0",
