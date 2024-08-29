@@ -428,13 +428,15 @@
 	</for>
 </ul> -->
 <h2 id="feedback">Feedback</h2>
-<p>Wave smiley. Send me a message and I might respond.</p>
+<p>Wave smiley. Send me a message.</p>
 <form action="https://feedback.5079.workers.dev/" method="post">
+	<input type="text" placeholder="Name (optional)" name="author"/>
 	<textarea
 		name="text"
 		placeholder="Feedback"
 		style="resize:vertical;width:100%"
 		maxlength="2000"
+		required
 	></textarea><input type="submit" value="Send feedback" /><input
 		type="hidden"
 		name="wave"
