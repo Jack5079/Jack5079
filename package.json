@@ -16,7 +16,7 @@
     "@marko/runtime-tags": "^0.1.11",
     "@marko/translator-interop-class-tags": "^0.1.23",
     "@types/bun": "^1.1.8",
-    "marko": "^5.35.13",
+    "marko": "^5.35.14",
     "prettier-plugin-marko-htmljs": "^0.0.4",
     "sharp": "^0.33.5",
     "simple-icons": "^10.4.0",
