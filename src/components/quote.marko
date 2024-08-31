@@ -4,7 +4,7 @@ export interface Input {
 	byline: Marko.Body
 }
 // https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag#data-nosnippet-attr only works for span, div, and section
-<div style="display:contents" data-nosnippet role="none">
+<div style="display:contents" data-nosnippet role="none" class="review">
 	<figure itemscope itemtype="https://schema.org/Quotation">
 		<blockquote itemprop="text"><q><${input.renderBody} /></q></blockquote>
 		<figcaption>
@@ -13,17 +13,17 @@ export interface Input {
 	</figure>
 </div>
 <style>
-	figure {
+	.review figure {
 		margin-inline: 0;
 	}
-	blockquote {
+	.review blockquote {
 		display: inline;
 		margin: 0;
 	}
-	q {
+	.review q {
 		font-style: italic;
 	}
-	figcaption {
+	.review figcaption {
 		color: GrayText;
 	}
 </style>

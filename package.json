@@ -9,6 +9,7 @@
     "start": "node --enable-source-maps ./dist/index.mjs"
   },
   "dependencies": {
+    "@fontsource/dancing-script": "^5.0.19",
     "@marko/compiler": "^5.37.9",
     "@marko/run": "^0.4.5",
     "@marko/run-adapter-static": "^0.1.7",
