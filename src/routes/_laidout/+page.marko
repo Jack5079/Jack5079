@@ -66,6 +66,22 @@
 	</quote>
 </columns>
 
+<h2 id="feedback">Feedback</h2>
+<p>Wave smiley. Send me a message.</p>
+<form action="https://feedback.5079.workers.dev/" method="post">
+	<input type="text" placeholder="Name (optional)" name="author" maxlength=64 />
+	<textarea
+		name="text"
+		placeholder="Feedback"
+		style="resize:vertical;width:100%"
+		maxlength=2000
+		required
+	></textarea><input type="submit" value="Send feedback" /><input
+		type="hidden"
+		name="wave"
+		value="smiley"
+	/>
+</form>
 <link href="acct:j@jack.cab" class="u-url" />
 
 <h2 id="buttons">Buttons</h2>
@@ -436,19 +452,3 @@
 		</li>
 	</for>
 </ul> -->
-<h2 id="feedback">Feedback</h2>
-<p>Wave smiley. Send me a message.</p>
-<form action="https://feedback.5079.workers.dev/" method="post">
-	<input type="text" placeholder="Name (optional)" name="author" maxlength=64 />
-	<textarea
-		name="text"
-		placeholder="Feedback"
-		style="resize:vertical;width:100%"
-		maxlength=2000
-		required
-	></textarea><input type="submit" value="Send feedback" /><input
-		type="hidden"
-		name="wave"
-		value="smiley"
-	/>
-</form>
