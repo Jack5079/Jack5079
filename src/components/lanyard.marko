@@ -3,7 +3,7 @@ export interface Input {
 	value: string
 	renderBody?: Marko.Body<{}>
 }
-<let/presence=null />
+<let/presence />
 <effect() {
 	const websocket = new WebSocket("wss://api.lanyard.rest/socket")
 	let heartbeat: [heartbeat?: ReturnType<typeof setInterval>] = [undefined]
