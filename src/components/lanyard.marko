@@ -5,15 +5,40 @@ export interface Input {
 }
 <let/presence=null />
 <effect() {
-	const res = fetch(`https://api.lanyard.rest/v1/users/${input.value}`).then(
-		(res) => res.json(),
-	)
-
-	res.then((res) => {
-		if (res.data) {
-			presence = res.data
+	const websocket = new WebSocket("wss://api.lanyard.rest/socket")
+	let heartbeat: [heartbeat?: ReturnType<typeof setInterval>] = [undefined]
+	// Marko's compiler will move the following function outside of this <effect>. This is a bug which means we can't use heartbeat in the function.
+	// For now set a global variable to fix this.
+	globalThis.heartbeat = heartbeat
+	websocket.onmessage = function (event) {
+		const packet = JSON.parse(event.data)
+		if (packet.op === 1) {
+			if (heartbeat[0]) clearInterval(heartbeat[0])
+			// The previously mentioned bug also applies to `websocket`. Let's use `this` instead.
+			heartbeat[0] = setInterval(
+				() => this.send('{"op":3}'),
+				packet?.d?.heartbeat_interval ?? 30000,
+			)
+			this.send(
+				JSON.stringify({
+					op: 2,
+					d: {
+						subscribe_to_ids: [input.value],
+					},
+				}),
+			)
+		} else if (packet.op === 0) {
+			if (packet.t === "INIT_STATE") {
+				presence = packet.d[input.value]
+			} else if (packet.t === "PRESENCE_UPDATE") {
+				presence = packet.d
+			}
 		}
-	})
+	}
+	return () => {
+		websocket.close()
+		clearInterval(heartbeat)
+	}
 } />
 
 <if=presence><${input.renderBody} ...presence /></if>
