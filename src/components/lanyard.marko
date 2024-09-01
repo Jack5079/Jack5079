@@ -7,25 +7,19 @@ export interface Input {
 <effect() {
 	const websocket = new WebSocket("wss://api.lanyard.rest/socket")
 	let heartbeat: [heartbeat?: ReturnType<typeof setInterval>] = [undefined]
-	// Marko's compiler will move the following function outside of this <effect>. This is a bug which means we can't use heartbeat in the function.
-	// For now set a global variable to fix this.
+	// Marko's compiler will move the following function outside of this <effect>. This is a bug and it means we can't use `heartbeat` or `websocket` in the function.
+	// As a workaround we'll set `heartbeat` as a global variable and use `this` for `websocket`.
 	globalThis.heartbeat = heartbeat
 	websocket.onmessage = function (event) {
 		const packet = JSON.parse(event.data)
 		if (packet.op === 1) {
 			if (heartbeat[0]) clearInterval(heartbeat[0])
-			// The previously mentioned bug also applies to `websocket`. Let's use `this` instead.
 			heartbeat[0] = setInterval(
 				() => this.send('{"op":3}'),
 				packet?.d?.heartbeat_interval ?? 30000,
 			)
 			this.send(
-				JSON.stringify({
-					op: 2,
-					d: {
-						subscribe_to_ids: [input.value],
-					},
-				}),
+				`{"op":2,"d":{"subscribe_to_ids":[${JSON.stringify(input.value)}]}}`,
 			)
 		} else if (packet.op === 0) {
 			if (packet.t === "INIT_STATE") {
@@ -35,9 +29,10 @@ export interface Input {
 			}
 		}
 	}
+	// Thankfully, this function is not moved outside of the <effect>
 	return () => {
 		websocket.close()
-		clearInterval(heartbeat)
+		clearInterval(heartbeat[0])
 	}
 } />
 
