@@ -4,8 +4,8 @@ import beach from "./beach.webp?url"
 <section id="philosophy" role="none">
 	<h2>Philosophy</h2>
 	<figure style=`background:#000 url(${beach})center/cover;color:#fff`>
-		<let/quote="Click the button to begin." />
-		<blockquote>${quote}</blockquote>
+		<let/quote />
+		<blockquote>${quote ?? "Click the button to begin."}</blockquote>
 		<figcaption>―Jack Wavesmiley</figcaption>
 		<button
 			onClick() {
@@ -26,7 +26,7 @@ import beach from "./beach.webp?url"
 						"trollsmile is now scanning you. These DMs.... property of trollsmile....",
 						"Etcetera has therefore decided that your startup should be destroyed",
 						"Step 5: Toot. Step 6: Motion",
-						"@Sales Convince this user"
+						"@Sales Convince this user",
 					].filter((q) => q !== quote),
 				)
 			}
