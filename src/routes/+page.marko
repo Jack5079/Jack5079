@@ -1,4 +1,8 @@
-<p class="p-note">
+import beach from "../components/beach.webp?url"
+
+<link href="acct:j@jack.cab" class="u-url" />
+
+<p class="p-note" style="text-align:center">
 	Developer since 2016,
 	<a href="https://cetera.uk">
 		<svg
@@ -17,402 +21,438 @@
 		etc.
 	</a> <abbr title="established">est.</abbr> 2020.
 </p>
-<p>
-	My pronouns are
-	<span style="white-space:pre"><span>he</span>/<span>him</span></span>.
-	<clock-sentence="US/Eastern" />
-</p>
-<section>
-	<a href="https://webring.zip/prev/jack.cab">←</a>
-	·
-	<a href="https://webring.zip">webring.zip</a>
-	·
-	<a href="https://webring.zip/next/jack.cab">→</a>
-</section>
+
+<bento=(
+	`
+	"clock pronouns philosophy"
+	"reviews reviews philosophy"
+	"reviews reviews feedback"
+	"webrings webrings webrings"
+	"etceterans mutuals mutuals"
+	"others mutuals mutuals"
+`
+)>
+	<@clock><clock="US/Eastern" /></@clock>
+	<@pronouns style="text-align:center">
+		<legend role="heading" aria-level="2">Pronouns</legend>
+		<span style="white-space:pre;font-weight:1000;font-size:x-large">
+			<span>he</span>/<span>him</span>
+		</span>
+	</@pronouns>
+	<@philosophy style=`background:#000 url(${beach})center/cover;color:#fff;`>
+		<philosophy-section />
+	</@philosophy>
+	<@reviews>
+		<legend role="heading" aria-level="2">Quotes</legend>
+		<quote>
+			Is writing <a href="https://markojs.com/v6/">Marko</a> like edging for you
+			<@byline>
+				split, of
+				<a href="https://wetdry.world/@j/112164857178980569">
+					'MY INSTANCE CANT FUCKING FEDERATE'
+				</a>
+				fame, August 2024
+			</@byline>
+		</quote>
+		<quote>
+			JACK IT'S THE GLOWIES [...] THIS WAS CAUSED BY BIG BRAINWAVE, BIG NEURO IS
+			GETTING TO THE DRIVE
+			<@byline>
+				tacticalmanx75, controlling Roblox servers with his mind, August 2024
+			</@byline>
+		</quote>
+		<quote>
+			jack im not american
+			<@byline>
+				Malice,
+				<a href="https://discord.com/application-directory/1067543931518205973">
+					Solvalou
+				</a>
+				mastermind, February 2024
+			</@byline>
+		</quote>
+		<quote>
+			i will kil lyou [sic] and send you over 30 bibles 👍 i will bible your ass
+			<@byline>Auxnos, animator of "Snake Banisher v4", June 2023</@byline>
+		</quote>
+	</@reviews>
+	<@feedback>
+		<legend role="heading" aria-level="2">Feedback</legend>
+		<form action="https://feedback.5079.workers.dev/" method="post">
+			<input
+				type="text"
+				placeholder="Name (optional)"
+				name="author"
+				maxlength=64
+			/>
+			<textarea
+				name="text"
+				placeholder="Feedback"
+				style="resize:vertical;width:100%"
+				maxlength=2000
+				required
+			></textarea><input type="submit" value="Send feedback" /><input
+				type="hidden"
+				name="wave"
+				value="smiley"
+			/>
+		</form>
+	</@feedback>
+	<@webrings>
+		<legend role="heading" aria-level="2">Webrings</legend>
+		<section>
+			<a href="https://webring.zip/prev/jack.cab">←</a>
+			·
+			<a href="https://webring.zip">webring.zip</a>
+			·
+			<a href="https://webring.zip/next/jack.cab">→</a>
+		</section>
+	</@webrings>
+	<@etceterans>
+		<button-section="Etceterans">
+			<li>
+				<a href="https://jack.cab">
+					<img
+						src="./_buttons/jack.png"
+						alt="Jack.cab"
+						decoding="async"
+						width="88"
+						height="31"
+					/>
+				</a>
+			</li>
+			<li>
+				<a href="https://split.pet">
+					<img
+						src="./_buttons/split.png"
+						alt="split"
+						decoding="async"
+						width="88"
+						height="31"
+					/>
+				</a>
+			</li>
+			<li>
+				<a href="https://maliciousmeaning.dev/" title="Malice">
+					<img
+						src="./_buttons/malice.png"
+						alt="Malice"
+						decoding="async"
+						width="120"
+						height="31"
+					/>
+				</a>
+			</li>
+			<li>
+				<a href="https://mau.monster" title="mau">
+					<img
+						src="./_buttons/mau.png"
+						alt="mau"
+						decoding="async"
+						width="88"
+						height="31"
+					/>
+				</a>
+			</li>
+		</button-section>
+	</@etceterans>
+	<@mutuals>
+		<button-section="Mutuals">
+			<li>
+				<a href="https://aei.sh/">
+					<img
+						src="./_buttons/aei.gif"
+						alt="aei's site"
+						decoding="async"
+						width="88"
+						height="31"
+					/>
+				</a>
+			</li>
+			<li>
+				<a href="https://beebl.es/">
+					<img
+						src="./_buttons/beebles.png"
+						alt="Beebles"
+						decoding="async"
+						width="88"
+						height="31"
+					/>
+				</a>
+			</li>
+			<li>
+				<a href="https://bee.movie/">
+					<img
+						src="./_buttons/beebadge.png"
+						alt="suspiciouslyBee"
+						decoding="async"
+						width="88"
+						height="31"
+					/>
+				</a>
+			</li>
+			<li>
+				<a href="https://thememesniper.dev/">
+					<img
+						src="./_buttons/katlin.png"
+						alt="k8's corner"
+						decoding="async"
+						width="88"
+						height="31"
+					/>
+				</a>
+			</li>
+			<li>
+				<a href="https://velzie.rip">
+					<img
+						src="./_buttons/ce88x31.png"
+						alt="velzie"
+						decoding="async"
+						width="88"
+						height="31"
+					/>
+				</a>
+			</li>
+			<li>
+				<a href="https://freeplay.floof.company/">
+					<img
+						src="./_buttons/freeplay.png"
+						alt="Freeplay"
+						decoding="async"
+						width="88"
+						height="31"
+					/>
+				</a>
+			</li>
+			<li>
+				<a href="https://micro.pages.gay/">
+					<img
+						src="./_buttons/micro.png"
+						alt="Micro"
+						decoding="async"
+						width="88"
+						height="31"
+					/>
+				</a>
+			</li>
+			<li>
+				<a href="https://sneexy.pages.gay/">
+					<img
+						src="./_buttons/sneexy.png"
+						alt="Sneexy"
+						decoding="async"
+						width="88"
+						height="31"
+					/>
+				</a>
+			</li>
+			<li>
+				<a href="https://spacy.neocities.org/">
+					<img
+						src="./_buttons/ssm230.png"
+						alt="spacy"
+						decoding="async"
+						width="88"
+						height="31"
+					/>
+				</a>
+			</li>
+			<li>
+				<a href="https://sterophonick.github.io/">
+					<img
+						src="./_buttons/sterophonick.gif"
+						alt="Sterophonick"
+						decoding="async"
+						width="88"
+						height="31"
+					/>
+				</a>
+			</li>
+			<li>
+				<a href="https://infisoft.org">
+					<img
+						src="./_buttons/whitespaced.gif"
+						alt="whitespaced"
+						decoding="async"
+						width="88"
+						height="31"
+					/>
+				</a>
+			</li>
+			<li>
+				<a href="https://pinkcreeper100.pages.gay">
+					<svg width="88" height="31" aria-label="pinkcreeper100">
+						<rect
+							width="88"
+							height="31"
+							fill="#1e1e2e"
+							stroke="#313244"
+							stroke-width="5"
+						></rect>
+						<image
+							x="57"
+							y="7"
+							width="16"
+							height="16"
+							href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAKlBMVEUYGCUeHi1MT2Noa4Fwcoh5eI6hjZ+tkqLZpKbep6biqaXlqqTltKjlt6nUvBI2AAAAfklEQVQI1y3KoQ3DMBCF4ecRbobbIAEHTkUFHaYsBganjFDcIQINXOkpExRWVUCWqROVfdL/o+SSb+WawRrNm1fM3+VhtA+cXO/BDQ7wCTR4kplJ4kT9g5HkDb/sgK+EWz88OjaI9B++p46ejHKgwV4HlgqdZDTRCTrIqKLDD2RBLP1L65KiAAAAAElFTkSuQmCC"
+							image-rendering="pixelated"
+						></image>
+						<text
+							x="14"
+							y="19"
+							font-size="12px"
+							font-family="'Fira Code',monospace"
+							fill="#cdd6f4"
+							stroke="#cdd6f4"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						>
+							pc100
+						</text>
+					</svg>
+				</a>
+			</li>
+			<li>
+				<a href="https://toastyfen.neocities.org/">
+					<img
+						src="./_buttons/toastyfen.gif"
+						alt="toastyfen"
+						decoding="async"
+						width="88"
+						height="31"
+					/>
+				</a>
+			</li>
+			<li>
+				<a href="https://luna.anarchy.center/">
+					<img
+						src="./_buttons/luna.png"
+						alt="luna's anarchy center"
+						decoding="async"
+						width="88"
+						height="31"
+					/>
+				</a>
+			</li>
+			<li>
+				<a href="https://tuxcrafting.online">
+					<img
+						src="./_buttons/tctek.png"
+						alt="tuxcrafting"
+						decoding="async"
+						width="88"
+						height="31"
+					/>
+				</a>
+			</li>
+			<li>
+				<a href="https://trypancakes.com">
+					<img
+						src="./_buttons/pancakes.png"
+						alt="pancakes"
+						decoding="async"
+						width="88"
+						height="31"
+					/>
+				</a>
+			</li>
+			<li>
+				<a href="https://drakonic.zone">
+					<img
+						src="./_buttons/drakonic.gif"
+						alt="DRAKONIC"
+						decoding="async"
+						width="88"
+						height="31"
+					/>
+				</a>
+			</li>
+			<li>
+				<a href="https://moondvsted.neocities.org">
+					<img
+						src="./_buttons/moondvsted.gif"
+						alt="moondvsted"
+						decoding="async"
+						width="88"
+						height="31"
+					/>
+				</a>
+			</li>
+		</button-section>
+	</@mutuals>
+	<@others>
+		<button-section="Other">
+			<li>
+				<a href="https://gba.ioi-xd.net/">
+					<img
+						src="./_buttons/sherbetbutton.gif"
+						alt="sherbetbutton"
+						decoding="async"
+						width="88"
+						height="31"
+					/>
+				</a>
+			</li>
+			<li>
+				<a href="https://simonwillison.net/tags/llms/">
+					<img
+						src="./_buttons/feedtheai.gif"
+						alt="DO feed the AI!"
+						decoding="async"
+						width="88"
+						height="31"
+					/>
+				</a>
+			</li>
+			<li>
+				<a href="https://github.com/mollersuite/etcet">
+					<img
+						src="./_buttons/etcet.png"
+						alt="ETCET"
+						decoding="async"
+						width="88"
+						height="31"
+					/>
+				</a>
+			</li>
+			<li>
+				<a href="https://music.youtube.com/watch?v=b5sXonDoX_I">
+					<img
+						src="./_buttons/allred.png"
+						alt="ALL RED"
+						decoding="async"
+						width="88"
+						height="31"
+					/>
+				</a>
+			</li>
+			<li>
+				<a href="https://gradienceteam.github.io/">
+					<img
+						src="./_buttons/pleasetheme.png"
+						alt="Please theme our apps"
+						decoding="async"
+						width="120"
+						height="31"
+					/>
+				</a>
+			</li>
+		</button-section>
+	</@others>
+</bento>
 
 <activities-section />
-<h2 id="reviews">Quotes</h2>
-<columns=2>
-	<quote>
-		Is writing <a href="https://markojs.com/v6/">Marko</a> like edging for you
-		<@byline>
-			split, of
-			<a href="https://wetdry.world/@j/112164857178980569">
-				'MY INSTANCE CANT FUCKING FEDERATE'
-			</a>
-			fame, August 2024
-		</@byline>
-	</quote>
-	<quote>
-		JACK IT'S THE GLOWIES [...] THIS WAS CAUSED BY BIG BRAINWAVE, BIG NEURO IS
-		GETTING TO THE DRIVE
-		<@byline>
-			tacticalmanx75, controlling Roblox servers with his mind, August 2024
-		</@byline>
-	</quote>
-	<quote>
-		jack im not american
-		<@byline>
-			Malice,
-			<a href="https://discord.com/application-directory/1067543931518205973">
-				Solvalou
-			</a>
-			mastermind, February 2024
-		</@byline>
-	</quote>
-	<quote>
-		i will kil lyou [sic] and send you over 30 bibles 👍 i will bible your ass
-		<@byline>Auxnos, animator of "Snake Banisher v4", June 2023</@byline>
-	</quote>
-</columns>
 
-<h2 id="feedback">Feedback</h2>
-<p>Wave smiley. Send me a message.</p>
-<form action="https://feedback.5079.workers.dev/" method="post">
-	<input type="text" placeholder="Name (optional)" name="author" maxlength=64 />
-	<textarea
-		name="text"
-		placeholder="Feedback"
-		style="resize:vertical;width:100%"
-		maxlength=2000
-		required
-	></textarea><input type="submit" value="Send feedback" /><input
-		type="hidden"
-		name="wave"
-		value="smiley"
-	/>
-</form>
-<link href="acct:j@jack.cab" class="u-url" />
-
-<philosophy-section />
-<h2 id="buttons">Buttons</h2>
-
-<button-section="Etceterans">
-	<li>
-		<a href="https://jack.cab">
-			<img
-				src="./_buttons/jack.png"
-				alt="Jack.cab"
-				decoding="async"
-				width="88"
-				height="31"
-			/>
-		</a>
-	</li>
-	<li>
-		<a href="https://split.pet">
-			<img
-				src="./_buttons/split.png"
-				alt="split"
-				decoding="async"
-				width="88"
-				height="31"
-			/>
-		</a>
-	</li>
-	<li>
-		<a href="https://maliciousmeaning.dev/" title="Malice">
-			<img
-				src="./_buttons/malice.png"
-				alt="Malice"
-				decoding="async"
-				width="120"
-				height="31"
-			/>
-		</a>
-	</li>
-	<li>
-		<a href="https://mau.monster" title="mau">
-			<img
-				src="./_buttons/mau.png"
-				alt="mau"
-				decoding="async"
-				width="88"
-				height="31"
-			/>
-		</a>
-	</li>
-</button-section>
-<button-section="Mutuals">
-	<li>
-		<a href="https://aei.sh/">
-			<img
-				src="./_buttons/aei.gif"
-				alt="aei's site"
-				decoding="async"
-				width="88"
-				height="31"
-			/>
-		</a>
-	</li>
-	<li>
-		<a href="https://beebl.es/">
-			<img
-				src="./_buttons/beebles.png"
-				alt="Beebles"
-				decoding="async"
-				width="88"
-				height="31"
-			/>
-		</a>
-	</li>
-	<li>
-		<a href="https://bee.movie/">
-			<img
-				src="./_buttons/beebadge.png"
-				alt="suspiciouslyBee"
-				decoding="async"
-				width="88"
-				height="31"
-			/>
-		</a>
-	</li>
-	<li>
-		<a href="https://thememesniper.dev/">
-			<img
-				src="./_buttons/katlin.png"
-				alt="k8's corner"
-				decoding="async"
-				width="88"
-				height="31"
-			/>
-		</a>
-	</li>
-	<li>
-		<a href="https://velzie.rip">
-			<img
-				src="./_buttons/ce88x31.png"
-				alt="velzie"
-				decoding="async"
-				width="88"
-				height="31"
-			/>
-		</a>
-	</li>
-	<li>
-		<a href="https://freeplay.floof.company/">
-			<img
-				src="./_buttons/freeplay.png"
-				alt="Freeplay"
-				decoding="async"
-				width="88"
-				height="31"
-			/>
-		</a>
-	</li>
-	<li>
-		<a href="https://micro.pages.gay/">
-			<img
-				src="./_buttons/micro.png"
-				alt="Micro"
-				decoding="async"
-				width="88"
-				height="31"
-			/>
-		</a>
-	</li>
-	<li>
-		<a href="https://sneexy.pages.gay/">
-			<img
-				src="./_buttons/sneexy.png"
-				alt="Sneexy"
-				decoding="async"
-				width="88"
-				height="31"
-			/>
-		</a>
-	</li>
-	<li>
-		<a href="https://spacy.neocities.org/">
-			<img
-				src="./_buttons/ssm230.png"
-				alt="spacy"
-				decoding="async"
-				width="88"
-				height="31"
-			/>
-		</a>
-	</li>
-	<li>
-		<a href="https://sterophonick.github.io/">
-			<img
-				src="./_buttons/sterophonick.gif"
-				alt="Sterophonick"
-				decoding="async"
-				width="88"
-				height="31"
-			/>
-		</a>
-	</li>
-	<li>
-		<a href="https://infisoft.org">
-			<img
-				src="./_buttons/whitespaced.gif"
-				alt="whitespaced"
-				decoding="async"
-				width="88"
-				height="31"
-			/>
-		</a>
-	</li>
-	<li>
-		<a href="https://pinkcreeper100.pages.gay">
-			<svg width="88" height="31" aria-label="pinkcreeper100">
-				<rect
-					width="88"
-					height="31"
-					fill="#1e1e2e"
-					stroke="#313244"
-					stroke-width="5"
-				></rect>
-				<image
-					x="57"
-					y="7"
-					width="16"
-					height="16"
-					href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAKlBMVEUYGCUeHi1MT2Noa4Fwcoh5eI6hjZ+tkqLZpKbep6biqaXlqqTltKjlt6nUvBI2AAAAfklEQVQI1y3KoQ3DMBCF4ecRbobbIAEHTkUFHaYsBganjFDcIQINXOkpExRWVUCWqROVfdL/o+SSb+WawRrNm1fM3+VhtA+cXO/BDQ7wCTR4kplJ4kT9g5HkDb/sgK+EWz88OjaI9B++p46ejHKgwV4HlgqdZDTRCTrIqKLDD2RBLP1L65KiAAAAAElFTkSuQmCC"
-					image-rendering="pixelated"
-				></image>
-				<text
-					x="14"
-					y="19"
-					font-size="12px"
-					font-family="'Fira Code',monospace"
-					fill="#cdd6f4"
-					stroke="#cdd6f4"
-					stroke-linecap="round"
-					stroke-linejoin="round"
-				>
-					pc100
-				</text>
-			</svg>
-		</a>
-	</li>
-	<li>
-		<a href="https://toastyfen.neocities.org/">
-			<img
-				src="./_buttons/toastyfen.gif"
-				alt="toastyfen"
-				decoding="async"
-				width="88"
-				height="31"
-			/>
-		</a>
-	</li>
-	<li>
-		<a href="https://luna.anarchy.center/">
-			<img
-				src="./_buttons/luna.png"
-				alt="luna's anarchy center"
-				decoding="async"
-				width="88"
-				height="31"
-			/>
-		</a>
-	</li>
-	<li>
-		<a href="https://tuxcrafting.online">
-			<img
-				src="./_buttons/tctek.png"
-				alt="tuxcrafting"
-				decoding="async"
-				width="88"
-				height="31"
-			/>
-		</a>
-	</li>
-	<li>
-		<a href="https://trypancakes.com">
-			<img
-				src="./_buttons/pancakes.png"
-				alt="pancakes"
-				decoding="async"
-				width="88"
-				height="31"
-			/>
-		</a>
-	</li>
-	<li>
-		<a href="https://drakonic.zone">
-			<img
-				src="./_buttons/drakonic.gif"
-				alt="DRAKONIC"
-				decoding="async"
-				width="88"
-				height="31"
-			/>
-		</a>
-	</li>
-	<li>
-		<a href="https://moondvsted.neocities.org">
-			<img
-				src="./_buttons/moondvsted.gif"
-				alt="moondvsted"
-				decoding="async"
-				width="88"
-				height="31"
-			/>
-		</a>
-	</li>
-</button-section>
-<button-section="Other">
-	<li>
-		<a href="https://gba.ioi-xd.net/">
-			<img
-				src="./_buttons/sherbetbutton.gif"
-				alt="sherbetbutton"
-				decoding="async"
-				width="88"
-				height="31"
-			/>
-		</a>
-	</li>
-	<li>
-		<a href="https://simonwillison.net/tags/llms/">
-			<img
-				src="./_buttons/feedtheai.gif"
-				alt="DO feed the AI!"
-				decoding="async"
-				width="88"
-				height="31"
-			/>
-		</a>
-	</li>
-	<li>
-		<a href="https://github.com/mollersuite/etcet">
-			<img
-				src="./_buttons/etcet.png"
-				alt="ETCET"
-				decoding="async"
-				width="88"
-				height="31"
-			/>
-		</a>
-	</li>
-	<li>
-		<a href="https://music.youtube.com/watch?v=b5sXonDoX_I">
-			<img
-				src="./_buttons/allred.png"
-				alt="ALL RED"
-				decoding="async"
-				width="88"
-				height="31"
-			/>
-		</a>
-	</li>
-	<li>
-		<a href="https://gradienceteam.github.io/">
-			<img
-				src="./_buttons/pleasetheme.png"
-				alt="Please theme our apps"
-				decoding="async"
-				width="120"
-				height="31"
-			/>
-		</a>
-	</li>
-</button-section>
-
+<style>
+	fieldset {
+		border-color: CanvasText;
+		border-radius: 1ch;
+		border-style: solid;
+	}
+	fieldset:target {
+		border-color: Highlight;
+	}
+</style>
 <!-- <h2 id="blog">Blog</h2>
 <ul>
 	<for|path, { title, pubDate }|

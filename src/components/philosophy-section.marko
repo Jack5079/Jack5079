@@ -1,47 +1,60 @@
 import "@fontsource/dancing-script/latin-400.css"
-import beach from "./beach.webp?url"
+// import beach from "./beach.webp?url"
 
-<section id="philosophy" role="none">
-	<h2>Philosophy</h2>
-	<figure style=`background:#000 url(${beach})center/cover;color:#fff`>
-		<let/quote />
-		<blockquote>${quote ?? "Click the button to begin."}</blockquote>
-		<figcaption>―Jack Wavesmiley</figcaption>
-		<button
-			onClick() {
-				const random = <Type,>(arr: readonly Type[]): Type =>
-					arr[Math.floor(Math.random() * arr.length)]
+<!-- <fieldset
+id="philosophy"
+style=`background:#000 url(${beach})center/cover;color:#fff;`
+role="none"
+> -->
+<let/quote />
+<legend role="none">
+	<span role="heading" aria-level="2">Philosophy</span>
+	${" "}
+	<button
+		onClick() {
+			const random = <Type,>(arr: readonly Type[]): Type =>
+				arr[Math.floor(Math.random() * arr.length)]
 
-				quote = random(
-					[
-						"Have anyone hating on Electron try to make an HTTP server responding with a stream in actix-web and they'll be worshipping Brendan Eich in no time",
-						"When I write a GTK app, I shouldn't be manually updating properties like a Roblox script",
-						"I don't wanna use anything made by people who know what Homestuck is",
-						"Telemetry can be good, that's why I have all of it enabled on Firefox",
-						"Linux users complain about software that runs slow, but not software that makes YOU slow",
-						"I need to add Marko, I need to add Marko so bad",
-						"Every day I feel more and more like a techbro",
-						"Who is Mike and why is he in my feedback form",
-						"Josh is like the DJ Khaled of Arc",
-						"trollsmile is now scanning you. These DMs.... property of trollsmile....",
-						"Etcetera has therefore decided that your startup should be destroyed",
-						"Step 5: Toot. Step 6: Motion",
-						"@Sales Convince this user",
-						"This is why you should never trust people who do their shit lowercase",
-					].filter((q) => q !== quote),
-				)
-			}
-		>
-			Random quote
-		</button>
-	</figure>
-</section>
+			quote = random(
+				[
+					"Have anyone hating on Electron try to make an HTTP server responding with a stream in actix-web and they'll be worshipping Brendan Eich in no time",
+					"When I write a GTK app, I shouldn't be manually updating properties like a Roblox script",
+					"I don't wanna use anything made by people who know what Homestuck is",
+					"Telemetry can be good, that's why I have all of it enabled on Firefox",
+					"Linux users complain about software that runs slow, but not software that makes YOU slow",
+					"I need to add Marko, I need to add Marko so bad",
+					"Every day I feel more and more like a techbro",
+					"Who is Mike and why is he in my feedback form",
+					"Josh is like the DJ Khaled of Arc",
+					"trollsmile is now scanning you. These DMs.... property of trollsmile....",
+					"Etcetera has therefore decided that your startup should be destroyed",
+					"Step 5: Toot. Step 6: Motion",
+					"@Sales Convince this user",
+					"This is why you should never trust people who do their shit lowercase",
+				].filter((q) => q !== quote),
+			)
+		}
+	>
+		🎲 Another quote
+	</button>
+</legend>
+<figure>
+	<blockquote>${quote ?? "Click the 🎲 to begin."}</blockquote>
+	<figcaption>―Jack Wavesmiley</figcaption>
+</figure>
+<!-- </fieldset> -->
+
 <style>
+	@media (prefers-color-scheme: light) {
+		#philosophy legend span {
+			background: Canvas;
+			color: CanvasText;
+		}
+	}
 	#philosophy figure {
 		font-family: "Dancing Script", cursive;
 		margin: 0;
 		padding: 2em;
-		border-radius: 1em;
 	}
 	#philosophy blockquote {
 		text-align: center;
@@ -51,9 +64,5 @@ import beach from "./beach.webp?url"
 	}
 	#philosophy figcaption {
 		text-align: right;
-	}
-	#philosophy button {
-		margin-inline: auto;
-		display: block;
 	}
 </style>

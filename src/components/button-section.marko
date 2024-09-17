@@ -4,7 +4,7 @@ export interface Input {
 	renderBody: Marko.Body
 }
 
-<h3>${input.value}</h3>
+<legend role="heading" aria-level="2">${input.value}</legend>
 <ul class="btns"><${input.renderBody} /></ul>
 <style>
 	.btns {

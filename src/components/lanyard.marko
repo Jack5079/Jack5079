@@ -1,7 +1,7 @@
 export interface Input {
 	/** The Discord user ID to monitor */
 	value: string
-	renderBody?: Marko.Body<{}>
+	renderBody?: Marko.Body<[{}]>
 }
 <let/presence />
 <effect() {
@@ -29,10 +29,12 @@ export interface Input {
 			}
 		}
 	}
+
 	// Thankfully, this function is not moved outside of the <effect>
-	return () => {
+	$signal.onabort = () => {
 		websocket.close()
 		clearInterval(heartbeat[0])
+		delete globalThis.heartbeat
 	}
 } />
 
