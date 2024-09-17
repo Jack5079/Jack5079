@@ -1,11 +1,5 @@
 import "@fontsource/dancing-script/latin-400.css"
-// import beach from "./beach.webp?url"
 
-<!-- <fieldset
-id="philosophy"
-style=`background:#000 url(${beach})center/cover;color:#fff;`
-role="none"
-> -->
 <let/quote />
 <legend role="none">
 	<span role="heading" aria-level="2">Philosophy</span>
@@ -42,7 +36,6 @@ role="none"
 	<blockquote>${quote ?? "Click the 🎲 to begin."}</blockquote>
 	<figcaption>―Jack Wavesmiley</figcaption>
 </figure>
-<!-- </fieldset> -->
 
 <style>
 	@media (prefers-color-scheme: light) {
@@ -50,6 +43,10 @@ role="none"
 			background: Canvas;
 			color: CanvasText;
 		}
+	}
+	#philosophy {
+		background: #000 url(./beach.webp) center/cover;
+		color: #fff;
 	}
 	#philosophy figure {
 		font-family: "Dancing Script", cursive;
