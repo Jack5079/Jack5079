@@ -1,6 +1,5 @@
-<!-- use tags -->
 <lanyard|presence|="173589391560802306">
-	<if=(
+	<if(
 		presence?.activities?.length !== undefined &&
 			presence?.activities?.length !== 0
 	)>
@@ -8,7 +7,7 @@
 		<for|activity| of=(presence?.activities ?? [])>
 			<article>
 				<section class="images">
-					<if=activity.assets>
+					<if(activity.assets)>
 						<img
 							src=`https://cdn.discordapp.com/app-assets/${activity.application_id}/${activity.assets.large_image}.png`
 							alt=(activity.assets.large_text)
@@ -50,7 +49,7 @@
 	</if>
 </lanyard>
 
-<style>
+style {
 	.large-image {
 		border-radius: 8px;
 	}
@@ -83,4 +82,4 @@
 		margin: 0;
 		line-height: 60px;
 	}
-</style>
+}
