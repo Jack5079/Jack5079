@@ -10,11 +10,14 @@ await $`rmdir ./dist/404`
 
 const fonts = new Glob("dancing-script-*.woff*")
 
-for await (const file of fonts.scan("./dist/assets/")) {
+for await (const file of fonts.scan({
+	absolute: true,
+	cwd: "./dist/assets/",
+})) {
 	writeFile(
-		`./dist/assets/${file}`,
+		file,
 		await subsetFont(
-			await readFile(`./dist/assets/${file}`),
+			await readFile(file),
 			quotes.join("\n") + "Jack Wavesmiley",
 		),
 	)
