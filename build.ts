@@ -15,7 +15,7 @@ for await (const file of fonts.scan("./dist/assets/")) {
 		`./dist/assets/${file}`,
 		await subsetFont(
 			await readFile(`./dist/assets/${file}`),
-			quotes.join("\n"),
+			quotes.join("\n") + "Jack Wavesmiley",
 		),
 	)
 }
