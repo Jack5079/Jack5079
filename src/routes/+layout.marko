@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/png" href="../favicon.png" />
 		<meta name="color-scheme" content="light dark" />
+		<meta name="theme-color" content="#FF4539" />
 		<link rel="authorization_endpoint" href="https://indieauth.com/auth" />
 		<link
 			rel="canonical"
@@ -53,6 +54,7 @@ style {
 		padding: 20px;
 		max-width: 800px;
 		line-height: 1.5;
+		accent-color: #ff4539;
 	}
 	h1,
 	h2,
@@ -77,5 +79,14 @@ style {
 		body {
 			padding: 0;
 		}
+	}
+	@media (prefers-color-scheme: dark) {
+		body {
+			background-color: #00000f;
+			color: #fff;
+		}
+	}
+	a {
+		color: #ff4539;
 	}
 }

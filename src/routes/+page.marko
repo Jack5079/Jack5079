@@ -443,28 +443,16 @@
 
 style {
 	fieldset {
-		border-color: CanvasText;
+		border-color: #ff4539;
 		border-radius: 1ch;
 		border-style: solid;
 	}
 	fieldset:target {
 		border-color: Highlight;
 	}
+	@media (prefers-color-scheme: dark) {
+		svg.social {
+			fill: currentColor;
+		}
+	}
 }
-<!-- <h2 id="blog">Blog</h2>
-<ul>
-	<for|path, { title, pubDate }|
-		in=import.meta.glob("../../posts/*.md", {
-			eager: true,
-			import: "attributes",
-		})
-	>
-		<li>
-			<a href=(path.replace("../../posts/", "/").replace(".md", ""))>
-				${title}
-			</a>
-			${" "}
-			<formatted-date=new Date(pubDate) style="color:GrayText" />
-		</li>
-	</for>
-</ul> -->
