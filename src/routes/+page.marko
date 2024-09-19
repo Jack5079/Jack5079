@@ -1,3 +1,12 @@
+import {
+	siDiscord,
+	siMastodon,
+	siGithub,
+	siYoutube,
+	siX,
+	type SimpleIcon,
+} from "simple-icons"
+
 <link href="acct:j@jack.cab" class="u-url" />
 
 <p class="p-note" style="text-align:center">
@@ -22,11 +31,13 @@
 
 <bento=(
 	`
-	"clock pronouns philosophy"
-	"reviews reviews philosophy"
+	"clock pronouns socials"
+	"reviews reviews socials"
 	"reviews reviews feedback"
-	"webrings webrings webrings"
-	"etceterans mutuals mutuals"
+	/* "blog blog blog" */
+	"webrings philosophy philosophy"
+	"etceterans philosophy philosophy"
+	"etceterans philosophy philosophy"
 	"others mutuals mutuals"
 `
 )>
@@ -37,9 +48,60 @@
 			<span>he</span>/<span>him</span>
 		</span>
 	</@pronouns>
-	<@philosophy>
-		<philosophy-section />
-	</@philosophy>
+	<@socials>
+		<legend role="heading" aria-level="2">Socials</legend>
+		<macro|{
+			href,
+			icon,
+			text,
+		}: {
+			href: string
+			icon: SimpleIcon
+			text: string
+		}| name="social">
+			<li>
+				<a
+					href=href
+					target="_blank"
+					rel="me"
+					class="u-url"
+					style="display:block"
+				>
+					$!{icon.svg.replace(
+						`role="img"`,
+						`role="img" width="24" height="24" class="social" fill="#${icon.hex}"`,
+					)}
+					${" " + text}
+				</a>
+			</li>
+		</macro>
+		<ul style="line-height:2">
+			<social
+				icon=siDiscord
+				href="https://discord.com/users/173589391560802306"
+				text="@nixos.org"
+			/>
+			<social
+				icon=siMastodon
+				href="https://wetdry.world/@j"
+				text="@j@wetdry.world"
+			/>
+			<social icon=siX href="https://x.com/banger_post" text="@banger_post" />
+			<social
+				icon=siGithub
+				href="https://github.com/Jack5079"
+				text="@Jack5079"
+			/>
+			<social
+				icon=siYoutube
+				href="https://youtube.com/@Jack5079"
+				text="@Jack5079"
+			/>
+		</ul>
+		<!-- <lanyard|presence|="173589391560802306">
+			<pre>${JSON.stringify(presence, null, 2) ?? "nothing"}</pre>
+		</lanyard> -->
+	</@socials>
 	<@reviews>
 		<legend role="heading" aria-level="2">Quotes</legend>
 		<quote>
@@ -96,6 +158,10 @@
 			/>
 		</form>
 	</@feedback>
+	<!-- <@blog>
+		<legend role="heading" aria-level="2">Blog</legend>
+		<p>No posts yet!</p>
+	</@blog> -->
 	<@webrings>
 		<legend role="heading" aria-level="2">Webrings</legend>
 		<section>
@@ -106,6 +172,7 @@
 			<a href="https://webring.zip/next/jack.cab">→</a>
 		</section>
 	</@webrings>
+	<@philosophy><philosophy-section /></@philosophy>
 	<@etceterans>
 		<button-section="Etceterans">
 			<li>
@@ -379,7 +446,7 @@
 		</button-section>
 	</@mutuals>
 	<@others>
-		<button-section="Other">
+		<button-section="Other 88x31s">
 			<li>
 				<a href="https://gba.ioi-xd.net/">
 					<img
@@ -447,6 +514,11 @@ style {
 	}
 	fieldset:target {
 		border-color: Highlight;
+	}
+	svg.social {
+		vertical-align: middle;
+		width: 1.5em;
+		height: 1.5em;
 	}
 	@media (prefers-color-scheme: dark) {
 		svg.social {

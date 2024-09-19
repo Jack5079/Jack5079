@@ -1,30 +1,3 @@
-import {
-	siDiscord,
-	siMastodon,
-	siGithub,
-	siCodeberg,
-	siYoutube,
-	siNixos,
-	siX,
-} from "simple-icons"
-
-<macro|{ href, icon, text }| name="social">
-	<a
-		href=href
-		target="_blank"
-		rel="me"
-		class="u-url"
-		title=`${text} on ${icon.title}`
-	>
-		$!{icon.svg
-			.replace(
-				`role="img"`,
-				`role="none" width="24" height="24" class="social"`,
-			)
-			.replace(new RegExp("<title>.*</title>"), "")}
-	</a>
-</macro>
-
 <nav>
 	<a href="/" class="u-url u-uid" rel="author">
 		<img
@@ -37,50 +10,18 @@ import {
 			width="32"
 		/> <span class="p-name">Jack W.</span>
 	</a>
-	<social
-		icon=siDiscord
-		href="https://discord.com/users/173589391560802306"
-		text="@nixos.org"
-	/>
-	<social
-		icon=siMastodon
-		href="https://wetdry.world/@j"
-		text="@j@wetdry.world"
-	/>
-	<social icon=siX href="https://x.com/banger_post" text="@banger_post" />
-	<social icon=siGithub href="https://github.com/Jack5079" text="@Jack5079" />
-	<social icon=siCodeberg href="https://codeberg.org/j-w" text="@j-w" />
-	<social
-		icon=siYoutube
-		href="https://youtube.com/@Jack5079"
-		text="@Jack5079"
-	/>
-	<social
-		icon=siNixos
-		href="https://github.com/Jack5079/dotfiles"
-		text="github:Jack5079/dotfiles"
-	/>
 </nav>
 
 style {
 	nav {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		flex-wrap: wrap;
-		gap: 1ch;
+		text-align: center;
 	}
 	.u-uid {
+		display: block;
 		margin: 0.5em 0;
 		/* Aligned with the height of the logo's beige portion */
 		font-size: 27.5px;
 		font-weight: bold;
 		text-decoration: none;
-		flex-grow: 1;
-	}
-	svg.social {
-		width: 1.5em;
-		height: 1.5em;
-		fill: currentColor;
 	}
 }
