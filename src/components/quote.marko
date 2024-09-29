@@ -1,8 +1,6 @@
 export interface Input {
 	renderBody: Marko.Body
-	byline: {
-		renderBody: Marko.Body
-	}
+	byline: Marko.AttrTag<Marko.Renderable>
 }
 // https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag#data-nosnippet-attr only works for span, div, and section
 <div style="display:contents" data-nosnippet role="none" class="review">
