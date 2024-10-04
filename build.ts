@@ -1,7 +1,7 @@
 import { $, Glob } from "bun"
 import { readFile, writeFile } from "fs/promises"
 import subsetFont from "subset-font"
-import quotes from "./src/quotes.json"
+import quotes from "./src/routes/_index/quotes.json"
 
 await $`marko-run build`
 await $`cp -r ./public/. ./dist`

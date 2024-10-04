@@ -1,17 +1,10 @@
-import {
-	siDiscord,
-	siMastodon,
-	siGithub,
-	siYoutube,
-	siX,
-	type SimpleIcon,
-} from "simple-icons"
+import { siDiscord, siMastodon, siGithub, siYoutube, siX } from "simple-icons"
 
 <link href="acct:j@jack.cab" class="u-url" />
 
 <p class="p-note" style="text-align:center">
-	Developer since 2016,
-	<a href="https://cetera.uk">
+	Developer since 2016, designer and
+	<a href="https://cetera.uk" style="color:#6acb5d">
 		<svg
 			viewBox="0 0 173.8 275.72"
 			height="20"
@@ -25,22 +18,21 @@ import {
 			<circle cx="127.16" cy="46.64" r="46.65"></circle>
 			<circle cx="102.68" cy="219.58" r="56.14"></circle>
 		</svg>
-		etc.
-	</a> <abbr title="established">est.</abbr> 2020.
+		Etceteran
+	</a>
+	since 2020.
 </p>
 
-<bento=(
-	`
-	"clock pronouns socials"
-	"reviews reviews socials"
-	"reviews reviews feedback"
-	/* "blog blog blog" */
-	"webrings philosophy philosophy"
-	"etceterans philosophy philosophy"
-	"etceterans philosophy philosophy"
-	"others mutuals mutuals"
-`
-)>
+<bento=[
+	["clock pronouns socials"],
+	["reviews reviews socials"],
+	["reviews reviews webrings"],
+	["reviews reviews feedback"],
+	["blog blog blog"],
+	["etceterans philosophy philosophy"],
+	["others philosophy philosophy"],
+	["mutuals mutuals mutuals"],
+]>
 	<@clock><clock="US/Eastern" /></@clock>
 	<@pronouns style="text-align:center">
 		<legend role="heading" aria-level="2">Pronouns</legend>
@@ -50,57 +42,24 @@ import {
 	</@pronouns>
 	<@socials>
 		<legend role="heading" aria-level="2">Socials</legend>
-		<macro|{
-			href,
-			icon,
-			text,
-		}: {
-			href: string
-			icon: SimpleIcon
-			text: string
-		}| name="social">
-			<li>
-				<a
-					href=href
-					target="_blank"
-					rel="me"
-					class="u-url"
-					style="display:block"
-				>
-					$!{icon.svg.replace(
-						`role="img"`,
-						`role="img" width="24" height="24" class="social" fill="#${icon.hex}"`,
-					)}
-					${" " + text}
-				</a>
-			</li>
-		</macro>
 		<ul style="line-height:2">
 			<social
 				icon=siDiscord
 				href="https://discord.com/users/173589391560802306"
-				text="@nixos.org"
-			/>
-			<social
-				icon=siMastodon
-				href="https://wetdry.world/@j"
-				text="@j@wetdry.world"
-			/>
-			<social icon=siX href="https://x.com/banger_post" text="@banger_post" />
-			<social
-				icon=siGithub
-				href="https://github.com/Jack5079"
-				text="@Jack5079"
-			/>
-			<social
-				icon=siYoutube
-				href="https://youtube.com/@Jack5079"
-				text="@Jack5079"
-			/>
+			>
+				@nixos.org
+			</social>
+			<social icon=siMastodon href="https://wetdry.world/@j">
+				@j@wetdry.world
+			</social>
+			<social icon=siX href="https://x.com/banger_post">@banger_post</social>
+			<social icon=siGithub href="https://github.com/Jack5079">
+				@Jack5079
+			</social>
+			<social icon=siYoutube href="https://youtube.com/@Jack5079">
+				@Jack5079
+			</social>
 		</ul>
-		<!-- <lanyard|presence|="173589391560802306">
-			<pre>${JSON.stringify(presence, null, 2) ?? "nothing"}</pre>
-		</lanyard> -->
 	</@socials>
 	<@reviews>
 		<legend role="heading" aria-level="2">Testimonials</legend>
@@ -135,6 +94,16 @@ import {
 			<@byline>Integra, co-founder of Etcetera, February 2022</@byline>
 		</quote>
 	</@reviews>
+	<@webrings style="text-align:center">
+		<legend role="heading" aria-level="2">Webrings</legend>
+		<section>
+			<a href="https://webring.zip/prev/jack.cab">←</a>
+			·
+			<a href="https://webring.zip">webring.zip</a>
+			·
+			<a href="https://webring.zip/next/jack.cab">→</a>
+		</section>
+	</@webrings>
 	<@feedback>
 		<legend role="heading" aria-level="2">Feedback</legend>
 		<form action="https://feedback.5079.workers.dev/" method="post">
@@ -159,25 +128,24 @@ import {
 	</@feedback>
 	<!-- <@blog>
 		<legend role="heading" aria-level="2">Blog</legend>
-		<p>No posts yet!</p>
+		<ul>
+			<li>
+				<a href="/mailinator">The Mailinator Method</a>
+				(September 26, 2024)
+			</li>
+			<li>
+				<a href="/superweapon">We called it The Superweapon</a>
+				(September 25, 2024)
+			</li>
+		</ul>
 	</@blog> -->
-	<@webrings>
-		<legend role="heading" aria-level="2">Webrings</legend>
-		<section>
-			<a href="https://webring.zip/prev/jack.cab">←</a>
-			·
-			<a href="https://webring.zip">webring.zip</a>
-			·
-			<a href="https://webring.zip/next/jack.cab">→</a>
-		</section>
-	</@webrings>
-	<@philosophy><philosophy-section /></@philosophy>
+	<@philosophy><philosophy /></@philosophy>
 	<@etceterans>
 		<button-section="Etceterans">
 			<li>
 				<a href="https://jack.cab">
 					<img
-						src="./_buttons/jack.png"
+						src="./buttons/jack.png"
 						alt="Jack.cab"
 						decoding="async"
 						width="88"
@@ -188,7 +156,7 @@ import {
 			<li>
 				<a href="https://split.pet">
 					<img
-						src="./_buttons/split.png"
+						src="./buttons/split.png"
 						alt="split"
 						decoding="async"
 						width="88"
@@ -199,7 +167,7 @@ import {
 			<li>
 				<a href="https://maliciousmeaning.dev/" title="Malice">
 					<img
-						src="./_buttons/malice.png"
+						src="./buttons/malice.png"
 						alt="Malice"
 						decoding="async"
 						width="120"
@@ -210,7 +178,7 @@ import {
 			<li>
 				<a href="https://mau.monster" title="mau">
 					<img
-						src="./_buttons/mau.png"
+						src="./buttons/mau.png"
 						alt="mau"
 						decoding="async"
 						width="88"
@@ -225,7 +193,7 @@ import {
 			<li>
 				<a href="https://aei.sh/">
 					<img
-						src="./_buttons/aei.gif"
+						src="./buttons/aei.gif"
 						alt="aei's site"
 						decoding="async"
 						width="88"
@@ -236,7 +204,7 @@ import {
 			<li>
 				<a href="https://beebl.es/">
 					<img
-						src="./_buttons/beebles.png"
+						src="./buttons/beebles.png"
 						alt="Beebles"
 						decoding="async"
 						width="88"
@@ -247,7 +215,7 @@ import {
 			<li>
 				<a href="https://bee.movie/">
 					<img
-						src="./_buttons/beebadge.png"
+						src="./buttons/beebadge.png"
 						alt="suspiciouslyBee"
 						decoding="async"
 						width="88"
@@ -258,7 +226,7 @@ import {
 			<li>
 				<a href="https://thememesniper.dev/">
 					<img
-						src="./_buttons/katlin.png"
+						src="./buttons/katlin.png"
 						alt="k8's corner"
 						decoding="async"
 						width="88"
@@ -269,7 +237,7 @@ import {
 			<li>
 				<a href="https://velzie.rip">
 					<img
-						src="./_buttons/ce88x31.png"
+						src="./buttons/ce88x31.png"
 						alt="velzie"
 						decoding="async"
 						width="88"
@@ -280,7 +248,7 @@ import {
 			<li>
 				<a href="https://freeplay.floof.company/">
 					<img
-						src="./_buttons/freeplay.png"
+						src="./buttons/freeplay.png"
 						alt="Freeplay"
 						decoding="async"
 						width="88"
@@ -291,7 +259,7 @@ import {
 			<li>
 				<a href="https://micro.pages.gay/">
 					<img
-						src="./_buttons/micro.png"
+						src="./buttons/micro.png"
 						alt="Micro"
 						decoding="async"
 						width="88"
@@ -302,7 +270,7 @@ import {
 			<li>
 				<a href="https://sneexy.pages.gay/">
 					<img
-						src="./_buttons/sneexy.png"
+						src="./buttons/sneexy.png"
 						alt="Sneexy"
 						decoding="async"
 						width="88"
@@ -313,7 +281,7 @@ import {
 			<li>
 				<a href="https://spacy.neocities.org/">
 					<img
-						src="./_buttons/ssm230.png"
+						src="./buttons/ssm230.png"
 						alt="spacy"
 						decoding="async"
 						width="88"
@@ -324,7 +292,7 @@ import {
 			<li>
 				<a href="https://sterophonick.github.io/">
 					<img
-						src="./_buttons/sterophonick.gif"
+						src="./buttons/sterophonick.gif"
 						alt="Sterophonick"
 						decoding="async"
 						width="88"
@@ -335,7 +303,7 @@ import {
 			<li>
 				<a href="https://infisoft.org">
 					<img
-						src="./_buttons/whitespaced.gif"
+						src="./buttons/whitespaced.gif"
 						alt="whitespaced"
 						decoding="async"
 						width="88"
@@ -379,7 +347,7 @@ import {
 			<li>
 				<a href="https://toastyfen.neocities.org/">
 					<img
-						src="./_buttons/toastyfen.gif"
+						src="./buttons/toastyfen.gif"
 						alt="toastyfen"
 						decoding="async"
 						width="88"
@@ -390,7 +358,7 @@ import {
 			<li>
 				<a href="https://luna.anarchy.center/">
 					<img
-						src="./_buttons/luna.png"
+						src="./buttons/luna.png"
 						alt="luna's anarchy center"
 						decoding="async"
 						width="88"
@@ -401,7 +369,7 @@ import {
 			<li>
 				<a href="https://tuxcrafting.online">
 					<img
-						src="./_buttons/tctek.png"
+						src="./buttons/tctek.png"
 						alt="tuxcrafting"
 						decoding="async"
 						width="88"
@@ -412,7 +380,7 @@ import {
 			<li>
 				<a href="https://trypancakes.com">
 					<img
-						src="./_buttons/pancakes.png"
+						src="./buttons/pancakes.png"
 						alt="pancakes"
 						decoding="async"
 						width="88"
@@ -423,7 +391,7 @@ import {
 			<li>
 				<a href="https://drakonic.zone">
 					<img
-						src="./_buttons/drakonic.gif"
+						src="./buttons/drakonic.gif"
 						alt="DRAKONIC"
 						decoding="async"
 						width="88"
@@ -434,7 +402,7 @@ import {
 			<li>
 				<a href="https://moondvsted.neocities.org">
 					<img
-						src="./_buttons/moondvsted.gif"
+						src="./buttons/moondvsted.gif"
 						alt="moondvsted"
 						decoding="async"
 						width="88"
@@ -449,7 +417,7 @@ import {
 			<li>
 				<a href="https://gba.ioi-xd.net/">
 					<img
-						src="./_buttons/sherbetbutton.gif"
+						src="./buttons/sherbetbutton.gif"
 						alt="sherbetbutton"
 						decoding="async"
 						width="88"
@@ -460,7 +428,7 @@ import {
 			<li>
 				<a href="https://simonwillison.net/tags/llms/">
 					<img
-						src="./_buttons/feedtheai.gif"
+						src="./buttons/feedtheai.gif"
 						alt="DO feed the AI!"
 						decoding="async"
 						width="88"
@@ -471,7 +439,7 @@ import {
 			<li>
 				<a href="https://github.com/mollersuite/etcet">
 					<img
-						src="./_buttons/etcet.png"
+						src="./buttons/etcet.png"
 						alt="ETCET"
 						decoding="async"
 						width="88"
@@ -482,7 +450,7 @@ import {
 			<li>
 				<a href="https://music.youtube.com/watch?v=b5sXonDoX_I">
 					<img
-						src="./_buttons/allred.png"
+						src="./buttons/allred.png"
 						alt="ALL RED"
 						decoding="async"
 						width="88"
@@ -493,7 +461,7 @@ import {
 			<li>
 				<a href="https://gradienceteam.github.io/">
 					<img
-						src="./_buttons/pleasetheme.png"
+						src="./buttons/pleasetheme.png"
 						alt="Please theme our apps"
 						decoding="async"
 						width="120"
@@ -504,24 +472,3 @@ import {
 		</button-section>
 	</@others>
 </bento>
-
-style {
-	fieldset {
-		border-color: #ff4539;
-		border-radius: 1ch;
-		border-style: solid;
-	}
-	fieldset:target {
-		border-color: Highlight;
-	}
-	svg.social {
-		vertical-align: middle;
-		width: 1.5em;
-		height: 1.5em;
-	}
-	@media (prefers-color-scheme: dark) {
-		svg.social {
-			fill: currentColor;
-		}
-	}
-}
