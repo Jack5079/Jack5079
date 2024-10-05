@@ -6,7 +6,7 @@ import quotes from "../quotes.json"
 
 	quote = random(quotes.filter((q) => q !== quote))
 } />
-<lifecycle onMount=rollQuote />
+<effect=rollQuote />
 <legend role="none">
 	<span role="heading" aria-level="2">Philosophy</span>
 	${" "}
