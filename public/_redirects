@@ -3,3 +3,4 @@
 /.well-known/webfinger* https://fed.brid.gy/.well-known/webfinger:splat 301
 /.well-known/host-meta* https://fed.brid.gy/.well-known/host-meta:splat 301
 /call-me https://github.com/Jack5079/call-me 307
+/unsuggestive-suggestions https://github.com/Jack5079/unsuggestive-suggestions 307
