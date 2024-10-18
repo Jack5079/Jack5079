@@ -3,6 +3,6 @@ declare module "@marko/run" {
 		image?: [image: string, alt: string]
 		title?: string
 		description?: string
-		bodyClass?: string
+		bodyClass?: Marko.HTMLAttributes["class"]
 	}
 }
