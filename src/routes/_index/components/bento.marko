@@ -43,4 +43,7 @@ style {
 	fieldset:target {
 		border-color: Highlight;
 	}
+	div:has(fieldset:target) fieldset:not(:target) {
+		opacity: 0.5;
+	}
 }
