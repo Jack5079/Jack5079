@@ -6,33 +6,33 @@ export interface Input {
 	Time in
 	<a href=`https:///en.wikipedia.org/wiki/${input.value}`>${input.value}</a>
 </legend>
-<noscript>Enable JavaScript to see my time.</noscript>
-<let/time />
-<effect() {
-	time = new Date()
-	const interval = setInterval(() => {
+
+<time>
+	<let/time />
+	<effect() {
 		time = new Date()
-	}, 1000)
-	return () => clearInterval(interval)
-} />
-<if=time>
-	<time>
-		${time.toLocaleString([], {
-			timeZone: input.value,
-			timeStyle: "short",
-		})}
-	</time>
-</if>
+		const interval = setInterval(() => {
+			time = new Date()
+		}, 1000)
+		return () => clearInterval(interval)
+	} />
+	${time?.toLocaleString([], {
+		timeZone: input.value,
+		timeStyle: "short",
+	})}<noscript>Enable JavaScript to see my time.</noscript>
+</time>
 
 <style>
 	#clock time {
 		font-family: monospace, monospace;
 		font-size: x-large;
+		line-height: normal;
 	}
 	/* I think uBlock Origin renames noscript to span for some reason */
 	#clock noscript,
 	#clock span {
 		color: GrayText;
+		font-size: medium;
 	}
 	#clock {
 		/* aspect-ratio: 1/1; */
