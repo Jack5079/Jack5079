@@ -7,6 +7,6 @@ export default defineConfig({
 		marko({ adapter: staticAdapter() })
 	],
 	build: {
-		assetsInlineLimit: Infinity
+		assetsInlineLimit: 0
 	}
 })
