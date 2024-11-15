@@ -1,6 +1,6 @@
 export type Input = {
-	[key: string]: Marko.AttrTag<any> // I give up
-} & {
+	// This is technically incorrect, but it's the only way to get anything remotely typesafe
+	[key: string]: Omit<Marko.AttrTag<Marko.HTML.FieldSet>, "id"> | string[][]
 	value: string[][]
 }
 
@@ -12,15 +12,8 @@ export type Input = {
 		.join("")}`
 	role="none"
 >
-	<for|[gridArea, block]|
-		of=Object.entries(input).filter(([area]) => area !== "value")
-	>
-		<fieldset
-			role="none"
-			id=gridArea
-			...block
-			style=[{ gridArea }, block.style]
-		>
+	<for|[gridArea, block]| of=Object.entries(input).filter(([area]) => area !== "value")>
+		<fieldset role="none" id=gridArea ...block style=[{ gridArea }, block.style]>
 			<${block} />
 		</fieldset>
 	</for>
