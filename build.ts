@@ -4,7 +4,6 @@ import subsetFont from "subset-font"
 import quotes from "./src/routes/_index/quotes.json"
 
 await $`marko-run build`
-await $`cp -r ./public/. ./dist`
 await $`mv ./dist/404/index.html ./dist/404.html`
 await $`rmdir ./dist/404`
 
