@@ -1,8 +1,10 @@
 /dotfiles https://github.com/jack5079/dotfiles
-/dotfiles/* https://github.com/Jack5079/dotfiles/blob/main/:splat 301
-/.well-known/webfinger* https://fed.brid.gy/.well-known/webfinger:splat 301
-/.well-known/host-meta* https://fed.brid.gy/.well-known/host-meta:splat 301
 /socials /#socials 301
+/bluesky https://bsky.app/profile/jack.cab 301
+/fedi https://wetdry.world/@j
 /call-me https://github.com/Jack5079/call-me 307
 /unsuggestive-suggestions https://github.com/Jack5079/unsuggestive-suggestions 307
 /mc https://github.com/Jack5079/mc 307
+/dotfiles/* https://github.com/Jack5079/dotfiles/blob/main/:splat 301
+/.well-known/webfinger* https://fed.brid.gy/.well-known/webfinger:splat 301
+/.well-known/host-meta* https://fed.brid.gy/.well-known/host-meta:splat 301
