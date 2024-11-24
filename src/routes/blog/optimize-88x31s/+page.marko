@@ -1,0 +1,89 @@
+import authen from "./authen-comparsion.png"
+<h-entry heroImage=[authen, "authen-delooped.gif: 8.3 KB; authen.gif: 29.9 KB."]>
+	<p>
+		This guide is written for <a href="https://gimp.org">GIMP</a>, but I imagine other software has
+		things like this as well.
+	</p>
+	<h2>Combine, not replace</h2>
+	<p>
+		Go use
+		<a href="https://docs.gimp.org/en/plug-in-optimize.html">
+			Filter > Animation > Optimize (for GIF)
+		</a>.
+	</p>
+	<p>
+		This let me
+		<a href="https://github.com/Jack5079/Jack5079/commit/c83911f8455ad96dedf25aa8b159764c6cf57d2a">
+			save 15.2 KB
+		</a>
+		on <a href="https://aei.sh">aei's</a> 88x31.
+	</p>
+	<h2>Merge identical frames</h2>
+	<p>I don't think I have an example for this but I swear it helped one time.</p>
+	<h2>Remove artifacts</h2>
+	<p>Go through each frame of the GIF and remove pixels that appear not to change.</p>
+	<p>
+		This let me
+		<a
+			href="https://github.com/Jack5079/Jack5079/commits/8c49614853be80ddf56283ed3ffbf22f84dd589c/src/components/Buttons/toastyfen.gif"
+		>
+			save 7.71 KB
+		</a>
+		on <a href="https://toasty.zone">toastyfen's</a> 88x31.
+	</p>
+	<h2>Index it</h2>
+	<p>
+		In GIMP, it's
+		<a href="https://docs.gimp.org/en/gimp-image-convert-indexed.html">Image > Mode > Indexed</a>.
+	</p>
+	<p>
+		This let me
+		<a href="https://github.com/Jack5079/Jack5079/commit/a4b85813fd60482b2fb887694c65f284474c2db4">
+			save 1.99 KB
+		</a>
+		on ivytastic's 88x31.
+	</p>
+	<h2>Remove loops</h2>
+	<p>
+		It's a GIF. It loops infinitely. You don't need to hardcode loops. If you want a finite amount
+		of loops,
+		<a href="https://docs.gimp.org/en/gimp-images-out.html#file-gif-save">
+			GIMP allows you to set that
+		</a>
+		as well.
+	</p>
+	<p>
+		This
+		<a href="https://github.com/Jack5079/Jack5079/commit/5610bf2eaedb88bc80dffaaaf21ce5e2a5931771">
+			wasted 21.6 KB
+		</a>
+		on
+		<a href="https://authenyo.xyz">authen's</a> 88x31.
+	</p>
+	<h2>Inline them</h2>
+	<p>
+		This sounds counterintuitive, but if you have a lot of 88x31s on your page, it might be worth it
+		to <a href="https://developer.mozilla.org/en-US/docs/Web/URI/Schemes/data">inline</a> the small
+		ones. If you need a rule of thumb,
+		<a href="https://vite.dev/config/build-options.html#build-assetsinlinelimit">
+			Vite defaults to 4096 bytes
+		</a>.
+	</p>
+	<p>
+		The overhead of Base64 is made up with
+		<a href="https://en.wikipedia.org/wiki/Solid_compression">solid compression</a>, reduced
+		latency, and also avoiding the ~1 KB of overhead HTTP requests have.
+	</p>
+	<p>
+		This saved 24 KB on
+		<a href="https://split.pet">split's</a>
+		website when compressed.
+	</p>
+	<h2>Don't hotlink</h2>
+	<p>
+		To follow any of these, you need to be the one hosting the image. Also, third-party requests
+		mean a DNS lookup, adding even more latency.
+	</p>
+	<hr />
+	<p>I hope this guide will make your website a little faster. Good luck!</p>
+</h-entry>
