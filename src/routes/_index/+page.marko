@@ -1,5 +1,4 @@
-import { siDiscord, siMastodon, siGithub, siYoutube, siX, siBluesky, siGithubsponsors } from "simple-icons"
-
+import cabinet_logo from "../blog/logo.png"
 <link href="acct:j@jack.cab" class="u-url" />
 
 <p class="p-note" style="text-align:center">
@@ -26,8 +25,7 @@ import { siDiscord, siMastodon, siGithub, siYoutube, siX, siBluesky, siGithubspo
 <bento=[
 	["clock pronouns socials"],
 	["reviews reviews socials"],
-	// ["webrings blog feedback"],
-	["webrings webrings feedback"],
+	["webrings blog feedback"],
 	["etceterans philosophy philosophy"],
 	["others philosophy philosophy"],
 	["mutuals mutuals mutuals"],
@@ -99,10 +97,19 @@ import { siDiscord, siMastodon, siGithub, siYoutube, siX, siBluesky, siGithubspo
 		</section>
 		<small>Please <a href="#feedback">suggest</a> some webrings</small>
 	</@webrings>
-	<!-- <@blog style="text-align:center">
+	<@blog style="text-align:center">
 		<legend role="heading" aria-level="2">Blog</legend>
-		<a href="/blog">Blog</a>
-	</@blog> -->
+		<a href="/blog" style="display:block">
+			<img
+				src=cabinet_logo
+				alt="The Cabinet"
+				decoding="async"
+				width="90"
+				height="58"
+				style="image-rendering:pixelated"
+			/>
+		</a>
+	</@blog>
 	<@feedback>
 		<legend role="heading" aria-level="2">Feedback</legend>
 		<form action="https://feedback.5079.workers.dev/" method="post">
