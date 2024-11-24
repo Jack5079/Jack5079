@@ -1,3 +1,6 @@
-semi: false
-useTabs: true
-plugins: [prettier-plugin-marko-htmljs]
+{
+	"semi": false,
+	"useTabs": true,
+	"plugins": ["prettier-plugin-marko-htmljs"],
+	"printWidth": 100
+}
