@@ -1,0 +1,59 @@
+export interface Input {
+	/** The title of the article */
+	renderBody?: Marko.Body
+	heroImage?: [image: string, alt: string]
+}
+
+<article class="h-entry">
+	<if(input.heroImage)><img class="u-featured" src=input.heroImage[0] alt=input.heroImage[1] /></if>
+	<hgroup>
+		<h1 class="p-name">${$global.meta.title}</h1>
+		<if($global.meta.description)><p class="p-summary">${$global.meta.description}</p></if>
+		<if($global.meta.publishedAt)>
+			// href=new URL($global.url.pathname, "https://jack.cab")
+			<a class="u-url">
+				Published
+				<time class="dt-published" datetime=($global.meta.publishedAt)>
+					${$global.meta.publishedAt}
+				</time>
+			</a>
+		</if>
+	</hgroup>
+	<div class="e-content"><${input.renderBody} /></div>
+</article>
+
+style {
+	.e-content p:last-child::after {
+		content: "";
+		background: currentColor;
+		mask-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAQAgMAAABfD3aUAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAdnJLH8AAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlQTFRFAAAAAAAA////g93P0gAAAAF0Uk5TAEDm2GYAAAA2SURBVAjXLcqxCcBADMVQcVXwJMFTZpQjldGU9wkpXiNEC74P7h13VCxUhmaM6zf9Ncs80jUHwegVF1+wUSkAAAAASUVORK5CYII");
+		image-rendering: pixelated;
+		width: 12px;
+		height: 16px;
+		display: inline-block;
+		vertical-align: text-top;
+		margin-left: 0.5ch;
+	}
+	hgroup {
+		text-align: center;
+	}
+	hgroup a {
+		color: GrayText;
+	}
+	hgroup .p-name {
+		font-size: xx-large;
+		margin-bottom: 0;
+		text-wrap: balance;
+		width: 100%;
+	}
+	.p-summary {
+		font-style: italic;
+	}
+	.u-featured {
+		-webkit-mask-image: linear-gradient(to top, transparent 0%, black 40%);
+		mask-image: linear-gradient(to top, transparent 0%, black 40%);
+		border-radius: 1em 1em 0 0;
+		width: 100%;
+		height: auto;
+	}
+}
