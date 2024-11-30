@@ -115,6 +115,7 @@ import cabinet_logo from "../blog/logo.png"
 				decoding="async"
 				width="90"
 				height="58"
+				class="the-cabinet"
 				style="image-rendering:pixelated"
 			/>
 		</a>
@@ -465,5 +466,10 @@ import cabinet_logo from "../blog/logo.png"
 style {
 	:root {
 		scroll-behavior: smooth;
+	}
+	@media (prefers-color-scheme: light) {
+		.the-cabinet {
+			filter: invert(1);
+		}
 	}
 }
