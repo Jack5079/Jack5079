@@ -1,11 +1,13 @@
 <!-- Inspired by https://deeply.nekoweb.org which is in turn taken from "chfr" which I cannot find -->
-import quotes from "../quotes.json"
+export interface Input {
+	value: readonly string[]
+}
 import mc_click from "./mc_click.ogg?url"
 <let/quote />
 <const/rollQuote() {
 	const random = <Type,>(arr: readonly Type[]): Type => arr[Math.floor(Math.random() * arr.length)]
 
-	quote = random(quotes.filter((q) => q !== quote))
+	quote = random(input.value.filter((q) => q !== quote))
 } />
 <legend role="heading" aria-level="2">Philosophy</legend>
 <lifecycle onMount=rollQuote />
