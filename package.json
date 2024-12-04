@@ -9,7 +9,6 @@
     "start": "node --enable-source-maps ./dist/index.mjs"
   },
   "dependencies": {
-    "@fontsource/dancing-script": "^5.1.0",
     "@marko/compiler": "^5.38.2",
     "@marko/run": "^0.4.12",
     "@marko/run-adapter-static": "^0.1.7",
@@ -21,8 +20,7 @@
     "prettier-plugin-marko-htmljs": "^0.0.5",
     "shiki": "^1.24.0",
     "simple-icons": "^13.19.0",
-    "subset-font": "^2.4.0",
     "typescript": "^5.7.2",
-    "vite": "^6.0.2"
+    "vite": "https://pkg.pr.new/rolldown/vite@43"
   }
 }

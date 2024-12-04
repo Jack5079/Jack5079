@@ -1,0 +1,61 @@
+<!-- Inspired by https://deeply.nekoweb.org which is in turn taken from "chfr" which I cannot find -->
+import quotes from "../quotes.json"
+import mc_click from "./mc_click.ogg?url"
+<let/quote />
+<const/rollQuote() {
+	const random = <Type,>(arr: readonly Type[]): Type => arr[Math.floor(Math.random() * arr.length)]
+
+	quote = random(quotes.filter((q) => q !== quote))
+} />
+<legend role="heading" aria-level="2">Philosophy</legend>
+<lifecycle onMount=rollQuote />
+<button
+	onClick() {
+		rollQuote()
+		// https://deeply.nekoweb.org/mc_click.mp3
+		// Use `new Audio` instead of <audio> so that the sound can overlap
+		new Audio(mc_click).play()
+	}
+	aria-label="Random quote"
+>
+	<blockquote id="footer-quote">${quote}</blockquote>
+</button>
+<style>
+	/* https://github.com/IdreesInc/Minecraft-Font */
+	@font-face {
+		font-family: Minecraft;
+		src: url(./Minecraft.woff2) format("woff2");
+	}
+	button:has(#footer-quote) {
+		width: 100%;
+		height: 100%;
+		background-color: transparent;
+		background-image: none;
+		border: none;
+		font-family: Minecraft, monospace;
+		padding: 0.125%;
+		cursor: pointer;
+		text-align: center;
+		padding-block: 3ch;
+	}
+	#footer-quote {
+		margin: 0;
+		font-size: 15px;
+		color: #ff0;
+		font-weight: normal;
+		text-shadow: 2px 2px 0 #3f3f00;
+		animation: zoom-in-zoom-out 0.5s infinite;
+		animation-direction: normal;
+		animation-direction: alternate;
+		rotate: -12deg;
+		line-height: 18px;
+	}
+	@keyframes zoom-in-zoom-out {
+		0% {
+			transform: scale(0.875);
+		}
+		100% {
+			transform: scale(1);
+		}
+	}
+</style>
