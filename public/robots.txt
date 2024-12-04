@@ -1,0 +1,5 @@
+User-agent: Applebot-Extended
+User-agent: Google-Extended
+User-agent: GPTBot
+User-agent: Meta-ExternalAgent
+Disallow: /
