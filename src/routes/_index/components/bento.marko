@@ -1,25 +1,34 @@
+import type { AttrStyle } from "marko/tags-html"
 export type Input = {
 	// This is technically incorrect, but it's the only way to get anything remotely typesafe
-	[key: string]: Omit<Marko.AttrTag<Marko.HTML.FieldSet>, "id"> | string[][]
+	[key: string]: Omit<Marko.AttrTag<Marko.HTML.FieldSet>, "id"> | string[][] | AttrStyle
+	style: AttrStyle
 	value: string[][]
 }
 
 <div
 	class="bento"
-	style=`grid-template-areas:${input.value
-		.map((row) => row.join(" "))
-		.map((row) => `'${row}'`)
-		.join("")}`
+	style=[
+		{
+			"grid-template-areas": input.value
+				.map((row) => row.join(" "))
+				.map((row) => `'${row}'`)
+				.join(""),
+		},
+		input.style,
+	]
 	role="none"
 >
-	<for|[gridArea, block]| of=Object.entries(input).filter(([area]) => area !== "value")>
-		<fieldset role="none" id=gridArea ...block style=[{ gridArea }, block.style]>
+	<for|[gridArea, block]|
+		of=Object.entries(input).filter(([area]) => area !== "value" && area !== "style")
+	>
+		<fieldset role="none" id=gridArea ...block style=[{ "grid-area": gridArea }, block.style]>
 			<${block} />
 		</fieldset>
 	</for>
 </div>
 
-style {
+<style>
 	@media (min-width: calc(800px + 40px)) {
 		.bento {
 			display: grid;
@@ -42,4 +51,4 @@ style {
 	div:has(fieldset:target) fieldset:not(:target) {
 		opacity: 0.5;
 	}
-}
+</style>

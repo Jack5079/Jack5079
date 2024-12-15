@@ -3,17 +3,17 @@ export interface Input {
 	value: readonly string[]
 }
 import mc_click from "./mc_click.ogg?url"
-<let/quote />
-<const/rollQuote() {
+static {
 	const random = <Type,>(arr: readonly Type[]): Type => arr[Math.floor(Math.random() * arr.length)]
-
-	quote = random(input.value.filter((q) => q !== quote))
-} />
+}
+<let/quote>
 <legend role="heading" aria-level="2">Philosophy</legend>
-<lifecycle onMount=rollQuote />
+<lifecycle onMount () {
+	quote = random(input.value.filter((q) => q !== quote))
+}>
 <button
 	onClick() {
-		rollQuote()
+		quote = random(input.value.filter((q) => q !== quote))
 		// https://deeply.nekoweb.org/mc_click.mp3
 		// Use `new Audio` instead of <audio> so that the sound can overlap
 		new Audio(mc_click).play()

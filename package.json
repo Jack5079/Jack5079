@@ -9,17 +9,16 @@
     "start": "node --enable-source-maps ./dist/index.mjs"
   },
   "dependencies": {
-    "@marko/compiler": "^5.38.2",
-    "@marko/run": "^0.4.12",
-    "@marko/run-adapter-static": "^0.1.7",
-    "@marko/runtime-tags": "^0.1.25",
-    "@marko/translator-interop-class-tags": "^0.1.33",
+    "@marko/compiler": "^5.39.5",
+    "@marko/run": "^0.5.9",
+    "@marko/run-adapter-static": "^0.2.1",
+    "@marko/runtime-tags": "^0.3.9",
     "@types/bun": "^1.1.14",
     "dedent": "^1.5.3",
-    "marko": "^5.36.2",
+    "marko": "^5.37.5",
     "prettier-plugin-marko-htmljs": "^0.0.5",
-    "shiki": "^1.24.0",
-    "simple-icons": "^13.19.0",
+    "shiki": "^1.24.2",
+    "simple-icons": "^13.21.0",
     "typescript": "^5.7.2",
     "vite": "https://pkg.pr.new/rolldown/vite@43"
   }

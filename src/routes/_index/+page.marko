@@ -462,13 +462,17 @@ import cabinet_logo from "../blog/logo.png"
 		</button-section>
 	</@others>
 </bento>
-style {
+<style>
 	:root {
 		scroll-behavior: smooth;
 	}
 	@media (prefers-color-scheme: light) {
-		.the-cabinet {
+		#blog img,
+		#donothingroom img {
 			filter: invert(1);
 		}
+		#donothingroom {
+			background: #fff !important;
+		}
 	}
-}
+</style>

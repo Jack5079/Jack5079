@@ -1,6 +1,6 @@
 <header><div><a href="/blog/">The Cabinet</a></div></header>
 <${input.renderBody}></>
-style {
+<style>
 	header > div > a[href="/blog/"] {
 		mask-image: url(./logo.png);
 		mask-size: contain;
@@ -20,4 +20,4 @@ style {
 	header > div:has(a[href="/blog/"]:focus-visible) {
 		outline: 1px auto;
 	}
-}
+</style>

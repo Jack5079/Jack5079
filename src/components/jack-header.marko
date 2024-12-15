@@ -1,4 +1,4 @@
-<if(!$global.route.startsWith("/blog/"))>
+<if=!$global.route.startsWith("/blog/")>
 	<nav>
 		<a href="/" class="u-url u-uid" rel="author">
 			<img
@@ -14,7 +14,7 @@
 	</nav>
 </if>
 
-style {
+<style>
 	nav {
 		text-align: center;
 	}
@@ -26,4 +26,4 @@ style {
 		font-weight: bold;
 		text-decoration: none;
 	}
-}
+</style>

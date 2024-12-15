@@ -12,7 +12,7 @@ static {
 <p>Decompressed posting</p>
 
 // https://jamesg.blog/2024/01/10/h-card-how-to/
-<if(Object.keys(articles).length === 0)>
+<if=Object.keys(articles).length === 0>
 	<p style="text-align:center"><strong style="font-size:xxx-large">No articles yet!</strong></p>
 </if>
 <else>
@@ -33,7 +33,7 @@ static {
 	</ul>
 </else>
 
-style {
+<style>
 	hgroup {
 		display: flex;
 		align-items: center;
@@ -54,4 +54,4 @@ style {
 	time {
 		font-size: 0.8em;
 	}
-}
+</style>

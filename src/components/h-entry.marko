@@ -5,11 +5,11 @@ export interface Input {
 }
 
 <article class="h-entry">
-	<if(input.heroImage)><img class="u-featured" src=input.heroImage[0] alt=input.heroImage[1] /></if>
+	<if=input.heroImage><img class="u-featured" src=input.heroImage[0] alt=input.heroImage[1] /></if>
 	<hgroup>
 		<h1 class="p-name">${$global.meta.title}</h1>
-		<if($global.meta.description)><p class="p-summary">${$global.meta.description}</p></if>
-		<if($global.meta.publishedAt)>
+		<if=$global.meta.description><p class="p-summary">${$global.meta.description}</p></if>
+		<if=$global.meta.publishedAt>
 			// href=new URL($global.url.pathname, "https://jack.cab")
 			<a class="u-url">
 				Published
@@ -20,9 +20,10 @@ export interface Input {
 		</if>
 	</hgroup>
 	<div class="e-content"><${input.renderBody} /></div>
+	<footer><a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license">🅭🅯🄎 Jack.cab</a></footer>
 </article>
 
-style {
+<style>
 	.e-content p:last-child::after {
 		content: "";
 		background: currentColor;
@@ -56,4 +57,4 @@ style {
 		width: 100%;
 		height: auto;
 	}
-}
+</style>
