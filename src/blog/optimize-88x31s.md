@@ -9,7 +9,7 @@ This guide is written for [GIMP](https://gimp.org), but I imagine other software
 
 ## Combine, not replace
 
-Go use [Filter > Animation > Optimize (for GIF)](https://docs.gimp.org/en/plug-in-optimize.html) .
+Go use [Filter > Animation > Optimize (for GIF)](https://docs.gimp.org/en/plug-in-optimize.html).
 
 This let me [save 15.2 KB](https://github.com/Jack5079/Jack5079/commit/c83911f8455ad96dedf25aa8b159764c6cf57d2a) on [aei's](https://aei.sh) 88x31.
 
@@ -37,7 +37,7 @@ This [wasted 21.6 KB](https://github.com/Jack5079/Jack5079/commit/5610bf2eaedb88
 
 ## Inline them
 
-This sounds counterintuitive, but if you have a lot of 88x31s on your page, it might be worth it to [inline](https://developer.mozilla.org/en-US/docs/Web/URI/Schemes/data) the small ones. If you need a rule of thumb, [Vite defaults to 4096 bytes](https://vite.dev/config/build-options.html#build-assetsinlinelimit) .
+This sounds counterintuitive, but if you have a lot of 88x31s on your page, it might be worth it to [inline](https://developer.mozilla.org/en-US/docs/Web/URI/Schemes/data) the small ones. If you need a rule of thumb, [Vite defaults to 4096 bytes](https://vite.dev/config/build-options.html#build-assetsinlinelimit).
 
 The overhead of Base64 is made up with [solid compression](https://en.wikipedia.org/wiki/Solid_compression), reduced latency, and also avoiding the ~1 KB of overhead HTTP requests have.
 
