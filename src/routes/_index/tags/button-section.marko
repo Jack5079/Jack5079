@@ -1,10 +1,10 @@
 export interface Input {
 	value: string
-	renderBody: Marko.Body
+	content: Marko.Body
 }
 
 <legend role="heading" aria-level="2">${input.value}</legend>
-<ul class="btns"><${input.renderBody} /></ul>
+<ul class="btns"><${input.content} /></ul>
 <style>
 	.btns {
 		list-style-type: none;

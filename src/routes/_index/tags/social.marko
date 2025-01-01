@@ -3,17 +3,11 @@ import type { SimpleIcon } from "simple-icons"
 export interface Input {
 	href: string
 	icon: SimpleIcon
-	renderBody: Marko.Body
+	content: Marko.Body
 }
 
 <li>
-	<a
-		href=input.href
-		target="_blank"
-		rel="me"
-		class="u-url"
-		style="display:block"
-	>
+	<a href=input.href target="_blank" rel="me" class="u-url" style="display:block">
 		$!{input.icon.svg.replace(
 			`role="img"`,
 			`role="img" width="24" height="24" class="social" fill="#${input.icon.hex}"`,
