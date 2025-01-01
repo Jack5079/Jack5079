@@ -1,0 +1,35 @@
+---
+import type { SimpleIcon } from "simple-icons"
+
+interface Props {
+	children: any
+	href: string
+	icon: SimpleIcon
+}
+---
+
+<li>
+	<a href={Astro.props.href} target="_blank" rel="me" class="u-url" style="display:block">
+		<Fragment
+			set:html={Astro.props.icon.svg.replace(
+				`role="img"`,
+				`role="img" width="24" height="24" class="social" fill="#${Astro.props.icon.hex}"`
+			)}
+		/>
+		{" "}
+		<slot />
+	</a>
+</li>
+
+<style is:global>
+	svg.social {
+		vertical-align: middle;
+		width: 1.5em;
+		height: 1.5em;
+	}
+	@media (prefers-color-scheme: dark) {
+		svg.social {
+			fill: currentColor;
+		}
+	}
+</style>

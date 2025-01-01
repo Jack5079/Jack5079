@@ -1,22 +1,15 @@
 {
-  "name": "jack.cab",
+  "name": "astro",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "marko-run",
-    "build": "bun run build.ts",
-    "preview": "marko-run preview",
-    "start": "node --enable-source-maps ./dist/index.mjs"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "@marko/run": "^0.5.11",
-    "@marko/run-adapter-static": "^0.2.1",
-    "@types/bun": "^1.1.14",
-    "dedent": "^1.5.3",
-    "marko": "^6.0.0-next.3.18",
-    "prettier-plugin-marko-htmljs": "^0.0.5",
-    "shiki": "^1.24.4",
-    "simple-icons": "^14.0.1",
-    "typescript": "^5.7.2"
+    "astro": "^5.1.1",
+    "simple-icons": "^14.0.1"
   }
 }

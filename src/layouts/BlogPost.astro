@@ -1,0 +1,103 @@
+---
+import { Picture } from "astro:assets"
+import Layout from "./Layout.astro"
+
+interface Props {
+	title: string
+	date: Date
+	image?: [image: ImageMetadata, alt: string]
+	description?: string
+	children: any
+}
+
+const { image, date, title, description } = Astro.props
+---
+
+<Layout {description} {title} {image}>
+	<header><div><a href="/blog/">The Cabinet</a></div></header>
+	<article class="h-entry">
+		{
+			image && (
+				<Picture
+					alt={image[1]}
+					src={image[0]}
+					width={800}
+					densities={[1, 1.5, 0.5]}
+					class="u-featured"
+				/>
+			)
+		}
+		<hgroup>
+			<h1 class="p-name">{Astro.props.title}</h1>
+			{description && <p class="p-summary">{description}</p>}
+			{
+				date && (
+					<a class="u-url">
+						Published
+						<time class="dt-published" datetime={date.toISOString()}>
+							{date.toLocaleDateString()}
+						</time>
+					</a>
+				)
+			}
+		</hgroup>
+		<div class="e-content">
+			<slot />
+		</div>
+	</article>
+</Layout>
+
+<style is:global>
+	header > div > a[href="/blog/"] {
+		mask-image: url(./../pages/blog/_logo.png);
+		mask-size: contain;
+		mask-repeat: no-repeat;
+		mask-position: center;
+		background: currentColor;
+		user-select: none;
+		width: 100%;
+		height: 10ch;
+		display: block;
+		margin-inline: auto;
+		image-rendering: pixelated;
+	}
+	header > div > a[href="/blog/"] {
+		outline: none;
+	}
+	header > div:has(a[href="/blog/"]:focus-visible) {
+		outline: 1px auto;
+	}
+	.e-content p:last-child::after {
+		content: "";
+		background: currentColor;
+		mask-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAQAgMAAABfD3aUAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAdnJLH8AAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlQTFRFAAAAAAAA////g93P0gAAAAF0Uk5TAEDm2GYAAAA2SURBVAjXLcqxCcBADMVQcVXwJMFTZpQjldGU9wkpXiNEC74P7h13VCxUhmaM6zf9Ncs80jUHwegVF1+wUSkAAAAASUVORK5CYII");
+		image-rendering: pixelated;
+		width: 12px;
+		height: 16px;
+		display: inline-block;
+		vertical-align: text-top;
+		margin-left: 0.5ch;
+	}
+	hgroup {
+		text-align: center;
+	}
+	hgroup a {
+		color: GrayText;
+	}
+	hgroup .p-name {
+		font-size: xx-large;
+		margin-bottom: 0;
+		text-wrap: balance;
+		width: 100%;
+	}
+	.p-summary {
+		font-style: italic;
+	}
+	.u-featured {
+		-webkit-mask-image: linear-gradient(to top, transparent 0%, black 40%);
+		mask-image: linear-gradient(to top, transparent 0%, black 40%);
+		border-radius: 1em 1em 0 0;
+		width: 100%;
+		height: auto;
+	}
+</style>

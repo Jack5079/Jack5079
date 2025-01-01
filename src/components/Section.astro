@@ -1,0 +1,15 @@
+---
+interface Props {
+	children: any
+	id: string
+	style?: string
+}
+const id = Astro.props.id
+---
+
+<fieldset
+	role="none"
+	style={`grid-area:${id}${Astro.props.style ? ";" + Astro.props.style : ""}`}
+	{id}>
+	<slot />
+</fieldset>

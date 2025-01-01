@@ -1,0 +1,27 @@
+---
+interface Props {
+	children: any
+}
+---
+<!-- https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag#data-nosnippet-attr only works for span, div, and section -->
+<div style="display:contents" data-nosnippet role="none" class="review">
+	<figure itemscope itemtype="https://schema.org/Quotation">
+		<blockquote itemprop="text"><q><slot /></q></blockquote>
+		<figcaption>―<span itemprop="citation"><slot name="byline" /></span></figcaption>
+	</figure>
+</div>
+<style is:global>
+	.review figure {
+		margin-inline: 0;
+	}
+	.review blockquote {
+		display: inline;
+		margin: 0;
+	}
+	.review q {
+		font-style: italic;
+	}
+	.review figcaption {
+		color: GrayText;
+	}
+</style>

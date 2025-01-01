@@ -1,0 +1,63 @@
+---
+import "../global.css"
+import JackHeader from "../components/jack-header.astro"
+import favicon from "../favicon.png?url"
+import {getImage} from "astro:assets"
+interface Props {
+	title?: string
+	description?: string
+	image?: [image: ImageMetadata, alt: string],
+	bodyClass?: string // it can be a lot more but idfk
+	children: any
+}
+const title = Astro.props.title ?? "Jack.cab"
+const description = Astro.props.description ?? ":wavesmiley:"
+const image = Astro.props.image && await getImage({
+	src: Astro.props.image[0],
+	width: 1200
+})
+const alt_text = Astro.props.image?.[1]
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/png" href={favicon} />
+		<meta name="color-scheme" content="light dark" />
+		<meta name="theme-color" content="#FF4539" />
+		<link rel="authorization_endpoint" href="https://indieauth.com/auth" />
+		<link rel="canonical" href={Astro.url.href} />
+		<link
+			rel="alternate"
+			type="application/activity+json"
+			href=`https://fed.brid.gy/r/${Astro.url.href}`
+		/>
+		<!-- TODO: add sitemap & rss -->
+
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta property="og:site_name" content="Jack.cab" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta name="fediverse:creator" content="@j@wetdry.world" />
+
+		<meta property="twitter:card" content="summary_large_image" />
+		{Astro.props.image && (
+			<meta property="og:image" content={image!.src} />
+			<meta property="twitter:image" content={image!.src} />
+			<meta property="og:image:alt" content={alt_text} />
+			<meta property="twitter:image:alt" content={alt_text} />
+		)}
+		<meta name="robots" content="noai, noimageai" />
+		<meta name="tdm-reservation" content="1" />
+	</head>
+
+	<body class={Astro.props.bodyClass}>
+		<JackHeader />
+		<slot />
+	</body>
+</html>

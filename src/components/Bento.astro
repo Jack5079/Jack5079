@@ -1,0 +1,39 @@
+---
+interface Props {
+	layout: string[][]
+	style?: string
+}
+---
+<div
+	class="bento"
+	role="none"
+	style={`grid-template-areas:${Astro.props.layout
+		.map(row => row.join(" "))
+		.map(row => `'${row}'`)
+		.join("")}${Astro.props.style ? ";" + Astro.props.style : ""}`}>
+	<slot />
+</div>
+<style is:global>
+	@media (min-width: calc(800px + 40px)) {
+		.bento {
+			display: grid;
+			grid-gap: 1em;
+		}
+	}
+
+	.bento fieldset {
+		border-color: #ff4539;
+		border-radius: 1ch;
+		border-style: solid;
+		align-content: center;
+		transition:
+			opacity 0.3s,
+			border-color 0.3s;
+	}
+	.bento fieldset:target {
+		border-color: Highlight;
+	}
+	.bento:has(fieldset:target) fieldset:not(:target) {
+		opacity: 0.5;
+	}
+</style>

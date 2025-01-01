@@ -1,0 +1,83 @@
+---
+import Layout from "../../layouts/Layout.astro"
+import { getCollection } from "astro:content"
+const articles = await getCollection("blog")
+---
+
+<Layout title="The Cabinet" description="Decompressed posting">
+	<header><h1><a href="/blog/">The Cabinet</a></h1></header>
+	<p>Decompressed posting</p>
+	{
+		articles.length === 0 ? (
+			<p style="text-align:center">
+				<strong style="font-size:xxx-large">No articles yet!</strong>
+			</p>
+		) : (
+			// https://jamesg.blog/2024/01/10/h-card-how-to/
+			<ul class="h-feed">
+				{articles
+					.sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+					.map(article => (
+						<li class="h-entry">
+							<hgroup>
+								<h2 class="p-name">
+									<a href={`/blog/${article.id}`} class="u-url">
+										{article.data.title}
+									</a>
+								</h2>
+								<time
+									class="dt-published"
+									datetime={article.data.date.toISOString()}>
+									{article.data.date.toLocaleDateString()}
+								</time>
+							</hgroup>
+							<p class="p-summary">{article.data.description}</p>
+						</li>
+					))}
+			</ul>
+		)
+	}
+</Layout>
+
+<style is:global>
+	header > h1 > a[href="/blog/"] {
+		mask-image: url(./_logo.png);
+		mask-size: contain;
+		mask-repeat: no-repeat;
+		mask-position: center;
+		background: currentColor;
+		font-size: medium;
+		user-select: none;
+		width: 100%;
+		height: 10ch;
+		display: block;
+		margin-inline: auto;
+		image-rendering: pixelated;
+	}
+	header > h1 > a[href="/blog/"] {
+		outline: none;
+	}
+	header > h1:has(a[href="/blog/"]:focus-visible) {
+		outline: 1px auto;
+	}
+	hgroup {
+		display: flex;
+		align-items: center;
+		gap: 1ch;
+	}
+	a {
+		display: block;
+	}
+	h2 {
+		flex-grow: 1;
+		margin-block-end: 0;
+	}
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	time {
+		font-size: 0.8em;
+	}
+</style>

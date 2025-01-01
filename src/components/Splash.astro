@@ -1,0 +1,79 @@
+<!-- Inspired by https://deeply.nekoweb.org which is in turn taken from "chfr" which I cannot find -->
+<script>
+	import mc_click from "./mc_click.ogg?url"
+	const quotes = [
+		"Have anyone hating on Electron try to make an HTTP server responding with a stream in actix-web and they'll be worshipping Brendan Eich in no time",
+		"When I write a GTK app, I shouldn't be manually updating properties like a Roblox script",
+		"I don't wanna use anything made by people who know what Homestuck is",
+		"I need to add Marko, I need to add Marko so bad",
+		"Every day I feel more and more like a techbro",
+		"Who is Mike and why is he in my feedback form",
+		"Josh is like the DJ Khaled of Arc",
+		"trollsmile is now scanning you. These DMs.... property of trollsmile....",
+		"Etcetera has therefore decided that your startup should be destroyed",
+		"Step 5: Toot. Step 6: Motion",
+		"@Sales Convince this user",
+		"This is why you should never trust people who do their shit lowercase",
+		"Eventually you will get an evil user, and that evil user will be smarter than you, but has the same mental illnesses as you, so you wake up to 100% RAM usage and connecting gives you Bad Gateway",
+		"Your lottery numbers are 10, 20, 26, 57. Don't worry which lottery, any will work. Etcetera knows all. Etcetera knows it first. I am superhuman.",
+	]
+	let quote: string
+	declare const blockquote: HTMLQuoteElement
+	declare const random_quote: HTMLButtonElement
+	const random = <Type,>(arr: readonly Type[]): Type =>
+		arr[Math.floor(Math.random() * arr.length)]
+	const roll = () => {
+		quote = random(quotes.filter(q => q !== quote))
+		blockquote.innerText = quote
+	}
+	roll()
+	random_quote.onclick = () => {
+		new Audio(mc_click).play()
+		roll()
+	}
+</script>
+<legend role="heading" aria-level="2">Philosophy</legend>
+
+<button id="random_quote" aria-label="Random quote">
+	<blockquote id="blockquote"></blockquote>
+</button>
+
+<style is:global>
+	/* https://github.com/IdreesInc/Minecraft-Font */
+	@font-face {
+		font-family: Minecraft;
+		src: url(./Minecraft.woff2) format("woff2");
+	}
+	#random_quote {
+		width: 100%;
+		height: 100%;
+		background-color: transparent;
+		background-image: none;
+		border: none;
+		font-family: Minecraft, monospace;
+		padding: 0.125%;
+		cursor: pointer;
+		text-align: center;
+		padding-block: 3ch;
+	}
+	#blockquote {
+		margin: 0;
+		font-size: 15px;
+		color: #ff0;
+		font-weight: normal;
+		text-shadow: 2px 2px 0 #3f3f00;
+		animation: zoom-in-zoom-out 0.5s infinite;
+		animation-direction: normal;
+		animation-direction: alternate;
+		rotate: -12deg;
+		line-height: 18px;
+	}
+	@keyframes zoom-in-zoom-out {
+		0% {
+			transform: scale(0.875);
+		}
+		100% {
+			transform: scale(1);
+		}
+	}
+</style>

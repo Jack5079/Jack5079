@@ -1,0 +1,554 @@
+---
+import Layout from "../layouts/Layout.astro"
+import Quote from "../components/Quote.astro"
+import Bento from "../components/Bento.astro"
+import Section from "../components/Section.astro"
+import Social from "../components/Social.astro"
+import theCabinet from "./blog/_logo.png?url"
+import { siDiscord, siMastodon, siGithub, siX, siBluesky, siGithubsponsors, siYoutube } from "simple-icons"
+import Splash from "../components/Splash.astro"
+
+// 88x31 imports
+import button_jack from "../assets/buttons/jack.png?url"
+import button_split from "../assets/buttons/split.gif?url"
+import button_malice from "../assets/buttons/malice.png?url"
+import button_mau from "../assets/buttons/mau.png?url"
+import button_aei from "../assets/buttons/aei.gif?url"
+import button_beebles from "../assets/buttons/beebles.png?url"
+import button_beebadge from "../assets/buttons/beebadge.png?url"
+import button_katlin from "../assets/buttons/katlin.png?url"
+import button_ce88x31 from "../assets/buttons/ce88x31.png?url"
+import button_freeplay from "../assets/buttons/freeplay.png?url"
+import button_micro from "../assets/buttons/micro.png?url"
+import button_sneexy from "../assets/buttons/sneexy.png?url"
+import button_ssm230 from "../assets/buttons/ssm230.png?url"
+import button_whitespaced from "../assets/buttons/whitespaced.gif?url"
+import button_toastyfen from "../assets/buttons/toastyfen.gif?url"
+import button_tctek from "../assets/buttons/tctek.png?url"
+import button_pancakes from "../assets/buttons/pancakes.png?url"
+import button_drakonic from "../assets/buttons/drakonic.gif?url"
+import button_moondvsted from "../assets/buttons/moondvsted.gif?url"
+import button_ceat from "../assets/buttons/ceat.png?url"
+import button_kopper from "../assets/buttons/kopper.png?url"
+import button_authen from "../assets/buttons/authen.gif?url"
+import button_dee from "../assets/buttons/dee.gif?url"
+import button_sherbetbutton from "../assets/buttons/sherbetbutton.gif?url"
+import button_tangent from "../assets/buttons/tangent.png?url"
+import button_pleasetheme from "../assets/buttons/pleasetheme.png?url"
+---
+
+<Layout title="Jack.cab" description="I write, code, and design. Etceteran #1." bodyClass="h-card">
+	<link href="acct:j@jack.cab" class="u-url" />
+	<p class="p-note" style="text-align:center">
+		I develop and design software, I write, and I lead
+		<a href="https://etceterans.org">Etceterans</a>.
+	</p>
+	<Bento
+		layout={[
+			["clock pronouns socials"],
+			["reviews reviews socials"],
+			["webrings", "blog", "feedback"],
+			["etceterans philosophy philosophy"],
+			["others philosophy philosophy"],
+			["mutuals mutuals mutuals"],
+		]}>
+		<!-- style="grid-template-columns:219px auto auto" -->
+		<!-- prettier-ignore -->
+		<Section id="clock">
+			<legend>
+				Time in
+				<a href="https:///en.wikipedia.org/wiki/US/Eastern">US/Eastern</a>
+			</legend>
+			<time id="tz"><script id=tz is:inline>tzf=_=>new Date().toLocaleString([],{timeZone:"US/Eastern",timeStyle:"short"});tz.innerText=tzf();setInterval("tz.innerText=tzf()",1e3)</script></time>
+		</Section>
+		<Section id="pronouns" style="text-align:center">
+			<legend role="heading" aria-level="2">Pronouns</legend>
+			<span style="white-space:pre;font-weight:1000;font-size:x-large">
+				<span>he</span>/<span>him</span>
+			</span>
+		</Section>
+		<Section id="socials">
+			<legend role="heading" aria-level="2">Socials</legend>
+
+			<ul style="line-height:2">
+				<Social icon={siDiscord} href="https://discord.com/users/173589391560802306"
+					>@nixos.org</Social
+				>
+				<Social icon={siMastodon} href="https://wetdry.world/@j">@j@wetdry.world</Social>
+				<Social icon={siX} href="https://x.com/banger_post">@banger_post</Social>
+				<Social icon={siBluesky} href="https://bsky.app/profile/jack.cab">@jack.cab</Social>
+				<Social icon={siBluesky} href="https://bsky.app/profile/fedi.jack.cab"
+					>@fedi.jack.cab</Social
+				>
+				<ul>
+					<li>
+						please also follow
+						<a href="https://bsky.app/profile/ap.brid.gy">@ap.brid.gy</a>
+						so that I can see your interactions
+					</li>
+				</ul>
+				<Social icon={siGithub} href="https://github.com/Jack5079">@Jack5079</Social>
+				<ul>
+					<Social icon={siGithubsponsors} href="https://github.com/sponsors/Jack5079"
+						>@Jack5079</Social
+					>
+				</ul>
+				<Social icon={siYoutube} href="https://youtube.com/@Jack5079">@Jack5079</Social>
+			</ul>
+		</Section>
+		<Section id="reviews">
+			<legend role="heading" aria-level="2">Testimonials</legend>
+			<Quote>
+				What's the issue? [CC-BY-NC stands for] Creative Commons by Non Copyright
+				<Fragment slot="byline">
+					Malice,
+					<a href="https://discord.com/application-directory/1067543931518205973"
+						>Solvalou</a
+					>
+					mastermind, September 2024
+				</Fragment>
+			</Quote>
+			<Quote>
+				Is writing <a href="https://markojs.com/v6/">Marko</a> like edging for you
+				<Fragment slot="byline">
+					split, of
+					<a href="https://wetdry.world/@j/112164857178980569"
+						>'MY INSTANCE CANT FUCKING FEDERATE'</a
+					>
+					fame, August 2024
+				</Fragment>
+			</Quote>
+			<Quote>
+				jack if you start a civil war with the uk I dont want no part in it
+				<Fragment slot="byline">
+					Charlie, co-founder of
+					<a href="https://cetera.uk">
+						<svg
+							viewBox="0 0 173.8 275.72"
+							height="20"
+							style="vertical-align: middle"
+							role="none"
+							fill="currentColor">
+							<circle cx="37.13" cy="26.43" r="21.6"></circle>
+							<circle cx="34.62" cy="117.87" r="34.62"></circle>
+							<circle cx="119.78" cy="130.68" r="21.6"></circle>
+							<circle cx="127.16" cy="46.64" r="46.65"></circle>
+							<circle cx="102.68" cy="219.58" r="56.14"></circle>
+						</svg>
+						Etceterans
+					</a>, February 2022
+				</Fragment>
+			</Quote>
+		</Section>
+		<Section id="webrings" style="text-align:center">
+			<legend role="heading" aria-level="2">Webrings</legend>
+			<section>
+				<a href="https://webring.zip/prev/jack.cab">←</a>
+				·
+				<a href="https://webring.zip">webring.zip</a>
+				·
+				<a href="https://webring.zip/next/jack.cab">→</a>
+			</section>
+			<small>Please <a href="#feedback">suggest</a> some webrings</small>
+		</Section>
+		<Section id="blog" style="text-align:center">
+			<legend role="heading" aria-level="2">Blog</legend>
+			<a href="/blog" style="display:block">
+				<img
+					src={theCabinet}
+					alt="The Cabinet"
+					decoding="async"
+					width="90"
+					height="58"
+					style="image-rendering:pixelated"
+				/>
+			</a>
+		</Section>
+		<Section id="feedback">
+			<legend role="heading" aria-level="2">Feedback</legend>
+			<form action="https://feedback.5079.workers.dev/" method="post">
+				<input type="text" placeholder="Name (optional)" name="author" maxlength="64" />
+				<textarea
+					name="text"
+					placeholder="Feedback"
+					style="resize:vertical;width:100%"
+					maxlength="2000"
+					required></textarea><input type="submit" value="Send feedback" /><input
+					type="hidden"
+					name="wave"
+					value="smiley"
+				/>
+			</form>
+		</Section>
+		<Section id="philosophy">
+			<Splash />
+		</Section>
+		<Section id="etceterans">
+			<legend role="heading" aria-level="2">Etceterans</legend>
+			<ul class="btns">
+				<li>
+					<a href="https://jack.cab">
+						<img
+							src={button_jack}
+							alt="Jack.cab"
+							decoding="async"
+							width="88"
+							height="31"
+						/>
+					</a>
+				</li>
+				<li>
+					<a href="https://split.pet">
+						<img
+							src={button_split}
+							alt="split"
+							decoding="async"
+							width="88"
+							height="31"
+						/>
+					</a>
+				</li>
+				<li>
+					<a href="https://malice.nz" title="Malice">
+						<img
+							src={button_malice}
+							alt="Malice"
+							decoding="async"
+							width="88"
+							height="31"
+						/>
+					</a>
+				</li>
+				<li>
+					<a href="https://mau.monster" title="mau">
+						<img src={button_mau} alt="mau" decoding="async" width="88" height="31" />
+					</a>
+				</li>
+			</ul>
+		</Section>
+		<Section id="mutuals">
+			<legend role="heading" aria-level="2">Mutuals</legend>
+			<ul class="btns">
+				<li>
+					<a href="https://aei.sh/">
+						<img
+							src={button_aei}
+							alt="aei's site"
+							decoding="async"
+							width="88"
+							height="31"
+						/>
+					</a>
+				</li>
+				<li>
+					<a href="https://beebl.es/">
+						<img
+							src={button_beebles}
+							alt="Beebles"
+							decoding="async"
+							width="88"
+							height="31"
+						/>
+					</a>
+				</li>
+				<li>
+					<a href="https://bee.movie/">
+						<img
+							src={button_beebadge}
+							alt="suspiciouslyBee"
+							decoding="async"
+							width="88"
+							height="31"
+						/>
+					</a>
+				</li>
+				<li>
+					<a href="https://thememesniper.dev/">
+						<img
+							src={button_katlin}
+							alt="k8's corner"
+							decoding="async"
+							width="88"
+							height="31"
+						/>
+					</a>
+				</li>
+				<li>
+					<a href="https://velzie.rip">
+						<img
+							src={button_ce88x31}
+							alt="velzie"
+							decoding="async"
+							width="88"
+							height="31"
+						/>
+					</a>
+				</li>
+				<li>
+					<a href="https://freeplay.floof.company/">
+						<img
+							src={button_freeplay}
+							alt="Freeplay"
+							decoding="async"
+							width="88"
+							height="31"
+						/>
+					</a>
+				</li>
+				<li>
+					<a href="https://micro.niko.lgbt">
+						<img
+							src={button_micro}
+							alt="Micro"
+							decoding="async"
+							width="88"
+							height="31"
+						/>
+					</a>
+				</li>
+				<li>
+					<a href="https://synth.download/">
+						<img
+							src={button_sneexy}
+							alt="Sneexy"
+							decoding="async"
+							width="88"
+							height="31"
+						/>
+					</a>
+				</li>
+				<li>
+					<a href="https://spacy.neocities.org/">
+						<img
+							src={button_ssm230}
+							alt="spacy"
+							decoding="async"
+							width="88"
+							height="31"
+						/>
+					</a>
+				</li>
+				<li>
+					<a href="https://infisoft.org">
+						<img
+							src={button_whitespaced}
+							alt="whitespaced"
+							decoding="async"
+							width="88"
+							height="31"
+						/>
+					</a>
+				</li>
+				<li>
+					<a href="https://oli.pages.gay">
+						<svg width="88" height="31" aria-label="oli">
+							<rect
+								width="88"
+								height="31"
+								fill="#1e1e2e"
+								stroke="#313244"
+								stroke-width="5"></rect>
+							<image
+								x="57"
+								y="7"
+								width="16"
+								height="16"
+								href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAKlBMVEUYGCUeHi1MT2Noa4Fwcoh5eI6hjZ+tkqLZpKbep6biqaXlqqTltKjlt6nUvBI2AAAAfklEQVQI1y3KoQ3DMBCF4ecRbobbIAEHTkUFHaYsBganjFDcIQINXOkpExRWVUCWqROVfdL/o+SSb+WawRrNm1fM3+VhtA+cXO/BDQ7wCTR4kplJ4kT9g5HkDb/sgK+EWz88OjaI9B++p46ejHKgwV4HlgqdZDTRCTrIqKLDD2RBLP1L65KiAAAAAElFTkSuQmCC"
+								image-rendering="pixelated"
+							/>
+							<text
+								x="14"
+								y="19"
+								font-size="12px"
+								font-family="'Fira Code',monospace"
+								fill="#cdd6f4"
+								stroke="#cdd6f4"
+								stroke-linecap="round"
+								stroke-linejoin="round">
+								oli
+							</text>
+						</svg>
+					</a>
+				</li>
+				<li>
+					<a href="https://toasty.zone">
+						<img
+							src={button_toastyfen}
+							alt="toastyfen"
+							decoding="async"
+							width="88"
+							height="31"
+						/>
+					</a>
+				</li>
+				<li>
+					<a href="https://tuxcrafting.online">
+						<img
+							src={button_tctek}
+							alt="tuxcrafting"
+							decoding="async"
+							width="88"
+							height="31"
+						/>
+					</a>
+				</li>
+				<li>
+					<a href="https://trypancakes.com">
+						<img
+							src={button_pancakes}
+							alt="pancakes"
+							decoding="async"
+							width="88"
+							height="31"
+						/>
+					</a>
+				</li>
+				<li>
+					<a href="https://drakonic.zone">
+						<img
+							src={button_drakonic}
+							alt="DRAKONIC"
+							decoding="async"
+							width="88"
+							height="31"
+						/>
+					</a>
+				</li>
+				<li>
+					<a href="https://moondvsted.neocities.org">
+						<img
+							src={button_moondvsted}
+							alt="moondvsted"
+							decoding="async"
+							width="88"
+							height="31"
+						/>
+					</a>
+				</li>
+				<li>
+					<a href="https://ceat.neocities.org">
+						<img src={button_ceat} alt="ceat" decoding="async" width="88" height="31" />
+					</a>
+				</li>
+				<li>
+					<a href="https://w.on-t.work">
+						<img
+							src={button_kopper}
+							alt="wont work"
+							decoding="async"
+							width="88"
+							height="31"
+						/>
+					</a>
+				</li>
+				<li>
+					<a href="https://authenyo.xyz">
+						<img
+							src={button_authen}
+							alt="authen"
+							decoding="async"
+							width="88"
+							height="31"
+						/>
+					</a>
+				</li>
+				<li>
+					<a href="https://deeply.nekoweb.org"><img src={button_dee} alt="thxdeeply" /></a
+					>
+				</li>
+			</ul>
+		</Section>
+		<Section id="others">
+			<legend role="heading" aria-level="2">Other 88x31s</legend>
+			<ul class="btns">
+				<li>
+					<a href="https://gba.ioi-xd.net/">
+						<img
+							src={button_sherbetbutton}
+							alt="sherbetbutton"
+							decoding="async"
+							width="88"
+							height="31"
+						/>
+					</a>
+				</li>
+				<li>
+					<a href="https://github.com/mollersuite/tangent-android">
+						<img
+							src={button_tangent}
+							alt="Tangent Saves"
+							decoding="async"
+							width="88"
+							height="31"
+						/>
+					</a>
+				</li>
+				<li>
+					<a href="https://gradienceteam.github.io/">
+						<img
+							src={button_pleasetheme}
+							alt="Please theme our apps"
+							decoding="async"
+							width="120"
+							height="31"
+						/>
+					</a>
+				</li>
+			</ul>
+		</Section>
+	</Bento>
+</Layout>
+
+<style is:global>
+	:root {
+		scroll-behavior: smooth;
+	}
+	@media (prefers-color-scheme: light) {
+		#blog img {
+			filter: invert(1);
+		}
+	}
+	#clock time {
+		font-family: monospace, monospace;
+		font-size: x-large;
+		line-height: normal;
+	}
+	/* I think uBlock Origin renames noscript to span for some reason */
+	#clock noscript,
+	#clock span {
+		color: GrayText;
+		font-size: medium;
+	}
+	#clock {
+		/* aspect-ratio: 1/1; */
+		align-content: center;
+		text-align: center;
+	}
+	.btns {
+		list-style-type: none;
+		padding-inline-start: 0;
+		display: flex;
+		justify-content: space-between;
+		gap: 1ch;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+	.btns li {
+		display: inline-block;
+		margin: 0;
+	}
+	.btns img {
+		display: block;
+		image-rendering: pixelated;
+	}
+	@media (max-width: 560px) {
+		.btns li {
+			display: block;
+			margin-left: 0;
+		}
+		.btns img {
+			max-width: 100%;
+			height: auto;
+		}
+	}
+</style>
