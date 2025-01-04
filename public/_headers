@@ -7,7 +7,7 @@
 /robots.txt
 	! x-robots-tag
 
-/assets/*
+/_astro/
 	Cache-Control: public, max-age=31536000, immutable
 	! Cross-Origin-Embedder-Policy
 	! Cross-Origin-Opener-Policy
