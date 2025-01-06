@@ -5,7 +5,15 @@ import Bento from "../components/Bento.astro"
 import Section from "../components/Section.astro"
 import Social from "../components/Social.astro"
 import theCabinet from "./blog/_logo.png?url"
-import { siDiscord, siMastodon, siGithub, siX, siBluesky, siGithubsponsors, siYoutube } from "simple-icons"
+import {
+	siDiscord,
+	siMastodon,
+	siGithub,
+	siX,
+	siBluesky,
+	siGithubsponsors,
+	siYoutube,
+} from "simple-icons"
 import Splash from "../components/Splash.astro"
 
 // 88x31 imports
@@ -120,9 +128,7 @@ import button_pleasetheme from "../assets/buttons/pleasetheme.png?url"
 			</Quote>
 			<Quote>
 				jack if you start a civil war with the uk I dont want no part in it
-				<Fragment slot="byline">
-					Charlie, co-founder of Etcetera, February 2022
-				</Fragment>
+				<Fragment slot="byline"> Charlie, co-founder of Etcetera, February 2022 </Fragment>
 			</Quote>
 		</Section>
 		<Section id="webrings" style="text-align:center">
@@ -438,8 +444,15 @@ import button_pleasetheme from "../assets/buttons/pleasetheme.png?url"
 					</a>
 				</li>
 				<li>
-					<a href="https://deeply.nekoweb.org"><img src={button_dee} alt="thxdeeply" /></a
-					>
+					<a href="https://deeply.nekoweb.org">
+						<img
+							src={button_dee}
+							alt="thxdeeply"
+							decoding="async"
+							width="88"
+							height="31"
+						/>
+					</a>
 				</li>
 			</ul>
 		</Section>
