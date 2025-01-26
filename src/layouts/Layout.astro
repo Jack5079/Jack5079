@@ -34,7 +34,8 @@ const alt_text = Astro.props.image?.[1]
 			type="application/activity+json"
 			href=`https://fed.brid.gy/r/${Astro.url.href}`
 		/>
-		<!-- TODO: add sitemap & rss -->
+		<!-- TODO: add rss -->
+		<link rel="sitemap" href="/sitemap-index.xml" />
 
 		<title>{title}</title>
 		<meta name="description" content={description} />
