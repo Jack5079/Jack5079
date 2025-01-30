@@ -1,7 +1,6 @@
 ---
 import "../global.css"
 import JackHeader from "../components/jack-header.astro"
-import favicon from "../favicon.png?url"
 import {getImage} from "astro:assets"
 interface Props {
 	title?: string
@@ -24,7 +23,7 @@ const alt_text = Astro.props.image?.[1]
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/png" href={favicon} />
+		<link rel="icon" type="image/png" href="/favicon.svg" />
 		<meta name="color-scheme" content="light dark" />
 		<meta name="theme-color" content="#FF4539" />
 		<link rel="authorization_endpoint" href="https://indieauth.com/auth" />

@@ -1,0 +1,12 @@
+<svg viewBox="0 0 1 1" xmlns="http://www.w3.org/2000/svg">
+	<image
+		href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAQAgMAAABfD3aUAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAdnJLH8AAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlQTFRFAAAAAAAA////g93P0gAAAAF0Uk5TAEDm2GYAAAA2SURBVAjXLcqxCcBADMVQcVXwJMFTZpQjldGU9wkpXiNEC74P7h13VCxUhmaM6zf9Ncs80jUHwegVF1+wUSkAAAAASUVORK5CYII"
+		height="1"
+		width="1"
+		image-rendering="pixelated" />
+	<style>
+		@media (prefers-color-scheme: light) {
+			image { filter: invert(1) }
+		}
+	</style>
+</svg>
