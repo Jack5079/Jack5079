@@ -7,13 +7,13 @@ import favicon from "../favicon.png?url"
 		<nav>
 			<a href="/" class="u-url u-uid" rel="author">
 				<img
-					src={favicon}
+					src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAQAgMAAABfD3aUAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAdnJLH8AAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlQTFRFAAAAAAAA////g93P0gAAAAF0Uk5TAEDm2GYAAAA2SURBVAjXLcqxCcBADMVQcVXwJMFTZpQjldGU9wkpXiNEC74P7h13VCxUhmaM6zf9Ncs80jUHwegVF1+wUSkAAAAASUVORK5CYII"
 					alt=""
 					decoding="async"
 					class="u-photo"
 					style="image-rendering:pixelated"
-					height="32"
-					width="32"
+					width="12"
+					height="16"
 				/>{" "}
 				<span class="p-name">Jack.cab</span>
 			</a>
@@ -23,12 +23,18 @@ import favicon from "../favicon.png?url"
 
 <style is:global>
 	.u-uid {
-		text-align: center;
+		/* text-align: center; */
+		text-transform: uppercase;
 		display: block;
+		color: currentColor;
 		margin: 0.5em 0;
-		/* Aligned with the height of the logo's beige portion */
-		font-size: 27.5px;
 		font-weight: bold;
 		text-decoration: none;
+
+		@media (prefers-color-scheme: light) {
+			img {
+				filter: invert(1);
+			}
+		}
 	}
 </style>

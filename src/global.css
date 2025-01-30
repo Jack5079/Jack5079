@@ -8,14 +8,14 @@ body {
 }
 h1,
 h2,
-h3,
-.u-uid {
+h3 {
 	font-family: "Inter Display", "Inter Variable", "Inter", sans-serif;
 }
-
+legend,
+.u-uid,
 code,
 pre {
-	font-family: monospace, monospace; /* [sic], https://seirdy.one/posts/2020/11/23/website-best-practices#monospace-handling */
+	font-family: "Go Mono", monospace;
 }
 
 @media (max-width: 230px) {
@@ -28,7 +28,7 @@ pre {
 		background-color: #00000f;
 		color: #fff;
 	}
-	 .astro-code,
+	.astro-code,
 	.astro-code span {
 		color: var(--shiki-dark) !important;
 		background-color: var(--shiki-dark-bg) !important;
