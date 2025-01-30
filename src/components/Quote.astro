@@ -3,7 +3,10 @@ interface Props {
 	children: any
 }
 ---
-<!-- https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag#data-nosnippet-attr only works for span, div, and section -->
+
+{
+	// https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag#data-nosnippet-attr only works for span, div, and section
+}
 <div style="display:contents" data-nosnippet role="none" class="review">
 	<figure itemscope itemtype="https://schema.org/Quotation">
 		<blockquote itemprop="text"><q><slot /></q></blockquote>
