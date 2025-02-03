@@ -55,7 +55,7 @@ import button_pleasetheme from "../assets/buttons/pleasetheme.png?url"
 		layout={[
 			["clock pronouns socials"],
 			["reviews reviews socials"],
-			["webrings", "blog", "feedback"],
+			["webrings", "blog", "socials"],
 			["etceterans philosophy philosophy"],
 			["others philosophy philosophy"],
 			["mutuals mutuals mutuals"],
@@ -143,7 +143,7 @@ import button_pleasetheme from "../assets/buttons/pleasetheme.png?url"
 				·
 				<a href="https://webring.zip/next/jack.cab">→</a>
 			</section>
-			<small>Please <a href="#feedback">suggest</a> some webrings</small>
+			<small>Please <a href="#socials">suggest</a> some webrings</small>
 		</Section>
 		<Section id="blog" style="text-align:center">
 			<legend role="heading" aria-level="2">Blog</legend>
@@ -157,22 +157,6 @@ import button_pleasetheme from "../assets/buttons/pleasetheme.png?url"
 					style="image-rendering:pixelated"
 				/>
 			</a>
-		</Section>
-		<Section id="feedback">
-			<legend role="heading" aria-level="2">Feedback</legend>
-			<form action="https://feedback.5079.workers.dev/" method="post">
-				<input type="text" placeholder="Name (optional)" name="author" maxlength="64" />
-				<textarea
-					name="text"
-					placeholder="Feedback"
-					style="resize:vertical;width:100%"
-					maxlength="2000"
-					required></textarea><input type="submit" value="Send feedback" /><input
-					type="hidden"
-					name="jack"
-					value="cab"
-				/>
-			</form>
 		</Section>
 		<Section id="philosophy">
 			<Splash />
