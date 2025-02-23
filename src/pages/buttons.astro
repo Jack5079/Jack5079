@@ -38,58 +38,56 @@ import Section from "../components/Section.astro"
 
 <Layout title="Buttons" description="88x31s">
 	<h1>Buttons</h1>
-
-	<p>
+	<!-- <p>
 		88x31 buttons <a
 			href="https://ux.stackexchange.com/questions/140100/why-has-8831-become-the-standard-ratio-for-micro-bars"
 			>originated from the GeoCities default backlink</a
 		>. Sadly, 31 is a Mersenne prime.
-	</p>
-	<Section id="filters">
-		<legend role="heading" aria-level="2">Filters</legend>
-		<label>
-			<input type="checkbox" id="etc" /> Etceterans
-		</label>
-		<label>
-			<input type="checkbox" id="bsky" /> Bluesky mutuals
-		</label>
-		<label>
-			<input type="checkbox" id="weddy" /> wetdry.world mutuals
-		</label>
-		<label>
-			<input type="checkbox" id="inhouse" /> Designed by me
-		</label>
-	</Section>
-	<Section id="etceterans">
-		<legend role="heading" aria-level="2">Etceterans</legend>
-		<p>All buttons in this section were designed by me.</p>
+	</p> -->
+	<main>
+		<form>
+			<fieldset>
+				<legend role="heading" aria-level="2">Filters</legend>
+				<label>
+					<input type="checkbox" id="etc" /> Etceterans
+				</label>
+				<label>
+					<input type="checkbox" id="bsky" /> Bluesky mutuals
+				</label>
+				<label>
+					<input type="checkbox" id="fedi" /> wetdry.world mutuals
+				</label>
+				<label>
+					<input type="checkbox" id="x" /> 𝕏 (formerly Twitter) mutuals
+				</label>
+				<label>
+					<input type="checkbox" id="inhouse" /> 88x31 created by me
+				</label>
+				<button type="reset">Clear all filters</button>
+			</fieldset>
+		</form>
 		<ul class="btns">
-			<li>
+			<li class="etc inhouse">
 				<a href="https://jack.cab">
 					<img src={button_jack} alt="Jack.cab" decoding="async" width="88" height="31" />
 				</a>
 			</li>
-			<li>
+			<li class="etc inhouse fedi bsky">
 				<a href="https://split.pet">
 					<img src={button_split} alt="split" decoding="async" width="88" height="31" />
 				</a>
 			</li>
-			<li>
+			<li class="etc inhouse fedi">
 				<a href="https://malice.nz" title="Malice">
 					<img src={button_malice} alt="Malice" decoding="async" width="88" height="31" />
 				</a>
 			</li>
-			<li>
+			<li class="etc inhouse">
 				<a href="https://github.com/maumaumaumaumaumau" title="mau">
 					<img src={button_mau} alt="mau" decoding="async" width="88" height="31" />
 				</a>
 			</li>
-		</ul>
-	</Section>
-	<Section id="mutuals">
-		<legend role="heading" aria-level="2">Mutuals</legend>
-		<ul class="btns">
-			<li>
+			<li class="fedi">
 				<a href="https://aei.sh/">
 					<img
 						src={button_aei}
@@ -100,7 +98,7 @@ import Section from "../components/Section.astro"
 					/>
 				</a>
 			</li>
-			<li>
+			<li class="fedi inhouse">
 				<a href="https://beebl.es/">
 					<img
 						src={button_beebles}
@@ -111,7 +109,7 @@ import Section from "../components/Section.astro"
 					/>
 				</a>
 			</li>
-			<li>
+			<li class="fedi">
 				<a href="https://bee.movie/">
 					<img
 						src={button_beebadge}
@@ -122,7 +120,7 @@ import Section from "../components/Section.astro"
 					/>
 				</a>
 			</li>
-			<li>
+			<li class="fedi bsky">
 				<a href="https://thememesniper.dev/">
 					<img
 						src={button_katlin}
@@ -133,7 +131,7 @@ import Section from "../components/Section.astro"
 					/>
 				</a>
 			</li>
-			<li>
+			<li class="fedi">
 				<a href="https://velzie.rip">
 					<img
 						src={button_ce88x31}
@@ -144,7 +142,7 @@ import Section from "../components/Section.astro"
 					/>
 				</a>
 			</li>
-			<li>
+			<li class="fedi">
 				<a href="https://freeplay.floof.company/">
 					<img
 						src={button_freeplay}
@@ -155,12 +153,12 @@ import Section from "../components/Section.astro"
 					/>
 				</a>
 			</li>
-			<li>
+			<li class="fedi">
 				<a href="https://micro.niko.lgbt">
 					<img src={button_micro} alt="Micro" decoding="async" width="88" height="31" />
 				</a>
 			</li>
-			<li>
+			<li class="fedi bsky">
 				<a href="https://synth.download/">
 					<svg aria-label="Sneexy" width="88" height="31" viewBox="0 0 23.283 8.202"
 						><defs
@@ -277,12 +275,12 @@ import Section from "../components/Section.astro"
 					>
 				</a>
 			</li>
-			<li>
+			<li class="fedi">
 				<a href="https://spacy.neocities.org/">
 					<img src={button_ssm230} alt="spacy" decoding="async" width="88" height="31" />
 				</a>
 			</li>
-			<li>
+			<li class="fedi">
 				<a href="https://infisoft.org">
 					<img
 						src={button_whitespaced}
@@ -293,7 +291,7 @@ import Section from "../components/Section.astro"
 					/>
 				</a>
 			</li>
-			<li>
+			<li class="fedi">
 				<a href="https://floof.gay">
 					<svg width="88" height="31" aria-label="oli">
 						<rect
@@ -324,7 +322,7 @@ import Section from "../components/Section.astro"
 					</svg>
 				</a>
 			</li>
-			<li>
+			<li class="fedi bsky">
 				<a href="https://toasty.zone">
 					<img
 						src={button_toastyfen}
@@ -335,7 +333,7 @@ import Section from "../components/Section.astro"
 					/>
 				</a>
 			</li>
-			<li>
+			<li class="fedi">
 				<a href="https://tuxcrafting.online">
 					<img
 						src={button_tctek}
@@ -346,7 +344,7 @@ import Section from "../components/Section.astro"
 					/>
 				</a>
 			</li>
-			<li>
+			<li class="fedi">
 				<a href="https://pancakes.gay">
 					<img
 						src={button_pancakes}
@@ -357,7 +355,7 @@ import Section from "../components/Section.astro"
 					/>
 				</a>
 			</li>
-			<li>
+			<li class="fedi">
 				<a href="https://drakonic.zone">
 					<img
 						src={button_drakonic}
@@ -368,7 +366,7 @@ import Section from "../components/Section.astro"
 					/>
 				</a>
 			</li>
-			<li>
+			<li class="fedi">
 				<a href="https://moondvsted.neocities.org">
 					<img
 						src={button_moondvsted}
@@ -379,12 +377,12 @@ import Section from "../components/Section.astro"
 					/>
 				</a>
 			</li>
-			<li>
+			<li class="bsky">
 				<a href="https://ceat.neocities.org">
 					<img src={button_ceat} alt="ceat" decoding="async" width="88" height="31" />
 				</a>
 			</li>
-			<li>
+			<li class="fedi bsky">
 				<a href="https://w.on-t.work">
 					<img
 						src={button_kopper}
@@ -395,21 +393,16 @@ import Section from "../components/Section.astro"
 					/>
 				</a>
 			</li>
-			<li>
+			<li class="fedi bsky x">
 				<a href="https://authenyo.xyz">
 					<img src={button_authen} alt="authen" decoding="async" width="88" height="31" />
 				</a>
 			</li>
-			<li>
+			<li class="bsky x">
 				<a href="https://deeply.nekoweb.org">
 					<img src={button_dee} alt="thxdeeply" decoding="async" width="88" height="33" />
 				</a>
 			</li>
-		</ul>
-	</Section>
-	<Section id="others">
-		<legend role="heading" aria-level="2">Other 88x31s</legend>
-		<ul class="btns">
 			<li>
 				<a href="https://gba.ioi-xd.net/">
 					<img
@@ -421,7 +414,7 @@ import Section from "../components/Section.astro"
 					/>
 				</a>
 			</li>
-			<li>
+			<li class="inhouse">
 				<a href="https://github.com/mollersuite/tangent">
 					<img
 						src={button_tangent}
@@ -432,7 +425,7 @@ import Section from "../components/Section.astro"
 					/>
 				</a>
 			</li>
-			<li>
+			<li class="inhouse">
 				<a href="https://github.com/mollersuite/tangent-saves">
 					<img
 						src={button_tangent_saves}
@@ -443,7 +436,7 @@ import Section from "../components/Section.astro"
 					/>
 				</a>
 			</li>
-			<li>
+			<li class="inhouse">
 				<a
 					href="http://apps.samsung.com/appquery/appDetail.as?appId=com.monotype.android.font.chococooky">
 					<img
@@ -455,7 +448,7 @@ import Section from "../components/Section.astro"
 					/>
 				</a>
 			</li>
-			<li>
+			<li class="inhouse">
 				<a href="https://gradienceteam.github.io/">
 					<img
 						src={button_pleasetheme}
@@ -467,7 +460,7 @@ import Section from "../components/Section.astro"
 				</a>
 			</li>
 		</ul>
-	</Section>
+	</main>
 	<h2>Add my button</h2>
 	<Code
 		lang="html"
@@ -486,43 +479,55 @@ import Section from "../components/Section.astro"
 </a>`
 		wrap
 	/>
+
+	<style is:global>
+		@media (min-width: 800px) {
+			fieldset {
+				margin: 1ch;
+				float: left;
+			}
+		}
+		h2 {
+			clear: both;
+		}
+		.btns {
+			list-style-type: none;
+			padding-inline-start: 0;
+			display: flex;
+			justify-content: space-around;
+			gap: 1ch;
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+		.btns li {
+			display: inline-block;
+			margin: 0;
+		}
+		.btns img {
+			display: block;
+			image-rendering: pixelated;
+		}
+		label {
+			display: block;
+		}
+
+		body:has(:checked) .btns li {
+			display: none;
+		}
+		body:has(#etc:checked) .btns li.etc {
+			display: inline-block;
+		}
+		body:has(#inhouse:checked) .btns li.inhouse {
+			display: inline-block;
+		}
+		body:has(#bsky:checked) .btns li.bsky {
+			display: inline-block;
+		}
+		body:has(#fedi:checked) .btns li.fedi {
+			display: inline-block;
+		}
+		body:has(#x:checked) .btns li.x {
+			display: inline-block;
+		}
+	</style>
 </Layout>
-
-<style is:global>
-	.btns {
-		list-style-type: none;
-		padding-inline-start: 0;
-		display: flex;
-		justify-content: space-between;
-		gap: 1ch;
-		flex-direction: row;
-		flex-wrap: wrap;
-	}
-	.btns li {
-		display: inline-block;
-		margin: 0;
-	}
-	.btns img {
-		display: block;
-		image-rendering: pixelated;
-	}
-	label {
-		display: block;
-	}
-
-	body:has(:checked) .btns li {
-		display: none;
-	}
-	body:has(#etc:checked) .btns li.etc {
-		display: inline-block;
-	}
-	body:has(#inhouse:checked) .btns li.inhouse {
-		display: inline-block;
-	}
-	body:has(#bsky:checked) .btns li.bsky {
-		display: inline-block;
-	}
-	body:has(#weddy:checked) .btns li.weddy {
-		display: inline-block;
-	}
-</style>
