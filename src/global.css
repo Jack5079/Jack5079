@@ -15,7 +15,7 @@ legend,
 .u-uid,
 code,
 pre {
-	font-family: "Go Mono", monospace;
+	font-family: "Adwaita Mono", "Go Mono", monospace;
 }
 
 @media (max-width: 230px) {
