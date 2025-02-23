@@ -1,0 +1,528 @@
+---
+import Layout from "../layouts/Layout.astro"
+import { Code } from "astro:components"
+
+import monospaceDark from "../monospace-dark.json"
+import monospaceLight from "../monospace-light.json"
+
+// 88x31 imports
+import button_jack from "../assets/buttons/jack.png?url"
+import button_split from "../assets/buttons/split.gif?url"
+import button_malice from "../assets/buttons/malice.png?url"
+import button_mau from "../assets/buttons/mau.png?url"
+import button_aei from "../assets/buttons/aei.gif?url"
+import button_beebles from "../assets/buttons/beebles.png?url"
+import button_beebadge from "../assets/buttons/beebadge.png?url"
+import button_katlin from "../assets/buttons/katlin.png?url"
+import button_ce88x31 from "../assets/buttons/ce88x31.png?url"
+import button_freeplay from "../assets/buttons/freeplay.png?url"
+import button_micro from "../assets/buttons/micro.png?url"
+import button_ssm230 from "../assets/buttons/ssm230.png?url"
+import button_whitespaced from "../assets/buttons/whitespaced.gif?url"
+import button_toastyfen from "../assets/buttons/toastyfen.gif?url"
+import button_tctek from "../assets/buttons/tctek.png?url"
+import button_pancakes from "../assets/buttons/pancakes.png?url"
+import button_drakonic from "../assets/buttons/drakonic.gif?url"
+import button_moondvsted from "../assets/buttons/moondvsted.gif?url"
+import button_ceat from "../assets/buttons/ceat.png?url"
+import button_kopper from "../assets/buttons/kopper.png?url"
+import button_authen from "../assets/buttons/authen.gif?url"
+import button_dee from "../assets/buttons/dee.gif?url"
+import button_sherbetbutton from "../assets/buttons/sherbetbutton.gif?url"
+import button_tangent from "../assets/buttons/tangent.png?url"
+import button_tangent_saves from "../assets/buttons/tangentsaves.png?url"
+import button_chococooky from "../assets/buttons/chococooky.png?url"
+import button_pleasetheme from "../assets/buttons/pleasetheme.png?url"
+import Section from "../components/Section.astro"
+---
+
+<Layout title="Buttons" description="88x31s">
+	<h1>Buttons</h1>
+
+	<p>
+		88x31 buttons <a
+			href="https://ux.stackexchange.com/questions/140100/why-has-8831-become-the-standard-ratio-for-micro-bars"
+			>originated from the GeoCities default backlink</a
+		>. Sadly, 31 is a Mersenne prime.
+	</p>
+	<Section id="filters">
+		<legend role="heading" aria-level="2">Filters</legend>
+		<label>
+			<input type="checkbox" id="etc" /> Etceterans
+		</label>
+		<label>
+			<input type="checkbox" id="bsky" /> Bluesky mutuals
+		</label>
+		<label>
+			<input type="checkbox" id="weddy" /> wetdry.world mutuals
+		</label>
+		<label>
+			<input type="checkbox" id="inhouse" /> Designed by me
+		</label>
+	</Section>
+	<Section id="etceterans">
+		<legend role="heading" aria-level="2">Etceterans</legend>
+		<p>All buttons in this section were designed by me.</p>
+		<ul class="btns">
+			<li>
+				<a href="https://jack.cab">
+					<img src={button_jack} alt="Jack.cab" decoding="async" width="88" height="31" />
+				</a>
+			</li>
+			<li>
+				<a href="https://split.pet">
+					<img src={button_split} alt="split" decoding="async" width="88" height="31" />
+				</a>
+			</li>
+			<li>
+				<a href="https://malice.nz" title="Malice">
+					<img src={button_malice} alt="Malice" decoding="async" width="88" height="31" />
+				</a>
+			</li>
+			<li>
+				<a href="https://github.com/maumaumaumaumaumau" title="mau">
+					<img src={button_mau} alt="mau" decoding="async" width="88" height="31" />
+				</a>
+			</li>
+		</ul>
+	</Section>
+	<Section id="mutuals">
+		<legend role="heading" aria-level="2">Mutuals</legend>
+		<ul class="btns">
+			<li>
+				<a href="https://aei.sh/">
+					<img
+						src={button_aei}
+						alt="aei's site"
+						decoding="async"
+						width="88"
+						height="31"
+					/>
+				</a>
+			</li>
+			<li>
+				<a href="https://beebl.es/">
+					<img
+						src={button_beebles}
+						alt="Beebles"
+						decoding="async"
+						width="88"
+						height="31"
+					/>
+				</a>
+			</li>
+			<li>
+				<a href="https://bee.movie/">
+					<img
+						src={button_beebadge}
+						alt="suspiciouslyBee"
+						decoding="async"
+						width="88"
+						height="31"
+					/>
+				</a>
+			</li>
+			<li>
+				<a href="https://thememesniper.dev/">
+					<img
+						src={button_katlin}
+						alt="k8's corner"
+						decoding="async"
+						width="88"
+						height="31"
+					/>
+				</a>
+			</li>
+			<li>
+				<a href="https://velzie.rip">
+					<img
+						src={button_ce88x31}
+						alt="velzie"
+						decoding="async"
+						width="88"
+						height="31"
+					/>
+				</a>
+			</li>
+			<li>
+				<a href="https://freeplay.floof.company/">
+					<img
+						src={button_freeplay}
+						alt="Freeplay"
+						decoding="async"
+						width="88"
+						height="31"
+					/>
+				</a>
+			</li>
+			<li>
+				<a href="https://micro.niko.lgbt">
+					<img src={button_micro} alt="Micro" decoding="async" width="88" height="31" />
+				</a>
+			</li>
+			<li>
+				<a href="https://synth.download/">
+					<svg aria-label="Sneexy" width="88" height="31" viewBox="0 0 23.283 8.202"
+						><defs
+							><filter
+								id="g"
+								width="1.298"
+								height="1.733"
+								x="-.149"
+								y="-.367"
+								style="color-interpolation-filters:sRGB"
+								><feGaussianBlur stdDeviation="5.703"></feGaussianBlur></filter
+							><filter
+								id="h"
+								width="1.532"
+								height="1.47"
+								x="-.266"
+								y="-.235"
+								style="color-interpolation-filters:sRGB"
+								><feGaussianBlur stdDeviation="2.566"></feGaussianBlur></filter
+							><filter
+								id="l"
+								width="1.61"
+								height="1.597"
+								x="-.305"
+								y="-.298"
+								style="color-interpolation-filters:sRGB"
+								><feGaussianBlur stdDeviation="2.073"></feGaussianBlur></filter
+							><filter
+								id="f"
+								width="1.095"
+								height="1.327"
+								x="-.047"
+								y="-.163"
+								style="color-interpolation-filters:sRGB"
+								><feGaussianBlur stdDeviation="1.391"></feGaussianBlur></filter
+							><clipPath id="e" clipPathUnits="userSpaceOnUse"
+								><use xlink:href="#a"></use></clipPath
+							><clipPath id="i" clipPathUnits="userSpaceOnUse"
+								><use xlink:href="#c" transform="translate(-1.753)"></use></clipPath
+							><clipPath id="j" clipPathUnits="userSpaceOnUse"
+								><use xlink:href="#d"></use></clipPath
+							><linearGradient id="b"
+								><stop offset="0" style="stop-color:#6f8;stop-opacity:1"
+								></stop><stop offset="1" style="stop-color:#8cffaa;stop-opacity:1"
+								></stop></linearGradient
+							><linearGradient
+								xlink:href="#b"
+								id="k"
+								x1="-11.217"
+								x2="10.892"
+								y1="15.778"
+								y2="15.778"
+								gradientUnits="userSpaceOnUse"></linearGradient></defs
+						><g clip-path="url(#e)" transform="scale(.26458)"
+							><path
+								id="a"
+								d="M0 0h88v31H0z"
+								style="fill:#0d0d0d;fill-opacity:1;fill-rule:evenodd;stroke-width:1.19062;stroke-dashoffset:320"
+							></path><path
+								d="M26.668 31s25.48-.859 38.19-1.79c8.762-.64 26.228-2.613 26.228-2.613l6.152 20.45-65.446-.117Z"
+								style="opacity:.529248;mix-blend-mode:normal;fill:#6f8;fill-rule:evenodd;stroke-width:4.5;stroke-dashoffset:320;filter:url(#f)"
+							></path><path
+								d="m19.018-12.519 90.148-2.522 1.654 37.335L88 18.474l-16.162-9.49-26.513-3.349L23.283 0Z"
+								style="mix-blend-mode:normal;fill:#262626;fill-opacity:1;fill-rule:evenodd;stroke-width:1.19062;stroke-dashoffset:320;filter:url(#g)"
+							></path><path
+								d="M40.34 2.195c-.07 0-.14.006-.213.015L22.684 4.225a2.082 2.082 0 0 0-1.834 2.312 2.084 2.084 0 0 0 2.314 1.834l17.442-2.015a2.082 2.082 0 0 0 1.834-2.312 2.083 2.083 0 0 0-2.1-1.85Zm-19.745 8.303-.432 4.028c-.741 6.942 3.29 13.023 9.035 13.637l1.877.202c5.746.614 10.97-4.48 11.712-11.422l.43-4.028-11.133-1.19v7.091a4.241 4.241 0 0 1-4.25 4.25 4.243 4.243 0 0 1-4.253-4.25v-8z"
+								style="opacity:.5;fill:#6f8;fill-opacity:1;fill-rule:evenodd;stroke-width:1.58613;stroke-dashoffset:320;filter:url(#h)"
+								transform="matrix(1.0458 0 0 1.0458 10.446 -.47)"></path><path
+								d="M40.34 2.195c-.07 0-.14.006-.213.015L22.684 4.225a2.082 2.082 0 0 0-1.834 2.312 2.084 2.084 0 0 0 2.314 1.834l17.442-2.015a2.082 2.082 0 0 0 1.834-2.312 2.083 2.083 0 0 0-2.1-1.85Zm-19.745 8.303-.432 4.028c-.741 6.942 3.29 13.023 9.035 13.637l1.877.202c5.746.614 10.97-4.48 11.712-11.422l.43-4.028-11.133-1.19v7.091a4.241 4.241 0 0 1-4.25 4.25 4.243 4.243 0 0 1-4.253-4.25v-8z"
+								style="opacity:1;fill:#6f8;fill-opacity:1;fill-rule:evenodd;stroke-width:1.58613;stroke-dashoffset:320"
+								transform="matrix(1.0458 0 0 1.0458 10.446 -.47)"></path><g
+								clip-path="url(#i)"
+								transform="translate(1.812 -.608)"
+								><ellipse
+									id="c"
+									cx="2.636"
+									cy="16.108"
+									rx="15.73"
+									ry="23.051"
+									style="fill:#737373;fill-opacity:1;fill-rule:evenodd;stroke-width:1.19062;stroke-dashoffset:320"
+									transform="translate(1.753)"></ellipse><path
+									d="m-12.386 9.273 26.34-20.858L20.856 6.47s-5.003 11.603-13.31 11.462c-8.15-.138-19.932-8.659-19.932-8.659Z"
+									style="fill:#636363;fill-rule:evenodd;stroke-width:1.19062;stroke-dashoffset:320"
+								></path><g clip-path="url(#j)"
+									><ellipse
+										id="d"
+										cx="-.162"
+										cy="15.778"
+										rx="11.054"
+										ry="18.346"
+										style="fill:url(#k);fill-opacity:1;fill-rule:evenodd;stroke-width:1.19062;stroke-dashoffset:320"
+									></ellipse><ellipse
+										cx="9.413"
+										cy="21.183"
+										rx="6.53"
+										ry="6.485"
+										style="fill:#27ff56;fill-opacity:.780392;fill-rule:evenodd;stroke-width:3.23029;stroke-dashoffset:320"
+									></ellipse><ellipse
+										cx="2.314"
+										cy="11.678"
+										rx="3.302"
+										ry="3.279"
+										style="fill:#27ff56;fill-opacity:.780392;fill-rule:evenodd;stroke-width:1.63326;stroke-dashoffset:320"
+									></ellipse></g
+								></g
+							><path
+								d="M73.675-5.687a1.823 1.823 0 0 0-1.458 1.79c0 1.011.816 1.825 1.827 1.825h8.397v1.698a1.95 1.95 0 0 0 1.955 1.955A1.95 1.95 0 0 0 86.35-.374l.002-3.397-.003-.079.002-.05a1.823 1.823 0 0 0-1.827-1.825H74.043c-.126 0-.248.013-.368.038zm2.182 9.366A1.82 1.82 0 0 0 74.4 5.47c0 1.011.814 1.828 1.826 1.828h8.4v1.697a1.95 1.95 0 0 0 1.954 1.955 1.95 1.95 0 0 0 1.954-1.955V5.598c0-.034-.001-.07-.003-.103l.002-.026a1.822 1.822 0 0 0-1.825-1.826H76.227c-.127 0-.251.012-.37.036z"
+								style="opacity:.5;fill:#6f8;fill-opacity:1;fill-rule:evenodd;stroke-width:5.97094;stroke-dashoffset:320;filter:url(#l)"
+								transform="rotate(7.232 -58.878 138.937) scale(.78128)"></path><path
+								d="M73.675-5.687a1.823 1.823 0 0 0-1.458 1.79c0 1.011.816 1.825 1.827 1.825h8.397v1.698a1.95 1.95 0 0 0 1.955 1.955A1.95 1.95 0 0 0 86.35-.374l.002-3.397-.003-.079.002-.05a1.823 1.823 0 0 0-1.827-1.825H74.043c-.126 0-.248.013-.368.038zm2.182 9.366A1.82 1.82 0 0 0 74.4 5.47c0 1.011.814 1.828 1.826 1.828h8.4v1.697a1.95 1.95 0 0 0 1.954 1.955 1.95 1.95 0 0 0 1.954-1.955V5.598c0-.034-.001-.07-.003-.103l.002-.026a1.822 1.822 0 0 0-1.825-1.826H76.227c-.127 0-.251.012-.37.036z"
+								style="opacity:1;fill:#6f8;fill-opacity:1;fill-rule:evenodd;stroke-width:5.97094;stroke-dashoffset:320"
+								transform="rotate(7.232 -58.878 138.937) scale(.78128)"></path></g
+						></svg
+					>
+				</a>
+			</li>
+			<li>
+				<a href="https://spacy.neocities.org/">
+					<img src={button_ssm230} alt="spacy" decoding="async" width="88" height="31" />
+				</a>
+			</li>
+			<li>
+				<a href="https://infisoft.org">
+					<img
+						src={button_whitespaced}
+						alt="whitespaced"
+						decoding="async"
+						width="88"
+						height="31"
+					/>
+				</a>
+			</li>
+			<li>
+				<a href="https://floof.gay">
+					<svg width="88" height="31" aria-label="oli">
+						<rect
+							width="88"
+							height="31"
+							fill="#1e1e2e"
+							stroke="#313244"
+							stroke-width="5"></rect>
+						<image
+							x="57"
+							y="7"
+							width="16"
+							height="16"
+							href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAKlBMVEUYGCUeHi1MT2Noa4Fwcoh5eI6hjZ+tkqLZpKbep6biqaXlqqTltKjlt6nUvBI2AAAAfklEQVQI1y3KoQ3DMBCF4ecRbobbIAEHTkUFHaYsBganjFDcIQINXOkpExRWVUCWqROVfdL/o+SSb+WawRrNm1fM3+VhtA+cXO/BDQ7wCTR4kplJ4kT9g5HkDb/sgK+EWz88OjaI9B++p46ejHKgwV4HlgqdZDTRCTrIqKLDD2RBLP1L65KiAAAAAElFTkSuQmCC"
+							image-rendering="pixelated"
+						/>
+						<text
+							x="14"
+							y="19"
+							font-size="12px"
+							font-family="'Fira Code',monospace"
+							fill="#cdd6f4"
+							stroke="#cdd6f4"
+							stroke-linecap="round"
+							stroke-linejoin="round">
+							oli
+						</text>
+					</svg>
+				</a>
+			</li>
+			<li>
+				<a href="https://toasty.zone">
+					<img
+						src={button_toastyfen}
+						alt="toastyfen"
+						decoding="async"
+						width="88"
+						height="31"
+					/>
+				</a>
+			</li>
+			<li>
+				<a href="https://tuxcrafting.online">
+					<img
+						src={button_tctek}
+						alt="tuxcrafting"
+						decoding="async"
+						width="88"
+						height="31"
+					/>
+				</a>
+			</li>
+			<li>
+				<a href="https://pancakes.gay">
+					<img
+						src={button_pancakes}
+						alt="pancakes"
+						decoding="async"
+						width="88"
+						height="31"
+					/>
+				</a>
+			</li>
+			<li>
+				<a href="https://drakonic.zone">
+					<img
+						src={button_drakonic}
+						alt="DRAKONIC"
+						decoding="async"
+						width="88"
+						height="31"
+					/>
+				</a>
+			</li>
+			<li>
+				<a href="https://moondvsted.neocities.org">
+					<img
+						src={button_moondvsted}
+						alt="moondvsted"
+						decoding="async"
+						width="88"
+						height="31"
+					/>
+				</a>
+			</li>
+			<li>
+				<a href="https://ceat.neocities.org">
+					<img src={button_ceat} alt="ceat" decoding="async" width="88" height="31" />
+				</a>
+			</li>
+			<li>
+				<a href="https://w.on-t.work">
+					<img
+						src={button_kopper}
+						alt="wont work"
+						decoding="async"
+						width="88"
+						height="31"
+					/>
+				</a>
+			</li>
+			<li>
+				<a href="https://authenyo.xyz">
+					<img src={button_authen} alt="authen" decoding="async" width="88" height="31" />
+				</a>
+			</li>
+			<li>
+				<a href="https://deeply.nekoweb.org">
+					<img src={button_dee} alt="thxdeeply" decoding="async" width="88" height="33" />
+				</a>
+			</li>
+		</ul>
+	</Section>
+	<Section id="others">
+		<legend role="heading" aria-level="2">Other 88x31s</legend>
+		<ul class="btns">
+			<li>
+				<a href="https://gba.ioi-xd.net/">
+					<img
+						src={button_sherbetbutton}
+						alt="sherbetbutton"
+						decoding="async"
+						width="88"
+						height="31"
+					/>
+				</a>
+			</li>
+			<li>
+				<a href="https://github.com/mollersuite/tangent">
+					<img
+						src={button_tangent}
+						alt="Tangent"
+						decoding="async"
+						width="88"
+						height="31"
+					/>
+				</a>
+			</li>
+			<li>
+				<a href="https://github.com/mollersuite/tangent-saves">
+					<img
+						src={button_tangent_saves}
+						alt="Tangent Saves"
+						decoding="async"
+						width="88"
+						height="31"
+					/>
+				</a>
+			</li>
+			<li>
+				<a
+					href="http://apps.samsung.com/appquery/appDetail.as?appId=com.monotype.android.font.chococooky">
+					<img
+						src={button_chococooky}
+						alt="Choco cooky"
+						decoding="async"
+						width="88"
+						height="31"
+					/>
+				</a>
+			</li>
+			<li>
+				<a href="https://gradienceteam.github.io/">
+					<img
+						src={button_pleasetheme}
+						alt="Please theme our apps"
+						decoding="async"
+						width="120"
+						height="31"
+					/>
+				</a>
+			</li>
+		</ul>
+	</Section>
+	<h2>Add my button</h2>
+	<Code
+		lang="html"
+		themes={{
+			dark: monospaceDark,
+			light: monospaceLight,
+		}}
+		code=`<a href="https://jack.cab">
+	<img
+		src=${button_jack}
+		width=88
+		height=31
+		style=image-rendering:pixelated
+		alt=Jack.cab
+	>
+</a>`
+		wrap
+	/>
+</Layout>
+
+<style is:global>
+	.btns {
+		list-style-type: none;
+		padding-inline-start: 0;
+		display: flex;
+		justify-content: space-between;
+		gap: 1ch;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+	.btns li {
+		display: inline-block;
+		margin: 0;
+	}
+	.btns img {
+		display: block;
+		image-rendering: pixelated;
+	}
+	label {
+		display: block;
+	}
+
+	body:has(:checked) .btns li {
+		display: none;
+	}
+	body:has(#etc:checked) .btns li.etc {
+		display: inline-block;
+	}
+	body:has(#inhouse:checked) .btns li.inhouse {
+		display: inline-block;
+	}
+	body:has(#bsky:checked) .btns li.bsky {
+		display: inline-block;
+	}
+	body:has(#weddy:checked) .btns li.weddy {
+		display: inline-block;
+	}
+</style>
