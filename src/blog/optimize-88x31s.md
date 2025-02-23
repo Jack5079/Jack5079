@@ -51,12 +51,6 @@ To follow any of these, you need to be the one hosting the image. Also, third-pa
 
 In theory using WebP, AVIF, or JPEG XL would save space, but in my experience it does the opposite for smaller images. Try and see if it works for you.
 
-## PS: In alt text, describe the location, not the content
-
-Links with images are functional images. [Write where it goes, not what it looks like](https://www.w3.org/WAI/tutorials/images/functional/).
-
-This is your decision however, see [@760ceb3b9c0ba4872cadf3ce35a7a494's reply](https://wetdry.world/@760ceb3b9c0ba4872cadf3ce35a7a4/113536719226673113) for a counterargument.
-
 ---
 
 I hope this guide will make your website a little faster. Good luck!
