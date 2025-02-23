@@ -13,7 +13,7 @@ interface Props {
 const { image, date, title, description } = Astro.props
 ---
 
-<Layout {description} {title} {image}>
+<Layout {description} {title} {image} large_image>
 	<header><div><a href="/blog/">The Cabinet</a></div></header>
 	<article class="h-entry">
 		{
@@ -67,7 +67,7 @@ const { image, date, title, description } = Astro.props
 	header > div:has(a[href="/blog/"]:focus-visible) {
 		outline: 1px auto;
 	}
-	.e-content p:last-child::after {
+	.e-content > p:last-of-type::after {
 		content: "";
 		background: currentColor;
 		mask-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAQAgMAAABfD3aUAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAdnJLH8AAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlQTFRFAAAAAAAA////g93P0gAAAAF0Uk5TAEDm2GYAAAA2SURBVAjXLcqxCcBADMVQcVXwJMFTZpQjldGU9wkpXiNEC74P7h13VCxUhmaM6zf9Ncs80jUHwegVF1+wUSkAAAAASUVORK5CYII");

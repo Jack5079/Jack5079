@@ -8,6 +8,7 @@ interface Props {
 	image?: [image: ImageMetadata, alt: string],
 	bodyClass?: string // it can be a lot more but idfk
 	children: any
+	large_image?: boolean
 }
 const title = Astro.props.title ?? "Jack.cab"
 const description = Astro.props.description ?? ":wavesmiley:"
@@ -45,7 +46,7 @@ const alt_text = Astro.props.image?.[1]
 		<meta property="twitter:description" content={description} />
 		<meta name="fediverse:creator" content="@j@wetdry.world" />
 
-		<meta property="twitter:card" content="summary_large_image" />
+		{Astro.props.large_image && <meta property="twitter:card" content="summary_large_image" />}
 		{Astro.props.image && (
 			<meta property="og:image" content={image!.src} />
 			<meta property="twitter:image" content={image!.src} />
