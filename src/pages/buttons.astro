@@ -513,18 +513,10 @@ import button_pleasetheme from "../assets/buttons/pleasetheme.png?url"
 		body:has(:checked) .btns li {
 			display: none;
 		}
-		body:has(#etc:checked) .btns li.etc {
-			display: inline-block;
-		}
-		body:has(#inhouse:checked) .btns li.inhouse {
-			display: inline-block;
-		}
-		body:has(#bsky:checked) .btns li.bsky {
-			display: inline-block;
-		}
-		body:has(#fedi:checked) .btns li.fedi {
-			display: inline-block;
-		}
+		body:has(#etc:checked) .btns li.etc,
+		body:has(#inhouse:checked) .btns li.inhouse,
+		body:has(#bsky:checked) .btns li.bsky,
+		body:has(#fedi:checked) .btns li.fedi,
 		body:has(#x:checked) .btns li.x {
 			display: inline-block;
 		}
