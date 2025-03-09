@@ -1,0 +1,103 @@
+---
+import Layout from "../../layouts/Layout.astro"
+---
+
+<Layout
+	title="Jack.cab/tools/data"
+	description="I Can't Believe The #1 Google Result For This Upsells Me!"
+	tool>
+	<h1>File to <code>data:</code> URI</h1>
+	<p>Probably the worst tool in <a href=".">the collection</a>.</p>
+	<form>
+		<fieldset id="container" disabled>
+			<input type="file" id="input" />
+			<textarea rows="5" id="output" readonly placeholder="Output will appear here"
+			></textarea>
+		</fieldset>
+	</form>
+	<h2>Extras</h2>
+	<ul>
+		<li>
+			<a href="https://developer.mozilla.org/en-US/docs/Web/URI/Reference/Schemes/data"
+				>data: on MDN</a
+			>
+		</li>
+		<li>
+			Base64 padding (trailing equals) <a
+				href="https://stackoverflow.com/a/26632221">is only needed for concatenation</a
+			>. I don't think data URIs can be concatenated so I strip them here.
+		</li>
+		<li>
+			Do you use nushell? Try<br /><code style="user-select:contain"
+				>{
+					`def datauri [file: path] {
+						$"data:((ls $file -m).type.0);base64,(open -r $file | encode base64 --nopad)"
+					}`
+				}</code
+			><br />instead to avoid visiting a 6kb website <a
+				href="https://www.gnu.org/philosophy/wwworst-app-store"
+				>that can update without your knowledge</a
+			> every time you want to do this
+		</li>
+		<li>
+			Vite <a href="https://vite.dev/guide/assets.html#explicit-inline-handling"
+				>inlines assets smaller than 4096 bytes by default</a
+			>. You can force this with <a
+				href="https://vite.dev/guide/assets.html#explicit-inline-handling"
+				><code>?inline</code></a
+			>.
+		</li>
+	</ul>
+	<script>
+		declare const input: HTMLInputElement
+		declare const output: HTMLTextAreaElement
+		declare const container: HTMLFieldSetElement
+		const reader = new FileReader()
+		input.oninput = e => {
+			const fyle = input.files![0]
+			reader.readAsDataURL(fyle)
+			input.value = ""
+		}
+		reader.onload = () => {
+			const no_padding = (reader.result as string).replaceAll("=", "")
+			output.value = no_padding
+			output.select()
+			output.setSelectionRange(0, Number.MAX_SAFE_INTEGER)
+			document.execCommand("copy")
+			navigator.clipboard.writeText(no_padding) // just in case :)
+		}
+		container.disabled = false
+	</script>
+	<style is:global>
+		textarea {
+			width: 100%;
+			overflow: auto;
+			resize: none;
+		}
+		input {
+			vertical-align: middle;
+			text-align: center;
+			width: 100%;
+			height: 200px;
+			display: grid;
+			place-content: center;
+		}
+		fieldset[disabled] {
+			mask: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 40%, black, rgba(0, 0, 0, 0.5) 60%)
+				100% 100% / 240% 240%;
+			animation: shine 2s infinite;
+			animation-fill-mode: none;
+		}
+		@keyframes shine {
+			from {
+				mask-position: 150% 0;
+			}
+			to {
+				mask-position: 0 0;
+			}
+		}
+		input:-moz-drag-over {
+			filter: brightness(100%);
+		}
+	</style>
+</Layout>

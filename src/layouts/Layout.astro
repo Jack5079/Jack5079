@@ -9,6 +9,7 @@ interface Props {
 	bodyClass?: string // it can be a lot more but idfk
 	children: any
 	large_image?: boolean
+	tool?: boolean
 }
 const title = Astro.props.title ?? "Jack.cab"
 const description = Astro.props.description ?? ":wavesmiley:"
@@ -24,7 +25,7 @@ const alt_text = Astro.props.image?.[1]
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/png" href="/favicon.svg" />
+		<link rel="icon" type="image/png" href={Astro.props.tool ? "/tool.svg" : "/favicon.svg"} />
 		<meta name="color-scheme" content="light dark" />
 		<meta name="theme-color" content="#FF4539" />
 		<link rel="authorization_endpoint" href="https://indieauth.com/auth" />
