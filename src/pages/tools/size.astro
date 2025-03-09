@@ -67,7 +67,7 @@ import Layout from "../../layouts/Layout.astro"
 			}
 		}
 		input.oninput = () => {
-			if (auto.value) update()
+			if (auto.checked) update()
 		}
 		quality.oninput = () => {
 			quality_label.textContent = quality.value
