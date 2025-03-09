@@ -271,3 +271,31 @@ import opengraph from "../assets/opengraph.png"
 		scale: 0.96;
 	}
 </style>
+
+<script>
+	const konami_code = [
+		"ArrowUp",
+		"ArrowUp",
+		"ArrowDown",
+		"ArrowDown",
+		"ArrowLeft",
+		"ArrowRight",
+		"ArrowLeft",
+		"ArrowRight",
+		"KeyB",
+		"KeyA",
+	]
+	let user_input = []
+
+	addEventListener("keydown", event => {
+		user_input.push(event.code)
+
+		if (user_input.length > konami_code.length) {
+			user_input.shift()
+		}
+
+		if (user_input.join("") === konami_code.join("")) {
+			location.href = "/tools/"
+		}
+	})
+</script>
