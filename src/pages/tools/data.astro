@@ -4,6 +4,7 @@ import Layout from "../../layouts/Layout.astro"
 
 <Layout
 	title="Jack.cab/tools/data"
+	ogTitle="File to data: URI"
 	description="I Can't Believe The #1 Google Result For This Upsells Me!"
 	tool>
 	<h1>File to <code>data:</code> URI</h1>
@@ -23,8 +24,8 @@ import Layout from "../../layouts/Layout.astro"
 			>
 		</li>
 		<li>
-			Base64 padding (trailing equals) <a
-				href="https://stackoverflow.com/a/26632221">is only needed for concatenation</a
+			Base64 padding (trailing equals) <a href="https://stackoverflow.com/a/26632221"
+				>is only needed for concatenation</a
 			>. I don't think data URIs can be concatenated so I strip them here.
 		</li>
 		<li>
