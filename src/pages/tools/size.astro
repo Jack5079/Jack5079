@@ -71,6 +71,7 @@ import Layout from "../../layouts/Layout.astro"
 		}
 		quality.oninput = () => {
 			quality_label.textContent = quality.value
+			if (auto.checked) update()
 		}
 		form.onsubmit = e => {
 			e.preventDefault()
