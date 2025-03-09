@@ -41,7 +41,7 @@ const alt_text = Astro.props.image?.[1]
 
 		<title>{title}</title>
 		<meta name="description" content={description} />
-		<meta property="og:site_name" content="Jack.cab" />
+		<meta property="og:site_name" content={Astro.props.tool ? "Jack.cab tools" : "Jack.cab"} />
 		<meta property="og:title" content={Astro.props.ogTitle ?? title} />
 		<meta property="og:description" content={description} />
 		<meta property="twitter:title" content={title} />
