@@ -59,7 +59,7 @@ import button_pleasetheme from "../assets/buttons/pleasetheme.png?url"
 				<button type="reset">Clear all filters</button>
 			</fieldset>
 		</form>
-		<ul class="btns">
+		<ul>
 			<li class="etc inhouse">
 				<a href="https://jack.cab">
 					<img src={button_jack} alt="Jack.cab" decoding="async" width="88" height="31" />
@@ -483,7 +483,7 @@ import button_pleasetheme from "../assets/buttons/pleasetheme.png?url"
 		h2 {
 			clear: both;
 		}
-		.btns {
+		ul {
 			list-style-type: none;
 			padding-inline-start: 0;
 			display: flex;
@@ -492,11 +492,11 @@ import button_pleasetheme from "../assets/buttons/pleasetheme.png?url"
 			flex-direction: row;
 			flex-wrap: wrap;
 		}
-		.btns li {
+		li {
 			display: inline-block;
 			margin: 0;
 		}
-		.btns img {
+		ul img {
 			display: block;
 			image-rendering: pixelated;
 		}
@@ -504,14 +504,14 @@ import button_pleasetheme from "../assets/buttons/pleasetheme.png?url"
 			display: block;
 		}
 
-		body:has(:checked) .btns li {
+		main:has(:checked) li {
 			display: none;
 		}
-		body:has(#etc:checked) .btns li.etc,
-		body:has(#inhouse:checked) .btns li.inhouse,
-		body:has(#bsky:checked) .btns li.bsky,
-		body:has(#fedi:checked) .btns li.fedi,
-		body:has(#x:checked) .btns li.x {
+		main:has(#etc:checked) li.etc,
+		main:has(#inhouse:checked) li.inhouse,
+		main:has(#bsky:checked) li.bsky,
+		main:has(#fedi:checked) li.fedi,
+		main:has(#x:checked) li.x {
 			display: inline-block;
 		}
 	</style>
