@@ -11,8 +11,14 @@ const blog = defineCollection({
 		z.object({
 			title: z.string(),
 			description: z.optional(z.string()),
-			image: z.optional(z.tuple([image(), z.string()])),
-			date: z.date()
+			image: z.optional(
+				z.object({
+					src: image(),
+					alt: z.string(),
+					pixelated: z.optional(z.boolean())
+				})
+			),
+			date: z.date(),
 		}),
 })
 

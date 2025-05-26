@@ -5,7 +5,7 @@ import Layout from "./Layout.astro"
 interface Props {
 	title: string
 	date: Date
-	image?: [image: ImageMetadata, alt: string]
+	image?: { src: ImageMetadata; alt: string; pixelated?: boolean }
 	description?: string
 	children: any
 }
@@ -13,19 +13,18 @@ interface Props {
 const { image, date, title, description } = Astro.props
 ---
 
-<Layout {description} {title} {image} large_image>
-	<header><div><a href="/blog/">The Cabinet</a></div></header>
+<Layout {description} {title} image={image && [image.src, image.alt]} large_image>
 	<article class="h-entry">
 		{
-			image && (
+			image && (image.pixelated ? <img src={image.src.src} style="image-rendering:pixelated" alt={image.alt} width={800} class="u-featured"> : (
 				<Picture
-					alt={image[1]}
-					src={image[0]}
+					src={image.src}
+					alt={image.alt}
 					width={800}
 					densities={[1, 1.5, 0.5]}
 					class="u-featured"
 				/>
-			)
+			))
 		}
 		<hgroup>
 			<h1 class="p-name">{Astro.props.title}</h1>
@@ -48,6 +47,10 @@ const { image, date, title, description } = Astro.props
 </Layout>
 
 <style is:global>
+	img {
+		max-width: 100%;
+		height: auto;
+	}
 	header > div > a[href="/blog/"] {
 		mask-image: url(./../pages/blog/_logo.png);
 		mask-size: contain;

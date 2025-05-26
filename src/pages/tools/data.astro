@@ -29,7 +29,8 @@ import Layout from "../../layouts/Layout.astro"
 			>. I don't think data URIs can be concatenated so I strip them here.
 		</li>
 		<li>
-			Do you use nushell? Try<br /><code style="user-select:contain"
+			Do you use <a href="https://www.nushell.sh">nushell</a>? Try<br /><code
+				style="user-select:contain"
 				>{
 					`def datauri [file: path] {
 						$"data:((ls $file -m).type.0);base64,(open -r $file | encode base64 --nopad)"

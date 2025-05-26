@@ -4,25 +4,34 @@ import Quote from "../components/Quote.astro"
 import Bento from "../components/Bento.astro"
 import Section from "../components/Section.astro"
 import Social from "../components/Social.astro"
-import theCabinet from "./blog/_logo.png?url"
 import {
+	siX,
+	siGithubsponsors,
+	siGithub,
+	siBluesky,
 	siDiscord,
 	siMastodon,
-	siGithub,
-	siX,
-	siBluesky,
-	siGithubsponsors,
 	siYoutube,
 } from "simple-icons"
 import Splash from "../components/Splash.astro"
 
-import button_split from "../assets/buttons/split.gif?url"
-import button_mau from "../assets/buttons/mau.png?url"
-import button_malice from "../assets/buttons/malice.png?url"
+import social_bluesky from "../assets/marzipan/fg_bluesky.png?url"
+import social_discord from "../assets/marzipan/fg_discord.png?url"
+import social_github from "../assets/marzipan/fg_github.png?url"
+import social_mastodon from "../assets/marzipan/fg_mastodon.png?url"
+import social_youtube from "../assets/marzipan/fg_youtube.png?url"
 
 // Do not inline this it is for robots
 // No alt text because it would have been the same as the title
 import opengraph from "../assets/opengraph.png"
+
+import red from "../assets/pantson/red.png?url"
+import green from "../assets/pantson/green.png?url"
+import pantson from "../assets/pantson/joinvivid.webp?url"
+
+import { getCollection } from "astro:content"
+import Buttons from "../components/Buttons.astro"
+const articles = await getCollection("blog")
 ---
 
 <Layout
@@ -32,23 +41,51 @@ import opengraph from "../assets/opengraph.png"
 	image={[opengraph, ""]}>
 	<link href="acct:j@jack.cab" class="u-url" />
 	<p class="p-note">
-		I develop and design software, I write, and I lead
-		<a href="https://cetera.uk">Etcetera</a>.
+		I develop and design software.
+		<a href="https://cetera.uk">Etceteran</a> #1.
 	</p>
 	<Bento
 		layout={[
+			["blog", "blog", "blog"],
 			["clock pronouns socials"],
 			["reviews reviews socials"],
-			["webrings", "blog", "socials"],
-			["buttons philosophy philosophy"],
+			["buttons buttons philosophy"],
+			["buttons buttons philosophy"],
+			["buttons buttons pantson"],
 		]}>
-		<!-- style="grid-template-columns:219px auto auto" -->
-		<!-- prettier-ignore -->
+		<Section id="blog">
+			<legend role="heading" aria-level="2"
+				><img
+					style="vertical-align:sub;image-rendering:pixelated"
+					src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAQAgMAAABfD3aUAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAdnJLH8AAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAxQTFRFAAAAAAAAAAAA////NVcRhAAAAAF0Uk5TAEDm2GYAAAA3SURBVAjXLcqxCcAwEATBBRXwDRm+dYEbEjh9WF3gYFg4jhb8Np4TT1QsVIZmdhjv32yW+UjXXEQHIRA5bnbJAAAAAElFTkSuQmCC"
+					alt=""
+				/>
+				<a href="/blog/">jack.cab/blog/</a></legend
+			>
+			<ul>
+				{
+					articles
+						.sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+						.slice(0, 5)
+						.map(({ data: { title, description, date }, id }) => (
+							<li>
+								<time datetime={date.toISOString()}>
+									{date.toLocaleDateString("en-US", {
+										month: "short",
+										day: "2-digit",
+									})}
+								</time>
+								<span>
+									<a href={`/blog/${id}`}>{title}</a>: {description}
+								</span>
+							</li>
+						))
+				}
+			</ul>
+		</Section>
 		<Section id="clock">
-			<legend>
-				Time in
-				<a href="https:///en.wikipedia.org/wiki/US/Eastern">US/Eastern</a>
-			</legend>
+			<legend>My time</legend>
+			<!-- prettier-ignore -->
 			<time id="tz"><script is:inline>tzf=_=>new Date().toLocaleString([],{timeZone:"US/Eastern",timeStyle:"short"});tz.innerText=tzf();setInterval("tz.innerText=tzf()",1e3)</script><noscript>JS required</noscript></time>
 		</Section>
 		<Section id="pronouns" style="text-align:center">
@@ -61,32 +98,64 @@ import opengraph from "../assets/opengraph.png"
 			<legend role="heading" aria-level="2">Socials</legend>
 
 			<ul style="line-height:2">
-				<Social icon={siDiscord} href="https://discord.com/users/173589391560802306"
-					>@nixos.org</Social
-				>
-				<Social icon={siMastodon} href="https://wetdry.world/@j">@j@wetdry.world</Social>
-				<Social icon={siX} href="https://x.com/banger_post">@banger_post</Social>
-				<Social icon={siBluesky} href="https://bsky.app/profile/jack.cab">@jack.cab</Social>
-				<Social icon={siBluesky} href="https://bsky.app/profile/fedi.jack.cab">
-					@fedi.jack.cab
+				<Social
+					marzipan={social_discord}
+					href="https://discord.com/users/173589391560802306"
+					simple_icon={siDiscord}>
+					@nixos.org
+				</Social>
+				<Social
+					marzipan={social_bluesky}
+					href="https://bsky.app/profile/jack.cab"
+					simple_icon={siBluesky}>
+					@jack.cab
+				</Social>
+				<Social simple_icon={siX} href="https://x.com/banger_post">@banger_post</Social>
+				<Social
+					marzipan={social_mastodon}
+					href="https://wetdry.world/@j"
+					simple_icon={siMastodon}>
+					@j@wetdry.world
 					<ul slot="extra">
-						<li>
-							please also follow
-							<a href="https://bsky.app/profile/ap.brid.gy">@ap.brid.gy</a>
-							so that I can see your interactions
-						</li>
+						<Social
+							marzipan={social_bluesky}
+							href="https://bsky.app/profile/fedi.jack.cab"
+							simple_icon={siBluesky}
+							inline>
+							@fedi.jack.cab<span slot="extra">
+								, follow <a href="https://bsky.app/profile/ap.brid.gy"
+									>@ap.brid.gy</a
+								> first
+							</span></Social
+						>
 					</ul>
 				</Social>
-				<Social icon={siGithub} href="https://github.com/Jack5079">
+				<Social
+					marzipan={social_github}
+					href="https://github.com/Jack5079"
+					simple_icon={siGithub}>
 					@Jack5079
 					<ul slot="extra">
-						<Social icon={siGithubsponsors} href="https://github.com/sponsors/Jack5079">
+						<Social
+							simple_icon={siGithubsponsors}
+							href="https://github.com/sponsors/Jack5079">
 							@Jack5079
 						</Social>
 					</ul>
 				</Social>
-				<Social icon={siYoutube} href="https://youtube.com/@Jack5079">@Jack5079</Social>
+				<Social
+					marzipan={social_youtube}
+					href="https://youtube.com/@Jack5079"
+					simple_icon={siYoutube}>
+					@Jack5079
+				</Social>
 			</ul>
+			<small
+				>Colored icons from the
+				<a href="https://licorice45.github.io/projects/marzipan">Marzipan</a> icon pack by <a
+					href="https://licorice45.github.io">licorice45</a
+				>, licensed under CC-BY-SA 4.0</small
+			>
 		</Section>
 		<Section id="reviews">
 			<legend role="heading" aria-level="2">Testimonials</legend>
@@ -111,71 +180,66 @@ import opengraph from "../assets/opengraph.png"
 				</Fragment></Quote
 			>
 		</Section>
-		<Section id="webrings" style="text-align:center">
-			<legend role="heading" aria-level="2">Webrings</legend>
-			<section>
-				<a href="https://webring.zip/prev/jack.cab">←</a>
-				·
-				<a href="https://webring.zip">webring.zip</a>
-				·
-				<a href="https://webring.zip/next/jack.cab">→</a>
-			</section>
-			<small>Please <a href="#socials">suggest</a> some webrings</small>
-		</Section>
-		<Section id="blog">
-			<legend role="heading" aria-level="2">Blog</legend>
-			<a href="/blog" style="display:block;text-align:center">
-				<img
-					src={theCabinet}
-					alt="The Cabinet"
-					decoding="async"
-					width="90"
-					height="58"
-					style="image-rendering:pixelated"
-				/>
-			</a>
-		</Section>
 		<Section id="buttons">
 			<legend role="heading" aria-level="2">Buttons</legend>
-			<a href="/buttons" class="stack-link" aria-label="View all buttons">
-				<div class="stack-inner">
-					<div class="stack-button" style="background:#FF4539;color:#fff">
-						View all buttons
-					</div>
-					<img
-						src={button_split}
-						alt="split"
-						decoding="async"
-						width="88"
-						height="31"
-						class="stack-button"
-					/>
-					<img
-						src={button_mau}
-						alt="mau"
-						decoding="async"
-						width="88"
-						height="31"
-						class="stack-button"
-					/>
-					<img
-						src={button_malice}
-						alt="malice"
-						decoding="async"
-						width="88"
-						height="31"
-						class="stack-button"
-					/>
-				</div>
-			</a>
+			<Buttons />
 		</Section>
-		<Section id="philosophy" style="aspect-ratio:16/9">
+		<Section id="philosophy">
+			<legend role="heading" aria-level="2">Splash</legend>
 			<Splash />
 		</Section>
+		<Section id="pantson">
+			<legend role="heading" aria-level="2">Colors</legend>
+			<script>
+				let timeout: ReturnType<typeof setTimeout>
+				document.body.addEventListener("click", event => {
+					const target = event.target as HTMLElement
+					const button = target.closest("button[data-color]")
+					if (button) {
+						const color = button.getAttribute("data-color")!
+						navigator.clipboard.writeText(color)
+					}
+				})
+			</script>
+			<button data-color="#FF4539" title="Copy to clipboard">
+				<img src={red} alt="#FF4539: ERROR RED" width="64" height="100" decoding="async" />
+				<span class="feedback-message" aria-live="polite"></span>
+			</button>
+			<button data-color="#6ACB5D" title="Copy to clipboard">
+				<img
+					src={green}
+					alt="#6ACB5D: YES GREEN"
+					width="64"
+					height="100"
+					decoding="async"
+				/>
+				<span class="feedback-message" aria-live="polite"></span>
+			</button>
+		</Section>
 	</Bento>
+	<small>↑↑↓↓←→←→BA</small>
 </Layout>
 
 <style is:global>
+	#colors button {
+		margin: 0;
+		padding: 5px;
+		cursor: pointer;
+		position: relative;
+		line-height: 0;
+	}
+	#colors img {
+		image-rendering: pixelated;
+	}
+	#blog ul li {
+		display: grid;
+		grid-template-columns: max-content 1fr;
+		gap: 1ch;
+		time {
+			font-family: "Adwaita Mono", "Go Mono", monospace;
+			text-transform: uppercase;
+		}
+	}
 	:root {
 		scroll-behavior: smooth;
 	}
@@ -196,105 +260,25 @@ import opengraph from "../assets/opengraph.png"
 		font-size: medium;
 	}
 	#clock {
-		/* aspect-ratio: 1/1; */
 		align-content: center;
 		text-align: center;
-	}
-
-	.stack-link {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		min-height: 120px;
-		height: 100%;
-	}
-
-	.stack-inner {
-		position: relative;
-		display: inline-block;
-		width: 88px;
-		height: 31px;
-	}
-
-	.stack-button {
-		image-rendering: pixelated;
-		position: absolute;
-		inset: 0;
-		border-radius: 6px;
-		box-shadow: 0 4px 6px rgba(255, 69, 57, 0.1);
-		transition:
-			transform 0.2s cubic-bezier(0.17, 0.84, 0.44, 1),
-			scale 0.2s cubic-bezier(0.17, 0.84, 0.44, 1);
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		font-size: x-small;
-		font-weight: bold;
-		color: white;
-	}
-
-	/* https://github.com/w3c/csswg-drafts/issues/1026 will greatly simplify this */
-	.stack-inner .stack-button:nth-child(1) {
-		z-index: 3;
-	}
-	.stack-button:nth-child(2) {
-		z-index: 2;
-	}
-	.stack-button:nth-child(3) {
-		z-index: 1;
-	}
-	.stack-button:nth-child(4) {
-		z-index: 0;
-	}
-	.stack-link:is(:hover, :focus-visible) .stack-button:nth-child(1) {
-		transform: translateY(-48px) rotate(-10deg);
-	}
-	.stack-link:is(:hover, :focus-visible) .stack-button:nth-child(2) {
-		transform: translateY(-32px) rotate(-5deg);
-	}
-	.stack-link:is(:hover, :focus-visible) .stack-button:nth-child(3) {
-		transform: translateY(-16px) rotate(5deg);
-	}
-	.stack-link:is(:hover, :focus-visible) .stack-button:nth-child(4) {
-		transform: translateY(-8px) rotate(10deg);
-	}
-	.stack-link:active .stack-button:nth-child(1) {
-		scale: 0.9;
-	}
-	.stack-link:active .stack-button:nth-child(2) {
-		scale: 0.92;
-	}
-	.stack-link:active .stack-button:nth-child(3) {
-		scale: 0.94;
-	}
-	.stack-link:active .stack-button:nth-child(4) {
-		scale: 0.96;
 	}
 </style>
 
 <script>
-	const konami_code = [
-		"ArrowUp",
-		"ArrowUp",
-		"ArrowDown",
-		"ArrowDown",
-		"ArrowLeft",
-		"ArrowRight",
-		"ArrowLeft",
-		"ArrowRight",
-		"KeyB",
-		"KeyA",
-	]
 	let user_input = []
 
 	addEventListener("keydown", event => {
 		user_input.push(event.code)
 
-		if (user_input.length > konami_code.length) {
+		if (user_input.length > 10) {
 			user_input.shift()
 		}
 
-		if (user_input.join("") === konami_code.join("")) {
+		if (
+			user_input.join("") ===
+			"ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRightArrowLeftArrowRightKeyBKeyA"
+		) {
 			location.href = "/tools/"
 		}
 	})
