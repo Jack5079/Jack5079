@@ -1,0 +1,113 @@
+---
+import Layout from "../../layouts/Layout.astro"
+---
+
+<Layout
+	title="Jack.cab/tools/size"
+	ogTitle="Brotli size calculator"
+	description="For when your micro-optimizations turn schizophrenic"
+	tool>
+	<h1>Brotli size calculator</h1>
+	<p>
+		I made this <a href=".">tool</a> for my deranged code golfing adventures. Why else did you think
+		I'm named jack<a href="https://en.wikipedia.org/wiki/Cabinet_(file_format)">.cab</a> idiot
+	</p>
+	<form id="form">
+		<fieldset id="container" disabled>
+			<legend
+				>Powered by <a href="https://www.npmjs.com/package/brotli-compress"
+					>brotli-compress</a
+				></legend
+			>
+			<label
+				><input type="range" id="quality" min="0" max="11" value="11" />
+				Quality (<span id="quality_label">11</span>)</label
+			>
+			<div style="float:right">
+				<label>Auto-update <input type="checkbox" id="auto" /></label>
+				<button type="submit">Calculate (try <kbd>Shift + Enter</kbd>)</button>
+			</div>
+			<textarea rows="20" id="input"></textarea>
+			<button type="reset" style="float:right">Reset</button>
+			<output id="output" for="quality input">1 byte</output>
+		</fieldset>
+	</form>
+	<h2>Links</h2>
+	<ul>
+		<li>
+			<a href="https://gist.github.com/duskwuff/8a75e1b5e5a06d768336c8c7c370f0f3"
+				>The default Brotli dictionary</a
+			>
+		</li>
+	</ul>
+	<script>
+		declare const form: HTMLFormElement
+		declare const input: HTMLTextAreaElement
+		declare const quality: HTMLInputElement
+		declare const quality_label: HTMLSpanElement
+		declare const auto: HTMLInputElement
+		declare const output: HTMLOutputElement
+		declare const container: HTMLFieldSetElement
+		import { compress } from "brotli-compress"
+		container.disabled = false
+		const encoder = new TextEncoder()
+		const update = async () => {
+			const length = (
+				await compress(encoder.encode(input.value), {
+					quality: parseInt(quality.value, 10),
+				})
+			).length
+			output.textContent = length + " byte" + (length !== 1 ? "s" : "")
+		}
+		input.onkeydown = e => {
+			if (e.key === "Enter" && (e.shiftKey || e.ctrlKey)) {
+				e.preventDefault()
+				update()
+			}
+		}
+		input.oninput = () => {
+			if (auto.checked) update()
+		}
+		quality.oninput = () => {
+			quality_label.textContent = quality.value
+			if (auto.checked) update()
+		}
+		form.onsubmit = e => {
+			e.preventDefault()
+			update()
+		}
+		form.onreset = () => {
+			output.textContent = "1 byte"
+		}
+	</script>
+	<style is:global>
+		textarea {
+			width: 100%;
+			overflow: auto;
+			resize: none;
+		}
+		label,
+		input {
+			vertical-align: middle;
+		}
+		output {
+			display: block;
+			font-size: xx-large;
+			font-family: "Adwaita Mono", monospace;
+		}
+		fieldset[disabled] {
+			mask: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 40%, black, rgba(0, 0, 0, 0.5) 60%)
+				100% 100% / 240% 240%;
+			animation: shine 2s infinite;
+			animation-fill-mode: none;
+		}
+		@keyframes shine {
+			from {
+				mask-position: 150% 0;
+			}
+			to {
+				mask-position: 0 0;
+			}
+		}
+	</style>
+</Layout>

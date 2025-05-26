@@ -1,0 +1,53 @@
+---
+import Layout from "../../layouts/Layout.astro"
+import opengraph from "../../assets/tools-opengraph.png"
+---
+
+<Layout
+	title="Jack.cab/tools/"
+	ogTitle="Tools"
+	description="Small in-browser tools by me"
+	image={[opengraph, ""]}
+	tool>
+	<h1>
+		<img
+			width="48"
+			height="64"
+			src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAQAgMAAABfD3aUAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAdnJLH8AAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlQTFRFAAAA/0U5////eikEDAAAAAF0Uk5TAEDm2GYAAAA3SURBVAjXRcqxCQAxDATBxaEqMarycSXGkdgqLfjAwbAXHCl4Pty7zRZtoFIktfLVfxv2RzLqAscIFWP94yGZAAAAAElFTkSuQmCC"
+			alt=""
+		/><br />
+		jack.cab/tools/
+	</h1>
+	<ul>
+		<li><a href="/tools/size">Brotli size calculator</a></li>
+		<li><a href="/tools/data">File to data: URI</a></li>
+	</ul>
+	<fieldset>
+		<legend>Warning</legend>
+		Web apps are by definition <a href="https://www.gnu.org/philosophy/wwworst-app-store"
+			>out of your control</a
+		>! As a user, you cannot review or revert updates!
+	</fieldset>
+	<style is:global>
+		fieldset {
+			border-image: repeating-linear-gradient(
+					-55deg,
+					#000,
+					#000 20px,
+					#ffb101 20px,
+					#ffb101 40px
+				)
+				10;
+			border-width: 5px;
+		}
+		h1 {
+			text-align: center;
+		}
+		img {
+			image-rendering: pixelated;
+			@media (prefers-color-scheme: light) {
+				filter: invert(1);
+			}
+		}
+	</style>
+</Layout>

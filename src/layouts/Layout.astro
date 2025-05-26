@@ -9,6 +9,8 @@ interface Props {
 	bodyClass?: string // it can be a lot more but idfk
 	children: any
 	large_image?: boolean
+	tool?: boolean
+	ogTitle?: string
 }
 const title = Astro.props.title ?? "Jack.cab"
 const description = Astro.props.description ?? ":wavesmiley:"
@@ -24,7 +26,7 @@ const alt_text = Astro.props.image?.[1]
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/png" href="/favicon.svg" />
+		<link rel="icon" type="image/png" href={Astro.props.tool ? "/tool.svg" : Astro.props.large_image ? "/blog.svg" : "/favicon.svg"} />
 		<meta name="color-scheme" content="light dark" />
 		<meta name="theme-color" content="#FF4539" />
 		<link rel="authorization_endpoint" href="https://indieauth.com/auth" />
@@ -34,13 +36,12 @@ const alt_text = Astro.props.image?.[1]
 			type="application/activity+json"
 			href=`https://fed.brid.gy/r/${Astro.url.href}`
 		/>
-		<!-- TODO: add rss -->
 		<link rel="sitemap" href="/sitemap-index.xml" />
 
 		<title>{title}</title>
 		<meta name="description" content={description} />
-		<meta property="og:site_name" content="Jack.cab" />
-		<meta property="og:title" content={title} />
+		<meta property="og:site_name" content={Astro.props.tool ? "Jack.cab tools" : "Jack.cab"} />
+		<meta property="og:title" content={Astro.props.ogTitle ?? title} />
 		<meta property="og:description" content={description} />
 		<meta property="twitter:title" content={title} />
 		<meta property="twitter:description" content={description} />
@@ -58,7 +59,7 @@ const alt_text = Astro.props.image?.[1]
 	</head>
 
 	<body class={Astro.props.bodyClass}>
-		<JackHeader />
+		<JackHeader blog={Astro.props.large_image} tool={Astro.props.tool} />
 		<slot />
 	</body>
 </html>

@@ -1,17 +1,32 @@
+---
+import LanyardPeriod from "./LanyardPeriod.astro"
+---
+
 {
-	!(Astro.url.pathname.startsWith("/blog/") && Astro.url.pathname.length > 6) && (
+	(
 		<nav>
 			<a href="/" class="u-url u-uid" rel="author">
 				<img
-					src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAQAgMAAABfD3aUAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAdnJLH8AAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlQTFRFAAAAAAAA////g93P0gAAAAF0Uk5TAEDm2GYAAAA2SURBVAjXLcqxCcBADMVQcVXwJMFTZpQjldGU9wkpXiNEC74P7h13VCxUhmaM6zf9Ncs80jUHwegVF1+wUSkAAAAASUVORK5CYII"
+					src={
+						Astro.props.tool
+							? "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAQAgMAAABfD3aUAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAdnJLH8AAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlQTFRFAAAA/0U5////eikEDAAAAAF0Uk5TAEDm2GYAAAA3SURBVAjXRcqxCQAxDATBxaEqMarycSXGkdgqLfjAwbAXHCl4Pty7zRZtoFIktfLVfxv2RzLqAscIFWP94yGZAAAAAElFTkSuQmCC"
+							: Astro.props.blog
+								? "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAQAgMAAABfD3aUAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAdnJLH8AAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAxQTFRFAAAAAAAAAAAA////NVcRhAAAAAF0Uk5TAEDm2GYAAAA3SURBVAjXLcqxCcAwEATBBRXwDRm+dYEbEjh9WF3gYFg4jhb8Np4TT1QsVIZmdhjv32yW+UjXXEQHIRA5bnbJAAAAAElFTkSuQmCC"
+								: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAQAgMAAABfD3aUAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAdnJLH8AAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlQTFRFAAAAAAAA////g93P0gAAAAF0Uk5TAEDm2GYAAAA2SURBVAjXLcqxCcBADMVQcVXwJMFTZpQjldGU9wkpXiNEC74P7h13VCxUhmaM6zf9Ncs80jUHwegVF1+wUSkAAAAASUVORK5CYII"
+					}
 					alt=""
 					decoding="async"
-					class="u-photo"
+					class={Astro.props.tool || Astro.props.blog ? "" : "u-photo"}
 					style="image-rendering:pixelated"
 					width="12"
 					height="16"
 				/>{" "}
-				<span class="p-name">Jack.cab</span>
+				{/* For some horrifying reason Astro is adding whitespace between the period which destroys everything */}
+				{/* Only show the lanyard period on the homepage and also don't do it at dev because it refreshes a lot */}
+				{/* prettier-ignore */}
+				<span class="p-name">
+					Jack{Astro.url.pathname === "/" && import.meta.env.PROD ? <LanyardPeriod /> : "."}cab
+				</span>
 			</a>
 		</nav>
 	)

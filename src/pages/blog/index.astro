@@ -4,8 +4,16 @@ import { getCollection } from "astro:content"
 const articles = await getCollection("blog")
 ---
 
-<Layout title="The Cabinet" description="Decompressed posting">
-	<header><h1><a href="/blog/">The Cabinet</a></h1></header>
+<Layout title="Jack.cab/blog/" ogTitle="Blog" description="Decompressed posting">
+	<h1>
+		<img
+			width="48"
+			height="64"
+			src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAQAgMAAABfD3aUAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAdnJLH8AAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAxQTFRFAAAAAAAAAAAA////NVcRhAAAAAF0Uk5TAEDm2GYAAAA3SURBVAjXLcqxCcAwEATBBRXwDRm+dYEbEjh9WF3gYFg4jhb8Np4TT1QsVIZmdhjv32yW+UjXXEQHIRA5bnbJAAAAAElFTkSuQmCC"
+			alt=""
+		/><br />
+		jack.cab/blog/
+	</h1>
 	<p>Decompressed posting</p>
 	{
 		articles.length === 0 ? (
@@ -19,18 +27,14 @@ const articles = await getCollection("blog")
 					.sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
 					.map(article => (
 						<li class="h-entry">
-							<hgroup>
-								<h2 class="p-name">
-									<a href={`/blog/${article.id}`} class="u-url">
-										{article.data.title}
-									</a>
-								</h2>
-								<time
-									class="dt-published"
-									datetime={article.data.date.toISOString()}>
-									{article.data.date.toLocaleDateString()}
-								</time>
-							</hgroup>
+							<h2 class="p-name">
+								<a href={`/blog/${article.id}`} class="u-url">
+									{article.data.title}
+								</a>
+							</h2>
+							<time class="dt-published" datetime={article.data.date.toISOString()}>
+								{article.data.date.toISOString().split("T")[0]}
+							</time>
 							<p class="p-summary">{article.data.description}</p>
 						</li>
 					))}
@@ -40,30 +44,14 @@ const articles = await getCollection("blog")
 </Layout>
 
 <style is:global>
-	header > h1 > a[href="/blog/"] {
-		mask-image: url(./_logo.png);
-		mask-size: contain;
-		mask-repeat: no-repeat;
-		mask-position: center;
-		background: currentColor;
-		font-size: medium;
-		user-select: none;
-		width: 100%;
-		height: 10ch;
-		display: block;
-		margin-inline: auto;
+	h1 {
+		text-align: center;
+	}
+	img {
 		image-rendering: pixelated;
-	}
-	header > h1 > a[href="/blog/"] {
-		outline: none;
-	}
-	header > h1:has(a[href="/blog/"]:focus-visible) {
-		outline: 1px auto;
-	}
-	hgroup {
-		display: flex;
-		align-items: center;
-		gap: 1ch;
+		@media (prefers-color-scheme: light) {
+			filter: invert(1);
+		}
 	}
 	a {
 		display: block;
@@ -79,5 +67,6 @@ const articles = await getCollection("blog")
 	}
 	time {
 		font-size: 0.8em;
+		float: right;
 	}
 </style>

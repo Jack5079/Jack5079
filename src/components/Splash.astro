@@ -16,17 +16,21 @@
 		"Eventually you will get an evil user, and that evil user will be smarter than you, but has the same mental illnesses as you, so you wake up to 100% RAM usage and connecting gives you Bad Gateway",
 		"Your lottery numbers are 10, 20, 26, 57. Don't worry which lottery, any will work. Etcetera knows all. Etcetera knows it first. I am superhuman.",
 		"When I die, they'll study my brain for decades, like Albert Einstein",
-		"UWP will be deleted in the next 5 months mark my words",
-		"I need disciples, like Quanos or Jesus"
+		"I need disciples, like Quanos or Jesus",
+		"your bsky got hacked",
+		"They're all fucking doiding me",
+		"Statue of limitations on funny is 13 months",
+		"We should make racist ux",
+		"This bread looks. Like finder macos"
 	]
 	let quote: string
-	declare const blockquote: HTMLQuoteElement
+	declare const inner_blockquote: HTMLQuoteElement
 	declare const random_quote: HTMLButtonElement
 	const random = <Type,>(arr: readonly Type[]): Type =>
 		arr[Math.floor(Math.random() * arr.length)]
 	const roll = () => {
 		quote = random(quotes.filter(q => q !== quote))
-		blockquote.innerText = quote
+		inner_blockquote.innerText = quote
 	}
 	roll()
 	random_quote.onclick = () => {
@@ -34,13 +38,17 @@
 		roll()
 	}
 </script>
-<legend role="heading" aria-level="2">Philosophy</legend>
 
 <button id="random_quote" aria-label="Random quote">
-	<blockquote id="blockquote"></blockquote>
+	<blockquote id="blockquote">
+		<span id="inner_blockquote" data-nosnippet></span>
+	</blockquote>
 </button>
 
 <style is:global>
+	#inner_blockquote {
+		display: contents;
+	}
 	/* https://github.com/IdreesInc/Minecraft-Font */
 	@font-face {
 		font-family: Minecraft;

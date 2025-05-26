@@ -1,1 +1,2 @@
+# https://grapheneos.org/articles/sitewide-advertising-industry-opt-out
 placeholder.example.com, placeholder, DIRECT, placeholder
