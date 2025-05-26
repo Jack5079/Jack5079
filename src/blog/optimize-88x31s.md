@@ -2,7 +2,10 @@
 title = "Tips for optimizing animated 88x31 buttons"
 description = "Try not to make 20 kb GIFs challenge failed instantly"
 date = 2024-11-24
-image = ["./authen-comparsion.png", "authen-delooped.gif: 8.3 KB; authen.gif: 29.9 KB."]
+
+[image]
+src = "./authen-comparsion.png"
+alt = "authen-delooped.gif: 8.3 KB; authen.gif: 29.9 KB."
 +++
 
 This guide is written for [GIMP](https://gimp.org), but I imagine other software has things like this as well.

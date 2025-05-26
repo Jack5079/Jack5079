@@ -4,32 +4,51 @@ import type { SimpleIcon } from "simple-icons"
 interface Props {
 	children: any
 	href: string
-	icon: SimpleIcon
+	simple_icon: SimpleIcon
+	marzipan?: string
+	inline?: boolean
 }
 ---
 
 <li>
-	<a href={Astro.props.href} target="_blank" rel="me" class="u-url" style="display:block">
-		<Fragment
-			set:html={Astro.props.icon.svg.replace(
-				`role="img"`,
-				`role="img" width="24" height="24" class="social" fill="#${Astro.props.icon.hex}"`
-			)}
-		/>
-		{" "}
+	<a
+		href={Astro.props.href}
+		target="_blank"
+		rel="me"
+		class="u-url"
+		style={Astro.props.inline ? null : "display:block"}>
+		{
+			Astro.props.marzipan ? (
+				<img
+					src={Astro.props.marzipan}
+					alt={Astro.props.simple_icon.title}
+					width="24"
+					height="24"
+					decoding="async"
+					class="social"
+				/>
+			) : (
+				<Fragment
+					set:html={Astro.props.simple_icon.svg.replace(
+						`role="img"`,
+						`role="img" width="24" height="24" class="social" fill="#${Astro.props.simple_icon.hex}"`
+					)}
+				/>
+			)
+		}
 		<slot />
 	</a>
-	<slot name="extra"/>
+	<slot name="extra" />
 </li>
 
 <style is:global>
-	svg.social {
+	.social {
 		vertical-align: middle;
 		width: 1.5em;
 		height: 1.5em;
 	}
 	@media (prefers-color-scheme: dark) {
-		svg.social {
+		.social {
 			fill: currentColor;
 		}
 	}

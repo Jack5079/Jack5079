@@ -4,6 +4,7 @@ interface Props {
 	style?: string
 }
 ---
+
 <div
 	class="bento"
 	role="none"
@@ -20,7 +21,9 @@ interface Props {
 			grid-gap: 1em;
 		}
 	}
-
+	legend {
+		text-transform: uppercase;
+	}
 	.bento fieldset {
 		border-color: #ff4539;
 		border-radius: 0;
@@ -28,12 +31,21 @@ interface Props {
 		align-content: center;
 		transition:
 			opacity 0.3s,
-			border-color 0.3s;
+			border-color 0.3s,
+			transform 0.1s,
+			filter 0.1s;
 	}
 	.bento fieldset:target {
 		border-color: Highlight;
 	}
+	.bento fieldset:has(button:active, a:active):not(#buttons):not(#colors) {
+		transform: scale(0.9975);
+	}
 	.bento:has(fieldset:target) fieldset:not(:target) {
 		opacity: 0.5;
+		filter: blur(1px);
+	}
+	.bento:not(:has(:target)):hover fieldset:not(:hover) {
+		filter: blur(0.75px);
 	}
 </style>

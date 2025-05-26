@@ -1,0 +1,61 @@
+<span id="period"
+	>.<script>
+		declare const period: HTMLSpanElement
+		const lanyard = new WebSocket("wss://api.lanyard.rest/socket")
+		let heartbeat = null
+		lanyard.addEventListener("open", () => {
+			lanyard.send(
+				JSON.stringify({
+					op: 2,
+					d: {
+						subscribe_to_id: "173589391560802306",
+					},
+				})
+			)
+
+			heartbeat = setInterval(() => {
+				lanyard.send(
+					JSON.stringify({
+						op: 3,
+					})
+				)
+			}, 1000 * 30)
+		})
+		lanyard.addEventListener("message", ({ data: message }) => {
+			const { t: event, d: data } = JSON.parse(message)
+
+			if (event === "INIT_STATE" || event === "PRESENCE_UPDATE") {
+				const status = data.discord_status as "online" | "idle" | "dnd" | "offline"
+				period.style.color = {
+					online: "#6acb5d",
+					offline: "gray",
+					idle: "yellow",
+					dnd: "#ff4539",
+				}[status]
+				period.title = {
+					online: "Online",
+					offline: "Offline",
+					idle: "Idle",
+					dnd: "Do Not Disturb",
+				}[status]
+			}
+		})
+	</script><style is:global>
+		@media (scripting) {
+			#period:not([style]) {
+				mask: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 40%, black, rgba(0, 0, 0, 0.5) 60%)
+					100% 100% / 240% 240%;
+				animation: shine 2s infinite;
+				animation-fill-mode: none;
+			}
+		}
+		@keyframes shine {
+			from {
+				mask-position: 150% 0;
+			}
+			to {
+				mask-position: 0 0;
+			}
+		}
+	</style></span
+>
