@@ -16,9 +16,6 @@ Go use [Filter > Animation > Optimize (for GIF)](https://docs.gimp.org/en/plug-i
 
 This let me [save 15.2 KB](https://github.com/Jack5079/Jack5079/commit/c83911f8455ad96dedf25aa8b159764c6cf57d2a) on [aei's](https://aei.sh) 88x31.
 
-## Merge identical frames
-
-I don't think I have an example for this but I swear it helped one time.
 
 ## Remove artifacts
 
@@ -61,6 +58,10 @@ Unloaded images without an explicit size do not reserve their space, resulting i
 ## Alternative formats
 
 In theory using WebP, AVIF, or JPEG XL would save space, but in my experience it does the opposite for smaller images. Try and see if it works for you.
+
+## Merge identical frames
+
+I don't have an example but I swear it worked once.
 
 ---
 
