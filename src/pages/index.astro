@@ -11,6 +11,7 @@ import {
 	siBluesky,
 	siDiscord,
 	siMastodon,
+	siSteam,
 } from "simple-icons"
 import Splash from "../components/Splash.astro"
 
@@ -18,6 +19,7 @@ import social_bluesky from "../assets/marzipan/fg_bluesky.webp?url"
 import social_discord from "../assets/marzipan/fg_discord.webp?url"
 import social_github from "../assets/marzipan/fg_github.webp?url"
 import social_mastodon from "../assets/marzipan/fg_mastodon.webp?url"
+import social_steam from "../assets/marzipan/fg_steam.webp?url"
 
 // Do not inline this it is for robots
 // No alt text because it would have been the same as the title
@@ -141,6 +143,11 @@ const articles = await getCollection("blog")
 						</Social>
 					</ul>
 				</Social>
+				<Social
+					marzipan={social_steam}
+					href="https://steamcommunity.com/id/Jack5079/"
+					simple_icon={siSteam}>@Jack5079</Social
+				>
 			</ul>
 			<small
 				>Colored icons from the
@@ -214,6 +221,7 @@ const articles = await getCollection("blog")
 		</Section>
 	</Bento>
 	<small>↑↑↓↓←→←→BA</small>
+	<small style="float:right"><a href="https://cd5k.net/tau/">&tau;</a></small>
 </Layout>
 
 <style is:global>
