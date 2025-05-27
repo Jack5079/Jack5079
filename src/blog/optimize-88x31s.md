@@ -39,7 +39,7 @@ This [wasted 21.6 KB](https://github.com/Jack5079/Jack5079/commit/5610bf2eaedb88
 
 ## Inline them
 
-If you have a lot of 88x31s on your page, it might be worth it to inline the small ones as [`data:` URIs](https://developer.mozilla.org/en-US/docs/Web/URI/Schemes/data). If you need a rule of thumb, [Vite defaults to 4096 bytes](https://vite.dev/config/build-options.html#build-assetsinlinelimit).
+If you have a lot of 88x31s on your page, it might be worth it to inline the small ones as [`data:` URIs](https://developer.mozilla.org/en-US/docs/Web/URI/Schemes/data). If you need a rule of thumb, [Vite defaults to 4096 bytes](https://vite.dev/config/build-options.html#build-assetsinlinelimit), and [Seirdy recommends 250 bytes](https://seirdy.one/posts/2020/11/23/website-best-practices/#inline-content).
 
 The overhead of Base64 is made up with [solid compression](https://en.wikipedia.org/wiki/Solid_compression), reduced latency, and also avoiding the ~1 KB of overhead HTTP requests have.
 
