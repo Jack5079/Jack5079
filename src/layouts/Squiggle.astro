@@ -1,0 +1,87 @@
+---
+/*
+	Powered by 90008
+	https://git.gaze.systems/90008/website/search/branch/svelte?path=&q=squiggle&mode=exact
+*/
+const svgSquiggles = [2, 3, 2, 3, 1]
+---
+
+<svg
+	width="0"
+	height="0"
+	image-rendering="optimizeSpeed"
+	role="none"
+	style="position:absolute;top:-1000px">
+	<>
+		{
+			svgSquiggles.map((scale, index) => (
+				<>
+					<filter id={`s${index}`}>
+						<feTurbulence
+							id="turbulence"
+							baseFrequency="0.03"
+							numOctaves="3"
+							result="noise"
+							seed={index}
+						/>
+						<feDisplacementMap in="SourceGraphic" in2="noise" {scale} />
+					</filter>
+					{/* super squiggle */}
+					<filter id={`ss${index}`}>
+						<feTurbulence
+							id="turbulence"
+							baseFrequency="0.03"
+							numOctaves="3"
+							result="noise"
+							seed={index}
+						/>
+						<feDisplacementMap in="SourceGraphic" in2="noise" scale={scale * 2} />
+					</filter>
+				</>
+			))
+		}
+	</>
+</svg>
+<style is:global>
+	a:is(:hover) {
+		animation: squiggle 0.3s infinite;
+	}
+	a:active {
+		animation: squiggle2 0.3s infinite;
+	}
+
+	@keyframes squiggle {
+		0% {
+			filter: url("#s0");
+		}
+		25% {
+			filter: url("#s1");
+		}
+		50% {
+			filter: url("#s2");
+		}
+		75% {
+			filter: url("#s3");
+		}
+		100% {
+			filter: url("#s4");
+		}
+	}
+	@keyframes squiggle2 {
+		0% {
+			filter: url("#ss0");
+		}
+		25% {
+			filter: url("#ss1");
+		}
+		50% {
+			filter: url("#ss2");
+		}
+		75% {
+			filter: url("#ss3");
+		}
+		100% {
+			filter: url("#ss4");
+		}
+	}
+</style>

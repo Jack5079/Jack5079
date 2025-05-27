@@ -36,14 +36,7 @@ pre {
 		url(./assets/pointer.svg) 7 -5,
 		auto;
 }
-a:hover:not(:has([height="31"])) {
-	filter: brightness(125%);
-	text-shadow: 0 0 0.1em #ff4539;
-}
-a:active:not(:has([height="31"])) {
-	filter: brightness(150%);
-	text-shadow: 0 0 0.2em #ff4539;
-}
+
 @media (prefers-color-scheme: dark) {
 	body {
 		background-color: #00000f;

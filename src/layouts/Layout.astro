@@ -2,6 +2,7 @@
 import "../global.css"
 import JackHeader from "../components/jack-header.astro"
 import {getImage} from "astro:assets"
+import Squiggle from "./Squiggle.astro"
 interface Props {
 	title?: string
 	description?: string
@@ -59,6 +60,7 @@ const alt_text = Astro.props.image?.[1]
 	</head>
 
 	<body class={Astro.props.bodyClass}>
+		<Squiggle />
 		<JackHeader blog={Astro.props.large_image} tool={Astro.props.tool} />
 		<slot />
 	</body>
