@@ -23,6 +23,8 @@ Go through each frame of the GIF and remove pixels that appear not to change.
 
 This let me [save 7.71 KB](https://github.com/Jack5079/Jack5079/commits/8c49614853be80ddf56283ed3ffbf22f84dd589c/src/components/Buttons/toastyfen.gif) on [toastyfen's](https://toasty.zone) 88x31.
 
+Make sure to open both the original GIF and your optimized version to make sure that there are no visible changes.
+
 ## Index it
 
 In GIMP, it's [Image > Mode > Indexed](https://docs.gimp.org/en/gimp-image-convert-indexed.html).
