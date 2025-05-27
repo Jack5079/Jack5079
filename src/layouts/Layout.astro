@@ -60,8 +60,8 @@ const alt_text = Astro.props.image?.[1]
 	</head>
 
 	<body class={Astro.props.bodyClass}>
-		<Squiggle />
 		<JackHeader blog={Astro.props.large_image} tool={Astro.props.tool} />
 		<slot />
+		<Squiggle />
 	</body>
 </html>
