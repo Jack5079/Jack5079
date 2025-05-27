@@ -9,35 +9,33 @@ const svgSquiggles = [2, 3, 2, 3, 1]
 	image-rendering="optimizeSpeed"
 	role="none"
 	style="position:absolute;top:-1000px">
-	<>
-		{
-			svgSquiggles.map((scale, index) => (
-				<>
-					<filter id={`s${index}`}>
-						<feTurbulence
-							id="turbulence"
-							baseFrequency="0.03"
-							numOctaves="3"
-							result="noise"
-							seed={index}
-						/>
-						<feDisplacementMap in="SourceGraphic" in2="noise" {scale} />
-					</filter>
-					{/* super squiggle */}
-					<filter id={`ss${index}`}>
-						<feTurbulence
-							id="turbulence"
-							baseFrequency="0.03"
-							numOctaves="3"
-							result="noise"
-							seed={index}
-						/>
-						<feDisplacementMap in="SourceGraphic" in2="noise" scale={scale * 2} />
-					</filter>
-				</>
-			))
-		}
-	</>
+	{
+		svgSquiggles.map((scale, index) => (
+			<>
+				<filter id={`s${index}`}>
+					<feTurbulence
+						id="turbulence"
+						baseFrequency="0.03"
+						numOctaves="3"
+						result="noise"
+						seed={index}
+					/>
+					<feDisplacementMap in="SourceGraphic" in2="noise" {scale} />
+				</filter>
+				{/* super squiggle */}
+				<filter id={`ss${index}`}>
+					<feTurbulence
+						id="turbulence"
+						baseFrequency="0.03"
+						numOctaves="3"
+						result="noise"
+						seed={index}
+					/>
+					<feDisplacementMap in="SourceGraphic" in2="noise" scale={scale * 2} />
+				</filter>
+			</>
+		))
+	}
 </svg>
 <style is:global>
 	a:is(:hover) {
