@@ -40,7 +40,7 @@ This [wasted 21.6 KB](https://github.com/Jack5079/Jack5079/commit/5610bf2eaedb88
 
 ## Inline them
 
-This sounds counterintuitive, but if you have a lot of 88x31s on your page, it might be worth it to [inline](https://developer.mozilla.org/en-US/docs/Web/URI/Schemes/data) the small ones. If you need a rule of thumb, [Vite defaults to 4096 bytes](https://vite.dev/config/build-options.html#build-assetsinlinelimit).
+If you have a lot of 88x31s on your page, it might be worth it to inline the small ones as [`data:` URIs](https://developer.mozilla.org/en-US/docs/Web/URI/Schemes/data). If you need a rule of thumb, [Vite defaults to 4096 bytes](https://vite.dev/config/build-options.html#build-assetsinlinelimit).
 
 The overhead of Base64 is made up with [solid compression](https://en.wikipedia.org/wiki/Solid_compression), reduced latency, and also avoiding the ~1 KB of overhead HTTP requests have.
 
@@ -48,9 +48,17 @@ This saved 24 KB on [split's](https://split.pet) website when compressed.
 
 ## Don't hotlink
 
-To follow any of these, you need to be the one hosting the image. Also, third-party requests mean a DNS lookup, adding even more latency.
+To follow any of these, you need to be the one hosting the image. Also, third-party requests mean a DNS lookup, adding even more latency. [Don't count on the cache](https://seirdy.one/posts/2020/11/23/website-best-practices/#dont-count-on-the-cache).
 
-## Note: Alternative formats
+31a05b has written [a counterpoint](https://www.31a05b.net/f/short/note-on-8831.html) about 88x31 links.
+
+## Include width and height
+
+If all else fails, make sure you have included `width="88" height="31"`, even if the image is exactly 88x31.
+
+Unloaded images without an explicit size do not reserve their space, resulting in layout shift when they load.
+
+## Alternative formats
 
 In theory using WebP, AVIF, or JPEG XL would save space, but in my experience it does the opposite for smaller images. Try and see if it works for you.
 
