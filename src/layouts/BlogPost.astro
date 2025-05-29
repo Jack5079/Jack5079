@@ -51,25 +51,6 @@ const { image, date, title, description } = Astro.props
 		max-width: 100%;
 		height: auto;
 	}
-	header > div > a[href="/blog/"] {
-		mask-image: url(./../pages/blog/_logo.png);
-		mask-size: contain;
-		mask-repeat: no-repeat;
-		mask-position: center;
-		background: currentColor;
-		user-select: none;
-		width: 100%;
-		height: 10ch;
-		display: block;
-		margin-inline: auto;
-		image-rendering: pixelated;
-	}
-	header > div > a[href="/blog/"] {
-		outline: none;
-	}
-	header > div:has(a[href="/blog/"]:focus-visible) {
-		outline: 1px auto;
-	}
 	.e-content > p:last-of-type::after {
 		content: "";
 		background: currentColor;
