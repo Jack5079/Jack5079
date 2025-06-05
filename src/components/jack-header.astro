@@ -16,7 +16,9 @@ import LanyardPeriod from "./LanyardPeriod.astro"
 					}
 					alt=""
 					decoding="async"
-					class={Astro.props.tool || Astro.props.blog ? "" : "u-photo"}
+					class:list={{
+						"u-photo": !(Astro.props.tool || Astro.props.blog),
+					}}
 					style="image-rendering:pixelated"
 					width="12"
 					height="16"
