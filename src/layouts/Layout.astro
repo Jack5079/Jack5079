@@ -38,7 +38,12 @@ const alt_text = Astro.props.image?.[1]
 			href=`https://fed.brid.gy/r/${Astro.url.href}`
 		/>
 		<link rel="sitemap" href="/sitemap-index.xml" />
-
+		<link
+			rel="alternate"
+			type="application/rss+xml"
+			title="Jack.cab/blog"
+			href={new URL("blog/rss.xml", Astro.site)}
+		/>
 		<title>{title}</title>
 		<meta name="description" content={description} />
 		<meta property="og:site_name" content={Astro.props.tool ? "Jack.cab tools" : "Jack.cab"} />
