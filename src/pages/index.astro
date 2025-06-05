@@ -73,6 +73,7 @@ const articles = await getCollection("blog")
 									{date.toLocaleDateString("en-US", {
 										month: "short",
 										day: "2-digit",
+										timeZone: "UTC",
 									})}
 								</time>
 								<span>

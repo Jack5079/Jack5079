@@ -33,7 +33,11 @@ const articles = await getCollection("blog")
 								</a>
 							</h2>
 							<time class="dt-published" datetime={article.data.date.toISOString()}>
-								{article.data.date.toISOString().split("T")[0]}
+								{article.data.date.toLocaleDateString("en-US", {
+									month: "short",
+									day: "2-digit",
+									timeZone: "UTC"
+								})}
 							</time>
 							<p class="p-summary">{article.data.description}</p>
 						</li>
@@ -68,5 +72,7 @@ const articles = await getCollection("blog")
 	time {
 		font-size: 0.8em;
 		float: right;
+		text-transform: uppercase;
+		font-family: "Adwaita Mono", monospace;
 	}
 </style>
