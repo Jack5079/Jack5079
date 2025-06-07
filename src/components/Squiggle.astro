@@ -13,25 +13,13 @@ const svgSquiggles = [2, 3, 2, 3, 1]
 		svgSquiggles.map((scale, index) => (
 			<>
 				<filter id={`s${index}`}>
-					<feTurbulence
-						id="turbulence"
-						baseFrequency="0.03"
-						numOctaves="3"
-						result="noise"
-						seed={index}
-					/>
-					<feDisplacementMap in="SourceGraphic" in2="noise" {scale} />
+					<feTurbulence baseFrequency="0.03" numOctaves="3" seed={index} />
+					<feDisplacementMap in="SourceGraphic" {scale} />
 				</filter>
 				{/* super squiggle */}
 				<filter id={`ss${index}`}>
-					<feTurbulence
-						id="turbulence"
-						baseFrequency="0.03"
-						numOctaves="3"
-						result="noise"
-						seed={index}
-					/>
-					<feDisplacementMap in="SourceGraphic" in2="noise" scale={scale * 2} />
+					<feTurbulence baseFrequency="0.03" numOctaves="3" seed={index} />
+					<feDisplacementMap in="SourceGraphic" scale={scale * 2} />
 				</filter>
 			</>
 		))
