@@ -1,7 +1,3 @@
----
-const svgSquiggles = [2, 3, 2, 3, 1]
----
-
 <!-- https://git.gaze.systems/90008/website/search/branch/svelte?path=&q=squiggle&mode=exact -->
 <svg
 	width="0"
@@ -9,62 +5,49 @@ const svgSquiggles = [2, 3, 2, 3, 1]
 	image-rendering="optimizeSpeed"
 	role="none"
 	style="position:absolute;top:-1000px">
-	{
-		svgSquiggles.map((scale, index) => (
-			<>
-				<filter id={`s${index}`}>
-					<feTurbulence baseFrequency="0.03" numOctaves="3" seed={index} />
-					<feDisplacementMap in="SourceGraphic" {scale} />
-				</filter>
-				{/* super squiggle */}
-				<filter id={`ss${index}`}>
-					<feTurbulence baseFrequency="0.03" numOctaves="3" seed={index} />
-					<feDisplacementMap in="SourceGraphic" scale={scale * 2} />
-				</filter>
-			</>
-		))
-	}
+	<filter id="s">
+		<feTurbulence baseFrequency="0.03" id="a" numOctaves="3">
+			<animate
+				attributeName="seed"
+				values="0;1;2;3;4"
+				dur="0.3s"
+				repeatCount="indefinite"
+				calcMode="discrete"></animate>
+		</feTurbulence>
+		<feDisplacementMap in="SourceGraphic" in2="a">
+			<animate
+				attributeName="scale"
+				values="2;3;2;3;1"
+				dur="0.3s"
+				repeatCount="indefinite"
+				calcMode="discrete"></animate>
+		</feDisplacementMap>
+	</filter>
+	{/* super squiggle */}
+	<filter id={`ss`}>
+		<feTurbulence baseFrequency="0.03" id="b" numOctaves="3">
+			<animate
+				attributeName="seed"
+				values="0;1;2;3;4"
+				dur="0.3s"
+				repeatCount="indefinite"
+				calcMode="discrete"></animate>
+		</feTurbulence>
+		<feDisplacementMap in="SourceGraphic" in2="b">
+			<animate
+				attributeName="scale"
+				values="4;6;4;6;2"
+				dur="0.3s"
+				repeatCount="indefinite"
+				calcMode="discrete"></animate>
+		</feDisplacementMap>
+	</filter>
 </svg>
 <style is:global>
 	a:is(:hover) {
-		animation: squiggle 0.3s infinite;
+		filter: url("#s");
 	}
 	a:active {
-		animation: squiggle2 0.3s infinite;
-	}
-
-	@keyframes squiggle {
-		0% {
-			filter: url("#s0");
-		}
-		25% {
-			filter: url("#s1");
-		}
-		50% {
-			filter: url("#s2");
-		}
-		75% {
-			filter: url("#s3");
-		}
-		100% {
-			filter: url("#s4");
-		}
-	}
-	@keyframes squiggle2 {
-		0% {
-			filter: url("#ss0");
-		}
-		25% {
-			filter: url("#ss1");
-		}
-		50% {
-			filter: url("#ss2");
-		}
-		75% {
-			filter: url("#ss3");
-		}
-		100% {
-			filter: url("#ss4");
-		}
+		filter: url("#ss");
 	}
 </style>
