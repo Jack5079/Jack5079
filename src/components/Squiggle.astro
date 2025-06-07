@@ -6,11 +6,11 @@
 	role="none"
 	style="position:absolute;top:-1000px">
 	<filter id="s">
-		<feTurbulence baseFrequency="0.03" id="a" numOctaves="3">
+		<feTurbulence baseFrequency=".03" id="a" numOctaves="3">
 			<animate
 				attributeName="seed"
 				values="0;1;2;3;4"
-				dur="0.3s"
+				dur=".3s"
 				repeatCount="indefinite"
 				calcMode="discrete"></animate>
 		</feTurbulence>
@@ -18,18 +18,18 @@
 			<animate
 				attributeName="scale"
 				values="2;3;2;3;1"
-				dur="0.3s"
+				dur=".3s"
 				repeatCount="indefinite"
 				calcMode="discrete"></animate>
 		</feDisplacementMap>
 	</filter>
 	{/* super squiggle */}
 	<filter id={`ss`}>
-		<feTurbulence baseFrequency="0.03" id="b" numOctaves="3">
+		<feTurbulence baseFrequency=".03" id="b" numOctaves="3">
 			<animate
 				attributeName="seed"
 				values="0;1;2;3;4"
-				dur="0.3s"
+				dur=".3s"
 				repeatCount="indefinite"
 				calcMode="discrete"></animate>
 		</feTurbulence>
@@ -37,7 +37,7 @@
 			<animate
 				attributeName="scale"
 				values="4;6;4;6;2"
-				dur="0.3s"
+				dur=".3s"
 				repeatCount="indefinite"
 				calcMode="discrete"></animate>
 		</feDisplacementMap>
