@@ -2,7 +2,6 @@ import rss from "@astrojs/rss"
 
 import type { APIContext } from "astro"
 import { getCollection } from "astro:content"
-import stylesheet from "../../assets/feed.xsl?no-inline"
 
 export async function GET(context: APIContext) {
 	const blog = await getCollection("blog")
@@ -22,6 +21,6 @@ export async function GET(context: APIContext) {
 		})),
 		trailingSlash: false,
 		customData: `<language>en-us</language>`,
-		stylesheet,
+		stylesheet: "/feed.xsl",
 	})
 }
