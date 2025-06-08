@@ -2,7 +2,7 @@ import rss from "@astrojs/rss"
 
 import type { APIContext } from "astro"
 import { getCollection } from "astro:content"
-import stylesheet from "../../assets/feed.xsl?url"
+import stylesheet from "../../assets/feed.xsl?no-inline"
 
 export async function GET(context: APIContext) {
 	const blog = await getCollection("blog")
