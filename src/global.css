@@ -1,5 +1,5 @@
 body {
-	font-family: "Inter Variable", "Inter", sans-serif;
+	font-family: "Inter Variable", "Inter", system-ui, sans-serif;
 	margin: auto;
 	padding: 20px;
 	max-width: 800px;
