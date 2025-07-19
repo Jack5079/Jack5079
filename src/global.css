@@ -16,7 +16,7 @@ article p {
 h1,
 h2,
 h3 {
-	font-family: "Inter Display", "Inter Variable", "Inter", sans-serif;
+	font-family: "Inter Display", "Inter Variable", "Inter", system-ui, sans-serif;
 }
 legend,
 .u-uid,
