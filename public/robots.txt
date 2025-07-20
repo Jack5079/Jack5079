@@ -2,4 +2,5 @@ User-agent: Applebot-Extended
 User-agent: Google-Extended
 User-agent: GPTBot
 User-agent: Meta-ExternalAgent
+User-agent: ia_archiver
 Disallow: /
