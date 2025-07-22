@@ -6,5 +6,3 @@
 /unsuggestive-suggestions https://github.com/Jack5079/unsuggestive-suggestions 307
 /mc https://github.com/Jack5079/mc 307
 /dotfiles/* https://github.com/Jack5079/dotfiles/blob/main/:splat 301
-/.well-known/webfinger* https://fed.brid.gy/.well-known/webfinger:splat 301
-/.well-known/host-meta* https://fed.brid.gy/.well-known/host-meta:splat 301
