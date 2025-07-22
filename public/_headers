@@ -1,6 +1,7 @@
 /*
-	Cross-Origin-Embedder-Policy: credentialless
-	Cross-Origin-Opener-Policy: same-origin
+	# Uncomment these when https://developer.mozilla.org/en-US/docs/Web/Security/IFrame_credentialless is in Firefox
+	# Cross-Origin-Embedder-Policy: credentialless
+	# Cross-Origin-Opener-Policy: same-origin
 	x-robots-tag: noai, noimageai
 	tdm-reservation: 1
 
