@@ -34,7 +34,7 @@ const { image, date, title, description } = Astro.props
 					<a class="u-url">
 						Published
 						<time class="dt-published" datetime={date.toISOString()}>
-							{date.toLocaleDateString()}
+							{date.toLocaleDateString([],{"timeZone":"UTC"})}
 						</time>
 					</a>
 				)

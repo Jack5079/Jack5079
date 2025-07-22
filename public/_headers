@@ -6,9 +6,10 @@
 
 /robots.txt
 	! x-robots-tag
+	! tdm-reservation
 
 /_astro/
-	Cache-Control: public, max-age=31536000, immutable
+	Cache-Control: public, max-age=31557600, immutable
 	! Cross-Origin-Embedder-Policy
 	! Cross-Origin-Opener-Policy
 

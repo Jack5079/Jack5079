@@ -190,7 +190,6 @@ const articles = await getCollection("blog")
 		<Section id="pantson">
 			<legend role="heading" aria-level="2">Colors</legend>
 			<script>
-				let timeout: ReturnType<typeof setTimeout>
 				document.body.addEventListener("click", event => {
 					const target = event.target as HTMLElement
 					const button = target.closest("button[data-color]")
