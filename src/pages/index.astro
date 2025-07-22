@@ -224,10 +224,10 @@ const articles = await getCollection("blog")
 		</Section>
 		<Section id="feedback">
 			<legend>Feedback</legend>
-			<form action="/feedback">
-			<input type="text" name="author" maxlength="64" placeholder="Name (optional)">
+			<form action="/feedback" method="post">
+				<input type="text" name="author" maxlength="64" placeholder="Name (optional)" />
 				<textarea name="message" maxlength="2000" required rows="5"></textarea>
-				<input type="hidden" value="cab" name="jack">
+				<input type="hidden" value="cab" name="jack" />
 				<button type="submit">Send</button>
 			</form>
 		</Section>
