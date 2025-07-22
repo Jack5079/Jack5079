@@ -1,6 +1,7 @@
 ---
 import { Picture } from "astro:assets"
 import Layout from "./Layout.astro"
+import BlueskyComments from "../components/BlueskyComments.astro"
 
 interface Props {
 	title: string
@@ -8,23 +9,33 @@ interface Props {
 	image?: { src: ImageMetadata; alt: string; pixelated?: boolean }
 	description?: string
 	children: any
+	bluesky?: string
 }
 
-const { image, date, title, description } = Astro.props
+const { image, date, title, description, bluesky } = Astro.props
 ---
 
 <Layout {description} {title} image={image && [image.src, image.alt]} large_image>
 	<article class="h-entry">
 		{
-			image && (image.pixelated ? <img src={image.src.src} style="image-rendering:pixelated" alt={image.alt} width={800} class="u-featured"> : (
-				<Picture
-					src={image.src}
-					alt={image.alt}
-					width={800}
-					densities={[1, 1.5, 0.5]}
-					class="u-featured"
-				/>
-			))
+			image &&
+				(image.pixelated ? (
+					<img
+						src={image.src.src}
+						style="image-rendering:pixelated"
+						alt={image.alt}
+						width={800}
+						class="u-featured"
+					/>
+				) : (
+					<Picture
+						src={image.src}
+						alt={image.alt}
+						width={800}
+						densities={[1, 1.5, 0.5]}
+						class="u-featured"
+					/>
+				))
 		}
 		<hgroup>
 			<h1 class="p-name">{Astro.props.title}</h1>
@@ -34,7 +45,7 @@ const { image, date, title, description } = Astro.props
 					<a class="u-url">
 						Published
 						<time class="dt-published" datetime={date.toISOString()}>
-							{date.toLocaleDateString([],{"timeZone":"UTC"})}
+							{date.toLocaleDateString([], { timeZone: "UTC" })}
 						</time>
 					</a>
 				)
@@ -44,6 +55,7 @@ const { image, date, title, description } = Astro.props
 			<slot />
 		</div>
 	</article>
+	{bluesky && <BlueskyComments record={bluesky} />}
 </Layout>
 
 <style is:global>

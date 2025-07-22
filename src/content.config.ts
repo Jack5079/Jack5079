@@ -15,9 +15,10 @@ const blog = defineCollection({
 				z.object({
 					src: image(),
 					alt: z.string(),
-					pixelated: z.optional(z.boolean())
+					pixelated: z.boolean().optional(),
 				})
 			),
+			bluesky: z.string().optional(),
 			date: z.date(),
 		}),
 })

@@ -1,0 +1,128 @@
+---
+const { record } = Astro.props
+interface Props {
+	record: string
+}
+const did = "did:plc:rl7veq6ixcxbvxskltypdcpa"
+---
+
+<div id="comments" data-record={record} data-did={did}>
+	<a href={`https://bsky.app/profile/${did}/post/${record}`}>Reply on Bluesky</a> and appear here!
+</div>
+
+<script>
+	import { segmentize } from "@atcute/bluesky-richtext-segmenter"
+	import type * as bluesky from "@atcute/bluesky"
+	const comments = document.getElementById("comments")!
+	const did = comments.dataset.did!
+	const record = comments.dataset.record!
+
+	const res: { thread: bluesky.AppBskyFeedDefs.ThreadViewPost } = await fetch(
+		`https://public.api.bsky.app/xrpc/app.bsky.feed.getPostThread?uri=at://${did}/app.bsky.feed.post/${record}`
+	).then(res => res.json())
+	const thread = res.thread
+
+	function renderComment(thread: bluesky.AppBskyFeedDefs.ThreadViewPost) {
+		const post = thread.post
+		const div = document.createElement("div")
+		div.className = "comment"
+		if (thread.threadContext?.rootAuthorLike) div.classList.add("liked")
+		const author = document.createElement("a")
+		author.className = "author"
+		author.href = "https://bsky.app/profile/" + post.author.did
+		author.textContent = `${post.author.displayName} (@${post.author.handle})`
+
+		// Render the post text, replacing any link-facets with real <a> tags
+		const body = document.createElement("div")
+		body.className = "text"
+
+		if (post.record.facets?.length) {
+			const tokens = segmentize(post.record.text, post.record.facets)
+			for (const token of tokens) {
+				if (token.features?.length) {
+					const node = token.features.reduce((childNode, feature) => {
+						const a = document.createElement("a")
+						a.rel = "ugc"
+						switch (feature.$type) {
+							case "app.bsky.richtext.facet#link":
+								a.href = feature.uri
+								break
+							case "app.bsky.richtext.facet#mention":
+								a.href = `https://bsky.app/profile/${feature.did}`
+								break
+							case "app.bsky.richtext.facet#tag":
+								a.href = `https://bsky.app/hashtag/${feature.tag}`
+								break
+						}
+						a.appendChild(childNode)
+						return a
+					}, document.createTextNode(token.text))
+
+					body.appendChild(node)
+				} else {
+					body.append(token.text)
+				}
+			}
+		} else {
+			body.textContent = post.record.text
+		}
+
+		div.appendChild(body)
+
+		const avatar = document.createElement("img")
+		avatar.className = "avatar"
+		avatar.width = 16
+		avatar.height = 16
+		avatar.src = post.author.avatar
+		avatar.alt = `${post.author.displayName}'s avatar`
+
+		author.prepend(avatar)
+		div.appendChild(author)
+		div.appendChild(body)
+		console.log(post)
+
+		if (thread.replies?.length) {
+			const repliesContainer = document.createElement("div")
+			repliesContainer.className = "replies"
+			thread.replies.forEach(reply => {
+				repliesContainer.appendChild(renderComment(reply))
+			})
+			div.appendChild(repliesContainer)
+		}
+
+		return div
+	}
+
+	comments.appendChild(renderComment(thread))
+</script>
+
+<style is:global>
+	.comment .author {
+		font-weight: bold;
+		margin-bottom: 0.5rem;
+	}
+	.comment {
+		border-left: solid 1px gray;
+		padding-left: 1ch;
+	}
+	.comment.liked > .author::after {
+		content: "❤️" / "Liked by me";
+		position: absolute;
+		rotate: 15deg;
+		opacity: 0.8;
+	}
+	.comment .author img {
+		margin-right: 0.5ch;
+		vertical-align: middle;
+		aspect-ratio: 1/1;
+		width: auto;
+		height: 16px;
+	}
+	.comment .text {
+		margin-bottom: 0.5rem;
+	}
+
+	.comment .replies {
+		margin-left: 1rem;
+	}
+</style>
