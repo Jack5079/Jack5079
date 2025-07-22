@@ -24,3 +24,5 @@ pnpm-debug.log*
 .idea/
 src/blog/drafts
 src/drafts
+.dev.vars
+.wrangler/

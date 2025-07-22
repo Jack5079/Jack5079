@@ -5,25 +5,31 @@ import monospaceLight from "./src/monospace-light.json"
 import sitemap from "@astrojs/sitemap"
 import solidJs from "@astrojs/solid-js"
 
+import cloudflare from "@astrojs/cloudflare";
+
 // https://astro.build/config
 export default defineConfig({
-	site: "https://jack.cab",
-	image: {
-		// Astro can't find Sharp when ran with Bun
-		service: "Bun" in globalThis ? passthroughImageService() : sharpImageService(),
-	},
-	build: {
-		format: "preserve",
-		inlineStylesheets: "always",
-	},
-	markdown: {
-		shikiConfig: {
-			themes: {
-				dark: monospaceDark,
-				light: monospaceLight,
-			},
-		},
+  site: "https://jack.cab",
+
+  image: {
+      // Astro can't find Sharp when ran with Bun
+      service: "Bun" in globalThis ? passthroughImageService() : sharpImageService(),
 	},
 
-	integrations: [sitemap(), solidJs()],
+  build: {
+      format: "preserve",
+      inlineStylesheets: "always",
+	},
+
+  markdown: {
+      shikiConfig: {
+          themes: {
+              dark: monospaceDark,
+              light: monospaceLight,
+          },
+      },
+	},
+
+  integrations: [sitemap(), solidJs()],
+  adapter: cloudflare(),
 })
