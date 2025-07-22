@@ -1,7 +1,7 @@
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
 	"name": "jack-cab",
-	"compatibility_date": "2025-03-25",
+	"compatibility_date": "2025-06-19",
 	"main": "./dist/_worker.js/index.js",
 	"assets": {
 		"directory": "./dist",
