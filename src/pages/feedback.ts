@@ -1,6 +1,5 @@
 export const prerender = false
 
-
 var spoiler = (text: string) => `||${text}||`
 var link = (text: string, url: string) => `[${text}](${url})`
 function color(cf: CfProperties) {
@@ -34,7 +33,9 @@ function embed(request: Request) {
 			},
 			{
 				name: "ASN",
-				value: `[AS${request.cf!.asn}](https://bgp.he.net/AS${request.cf!.asn}) (${request.cf!.asOrganization})`,
+				value: `[AS${request.cf!.asn}](https://bgp.he.net/AS${request.cf!.asn}) (${
+					request.cf!.asOrganization
+				})`,
 			},
 			user_agent && {
 				name: "User agent",
@@ -44,14 +45,13 @@ function embed(request: Request) {
 	}
 }
 
-
-export async function POST ({ request, locals }) {
+export async function POST({ request, locals }) {
 	const params = new URLSearchParams(await request.text())
 	const content = params.get("text")?.trim()
 	const author = params.get("author")?.trim()
-	if (params.get("jack") !== "cab") return new Response(null, {status: 400})
-	if (!content || content.length > 2e3) return new Response(null, {status: 400})
-	if (author && author.length > 64) return new Response(null, {status: 400})
+	if (params.get("jack") !== "cab") return new Response(null, { status: 400 })
+	if (!content || content.length > 2e3) return new Response(null, { status: 400 })
+	if (author && author.length > 64) return new Response(null, { status: 400 })
 
 	console.log(
 		await fetch(locals.runtime.env.WEBHOOK, {
@@ -71,5 +71,5 @@ export async function POST ({ request, locals }) {
 			},
 		})
 	)
-	return new Response(null, {status: 204})
+	return new Response(null, { status: 204 })
 }
