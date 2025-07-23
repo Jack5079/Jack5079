@@ -52,7 +52,7 @@ const articles = await getCollection("blog")
 			["reviews reviews socials"],
 			["buttons buttons philosophy"],
 			["buttons buttons philosophy"],
-			["feedback feedback pantson"],
+			["buttons buttons pantson"],
 		]}>
 		<Section id="blog">
 			<legend role="heading" aria-level="2"
@@ -222,15 +222,6 @@ const articles = await getCollection("blog")
 					decoding="async"
 				/>
 			</a>
-		</Section>
-		<Section id="feedback">
-			<legend>Feedback</legend>
-			<form action="/feedback">
-				<input type="text" name="author" maxlength="64" placeholder="Name (optional)" />
-				<textarea name="text" maxlength="2000" required rows="5"></textarea>
-				<input type="hidden" value="cab" name="jack" />
-				<button type="submit">Send</button>
-			</form>
 		</Section>
 	</Bento>
 	<small>↑↑↓↓←→←→BA</small>
