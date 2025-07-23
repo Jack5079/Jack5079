@@ -45,8 +45,8 @@ function embed(request: Request) {
 	}
 }
 
-export async function POST({ request, locals }) {
-	const params = new URLSearchParams(await request.text())
+export async function GET({ request, locals }) {
+	const params = new URL((request as Request).url).searchParams
 	const content = params.get("text")?.trim()
 	const author = params.get("author")?.trim()
 	if (params.get("jack") !== "cab") return new Response(null, { status: 400 })
@@ -71,5 +71,10 @@ export async function POST({ request, locals }) {
 			},
 		})
 	)
-	return new Response(null, { status: 204 })
+	return new Response(null, {
+		status: 204, headers: {
+		"Cache-Control": "no-store",
+		"Pragma": "no-cache",
+		"Expires": "0"
+	} })
 }
