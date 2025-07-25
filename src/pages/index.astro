@@ -27,7 +27,7 @@ import opengraph from "../assets/opengraph.png"
 
 import red from "../assets/pantson/red.png?url"
 import green from "../assets/pantson/green.png?url"
-import pantson from "../assets/pantson/joinvivid.webp?url"
+import pantson from "../assets/pantson/joinframe.png?url"
 
 import { getCollection } from "astro:content"
 import Buttons from "../components/Buttons.astro"
@@ -220,6 +220,7 @@ const articles = await getCollection("blog")
 					width="64"
 					height="100"
 					decoding="async"
+					class="animatedgradient"
 				/>
 			</a>
 		</Section>
@@ -232,6 +233,16 @@ const articles = await getCollection("blog")
 	textarea {
 		resize: vertical;
 		width: 100%;
+	}
+	.animatedgradient {
+		background: /* none fixed,  */repeating-linear-gradient(in hsl longer hue 45deg, red 0 100%);
+		background-size: /* auto, */ 600% 600%;
+		animation: gradientmove 4s ease-in-out infinite alternate;
+
+	}
+	@keyframes gradientmove {
+		0% { background-position: /* bottom center, */ 0% 100%; }
+		100% { background-position: /* bottom center, */ 100% 0%; }
 	}
 	#pantson button {
 		margin: 0;
