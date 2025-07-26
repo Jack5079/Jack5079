@@ -30,7 +30,7 @@ export default defineConfig({
 		},
 	},
 
-	integrations: [sitemap(), solidJs()],
+	integrations: [sitemap()],
 	adapter: cloudflare({
 
 	}),
