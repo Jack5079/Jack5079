@@ -16,7 +16,7 @@ export default defineConfig({
 	},
 	vite: {
 		build: {
-			sourcemap: true
+			sourcemap: "inline"
 		}
 	},
 	build: {
