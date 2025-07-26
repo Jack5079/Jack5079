@@ -16,8 +16,8 @@ export default defineConfig({
 	},
 	vite: {
 		build: {
-			sourcemap: "inline"
-		}
+			sourcemap: true
+		},
 	},
 	build: {
 		format: "preserve",
@@ -34,7 +34,5 @@ export default defineConfig({
 	},
 
 	integrations: [sitemap()],
-	adapter: cloudflare({
-
-	}),
+	adapter: cloudflare({}),
 })
