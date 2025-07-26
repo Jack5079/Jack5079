@@ -3,7 +3,6 @@ import { defineConfig, passthroughImageService, sharpImageService } from "astro/
 import monospaceDark from "./src/monospace-dark.json"
 import monospaceLight from "./src/monospace-light.json"
 import sitemap from "@astrojs/sitemap"
-import solidJs from "@astrojs/solid-js"
 
 import cloudflare from "@astrojs/cloudflare"
 
