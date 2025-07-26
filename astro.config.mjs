@@ -15,7 +15,11 @@ export default defineConfig({
 		// Astro can't find Sharp when ran with Bun
 		service: "Bun" in globalThis ? passthroughImageService() : sharpImageService(),
 	},
-
+	vite: {
+		build: {
+			sourcemap: true
+		}
+	},
 	build: {
 		format: "preserve",
 		inlineStylesheets: "always",
