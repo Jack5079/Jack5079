@@ -3,6 +3,7 @@ title = "A streamproof webpage*"
 description = "*on my exact setup"
 date = 2025-07-30
 blinding = true
+bluesky = "3lva43zrdc225"
 
 [image]
 src = "./macbook.png"
