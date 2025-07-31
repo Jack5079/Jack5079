@@ -10,9 +10,12 @@ interface Props {
 	description?: string
 	children: any
 	bluesky?: string
+	blinding?: boolean
 }
 
-const { image, date, title, description, bluesky } = Astro.props
+const { image, date, title, description, bluesky, blinding } = Astro.props
+import white from "./white.webm?url"
+
 ---
 
 <Layout {description} {title} image={image && [image.src, image.alt]} large_image>
@@ -55,6 +58,104 @@ const { image, date, title, description, bluesky } = Astro.props
 			<slot />
 		</div>
 	</article>
+	{blinding && (<>
+	<video src={white} playsinline muted width="4" height="4" inert id="blinding" />
+	<style is:global>
+		@media not (dynamic-range: high) {
+			article::before {
+				content: "If you see this, the styling is disabled because your display or browser does not support it. Use a MacBook, make sure your screen is set to Apple XDR Display, and open this article in Safari";
+				text-align: center;
+				display: block;
+				font-size: xx-large;
+				font-weight: bold;
+			}
+			article div p:nth-child(2)::after {
+				content: " If you see this, the styling is disabled because your display or browser does not support it. Use a MacBook, make sure your screen is set to Apple XDR Display, and open this article in Safari.";
+				font-weight: bold;
+			}
+			video {
+				display: none;
+			}
+			#contain + p::before {
+				content: "The above visualization only works if you are on HDR. ";
+				font-weight: bold;
+				display: block;
+				margin-block: 1lh;
+				text-align: center;
+			}
+		}
+
+		@media (dynamic-range: high) {
+		html {
+			color-scheme: light;
+		}
+
+		* {
+			color: white !important;
+		}
+
+		nav img {
+			filter: none !important;
+		}
+
+		hgroup a {
+			filter: brightness(1.5);
+			backdrop-filter: brightness();
+		}
+
+		body {
+			backdrop-filter: brightness(3) blur(0.6px);
+			background: white !important;
+			margin-block: 1ch;
+		}
+		
+		
+		:focus-visible {
+			outline: solid 2px white;
+			outline-offset: 3px;
+		}
+
+		::selection {
+			background: white;
+		}
+
+		hr {
+			border: none;
+			background: linear-gradient(to right, gray, white);
+			height: 5px;
+			filter: brightness(2);
+			backdrop-filter: brightness();
+		}
+
+		article img {
+			filter: brightness(10);
+			backdrop-filter: brightness();
+		}
+		#dark {
+			background: white;
+			span {
+				backdrop-filter: brightness();
+				filter: brightness(2);
+				background: rgb(128,128,128);
+			}
+		}
+		}
+		#contain {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 1ch;
+			flex-direction: row;
+		}
+		#dark, #light {
+			font-size: large;
+			display: grid;
+			place-content: center;
+			aspect-ratio: 1/1;
+			width: 50%;
+		}
+	</style>
+	</>)}
 	{bluesky && <BlueskyComments record={bluesky} />}
 </Layout>
 

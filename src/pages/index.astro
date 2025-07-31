@@ -63,7 +63,7 @@ const articles = await getCollection("blog")
 				/>
 				<a href="/blog/">jack.cab/blog/</a></legend
 			>
-			<!-- <ul>
+			<ul>
 				{
 					articles
 						.sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
@@ -83,8 +83,7 @@ const articles = await getCollection("blog")
 							</li>
 						))
 				}
-			</ul> -->
-			<p>Check back later</p>
+			</ul>
 		</Section>
 		<Section id="clock">
 			<legend>My time</legend>
@@ -231,14 +230,20 @@ const articles = await getCollection("blog")
 		width: 100%;
 	}
 	.animatedgradient {
-		background: /* none fixed,  */repeating-linear-gradient(in hsl longer hue 45deg, red 0 100%);
+		background: /* none fixed,  */ repeating-linear-gradient(
+			in hsl longer hue 45deg,
+			red 0 100%
+		);
 		background-size: /* auto, */ 600% 600%;
 		animation: gradientmove 4s ease-in-out infinite alternate;
-
 	}
 	@keyframes gradientmove {
-		0% { background-position: /* bottom center, */ 0% 100%; }
-		100% { background-position: /* bottom center, */ 100% 0%; }
+		0% {
+			background-position: /* bottom center, */ 0% 100%;
+		}
+		100% {
+			background-position: /* bottom center, */ 100% 0%;
+		}
 	}
 	#pantson button {
 		margin: 0;

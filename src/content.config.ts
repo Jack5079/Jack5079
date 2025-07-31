@@ -20,6 +20,7 @@ const blog = defineCollection({
 			),
 			bluesky: z.string().optional(),
 			date: z.date(),
+			blinding: z.boolean().optional()
 		}),
 })
 
